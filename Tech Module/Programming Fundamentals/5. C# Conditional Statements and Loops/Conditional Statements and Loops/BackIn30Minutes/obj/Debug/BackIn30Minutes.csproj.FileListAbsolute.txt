@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\bin\Debug\BackIn30Minutes.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\bin\Debug\BackIn30Minutes.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\bin\Debug\BackIn30Minutes.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\obj\Debug\BackIn30Minutes.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\obj\Debug\BackIn30Minutes.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\obj\Debug\BackIn30Minutes.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\BackIn30Minutes\obj\Debug\BackIn30Minutes.pdb

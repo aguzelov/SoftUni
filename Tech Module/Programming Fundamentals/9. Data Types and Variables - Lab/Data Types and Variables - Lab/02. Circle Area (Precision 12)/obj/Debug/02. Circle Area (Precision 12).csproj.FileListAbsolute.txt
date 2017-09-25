@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\bin\Debug\_02.Circle_Area__Precision_12_.exe.config
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\bin\Debug\_02.Circle_Area__Precision_12_.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\bin\Debug\_02.Circle_Area__Precision_12_.pdb
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\obj\Debug\02. Circle Area (Precision 12).csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\obj\Debug\_02.Circle_Area__Precision_12_.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\02. Circle Area (Precision 12)\obj\Debug\_02.Circle_Area__Precision_12_.pdb

@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\bin\Debug\Add Two Numbers.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\bin\Debug\Add Two Numbers.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\bin\Debug\Add Two Numbers.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\obj\Debug\Add Two Numbers.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\obj\Debug\Add Two Numbers.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Add Two Numbers\obj\Debug\Add Two Numbers.pdb

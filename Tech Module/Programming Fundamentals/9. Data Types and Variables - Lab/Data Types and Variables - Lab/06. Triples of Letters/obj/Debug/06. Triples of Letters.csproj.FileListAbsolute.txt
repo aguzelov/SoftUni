@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\bin\Debug\_06.Triples_of_Letters.exe.config
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\bin\Debug\_06.Triples_of_Letters.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\bin\Debug\_06.Triples_of_Letters.pdb
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\obj\Debug\06. Triples of Letters.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\obj\Debug\_06.Triples_of_Letters.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\06. Triples of Letters\obj\Debug\_06.Triples_of_Letters.pdb

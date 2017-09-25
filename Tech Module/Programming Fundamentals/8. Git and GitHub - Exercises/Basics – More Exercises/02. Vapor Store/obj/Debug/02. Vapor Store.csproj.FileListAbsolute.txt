@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\bin\Debug\_02.Vapor_Store.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\bin\Debug\_02.Vapor_Store.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\bin\Debug\_02.Vapor_Store.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\obj\Debug\02. Vapor Store.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\obj\Debug\02. Vapor Store.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\obj\Debug\_02.Vapor_Store.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\02. Vapor Store\obj\Debug\_02.Vapor_Store.pdb

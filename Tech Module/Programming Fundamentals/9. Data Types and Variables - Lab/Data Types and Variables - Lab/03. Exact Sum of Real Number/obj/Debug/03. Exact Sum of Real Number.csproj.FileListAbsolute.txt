@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\bin\Debug\_03.Exact_Sum_of_Real_Number.exe.config
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\bin\Debug\_03.Exact_Sum_of_Real_Number.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\bin\Debug\_03.Exact_Sum_of_Real_Number.pdb
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\obj\Debug\03. Exact Sum of Real Number.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\obj\Debug\_03.Exact_Sum_of_Real_Number.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\03. Exact Sum of Real Number\obj\Debug\_03.Exact_Sum_of_Real_Number.pdb

@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\bin\Debug\_08.Refactor_Volume_of_Pyramid.exe.config
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\bin\Debug\_08.Refactor_Volume_of_Pyramid.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\bin\Debug\_08.Refactor_Volume_of_Pyramid.pdb
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\obj\Debug\08. Refactor Volume of Pyramid.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\obj\Debug\_08.Refactor_Volume_of_Pyramid.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\08. Refactor Volume of Pyramid\obj\Debug\_08.Refactor_Volume_of_Pyramid.pdb

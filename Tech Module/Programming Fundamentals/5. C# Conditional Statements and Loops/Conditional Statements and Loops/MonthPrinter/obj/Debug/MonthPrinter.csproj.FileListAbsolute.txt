@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\bin\Debug\MonthPrinter.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\bin\Debug\MonthPrinter.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\bin\Debug\MonthPrinter.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\obj\Debug\MonthPrinter.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\obj\Debug\MonthPrinter.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\3. Conditional Statements and Loops\Conditional Statements and Loops\MonthPrinter\obj\Debug\MonthPrinter.pdb

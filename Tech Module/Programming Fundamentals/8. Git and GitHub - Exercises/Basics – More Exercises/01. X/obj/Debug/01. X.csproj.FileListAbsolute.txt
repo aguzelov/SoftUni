@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\bin\Debug\_01.X.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\bin\Debug\_01.X.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\bin\Debug\_01.X.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\obj\Debug\01. X.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\obj\Debug\01. X.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\obj\Debug\_01.X.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\01. X\obj\Debug\_01.X.pdb

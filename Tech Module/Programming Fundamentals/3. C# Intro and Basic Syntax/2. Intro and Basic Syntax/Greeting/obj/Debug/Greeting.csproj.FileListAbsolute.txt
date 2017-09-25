@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\bin\Debug\Greeting.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\bin\Debug\Greeting.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\bin\Debug\Greeting.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\obj\Debug\Greeting.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\obj\Debug\Greeting.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\obj\Debug\Greeting.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Greeting\obj\Debug\Greeting.pdb

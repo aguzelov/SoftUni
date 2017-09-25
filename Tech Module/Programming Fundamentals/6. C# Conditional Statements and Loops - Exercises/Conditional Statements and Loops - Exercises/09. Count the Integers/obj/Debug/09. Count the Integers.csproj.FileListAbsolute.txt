@@ -1,0 +1,7 @@
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\bin\Debug\_09.Count_the_Integers.exe.config
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\bin\Debug\_09.Count_the_Integers.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\bin\Debug\_09.Count_the_Integers.pdb
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\obj\Debug\09. Count the Integers.csprojResolveAssemblyReference.cache
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\obj\Debug\09. Count the Integers.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\obj\Debug\_09.Count_the_Integers.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\09. Count the Integers\obj\Debug\_09.Count_the_Integers.pdb

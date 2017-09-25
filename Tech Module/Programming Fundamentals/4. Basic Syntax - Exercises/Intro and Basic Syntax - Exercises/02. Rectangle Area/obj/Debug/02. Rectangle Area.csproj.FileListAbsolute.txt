@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\bin\Debug\_02.Rectangle_Area.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\bin\Debug\_02.Rectangle_Area.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\bin\Debug\_02.Rectangle_Area.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\obj\Debug\02. Rectangle Area.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\obj\Debug\_02.Rectangle_Area.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\02. Rectangle Area\obj\Debug\_02.Rectangle_Area.pdb

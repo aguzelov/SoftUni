@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\bin\Debug\_01.Debit_Card_Number.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\bin\Debug\_01.Debit_Card_Number.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\bin\Debug\_01.Debit_Card_Number.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\obj\Debug\01. Debit Card Number.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\obj\Debug\01. Debit Card Number.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\obj\Debug\_01.Debit_Card_Number.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\01. Debit Card Number\obj\Debug\_01.Debit_Card_Number.pdb

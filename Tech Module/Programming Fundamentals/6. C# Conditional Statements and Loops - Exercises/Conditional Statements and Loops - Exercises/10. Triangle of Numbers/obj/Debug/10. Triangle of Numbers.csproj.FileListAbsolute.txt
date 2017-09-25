@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\bin\Debug\_10.Triangle_of_Numbers.exe.config
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\bin\Debug\_10.Triangle_of_Numbers.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\bin\Debug\_10.Triangle_of_Numbers.pdb
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\obj\Debug\10. Triangle of Numbers.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\obj\Debug\_10.Triangle_of_Numbers.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\10. Triangle of Numbers\obj\Debug\_10.Triangle_of_Numbers.pdb

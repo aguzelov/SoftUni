@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\bin\Debug\_07.Training_Hall_Equipment.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\bin\Debug\_07.Training_Hall_Equipment.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\bin\Debug\_07.Training_Hall_Equipment.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\obj\Debug\07. Training Hall Equipment.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\obj\Debug\07. Training Hall Equipment.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\obj\Debug\_07.Training_Hall_Equipment.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\07. Training Hall Equipment\obj\Debug\_07.Training_Hall_Equipment.pdb

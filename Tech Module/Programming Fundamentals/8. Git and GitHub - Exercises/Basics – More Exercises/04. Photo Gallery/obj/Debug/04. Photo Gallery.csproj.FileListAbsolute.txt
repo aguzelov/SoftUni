@@ -1,0 +1,7 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\bin\Debug\_04.Photo_Gallery.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\bin\Debug\_04.Photo_Gallery.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\bin\Debug\_04.Photo_Gallery.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\obj\Debug\04. Photo Gallery.csprojResolveAssemblyReference.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\obj\Debug\04. Photo Gallery.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\obj\Debug\_04.Photo_Gallery.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\04. Photo Gallery\obj\Debug\_04.Photo_Gallery.pdb

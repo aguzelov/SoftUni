@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\bin\Debug\PassedOrFailed.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\bin\Debug\PassedOrFailed.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\bin\Debug\PassedOrFailed.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\obj\Debug\PassedOrFailed.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\obj\Debug\PassedOrFailed.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Conditional Statements and Loops\PassedOrFailed\obj\Debug\PassedOrFailed.pdb

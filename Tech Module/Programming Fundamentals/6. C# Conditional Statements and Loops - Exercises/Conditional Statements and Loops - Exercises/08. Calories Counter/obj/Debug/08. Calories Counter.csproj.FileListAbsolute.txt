@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\bin\Debug\_08.Calories_Counter.exe.config
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\bin\Debug\_08.Calories_Counter.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\bin\Debug\_08.Calories_Counter.pdb
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\obj\Debug\08. Calories Counter.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\obj\Debug\_08.Calories_Counter.exe
+C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\08. Calories Counter\obj\Debug\_08.Calories_Counter.pdb

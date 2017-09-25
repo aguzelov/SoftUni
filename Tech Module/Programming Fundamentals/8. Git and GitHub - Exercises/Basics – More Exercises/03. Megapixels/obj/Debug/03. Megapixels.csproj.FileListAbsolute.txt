@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\bin\Debug\_03.Megapixels.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\bin\Debug\_03.Megapixels.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\bin\Debug\_03.Megapixels.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\obj\Debug\03. Megapixels.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\obj\Debug\_03.Megapixels.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\03. Megapixels\obj\Debug\_03.Megapixels.pdb

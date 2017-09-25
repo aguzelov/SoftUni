@@ -1,0 +1,6 @@
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\bin\Debug\_07.Exchange_Variable_Values.exe.config
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\bin\Debug\_07.Exchange_Variable_Values.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\bin\Debug\_07.Exchange_Variable_Values.pdb
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\obj\Debug\07. Exchange Variable Values.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\obj\Debug\_07.Exchange_Variable_Values.exe
+C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\07. Exchange Variable Values\obj\Debug\_07.Exchange_Variable_Values.pdb

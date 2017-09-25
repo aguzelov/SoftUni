@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\bin\Debug\_04.Beverage_Labels.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\bin\Debug\_04.Beverage_Labels.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\bin\Debug\_04.Beverage_Labels.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\obj\Debug\04. Beverage Labels.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\obj\Debug\_04.Beverage_Labels.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\04. Beverage Labels\obj\Debug\_04.Beverage_Labels.pdb

@@ -1,0 +1,6 @@
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\bin\Debug\OddNumber.exe.config
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\bin\Debug\OddNumber.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\bin\Debug\OddNumber.pdb
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\obj\Debug\OddNumber.csproj.CoreCompileInputs.cache
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\obj\Debug\OddNumber.exe
+E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\OddNumber\obj\Debug\OddNumber.pdb
