@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+}
+
+form {
+    background: #eee;
+    padding: 25px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  border-radius: 4px;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+
+input[type="text"]:focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+button {
+    padding: 6px 12px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #2e6da4;
+    border-radius: 4px;
+    background: #337ab7;
+    color: #fff;
+    height: 36px;
+
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #286090;
+    border-color: #204d74;
+    cursor: pointer;
+}
