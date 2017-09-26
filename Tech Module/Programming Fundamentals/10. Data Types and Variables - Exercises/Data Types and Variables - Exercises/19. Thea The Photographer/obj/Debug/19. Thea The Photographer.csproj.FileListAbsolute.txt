@@ -1,7 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\bin\Debug\_19.Thea_The_Photographer.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\bin\Debug\_19.Thea_The_Photographer.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\bin\Debug\_19.Thea_The_Photographer.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\obj\Debug\19. Thea The Photographer.csprojResolveAssemblyReference.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\obj\Debug\19. Thea The Photographer.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\obj\Debug\_19.Thea_The_Photographer.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\19. Thea The Photographer\obj\Debug\_19.Thea_The_Photographer.pdb

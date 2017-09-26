@@ -1,7 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\bin\Debug\_05.BPM_Counter.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\bin\Debug\_05.BPM_Counter.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\bin\Debug\_05.BPM_Counter.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\obj\Debug\05. BPM Counter.csprojResolveAssemblyReference.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\obj\Debug\05. BPM Counter.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\obj\Debug\_05.BPM_Counter.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\05. BPM Counter\obj\Debug\_05.BPM_Counter.pdb

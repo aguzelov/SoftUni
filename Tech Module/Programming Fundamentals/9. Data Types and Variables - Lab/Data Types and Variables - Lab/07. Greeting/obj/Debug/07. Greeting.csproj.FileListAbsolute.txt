@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\bin\Debug\_07.Greeting.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\bin\Debug\_07.Greeting.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\bin\Debug\_07.Greeting.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\obj\Debug\07. Greeting.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\obj\Debug\_07.Greeting.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\07. Greeting\obj\Debug\_07.Greeting.pdb

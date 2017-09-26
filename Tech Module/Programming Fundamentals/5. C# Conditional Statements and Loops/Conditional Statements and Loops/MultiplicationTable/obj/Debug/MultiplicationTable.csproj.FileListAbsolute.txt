@@ -1,6 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\bin\Debug\MultiplicationTable.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\bin\Debug\MultiplicationTable.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\bin\Debug\MultiplicationTable.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\obj\Debug\MultiplicationTable.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\obj\Debug\MultiplicationTable.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\MultiplicationTable\obj\Debug\MultiplicationTable.pdb

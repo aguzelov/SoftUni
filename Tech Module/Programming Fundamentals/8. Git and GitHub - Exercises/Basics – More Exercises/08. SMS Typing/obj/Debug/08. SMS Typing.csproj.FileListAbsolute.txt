@@ -1,7 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\bin\Debug\_08.SMS_Typing.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\bin\Debug\_08.SMS_Typing.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\bin\Debug\_08.SMS_Typing.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\obj\Debug\08. SMS Typing.csprojResolveAssemblyReference.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\obj\Debug\08. SMS Typing.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\obj\Debug\_08.SMS_Typing.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\08. SMS Typing\obj\Debug\_08.SMS_Typing.pdb

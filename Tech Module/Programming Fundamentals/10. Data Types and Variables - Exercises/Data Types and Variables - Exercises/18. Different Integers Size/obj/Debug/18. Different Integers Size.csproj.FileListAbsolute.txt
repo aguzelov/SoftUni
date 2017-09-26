@@ -1,7 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\bin\Debug\_18.Different_Integers_Size.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\bin\Debug\_18.Different_Integers_Size.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\bin\Debug\_18.Different_Integers_Size.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\obj\Debug\18. Different Integers Size.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\obj\Debug\_18.Different_Integers_Size.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\obj\Debug\_18.Different_Integers_Size.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\18. Different Integers Size\obj\Debug\18. Different Integers Size.csprojResolveAssemblyReference.cache

@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\bin\Debug\_13.Game_of_Numbers.exe.config
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\bin\Debug\_13.Game_of_Numbers.exe
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\bin\Debug\_13.Game_of_Numbers.pdb
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\obj\Debug\13. Game of Numbers.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\obj\Debug\_13.Game_of_Numbers.exe
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\13. Game of Numbers\obj\Debug\_13.Game_of_Numbers.pdb

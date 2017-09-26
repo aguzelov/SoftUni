@@ -1,6 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\bin\Debug\_05.Character_Stats.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\bin\Debug\_05.Character_Stats.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\bin\Debug\_05.Character_Stats.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\obj\Debug\05. Character Stats.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\obj\Debug\_05.Character_Stats.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\05. Character Stats\obj\Debug\_05.Character_Stats.pdb

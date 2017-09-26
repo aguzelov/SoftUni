@@ -1,6 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\bin\Debug\NumberChecker.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\bin\Debug\NumberChecker.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\bin\Debug\NumberChecker.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\obj\Debug\NumberChecker.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\obj\Debug\NumberChecker.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\NumberChecker\obj\Debug\NumberChecker.pdb

@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\bin\Debug\_07.Cake_Ingredients.exe.config
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\bin\Debug\_07.Cake_Ingredients.exe
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\bin\Debug\_07.Cake_Ingredients.pdb
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\obj\Debug\07. Cake Ingredients.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\obj\Debug\_07.Cake_Ingredients.exe
-C:\Users\Aleksandur\Desktop\5. C# Conditional Statements and Loops - Exercises\Conditional Statements and Loops - Exercises\07. Cake Ingredients\obj\Debug\_07.Cake_Ingredients.pdb

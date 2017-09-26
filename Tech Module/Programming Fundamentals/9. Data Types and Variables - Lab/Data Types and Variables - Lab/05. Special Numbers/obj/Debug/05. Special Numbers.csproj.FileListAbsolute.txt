@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\bin\Debug\_05.Special_Numbers.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\bin\Debug\_05.Special_Numbers.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\bin\Debug\_05.Special_Numbers.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\obj\Debug\05. Special Numbers.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\obj\Debug\_05.Special_Numbers.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\05. Special Numbers\obj\Debug\_05.Special_Numbers.pdb

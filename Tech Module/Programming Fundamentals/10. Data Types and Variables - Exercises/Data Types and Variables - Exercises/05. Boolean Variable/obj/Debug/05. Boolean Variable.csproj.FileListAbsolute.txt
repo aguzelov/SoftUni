@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\bin\Debug\_05.Boolean_Variable.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\bin\Debug\_05.Boolean_Variable.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\bin\Debug\_05.Boolean_Variable.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\obj\Debug\05. Boolean Variable.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\obj\Debug\_05.Boolean_Variable.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\05. Boolean Variable\obj\Debug\_05.Boolean_Variable.pdb

@@ -1,7 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\bin\Debug\TheatrePromotion.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\bin\Debug\TheatrePromotion.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\bin\Debug\TheatrePromotion.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\obj\Debug\TheatrePromotion.csprojResolveAssemblyReference.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\obj\Debug\TheatrePromotion.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\obj\Debug\TheatrePromotion.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\4. C# Conditional Statements and Loops\Conditional Statements and Loops\TheatrePromotion\obj\Debug\TheatrePromotion.pdb

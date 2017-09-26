@@ -1,6 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\bin\Debug\_03.Miles_to_Kilometers.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\bin\Debug\_03.Miles_to_Kilometers.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\bin\Debug\_03.Miles_to_Kilometers.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\obj\Debug\03. Miles to Kilometers.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\obj\Debug\_03.Miles_to_Kilometers.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\Intro and Basic Syntax - Exercises\03. Miles to Kilometers\obj\Debug\_03.Miles_to_Kilometers.pdb

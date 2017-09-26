@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\bin\Debug\_15.Fast_Prime_Checker.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\bin\Debug\_15.Fast_Prime_Checker.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\bin\Debug\_15.Fast_Prime_Checker.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\obj\Debug\15. Fast Prime Checker.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\obj\Debug\_15.Fast_Prime_Checker.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\15. Fast Prime Checker\obj\Debug\_15.Fast_Prime_Checker.pdb

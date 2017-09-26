@@ -1,6 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\bin\Debug\Employee Data.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\bin\Debug\Employee Data.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\bin\Debug\Employee Data.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\obj\Debug\Employee Data.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\obj\Debug\Employee Data.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\2. C# Intro and Basic Syntax\2. Intro and Basic Syntax\Employee Data\obj\Debug\Employee Data.pdb

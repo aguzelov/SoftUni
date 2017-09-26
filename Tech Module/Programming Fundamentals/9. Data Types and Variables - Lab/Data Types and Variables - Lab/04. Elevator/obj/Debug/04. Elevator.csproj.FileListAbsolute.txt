@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\bin\Debug\_04.Elevator.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\bin\Debug\_04.Elevator.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\bin\Debug\_04.Elevator.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\obj\Debug\04. Elevator.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\obj\Debug\_04.Elevator.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\04. Elevator\obj\Debug\_04.Elevator.pdb

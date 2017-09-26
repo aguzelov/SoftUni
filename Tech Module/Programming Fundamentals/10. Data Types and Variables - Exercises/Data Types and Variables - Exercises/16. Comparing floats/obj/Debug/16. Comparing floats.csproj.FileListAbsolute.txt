@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\bin\Debug\_16.Comparing_floats.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\bin\Debug\_16.Comparing_floats.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\bin\Debug\_16.Comparing_floats.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\obj\Debug\16. Comparing floats.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\obj\Debug\_16.Comparing_floats.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Exercises\16. Comparing floats\obj\Debug\_16.Comparing_floats.pdb

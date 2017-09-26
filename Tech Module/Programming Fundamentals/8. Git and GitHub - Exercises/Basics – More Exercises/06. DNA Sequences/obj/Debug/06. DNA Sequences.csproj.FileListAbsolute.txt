@@ -1,7 +1,0 @@
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\bin\Debug\_06.DNA_Sequences.exe.config
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\bin\Debug\_06.DNA_Sequences.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\bin\Debug\_06.DNA_Sequences.pdb
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\obj\Debug\06. DNA Sequences.csprojResolveAssemblyReference.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\obj\Debug\06. DNA Sequences.csproj.CoreCompileInputs.cache
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\obj\Debug\_06.DNA_Sequences.exe
-E:\Programming\SoftUni\Tech Module\Programming Fundamentals\8. Git and GitHub - Exercises\Basics – More Exercises\06. DNA Sequences\obj\Debug\_06.DNA_Sequences.pdb

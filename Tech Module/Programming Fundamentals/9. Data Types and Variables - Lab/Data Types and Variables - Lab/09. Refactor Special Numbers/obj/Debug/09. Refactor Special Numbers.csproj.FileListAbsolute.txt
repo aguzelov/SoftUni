@@ -1,6 +1,0 @@
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\bin\Debug\_09.Refactor_Special_Numbers.exe.config
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\bin\Debug\_09.Refactor_Special_Numbers.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\bin\Debug\_09.Refactor_Special_Numbers.pdb
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\obj\Debug\09. Refactor Special Numbers.csproj.CoreCompileInputs.cache
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\obj\Debug\_09.Refactor_Special_Numbers.exe
-C:\Users\Aleksandur\Documents\Visual Studio 2017\Projects\Data Types and Variables - Lab\09. Refactor Special Numbers\obj\Debug\_09.Refactor_Special_Numbers.pdb
