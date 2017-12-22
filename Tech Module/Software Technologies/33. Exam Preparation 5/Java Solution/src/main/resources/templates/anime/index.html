@@ -1,0 +1,50 @@
+<h1>Anime List</h1>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Rating</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Watched</th>
+                <th>Actions</th>
+            </tr>
+            <th:block th:each="anime : ${animes}">
+            <tr>
+                <td th:text="${anime.rating}"></td>
+                <td th:text="${anime.name}"></td>
+                <td th:text="${anime.description}"></td>
+                <td>
+                    <input class="checkbox" type="checkbox" th:value="${anime.watched}" onclick="preventEvent(event)" th:name="${anime.name}" />
+                    <label th:for="${anime.name}"></label>
+                </td>
+                <td>
+                    <button class="delete" th:onclick="'location.href = \'' + @{/delete/{id}(id=${anime.id})} + '\''">Delete</button>
+                </td>
+            </tr>
+            </th:block>
+        </table>
+    </div>
+</section>
+
+<div>
+    <button class="add-new" th:onclick="'location.href = \'' + @{/create} + '\''">+</button>
+</div>
+
+<script>
+    //<![CDATA[
+    function preventEvent(ev) {
+        ev.preventDefault();
+    }
+    (function checkBox() {
+        let checkboxes = document.getElementsByClassName("checkbox");
+
+        for(let i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].value === "watched") {
+                checkboxes[i].checked = true;
+            }
+        }
+    })();
+    //]]>
+</script>

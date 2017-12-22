@@ -1,0 +1,38 @@
+<h1>Delete Anime</h1>
+<section>
+    <form action="/delete/{{id}}" onsubmit="checkValue()" method="POST">
+        <div>
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" value="{{rating}}" name="rating"  disabled/>
+            <label for="name">Name</label>
+            <input type="text" id="name" value="{{name}}" name="name" disabled/>
+            <label for="description">Description</label>
+            <input type="text" id="description" value="{{description}}" name="description" disabled/>
+            <label for="watched">Watched</label>
+            <input type="checkbox" id="watched" name="watched" value="{{watched}}" onclick="switchValue()" disabled/>
+            <label for="watched" id="watched-label"></label>
+            <button type="submit" class="accept">Delete</button>
+            <button type="button" class="cancel" onclick="location.href='/'">Cancel</button>
+        </div>
+    </form>
+</section>
+
+<script>
+    function switchValue() {
+        document.getElementById("watched").value =
+                document.getElementById("status").value === "watched" ? "not watched" : "watched";
+    }
+
+    function checkValue() {
+        document.getElementById("status").checked = true;
+        document.getElementById("rating").disabled = false;
+        document.getElementById("name").disabled = false;
+        document.getElementById("description").disabled = false;
+        document.getElementById("status").disabled = false;
+    }
+
+    (function checkBox() {
+        let checkbox = document.getElementById("watched");
+        checkbox.checked = checkbox.value !== "not watched";
+    })();
+</script>

@@ -1,0 +1,50 @@
+<h1>Anime List</h1>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Rating</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Watched</th>
+                <th>Actions</th>
+            </tr>
+            {{#each animes}}
+                <tr>
+                    <td>{{this.rating}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.description}}</td>
+                    <td>
+                        <input class="checkbox" type="checkbox" value="{{this.watched}}" onclick="preventEvent(event)"
+                               name="{{this.name}}"/>
+                        <label for="{{this.name}}"></label>
+                    </td>
+                    <td>
+                        <button class="delete" onclick="location.href='/delete/{{this.id}}'">Delete</button>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</section>
+
+<div>
+    <button class="add-new" onclick="location.href='/create'">+</button>
+</div>
+
+<script>
+    function preventEvent(ev) {
+        ev.preventDefault();
+    }
+
+    (function checkBox() {
+        let checkboxes = document.getElementsByClassName("checkbox");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].value === "watched") {
+                checkboxes[i].checked = true;
+            }
+        }
+    })();
+</script>

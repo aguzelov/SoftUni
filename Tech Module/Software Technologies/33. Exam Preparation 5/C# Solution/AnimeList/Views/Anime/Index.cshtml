@@ -1,0 +1,56 @@
+@model List<AnimeList.Models.Anime>
+
+@{
+    ViewBag.Title = "Anime List";
+}
+
+
+<h1>Anime List</h1>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Rating</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Watched</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var anime in Model.ToList())
+            {
+            <tr>
+                <td>@anime.Rating</td>
+                <td>@anime.Name</td>
+                <td>@anime.Description</td>
+                <td>
+                    <input class="checkbox" type="checkbox" value="@anime.Watched" onclick="preventEvent(event)" name="@anime.Name"/>
+                    <label for="@anime.Name"></label>
+                </td>
+                <td>
+                    <button class="delete" onclick="location.href='/delete/@anime.Id';return false;">Delete</button>
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</section>
+
+<div>
+    <button class="add-new" onclick="location.href='/create';return false;">+</button>
+</div>
+
+<script>
+    function preventEvent(ev) {
+        ev.preventDefault();
+    }
+    (function checkBox() {
+        let checkboxes = document.getElementsByClassName("checkbox");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].value === "watched") {
+                checkboxes[i].checked = true;
+            }
+        }
+    })();
+</script>

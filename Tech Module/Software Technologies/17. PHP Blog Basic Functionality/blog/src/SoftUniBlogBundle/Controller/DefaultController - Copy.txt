@@ -1,0 +1,29 @@
+<?php
+
+namespace SoftUniBlogBundle\Controller;
+
+use Doctrine\ORM\Mapping\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use SoftUniBlogBundle\Entity\Article;
+
+class DefaultController extends Controller
+{
+    /**
+     * @Route("/", name="block_index")
+     * @Method("GET")
+     *
+     */
+    public function indexAction()
+    {
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+
+
+        return $this->render('blog/index.html.twig', ['articles' => $articles]);
+    }
+}
+

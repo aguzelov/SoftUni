@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+<h1>Anime List</h1>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Rating</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Watched</th>
+                <th>Actions</th>
+            </tr>
+            {% for anime in animes %}
+            <tr>
+                <td>{{ anime.rating }}</td>
+                <td>{{ anime.name }}</td>
+                <td>{{ anime.description }}</td>
+                <td>
+                    <input class="checkbox" type="checkbox" value="{{ anime.watched }}" onclick="preventEvent(event)" name="{{ anime.name }}" />
+                    <label for="{{ anime.name }}"></label>
+                </td>
+                <td>
+                    <button class="delete" onclick="location.href='/delete/{{ anime.id }}'">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+<div>
+    <button class="add-new" onclick="location.href='/create'">+</button>
+</div>
+
+<script>
+    function preventEvent(ev) {
+        ev.preventDefault();
+    }
+    (function checkBox() {
+        let checkboxes = document.getElementsByClassName("checkbox");
+
+        for(let i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].value === "watched") {
+                checkboxes[i].checked = true;
+            }
+        }
+    })();
+</script>
+{% endblock %}

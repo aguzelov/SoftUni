@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumbersFrom1To50", "NumbersFrom1To50\NumbersFrom1To50.csproj", "{1F5DB70A-774D-44C7-8E6F-D5697A5FEAB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TODOList", "TODOList\TODOList.csproj", "{78B68CC1-263D-4837-A558-ADBB7F9CCC95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F5DB70A-774D-44C7-8E6F-D5697A5FEAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5DB70A-774D-44C7-8E6F-D5697A5FEAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5DB70A-774D-44C7-8E6F-D5697A5FEAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5DB70A-774D-44C7-8E6F-D5697A5FEAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B68CC1-263D-4837-A558-ADBB7F9CCC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B68CC1-263D-4837-A558-ADBB7F9CCC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B68CC1-263D-4837-A558-ADBB7F9CCC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B68CC1-263D-4837-A558-ADBB7F9CCC95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C26C9CD-55CA-41E2-9701-2FE3974B7072}
+	EndGlobalSection
+EndGlobal
