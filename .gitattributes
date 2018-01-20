@@ -2,5 +2,5 @@
 *.cs linguist-vendored=false
 *.java linguist-vendored=false
 *.php linguist-vendored=false
-*.js linguist-vendored=false
 *.cpp linguist-vendored=false
+
