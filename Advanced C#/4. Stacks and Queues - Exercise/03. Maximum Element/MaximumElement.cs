@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class MaximumElement
+public class MaximumElement
 {
-    static void Main()
+    public static void Main()
     {
-        int n = int.Parse(Console.ReadLine());
+        var n = int.Parse(Console.ReadLine());
 
-        Stack<int> stack = new Stack<int>();
-        int maxElement = 0;
+        var stack = new Stack<int>();
+        var maxElement = int.MinValue;
 
-        for (int i = 0; i < n; i++)
+        for (var i = 0; i < n; i++)
         {
-            int[] input = Console.ReadLine()
+            var input = Console.ReadLine()
                 .Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToArray();
@@ -28,7 +28,7 @@ class MaximumElement
                     }
                     break;
                 case 2:
-                    int element = stack.Pop();
+                    var element = stack.Pop();
 
                     if(element == maxElement && stack.Count > 0)
                     {

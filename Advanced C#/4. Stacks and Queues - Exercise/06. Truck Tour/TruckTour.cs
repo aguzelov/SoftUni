@@ -61,9 +61,3 @@ class TruckTour
         Console.WriteLine(resultIndex);
     }
 }
-/*
-3
-1 5
-10 3 
-3 4
-*/
