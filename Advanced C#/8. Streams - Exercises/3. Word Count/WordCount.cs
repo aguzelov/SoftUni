@@ -8,7 +8,7 @@ public class WordCount
     public static void Main()
     {
         List<string> words = new List<string>();
-        using (var reader = new StreamReader("words.txt"))
+        using (var reader = new StreamReader("../../words.txt"))
         {
             string line = null;
             while ((line = reader.ReadLine()) != null)
@@ -26,7 +26,7 @@ public class WordCount
             }
         }
 
-        using (var reader = new StreamReader("text.txt"))
+        using (var reader = new StreamReader("../../text.txt"))
         {
             string line = null;
 
@@ -36,22 +36,18 @@ public class WordCount
                 {
                     if (wordsCount.ContainsKey(word))
                     {
-                        Console.WriteLine(word);
                         ++wordsCount[word];
                     }
                 }
             }
         }
 
-        using (var writer = new StreamWriter("result.txt"))
+        using (var writer = new StreamWriter("../../result.txt"))
         {
             foreach (var pair in wordsCount.OrderByDescending(x=> x.Value))
             {
                 writer.WriteLine($"{pair.Key} - {pair.Value}");
             }
         }
-
-
-        Console.WriteLine(string.Join(" ", words));
     }
 }

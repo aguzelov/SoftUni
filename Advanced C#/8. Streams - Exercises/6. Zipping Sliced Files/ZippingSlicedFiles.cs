@@ -9,16 +9,16 @@ public class ZippingSlicedFiles
 
     public static void Main()
     {
-        string source = "movie.mp4";
+        string source = "sliceMe.mp4";
         int dotIndex = source.LastIndexOf('.');
         string fileExtension = source.Substring(dotIndex);
         string outputFileName = "assembled"+fileExtension;
         
-        string destination = "";
+        string destination = "../../";
         
         int parts = int.Parse(Console.ReadLine());
 
-        Slice(source, destination, parts);
+        Slice(destination + source, destination, parts);
         
         Assemble(files, destination + outputFileName);
 

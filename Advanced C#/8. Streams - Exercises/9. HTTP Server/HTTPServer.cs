@@ -13,7 +13,7 @@ public class HTTPServer
     {
         WebServer ws = new WebServer(SendResponse, "http://localhost:8081/");
         ws.Run();
-        Console.WriteLine("A simple webserver. Press a key to quit.");
+        Console.WriteLine("A simple webserver start on http://localhost:8081. Press a key to quit.");
         Console.ReadKey();
         ws.Stop();
     }

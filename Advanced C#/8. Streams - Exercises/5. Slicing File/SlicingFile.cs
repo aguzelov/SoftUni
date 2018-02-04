@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.NetworkInformation;
 
 public class SlicingFile
 {
@@ -9,16 +8,15 @@ public class SlicingFile
 
     public static void Main()
     {
-        string source = "movie.mp4";
+        string source = "sliceMe.mp4";
 
-        string destination = "";
+        string destination = "../../";
         int parts = int.Parse(Console.ReadLine());
         
-        Slice(source, destination, parts);
+        Slice(destination + source, destination, parts);
 
-        string outputFileName = destination + "output.mp4";
+        string outputFileName = destination + "assambled.mp4";
         Assemble(files, outputFileName);
-        
     }
 
     private static void Slice(string sourceFile, string destinationDirectory, int parts)

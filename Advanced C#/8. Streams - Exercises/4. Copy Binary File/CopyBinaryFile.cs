@@ -5,8 +5,8 @@ public class CopyBinaryFile
 {
     public static void Main()
     {
-        using (FileStream stream = File.OpenRead("input.gif"))
-        using (FileStream writeStream = File.OpenWrite("output.gif"))
+        using (FileStream stream = File.OpenRead("../../copyMe.png"))
+        using (FileStream writeStream = File.OpenWrite("../../output.png"))
         {
             BinaryReader reader = new BinaryReader(stream);
             BinaryWriter writer = new BinaryWriter(writeStream);

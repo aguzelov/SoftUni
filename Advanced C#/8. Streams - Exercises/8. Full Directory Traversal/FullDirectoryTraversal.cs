@@ -9,21 +9,26 @@ public class FullDirectoryTraversal
 
     public static void Main()
     {
-        string input = Console.ReadLine();
+        Console.Write("Directory: ");
+        string directoryToTravers = Console.ReadLine();
+
+        Console.Write("Extension to find: ");
+        string extensionToFind = Console.ReadLine();
+        
         List<string> filesindirectory = new List<string>();
 
-        filesindirectory.Add(input);
-        filesindirectory.AddRange(Directory.GetDirectories(input, ".", SearchOption.AllDirectories).ToList());
+        filesindirectory.Add(directoryToTravers);
+        filesindirectory.AddRange(Directory.GetDirectories(directoryToTravers, ".", SearchOption.AllDirectories).ToList());
         
         foreach (var path in filesindirectory)
         {
-            TraversDirectory(path);
+            TraversDirectory(path, extensionToFind);
         }
 
         WriteReport();
     }
 
-    private static void TraversDirectory(string directory)
+    private static void TraversDirectory(string directory, string extensionToFind)
     {
         string input = directory;
 
@@ -37,6 +42,11 @@ public class FullDirectoryTraversal
             
             int indexOfDot = fileName.LastIndexOf('.');
             string extension = fileName.Substring(indexOfDot);
+
+            if (extensionToFind != ".")
+            {
+                if (!extension.Equals(extensionToFind)) continue;
+            }
 
             double size = new FileInfo(file).Length / (double)1024;
 

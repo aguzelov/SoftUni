@@ -7,9 +7,13 @@ public class DirectoryTraversal
 {
     public static void Main()
     {
-        string input = Console.ReadLine();
+        Console.Write("Directory: ");
+        string directoryToTravers = Console.ReadLine();
 
-        var files = Directory.GetFiles(input);
+        Console.Write("Extension to find: ");
+        string extensionToFind = Console.ReadLine();
+
+        var files = Directory.GetFiles(directoryToTravers);
 
         Dictionary<string, List<KeyValuePair<string, double>>> groupedFilesByExtension = new Dictionary<string, List<KeyValuePair<string, double>>>();
 
@@ -21,6 +25,11 @@ public class DirectoryTraversal
             int indexOfDot = fileName.LastIndexOf('.');
             string extension = fileName.Substring(indexOfDot);
 
+            if (extensionToFind != ".")
+            {
+                if (!extension.Equals(extensionToFind)) continue;
+            }
+            
             double size = new FileInfo(file).Length / (double)1024;
 
             if (!groupedFilesByExtension.ContainsKey(extension))

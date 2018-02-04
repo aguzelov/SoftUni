@@ -1,13 +1,12 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 public class LineNumbers
 {
     public static void Main()
     {
-        using (var reader = new StreamReader(@"input.txt"))
+        using (var reader = new StreamReader(@"../../text.txt"))
         {
-            using (var writer = new StreamWriter(@"output.txt", append: false))
+            using (var writer = new StreamWriter(@"../../output.txt", append: false))
             {
                 CopyToOutputStream(reader, writer);
             }

@@ -6,7 +6,7 @@ public class OddLines
 {
     public static void Main()
     {
-        string fileName = "input.txt";
+        string fileName = "../../text.txt";
 
         const Int32 bufferSize = 128;
         using (var fileStream = File.OpenRead(fileName))
