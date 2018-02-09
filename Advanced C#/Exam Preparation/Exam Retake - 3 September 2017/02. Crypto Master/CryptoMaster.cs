@@ -10,27 +10,24 @@ public class CryptoMaster
     {
         InitCircle();
 
-        int maxSequence = 0;
+        var maxSequence = 0;
 
-        for (int index = 0; index < _circle.Count; index++)
+        for (var index = 0; index < _circle.Count; index++)
         {
-            long startNumber = _circle[index];
-            int nextStep = index;
+            var startNumber = _circle[index];
+            var nextStep = index;
 
-            for (int step = 1; step < _circle.Count; step++)
+            for (var step = 1; step < _circle.Count; step++)
             {
                 nextStep = (index + step) % _circle.Count;
-                long currentNumber = startNumber;
-                int currenSequence = 1;
-                
+                var currentNumber = startNumber;
+                var currenSequence = 1;
+
                 while (true)
                 {
-                    long temp = _circle[nextStep];
+                    var temp = _circle[nextStep];
 
-                    if (temp <= currentNumber )
-                    {
-                        break;
-                    }
+                    if (temp <= currentNumber) break;
 
                     currenSequence++;
 
@@ -38,22 +35,18 @@ public class CryptoMaster
                     nextStep = (nextStep + step) % _circle.Count;
                 }
 
-                if (currenSequence > maxSequence)
-                {
-                    maxSequence = currenSequence;
-                }
+                if (currenSequence > maxSequence) maxSequence = currenSequence;
             }
         }
+
         Console.WriteLine(maxSequence);
     }
 
     private static void InitCircle()
     {
         _circle = Console.ReadLine()
-            .Split(new[] { ", " }, StringSplitOptions.RemoveEmptyEntries)
+            .Split(new[] {", "}, StringSplitOptions.RemoveEmptyEntries)
             .Select(long.Parse)
             .ToList();
     }
 }
-//1, -2, -3, 4, -5, 6, -7, -8
-//1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0
