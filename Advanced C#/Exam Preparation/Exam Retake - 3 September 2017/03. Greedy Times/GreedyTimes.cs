@@ -1,77 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-
 
 public class GreedyTimes
 {
-    private static Dictionary<string, List<Item>> bag = new Dictionary<string, List<Item>>()
-    {
-        {"Gold", new List<Item>() },
-        {"Gem", new List<Item>() },
-        {"Cash", new List<Item>() }
-    };
+    private static readonly Dictionary<string, decimal> goldBag = new Dictionary<string, decimal>();
+    private static readonly Dictionary<string, decimal> gemBag = new Dictionary<string, decimal>();
+    private static readonly Dictionary<string, decimal> cashBag = new Dictionary<string, decimal>();
 
-    private static decimal allAmount = 0;
-    private static decimal goldAmount = 0;
-    private static decimal gemAmount = 0;
-    private static decimal cashAmount = 0;
+    private static decimal allAmount;
+    private static decimal goldAmount;
+    private static decimal gemAmount;
+    private static decimal cashAmount;
 
     public static void Main()
     {
-        decimal bagCapacity = decimal.Parse(Console.ReadLine());
+        var bagCapacity = decimal.Parse(Console.ReadLine());
 
-        string[] itemQuantityPairs = Console.ReadLine()
-            .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+        var itemQuantityPairs = Console.ReadLine()
+            .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
             .ToArray();
 
 
-        for (int index = 0; index < itemQuantityPairs.Length; index += 2)
+        for (var index = 0; index < itemQuantityPairs.Length; index += 2)
         {
-            string item = itemQuantityPairs[index];
-            decimal quantity = decimal.Parse(itemQuantityPairs[index + 1]);
+            var item = itemQuantityPairs[index];
+            var quantity = decimal.Parse(itemQuantityPairs[index + 1]);
 
-            if (bagCapacity < allAmount + quantity)
-            {
-                continue;
-            }
+            if (bagCapacity < allAmount + quantity) continue;
 
             Func<string, bool> gold = g => g.ToLower().Equals("Gold".ToLower());
             Func<string, bool> gem = g => g.ToLower().EndsWith("Gem".ToLower()) && g.Length >= 4;
             Func<string, bool> cash = c =>
             {
-                bool allIsLetter = true;
+                var allIsLetter = true;
                 foreach (var l in c)
-                {
-                    if (!char.IsLetter(l)) allIsLetter = false;
-                }
+                    if (!char.IsLetter(l))
+                        allIsLetter = false;
 
                 return c.Length == 3 && allIsLetter;
             };
 
-            bool hasAddingItem = false;
+            var hasAddingItem = false;
 
             if (Validate(item, gold))
             {
                 hasAddingItem = AddGold(new Item(item, quantity));
+                if (hasAddingItem) goldAmount += quantity;
             }
             else if (Validate(item, gem))
             {
                 hasAddingItem = AddGem(new Item(item, quantity));
+                if (hasAddingItem) gemAmount += quantity;
             }
             else if (Validate(item, cash))
             {
                 hasAddingItem = AddCash(new Item(item, quantity));
+                if (hasAddingItem) cashAmount += quantity;
             }
 
-            if (hasAddingItem)
-            {
-                allAmount += quantity;
-            }
+            if (hasAddingItem) allAmount += quantity;
         }
 
-        PrintBag();
+        Print();
     }
 
     private static bool Validate(string item, Func<string, bool> isValid)
@@ -79,111 +70,53 @@ public class GreedyTimes
         return isValid(item);
     }
 
-    private static void PrintBag()
+    private static void Print()
     {
-        foreach (var item in bag.OrderByDescending(x => x.Value.Sum(a => a.Quantity)))
+        if (goldBag.Any())
         {
-            decimal totalAmount = item.Value.Sum(a => a.Quantity);
-
-            if (totalAmount > 0)
+            PrintBag(goldBag, "Gold", goldAmount);
+            if (gemBag.Any())
             {
-                if (item.Key.ToLower().Equals("Gold".ToLower()))
-                {
-                    Console.WriteLine($"<Gold> ${totalAmount}");
-                    Console.WriteLine($"##Gold - {totalAmount}");
-                }
-                else
-                {
-                    Console.WriteLine($"<{item.Key}> ${totalAmount}");
-                    foreach (var currentItem in item.Value.OrderByDescending(a => a.Name).ThenBy(a => a.Quantity))
-                    {
-                        if (currentItem.Quantity == 0) continue;
-
-                        Console.WriteLine($"##{currentItem.Name} - {currentItem.Quantity}");
-                    }
-                }
+                PrintBag(gemBag, "Gem", gemAmount);
+                if (cashBag.Any()) PrintBag(cashBag, "Cash", cashAmount);
             }
         }
     }
 
+    private static void PrintBag(Dictionary<string, decimal> bag, string type, decimal amount)
+    {
+        Console.WriteLine($"<{type}> ${amount}");
+        foreach (var item in bag.OrderByDescending(k => k.Key).ThenBy(v => v.Value))
+            Console.WriteLine($"##{item.Key} - {item.Value}");
+    }
+
     private static bool AddGold(Item item)
     {
-        if (!bag["Gold"].Contains(item))
-        {
-            bag["Gold"].Add(item);
-        }
-        else
-        {
-            int index = bag["Gold"].FindIndex(a => a.Name == item.Name);
-            if (index < 0)
-            {
-                bag["Gold"].Add(item);
-            }
-            else
-            {
-                bag["Gold"][index].Quantity += item.Quantity;
-            }
-        }
+        if (!goldBag.ContainsKey(item.Name)) goldBag.Add(item.Name, 0);
+
+        goldBag[item.Name] += item.Quantity;
 
         return true;
     }
 
     private static bool AddGem(Item item)
     {
-        decimal currentGoldAmount = bag["Gold"].Sum(a => a.Quantity);
-        decimal currentGemAmout = bag["Gem"].Sum(a => a.Quantity);
+        if (goldAmount < gemAmount + item.Quantity) return false;
 
-        if (currentGoldAmount < currentGemAmout + item.Quantity)
-        {
-            return false;
-        }
+        if (!gemBag.ContainsKey(item.Name)) gemBag.Add(item.Name, 0);
 
-        if (!bag["Gem"].Contains(item))
-        {
-            bag["Gem"].Add(item);
-        }
-        else
-        {
-            int index = bag["Gem"].FindIndex(a => a.Name == item.Name);
-            if (index < 0)
-            {
-                bag["Gem"].Add(item);
-            }
-            else
-            {
-                bag["Gem"][index].Quantity += item.Quantity;
-            }
-        }
+        gemBag[item.Name] += item.Quantity;
 
         return true;
     }
 
     private static bool AddCash(Item item)
     {
-        decimal currentGemAmount = bag["Gem"].Sum(a => a.Quantity);
-        decimal currentCashAmout = bag["Cash"].Sum(a => a.Quantity);
+        if (gemAmount < cashAmount + item.Quantity) return false;
 
-        if (currentGemAmount < currentCashAmout + item.Quantity)
-        {
-            return false;
-        }
+        if (!cashBag.ContainsKey(item.Name)) cashBag.Add(item.Name, 0);
 
-        if (!bag["Cash"].Contains(item))
-        {
-            bag["Cash"].Add(item);
-        }
-        else
-        {
-            int index = bag["Cash"].FindIndex(a => a.Name == item.Name);
-            if (index < 0)
-            {
-                bag["Cash"].Add(item);
-            }
-            else
-            {
-                bag["Cash"][index].Quantity += item.Quantity;
-            }
-        }
+        cashBag[item.Name] += item.Quantity;
 
         return true;
     }
@@ -191,18 +124,18 @@ public class GreedyTimes
 
 public class Item
 {
-    public string Name { get; set; }
-    public decimal Quantity { get; set; }
-
     public Item(string name, decimal quantity)
     {
         Name = name;
         Quantity = quantity;
     }
 
+    public string Name { get; set; }
+    public decimal Quantity { get; set; }
+
     private bool Equals(Item other)
     {
-        return this.Name == other.Name;
+        return Name == other.Name;
     }
 
     public override bool Equals(object obj)
@@ -210,11 +143,16 @@ public class Item
         var other = obj as Item;
         if (other == null) return false;
 
-        return this.Equals(other);
+        return Equals(other);
     }
 
     public override int GetHashCode()
     {
-        return this.GetHashCode();
+        return GetHashCode();
+    }
+
+    public override string ToString()
+    {
+        return $"##{Name} - {Quantity}";
     }
 }
