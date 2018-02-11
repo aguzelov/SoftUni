@@ -1,28 +1,39 @@
 ﻿using System;
 
-public class CryptoBlockchain
+public class Sneaking
 {
     private static char[][] room;
 
-    private static Point sam;
-    private static Point nikoladze;
+    private static Point sam = null;
+    private static Point nikoladze = null;
 
     public static void Main()
     {
-        var numberOfRows = int.Parse(Console.ReadLine());
+        int numberOfRows = int.Parse(Console.ReadLine());
 
         room = new char[numberOfRows][];
 
-        for (var row = 0; row < numberOfRows; row++) room[row] = Console.ReadLine().ToCharArray();
-
-        var directions = Console.ReadLine().ToCharArray();
-
-        for (var i = 0; i < numberOfRows; i++)
-        for (var j = 0; j < room[i].Length; j++)
+        for (int row = 0; row < numberOfRows; row++)
         {
-            if (room[i][j] == 'S') sam = new Point(i, j);
+            room[row] = Console.ReadLine().ToCharArray();
+        }
 
-            if (room[i][j] == 'N') nikoladze = new Point(i, j);
+        char[] directions = Console.ReadLine().ToCharArray();
+
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            for (int j = 0; j < room[i].Length; j++)
+            {
+                if (room[i][j] == 'S')
+                {
+                    sam = new Point(i, j);
+                }
+
+                if (room[i][j] == 'N')
+                {
+                    nikoladze = new Point(i, j);
+                }
+            }
         }
 
         foreach (var direction in directions)
@@ -43,6 +54,7 @@ public class CryptoBlockchain
                 room[nikoladze.Row][nikoladze.Col] = 'X';
                 break;
             }
+
         }
 
 
@@ -76,12 +88,13 @@ public class CryptoBlockchain
                 break;
             case 'W':
                 return;
+
         }
     }
 
     private static bool HasFacingEnemy(Point sam)
     {
-        for (var col = 0; col < room[sam.Row].Length; col++)
+        for (int col = 0; col < room[sam.Row].Length; col++)
         {
             if (room[sam.Row][col] == 'b' && col < sam.Col) return true;
 
@@ -94,46 +107,57 @@ public class CryptoBlockchain
 
     private static void MoveEnemy(ref char[][] room)
     {
-        for (var row = 0; row < room.Length; row++)
-        for (var col = 0; col < room[row].Length; col++)
-            if (room[row][col] == 'b')
-                if (col == room[row].Length - 1)
+        for (int row = 0; row < room.Length; row++)
+        {
+            for (int col = 0; col < room[row].Length; col++)
+            {
+                if (room[row][col] == 'b')
                 {
-                    room[row][col] = 'd';
+                    if (col == room[row].Length - 1)
+                    {
+                        room[row][col] = 'd';
+                    }
+                    else
+                    {
+                        room[row][col + 1] = 'b';
+                        room[row][col] = '.';
+                        col++;
+                    }
                 }
-                else
+                else if (room[row][col] == 'd')
                 {
-                    room[row][col + 1] = 'b';
-                    room[row][col] = '.';
-                    col++;
+                    if (col == 0)
+                    {
+                        room[row][col] = 'b';
+                    }
+                    else
+                    {
+                        room[row][col - 1] = 'd';
+                        room[row][col] = '.';
+                        col--;
+                    }
                 }
-            else if (room[row][col] == 'd')
-                if (col == 0)
-                {
-                    room[row][col] = 'b';
-                }
-                else
-                {
-                    room[row][col - 1] = 'd';
-                    room[row][col] = '.';
-                    col--;
-                }
+            }
+        }
     }
 
     private static void Print(char[][] room)
     {
-        foreach (var row in room) Console.WriteLine(string.Join("", row));
+        foreach (var row in room)
+        {
+            Console.WriteLine(String.Join("", row));
+        }
     }
 }
 
 public class Point
 {
+    public int Row { get; set; }
+    public int Col { get; set; }
+
     public Point(int row, int col)
     {
         Row = row;
         Col = col;
     }
-
-    public int Row { get; set; }
-    public int Col { get; set; }
 }
