@@ -18,14 +18,13 @@ public class Person
         this.age = age;
     }
 
-    public Person(string name, int age, List<BankAccount> accounts) : this(name, age)
+    public Person(string name, int age, List<BankAccount> acc) : this(name, age)
     {
-        this.accounts.AddRange(accounts);
+        this.accounts.AddRange(acc);
     }
 
     public decimal GetBalance()
     {
-        return accounts.Sum(b => b.Balance);
+        return accounts.Sum(a=> a.Balance);
     }
 }
-
