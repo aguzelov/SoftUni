@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateModifier", "DateModifie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyRoster", "CompanyRoster\CompanyRoster.csproj", "{D64194E2-2899-411D-96E2-87E06BDA31A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{B900A643-F0A9-4621-A8CE-D7379D79F617}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D64194E2-2899-411D-96E2-87E06BDA31A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D64194E2-2899-411D-96E2-87E06BDA31A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D64194E2-2899-411D-96E2-87E06BDA31A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B900A643-F0A9-4621-A8CE-D7379D79F617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B900A643-F0A9-4621-A8CE-D7379D79F617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B900A643-F0A9-4621-A8CE-D7379D79F617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B900A643-F0A9-4621-A8CE-D7379D79F617}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
