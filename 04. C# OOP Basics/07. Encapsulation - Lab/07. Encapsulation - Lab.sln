@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persons", "Persons\Persons.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salary", "Salary\Salary.csproj", "{ECCC8520-4243-4CFF-9CBC-79F2A3605A2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{ED2A2504-FB76-4D26-8CCE-7972D81233C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ECCC8520-4243-4CFF-9CBC-79F2A3605A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECCC8520-4243-4CFF-9CBC-79F2A3605A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECCC8520-4243-4CFF-9CBC-79F2A3605A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2A2504-FB76-4D26-8CCE-7972D81233C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2A2504-FB76-4D26-8CCE-7972D81233C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2A2504-FB76-4D26-8CCE-7972D81233C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2A2504-FB76-4D26-8CCE-7972D81233C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
