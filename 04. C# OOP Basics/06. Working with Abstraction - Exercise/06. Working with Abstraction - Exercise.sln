@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedyTimes", "GreedyTimes\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sneaking", "Sneaking\Sneaking.csproj", "{8EE250E4-3C32-4C54-8455-A08C43434385}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyTree", "FamilyTree\FamilyTree.csproj", "{2D85C4A4-CA85-4CEF-BF76-68C869849B12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8EE250E4-3C32-4C54-8455-A08C43434385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EE250E4-3C32-4C54-8455-A08C43434385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EE250E4-3C32-4C54-8455-A08C43434385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D85C4A4-CA85-4CEF-BF76-68C869849B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D85C4A4-CA85-4CEF-BF76-68C869849B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D85C4A4-CA85-4CEF-BF76-68C869849B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D85C4A4-CA85-4CEF-BF76-68C869849B12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
