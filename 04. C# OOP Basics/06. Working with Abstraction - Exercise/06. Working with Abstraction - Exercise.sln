@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawData", "RawData\RawData.csproj", "{70CB7F78-748E-4D3A-BCC5-F111342FB40F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "RawData\RawData.csproj", "{70CB7F78-748E-4D3A-BCC5-F111342FB40F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{9B2E286C-4D85-4F2A-96A4-7DCF98AAE17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{9B2E286C-4D85-4F2A-96A4-7DCF98AAE17B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediGalaxy", "JediGalaxy\JediGalaxy.csproj", "{1B947B25-F49B-4C66-8E8A-7014192BCFE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9B2E286C-4D85-4F2A-96A4-7DCF98AAE17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2E286C-4D85-4F2A-96A4-7DCF98AAE17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2E286C-4D85-4F2A-96A4-7DCF98AAE17B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
