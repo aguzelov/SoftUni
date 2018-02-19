@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesman", "CarSalesman\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediGalaxy", "JediGalaxy\JediGalaxy.csproj", "{1B947B25-F49B-4C66-8E8A-7014192BCFE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital", "Hospital\Hospital.csproj", "{EF1D9F47-B492-4503-A736-46FC9FD46FEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B947B25-F49B-4C66-8E8A-7014192BCFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1D9F47-B492-4503-A736-46FC9FD46FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1D9F47-B492-4503-A736-46FC9FD46FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1D9F47-B492-4503-A736-46FC9FD46FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1D9F47-B492-4503-A736-46FC9FD46FEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
