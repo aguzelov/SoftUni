@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{04AC4F40-B77C-4E48-A38B-D62E04D4C9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Person", "Person\Person.csproj", "{04AC4F40-B77C-4E48-A38B-D62E04D4C9B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop", "BookShop\BookShop.csproj", "{F1CC1DF3-41BC-4C33-9AF6-D27621750DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop", "BookShop\BookShop.csproj", "{F1CC1DF3-41BC-4C33-9AF6-D27621750DE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mankind", "Mankind\Mankind.csproj", "{588DCCEB-8B16-4442-8C48-121F75961D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mankind", "Mankind\Mankind.csproj", "{588DCCEB-8B16-4442-8C48-121F75961D83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRadioDatabase", "OnlineRadioDatabase\OnlineRadioDatabase.csproj", "{FB2AE307-0643-44D5-AC55-6421CE7139A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MordorCrueltyPlan", "MordorCrueltyPlan\MordorCrueltyPlan.csproj", "{DE139507-DE79-463D-B175-30EAAFE97394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{588DCCEB-8B16-4442-8C48-121F75961D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{588DCCEB-8B16-4442-8C48-121F75961D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{588DCCEB-8B16-4442-8C48-121F75961D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2AE307-0643-44D5-AC55-6421CE7139A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2AE307-0643-44D5-AC55-6421CE7139A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2AE307-0643-44D5-AC55-6421CE7139A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2AE307-0643-44D5-AC55-6421CE7139A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE139507-DE79-463D-B175-30EAAFE97394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE139507-DE79-463D-B175-30EAAFE97394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE139507-DE79-463D-B175-30EAAFE97394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE139507-DE79-463D-B175-30EAAFE97394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
