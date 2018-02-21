@@ -3,22 +3,22 @@ using System.Linq;
 
 namespace BashSoft
 {
-    public static class RepositorySorters
+    public class RepositorySorter
     {
-        public static void OrderAndTake(Dictionary<string, List<int>> wantedData,
+        public void OrderAndTake(Dictionary<string, double> studentsWithMarks,
                                         string comparison,
                                         int studentsToTake)
         {
             comparison = comparison.ToLower();
             if (comparison == "ascending")
             {
-                PrintStudent(wantedData.OrderBy(x => x.Value.Sum())
+                this.PrintStudent(studentsWithMarks.OrderBy(x => x.Value)
                     .Take(studentsToTake)
-                .ToDictionary(pair => pair.Key, pair => pair.Value));
+                    .ToDictionary(pair => pair.Key, pair => pair.Value));
             }
             else if (comparison == "descending")
             {
-                PrintStudent(wantedData.OrderByDescending(x => x.Value.Sum())
+                PrintStudent(studentsWithMarks.OrderByDescending(x => x.Value)
                     .Take(studentsToTake)
                     .ToDictionary(pair => pair.Key, pair => pair.Value));
             }
@@ -28,7 +28,7 @@ namespace BashSoft
             }
         }
 
-        public static void PrintStudent(Dictionary<string, List<int>> studentsSorted)
+        public void PrintStudent(Dictionary<string, double> studentsSorted)
         {
             foreach (var pair in studentsSorted)
             {

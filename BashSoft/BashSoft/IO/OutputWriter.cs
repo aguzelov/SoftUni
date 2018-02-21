@@ -5,9 +5,9 @@ namespace BashSoft
 {
     public static class OutputWriter
     {
-        public static void PrintStudent(KeyValuePair<string, List<int>> student)
+        public static void PrintStudent(KeyValuePair<string, double> student)
         {
-            WriteMessageOnNewLine($"{student.Key} - {string.Join(", ", student.Value)}");
+            WriteMessageOnNewLine($"{student.Key} - {student.Value}");
         }
 
         public static void WriteMessage(string message)

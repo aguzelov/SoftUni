@@ -4,23 +4,23 @@ using System.Linq;
 
 namespace BashSoft
 {
-    public static class RepositoryFilters
+    public class RepositoryFilter
     {
-        public static void FilterAndTake(Dictionary<string, List<int>> wantedData,
+        public void FilterAndTake(Dictionary<string, double> studentsWithMarks,
                                          string wantedFilter,
                                          int studentsToTake)
         {
             if (wantedFilter == "excellent")
             {
-                FilterAndTake(wantedData, x => x >= 5, studentsToTake);
+                FilterAndTake(studentsWithMarks, x => x >= 5, studentsToTake);
             }
             else if (wantedFilter == "average")
             {
-                FilterAndTake(wantedData, x => x < 5 && x >= 3.50, studentsToTake);
+                FilterAndTake(studentsWithMarks, x => x < 5 && x >= 3.50, studentsToTake);
             }
             else if (wantedFilter == "poor")
             {
-                FilterAndTake(wantedData, x => x < 3.50, studentsToTake);
+                FilterAndTake(studentsWithMarks, x => x < 3.50, studentsToTake);
             }
             else
             {
@@ -28,24 +28,22 @@ namespace BashSoft
             }
         }
 
-        private static void FilterAndTake(Dictionary<string, List<int>> wantedData,
+        private void FilterAndTake(Dictionary<string, double> studentsWithMarks,
                                          Predicate<double> givenFilter,
                                          int studentsToTake)
         {
             int counterForPrinted = 0;
-            foreach (var userName_Points in wantedData)
+            foreach (var studentMark in studentsWithMarks)
             {
                 if (counterForPrinted == studentsToTake)
                 {
                     break;
                 }
 
-                double averageScore = userName_Points.Value.Average();
-                double percentageOfFullfilment = averageScore / 100;
-                double mark = percentageOfFullfilment * 4 + 2;
-                if (givenFilter(mark))
+                
+                if (givenFilter(studentMark.Value))
                 {
-                    OutputWriter.PrintStudent(userName_Points);
+                    OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMark.Key,studentMark.Value));
                     counterForPrinted++;
                 }
             }
