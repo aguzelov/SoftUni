@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using BashSoft.Exceptions;
 
 namespace BashSoft
 {
@@ -10,17 +11,7 @@ namespace BashSoft
             try
             {
                 OutputWriter.WriteMessageOnNewLine("Reading files...");
-                //TODO : Remove comment!
-                //if (userOutputPath.LastIndexOf("\\") < 0)
-                //{
-                //    userOutputPath = SessionData.currentPath + "\\" + userOutputPath;
-                //}
-
-                //if (expectedOutputPath.LastIndexOf("\\") < 0)
-                //{
-                //    expectedOutputPath = SessionData.currentPath + "\\" + expectedOutputPath;
-                //}
-
+                
                 string mismatchPath = GetMishmatchPath(expectedOutputPath);
 
                 string[] actualOutputLines = File.ReadAllLines(userOutputPath);
@@ -35,7 +26,7 @@ namespace BashSoft
             }
             catch (IOException)
             {
-                throw new IOException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
         }
 

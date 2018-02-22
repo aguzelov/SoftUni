@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using BashSoft.Exceptions;
 using BashSoft.Models;
 
 namespace BashSoft
@@ -26,8 +27,6 @@ namespace BashSoft
             if (this.isDataInitialized)
             {
                 throw new ArgumentException(ExceptionMessages.DataAlreadyInitializedException);
-                //TODO: To remove
-                //OutputWriter.DisplayException(ExceptionMessages.DataAlreadyInitializedException);
             }
 
             OutputWriter.WriteMessageOnNewLine("Reading data..");
@@ -103,7 +102,7 @@ namespace BashSoft
                             Student student = this.students[username];
 
                             student.EnrollInCourse(course);
-                            student.SetMarksInCourse(courseName,scores);
+                            student.SetMarksInCourse(courseName, scores);
 
                             course.EnrollStudent(student);
                         }
@@ -116,7 +115,7 @@ namespace BashSoft
             }
             else
             {
-                throw new ArgumentException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
 
             isDataInitialized = true;
@@ -167,20 +166,18 @@ namespace BashSoft
                 }
                 else
                 {
-                    throw  new ArgumentException(ExceptionMessages.InexistingCourseInDataBase);
+                    throw new ArgumentException(ExceptionMessages.InexistingCourseInDataBase);
                 }
             }
             else
             {
                 throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
-
-            return false;
         }
 
         private bool IsQueryFromStudentPossible(string courseName, string studentUserName)
         {
-            if (IsQueryFromCoursePossible(courseName) && 
+            if (IsQueryFromCoursePossible(courseName) &&
                 courses[courseName].StudentsByName.ContainsKey(studentUserName))
             {
                 return true;
@@ -190,14 +187,13 @@ namespace BashSoft
                 throw new ArgumentException(ExceptionMessages.InexistingStudentInDataBase);
             }
 
-            return false;
         }
 
         public void GetStudentScoresFromCourse(string courseName, string username)
         {
             if (IsQueryFromStudentPossible(courseName, username))
             {
-                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, 
+                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username,
                     this.courses[courseName].StudentsByName[username].MarksByCourseName[courseName]));
             }
         }
@@ -209,7 +205,7 @@ namespace BashSoft
                 OutputWriter.WriteMessageOnNewLine($"{courseName}");
                 foreach (var studentMarksEntry in this.courses[courseName].StudentsByName)
                 {
-                    this.GetStudentScoresFromCourse(courseName,studentMarksEntry.Key);
+                    this.GetStudentScoresFromCourse(courseName, studentMarksEntry.Key);
                 }
             }
         }
