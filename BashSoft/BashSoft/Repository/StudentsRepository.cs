@@ -25,7 +25,9 @@ namespace BashSoft
         {
             if (this.isDataInitialized)
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataAlreadyInitializedException);
+                throw new ArgumentException(ExceptionMessages.DataAlreadyInitializedException);
+                //TODO: To remove
+                //OutputWriter.DisplayException(ExceptionMessages.DataAlreadyInitializedException);
             }
 
             OutputWriter.WriteMessageOnNewLine("Reading data..");
@@ -39,7 +41,7 @@ namespace BashSoft
         {
             if (!this.isDataInitialized)
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
+                throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             this.students = null;
@@ -78,6 +80,7 @@ namespace BashSoft
                             if (scores.Any(x => x > 100 || x < 0))
                             {
                                 OutputWriter.DisplayException(ExceptionMessages.InvalidScore);
+                                continue;
                             }
 
                             if (scores.Length > Course.NumberOfTasksOnExam)
@@ -113,7 +116,7 @@ namespace BashSoft
             }
             else
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
+                throw new ArgumentException(ExceptionMessages.InvalidPath);
             }
 
             isDataInitialized = true;
@@ -126,12 +129,12 @@ namespace BashSoft
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.courses[courseName].studentsByName.Count;
+                    studentsToTake = this.courses[courseName].StudentsByName.Count;
                 }
 
                 Dictionary<string, double> marks =
-                    this.courses[courseName].studentsByName
-                        .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    this.courses[courseName].StudentsByName
+                        .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 filter.FilterAndTake(marks, givenFilter, studentsToTake.Value);
             }
@@ -143,12 +146,12 @@ namespace BashSoft
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.courses[courseName].studentsByName.Count;
+                    studentsToTake = this.courses[courseName].StudentsByName.Count;
                 }
 
                 Dictionary<string, double> marks =
-                    this.courses[courseName].studentsByName
-                        .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    this.courses[courseName].StudentsByName
+                        .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 sorter.OrderAndTake(marks, comparison, studentsToTake.Value);
             }
@@ -164,12 +167,12 @@ namespace BashSoft
                 }
                 else
                 {
-                    OutputWriter.DisplayException(ExceptionMessages.InexistingCourseInDataBase);
+                    throw  new ArgumentException(ExceptionMessages.InexistingCourseInDataBase);
                 }
             }
             else
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
+                throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             return false;
@@ -178,13 +181,13 @@ namespace BashSoft
         private bool IsQueryFromStudentPossible(string courseName, string studentUserName)
         {
             if (IsQueryFromCoursePossible(courseName) && 
-                courses[courseName].studentsByName.ContainsKey(studentUserName))
+                courses[courseName].StudentsByName.ContainsKey(studentUserName))
             {
                 return true;
             }
             else
             {
-                OutputWriter.DisplayException(ExceptionMessages.InexistingStudentInDataBase);
+                throw new ArgumentException(ExceptionMessages.InexistingStudentInDataBase);
             }
 
             return false;
@@ -195,7 +198,7 @@ namespace BashSoft
             if (IsQueryFromStudentPossible(courseName, username))
             {
                 OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, 
-                    this.courses[courseName].studentsByName[username].marksByCourseName[courseName]));
+                    this.courses[courseName].StudentsByName[username].MarksByCourseName[courseName]));
             }
         }
 
@@ -204,7 +207,7 @@ namespace BashSoft
             if (IsQueryFromCoursePossible(courseName))
             {
                 OutputWriter.WriteMessageOnNewLine($"{courseName}");
-                foreach (var studentMarksEntry in this.courses[courseName].studentsByName)
+                foreach (var studentMarksEntry in this.courses[courseName].StudentsByName)
                 {
                     this.GetStudentScoresFromCourse(courseName,studentMarksEntry.Key);
                 }

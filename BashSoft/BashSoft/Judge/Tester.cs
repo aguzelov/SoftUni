@@ -7,18 +7,19 @@ namespace BashSoft
     {
         public void CompareContent(string userOutputPath, string expectedOutputPath)
         {
-            OutputWriter.WriteMessageOnNewLine("Reading files...");
             try
             {
-                if (userOutputPath.LastIndexOf("\\") < 0)
-                {
-                    userOutputPath = SessionData.currentPath + "\\" + userOutputPath;
-                }
+                OutputWriter.WriteMessageOnNewLine("Reading files...");
+                //TODO : Remove comment!
+                //if (userOutputPath.LastIndexOf("\\") < 0)
+                //{
+                //    userOutputPath = SessionData.currentPath + "\\" + userOutputPath;
+                //}
 
-                if (expectedOutputPath.LastIndexOf("\\") < 0)
-                {
-                    expectedOutputPath = SessionData.currentPath + "\\" + expectedOutputPath;
-                }
+                //if (expectedOutputPath.LastIndexOf("\\") < 0)
+                //{
+                //    expectedOutputPath = SessionData.currentPath + "\\" + expectedOutputPath;
+                //}
 
                 string mismatchPath = GetMishmatchPath(expectedOutputPath);
 
@@ -29,12 +30,12 @@ namespace BashSoft
                 string[] mismatches =
                     GetLinesWithPossibleMismatches(actualOutputLines, expectedOutputLines, out hasMismatch);
 
-                PrintOutput(mismatches, hasMismatch, mismatchPath);
+                this.PrintOutput(mismatches, hasMismatch, mismatchPath);
                 OutputWriter.WriteMessageOnNewLine("Files read!");
             }
-            catch (FileNotFoundException)
+            catch (IOException)
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
+                throw new IOException(ExceptionMessages.InvalidPath);
             }
         }
 
@@ -46,16 +47,9 @@ namespace BashSoft
                 {
                     OutputWriter.WriteMessageOnNewLine(line);
                 }
-
-                try
-                {
-                    File.WriteAllLines(mismatchPath, mismatches);
-                }
-                catch (DriveNotFoundException)
-                {
-                    OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
-                }
-
+                
+                File.WriteAllLines(mismatchPath, mismatches);
+                
                 return;
             }
             OutputWriter.WriteMessageOnNewLine("File are identical. There are no mismatches.");
