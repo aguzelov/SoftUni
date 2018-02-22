@@ -1,7 +1,7 @@
-﻿using System;
+﻿using BashSoft.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using BashSoft.Exceptions;
 
 namespace BashSoft
 {
@@ -38,7 +38,6 @@ namespace BashSoft
                     foreach (string directoryPath in Directory.GetDirectories(currentPath))
                     {
                         subFolders.Enqueue(directoryPath);
-
                     }
                 }
                 catch (UnauthorizedAccessException)
@@ -76,7 +75,6 @@ namespace BashSoft
                 {
                     throw new ArgumentOutOfRangeException("indexOfLastSlash", ExceptionMessages.UnableToGoHigherInPartitionHierarchy);
                 }
-
             }
             else
             {
@@ -90,7 +88,7 @@ namespace BashSoft
         {
             if (!Directory.Exists(absolutePath))
             {
-                throw  new InvalidPathException();
+                throw new InvalidPathException();
             }
 
             SessionData.currentPath = absolutePath;

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using BashSoft.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BashSoft.Exceptions;
 
 namespace BashSoft.Models
 {

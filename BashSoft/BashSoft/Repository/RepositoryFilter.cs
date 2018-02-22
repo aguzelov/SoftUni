@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BashSoft
 {
@@ -24,7 +23,7 @@ namespace BashSoft
             }
             else
             {
-                throw  new ArgumentException(ExceptionMessages.InvalidStudentFilter);
+                throw new ArgumentException(ExceptionMessages.InvalidStudentFilter);
             }
         }
 
@@ -40,10 +39,9 @@ namespace BashSoft
                     break;
                 }
 
-                
                 if (givenFilter(studentMark.Value))
                 {
-                    OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMark.Key,studentMark.Value));
+                    OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMark.Key, studentMark.Value));
                     counterForPrinted++;
                 }
             }

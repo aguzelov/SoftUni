@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BashSoft.Exceptions;
+using BashSoft.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using BashSoft.Exceptions;
-using BashSoft.Models;
 
 namespace BashSoft
 {
@@ -186,7 +186,6 @@ namespace BashSoft
             {
                 throw new ArgumentException(ExceptionMessages.InexistingStudentInDataBase);
             }
-
         }
 
         public void GetStudentScoresFromCourse(string courseName, string username)

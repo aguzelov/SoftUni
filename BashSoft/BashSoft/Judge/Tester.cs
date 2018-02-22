@@ -1,6 +1,6 @@
-﻿using System;
+﻿using BashSoft.Exceptions;
+using System;
 using System.IO;
-using BashSoft.Exceptions;
 
 namespace BashSoft
 {
@@ -11,7 +11,7 @@ namespace BashSoft
             try
             {
                 OutputWriter.WriteMessageOnNewLine("Reading files...");
-                
+
                 string mismatchPath = GetMishmatchPath(expectedOutputPath);
 
                 string[] actualOutputLines = File.ReadAllLines(userOutputPath);
@@ -38,9 +38,9 @@ namespace BashSoft
                 {
                     OutputWriter.WriteMessageOnNewLine(line);
                 }
-                
+
                 File.WriteAllLines(mismatchPath, mismatches);
-                
+
                 return;
             }
             OutputWriter.WriteMessageOnNewLine("File are identical. There are no mismatches.");
