@@ -78,7 +78,7 @@ public class Book
         sb.Append("Type: ").AppendLine(this.GetType().Name)
             .Append("Title: ").AppendLine(this.Title)
             .Append("Author: ").AppendLine(this.Author)
-            .Append("Price: ").Append($"{this.Price:f1}")
+            .Append("Price: ").Append($"{this.Price:f2}")
             .AppendLine();
 
         return sb.ToString();

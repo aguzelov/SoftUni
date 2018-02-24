@@ -4,7 +4,7 @@
 
     public Tomcat(string name, int age) : base(name, age, "Male")
     {
-        this.sound = "Give me one million b***h";
+        this.sound = "MEOW";
     }
 
     protected override string ProduceSound()

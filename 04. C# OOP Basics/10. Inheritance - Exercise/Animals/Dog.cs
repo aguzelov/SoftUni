@@ -4,7 +4,7 @@
 
     public Dog(string name, int age, string gender) : base(name, age, gender)
     {
-        this.sound = "BauBau";
+        this.sound = "Woof!";
     }
 
     protected override string ProduceSound()

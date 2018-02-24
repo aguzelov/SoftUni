@@ -4,7 +4,7 @@
 
     public Kitten(string name, int age) : base(name, age, "Female")
     {
-        this.sound = "Miau";
+        this.sound = "Meow";
     }
 
     protected override string ProduceSound()

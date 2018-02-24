@@ -4,7 +4,7 @@
 
     public Cat(string name, int age, string gender) : base(name, age, gender)
     {
-        this.sound = "MiauMiau";
+        this.sound = "Meow meow";
     }
 
     protected override string ProduceSound()
