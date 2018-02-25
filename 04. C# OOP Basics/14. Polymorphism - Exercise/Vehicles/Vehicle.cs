@@ -3,6 +3,8 @@
     private string type;
     private double fuelQuantity;
     private double fuelConsumption;
+    private double tankCapacity;
+    private bool airConditioner;
 
     public string Type
     {
@@ -40,11 +42,36 @@
         }
     }
 
-    protected Vehicle(string type, double fuelQuantity, double fuelConsumption)
+    public double TankCapacity
+    {
+        get
+        {
+            return this.tankCapacity;
+        }
+        private set
+        {
+            this.tankCapacity = value;
+        }
+    }
+
+    public bool AirConditioner
+    {
+        get
+        {
+            return this.airConditioner;
+        }
+        set
+        {
+            this.airConditioner = value;
+        }
+    }
+
+    protected Vehicle(string type, double fuelQuantity, double fuelConsumption, double tankCapacity)
     {
         Type = type;
         FuelQuantity = fuelQuantity;
         FuelConsumption = fuelConsumption;
+        TankCapacity = tankCapacity;
     }
 
     public abstract void Drive(double distance);

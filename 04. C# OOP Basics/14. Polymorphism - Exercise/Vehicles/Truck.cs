@@ -2,8 +2,8 @@
 {
     private const double summerIncreasedConsumption = 1.6;
 
-    public Truck(string type, double fuelQuantity, double fuelConsumption)
-        : base(type, fuelQuantity, fuelConsumption)
+    public Truck(string type, double fuelQuantity, double fuelConsumption, double tankCapacity)
+        : base(type, fuelQuantity, fuelConsumption, tankCapacity)
     {
     }
 
@@ -24,6 +24,12 @@
 
     public override void Refuel(double fuel)
     {
+        if (fuel < 0)
+        {
+            Writer.WriteLine("Fuel must be a positive number");
+            return;
+        }
+
         base.FuelQuantity += (fuel * 0.95);
     }
 

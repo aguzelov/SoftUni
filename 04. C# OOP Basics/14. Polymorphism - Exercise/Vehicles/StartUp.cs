@@ -4,8 +4,8 @@ public class StartUp
 {
     private static void Main()
     {
-        Vehicle[] vehicles = new Vehicle[2];
-        for (int i = 0; i < 2; i++)
+        Vehicle[] vehicles = new Vehicle[3];
+        for (int i = 0; i < 3; i++)
         {
             vehicles[i] = InitVehicle();
         }
@@ -26,6 +26,10 @@ public class StartUp
             {
                 ExecuteCommand(vehicles[1], command, param);
             }
+            else if (type == "Bus")
+            {
+                ExecuteCommand(vehicles[2], command, param);
+            }
         }
 
         foreach (Vehicle vehicle in vehicles)
@@ -39,6 +43,12 @@ public class StartUp
         switch (command)
         {
             case "Drive":
+                vehicle.AirConditioner = true;
+                vehicle.Drive(param);
+                break;
+
+            case "DriveEmpty":
+                vehicle.AirConditioner = false;
                 vehicle.Drive(param);
                 break;
 
@@ -54,14 +64,18 @@ public class StartUp
         string type = tokens[0];
         double quantity = double.Parse(tokens[1]);
         double consumption = double.Parse(tokens[2]);
+        double capacity = double.Parse(tokens[3]);
 
         switch (type)
         {
             case "Car":
-                return new Car(type, quantity, consumption);
+                return new Car(type, quantity, consumption, capacity);
 
             case "Truck":
-                return new Truck(type, quantity, consumption);
+                return new Truck(type, quantity, consumption, capacity);
+
+            case "Bus":
+                return new Bus(type, quantity, consumption, capacity);
         }
         return null;
     }
