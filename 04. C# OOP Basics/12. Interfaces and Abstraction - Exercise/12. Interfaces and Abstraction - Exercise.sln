@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telephony", "Telephony\Tele
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BorderControl", "BorderControl\BorderControl.csproj", "{9687E0AB-88F6-415A-97F4-D9E8D44185ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodShortage", "FoodShortage\FoodShortage.csproj", "{701322B3-826A-4691-82B6-BAC6B1B2AB21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9687E0AB-88F6-415A-97F4-D9E8D44185ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9687E0AB-88F6-415A-97F4-D9E8D44185ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9687E0AB-88F6-415A-97F4-D9E8D44185ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701322B3-826A-4691-82B6-BAC6B1B2AB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701322B3-826A-4691-82B6-BAC6B1B2AB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701322B3-826A-4691-82B6-BAC6B1B2AB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701322B3-826A-4691-82B6-BAC6B1B2AB21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
