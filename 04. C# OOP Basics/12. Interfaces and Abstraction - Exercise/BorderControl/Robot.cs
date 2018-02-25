@@ -1,11 +1,23 @@
-﻿public class Robot : Rebellion, IRobot
+﻿public class Robot : Rebellion, IId
 {
-    public string Model { get; set; }
+    private string id;
+
+    public string Id
+    {
+        get
+        {
+            return this.id;
+        }
+        set
+        {
+            this.id = value;
+        }
+    }
 
     public Robot(string model, string id)
-        : base(id)
+        : base(model)
     {
-        Model = model;
+        this.Id = id;
     }
 
     public override string ToString()
