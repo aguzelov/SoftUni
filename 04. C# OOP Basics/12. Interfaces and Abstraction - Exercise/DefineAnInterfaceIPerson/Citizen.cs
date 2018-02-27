@@ -1,4 +1,4 @@
-﻿internal class Citizen : IPerson, IIdentifiable, IBirthable
+﻿public class Citizen : IPerson, IIdentifiable, IBirthable
 {
     private string name;
     private int age;
