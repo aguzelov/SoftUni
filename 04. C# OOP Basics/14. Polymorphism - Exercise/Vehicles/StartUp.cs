@@ -7,7 +7,7 @@ public class StartUp
         Vehicle[] vehicles = new Vehicle[3];
         for (int i = 0; i < 3; i++)
         {
-            vehicles[i] = InitVehicle();
+            vehicles[i] = VehicleFactory.GetVehicle(Console.ReadLine);
         }
 
         int numberOfCommands = int.Parse(Console.ReadLine());
@@ -56,27 +56,5 @@ public class StartUp
                 vehicle.Refuel(param);
                 break;
         }
-    }
-
-    private static Vehicle InitVehicle()
-    {
-        string[] tokens = Console.ReadLine().Split();
-        string type = tokens[0];
-        double quantity = double.Parse(tokens[1]);
-        double consumption = double.Parse(tokens[2]);
-        double capacity = double.Parse(tokens[3]);
-
-        switch (type)
-        {
-            case "Car":
-                return new Car(type, quantity, consumption, capacity);
-
-            case "Truck":
-                return new Truck(type, quantity, consumption, capacity);
-
-            case "Bus":
-                return new Bus(type, quantity, consumption, capacity);
-        }
-        return null;
     }
 }

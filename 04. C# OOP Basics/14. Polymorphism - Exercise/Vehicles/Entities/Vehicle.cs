@@ -6,6 +6,14 @@
     private double tankCapacity;
     private bool airConditioner;
 
+    protected Vehicle(string type, double fuelQuantity, double fuelConsumption, double tankCapacity)
+    {
+        Type = type;
+        TankCapacity = tankCapacity;
+        FuelQuantity = fuelQuantity;
+        FuelConsumption = fuelConsumption;
+    }
+
     public string Type
     {
         get
@@ -26,7 +34,15 @@
         }
         set
         {
-            this.fuelQuantity = value;
+            if (value > TankCapacity)
+            {
+                this.fuelQuantity = 0;
+            }
+            else
+            {
+                this.fuelQuantity = value;
+            }
+
         }
     }
 
@@ -65,16 +81,27 @@
             this.airConditioner = value;
         }
     }
-
-    protected Vehicle(string type, double fuelQuantity, double fuelConsumption, double tankCapacity)
-    {
-        Type = type;
-        FuelQuantity = fuelQuantity;
-        FuelConsumption = fuelConsumption;
-        TankCapacity = tankCapacity;
-    }
-
+    
     public abstract void Drive(double distance);
 
-    public abstract void Refuel(double fuel);
+    public virtual void Refuel(double fuel)
+    {
+        if (fuel <= 0)
+        {
+            Writer.WriteLine("Fuel must be a positive number");
+        }
+        else if (FuelQuantity + fuel > TankCapacity)
+        {
+            Writer.WriteLine($"Cannot fit {fuel} fuel in the tank");
+        }
+        else
+        {
+            FuelQuantity += fuel;
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"{Type}: {FuelQuantity:F2}";
+    }
 }
