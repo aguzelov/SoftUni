@@ -2,7 +2,7 @@
 {
     private int quantity;
 
-    public int Quntity
+    public int Quantity
     {
         get
         {
@@ -16,6 +16,6 @@
 
     protected Food(int quantity)
     {
-        Quntity = quantity;
+        Quantity = quantity;
     }
 }

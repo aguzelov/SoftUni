@@ -33,7 +33,9 @@ public class StartUp
                 Console.WriteLine(ex.Message);
             }
 
-            Console.WriteLine(animal.ToString());
+            animals.Add(animal);
         }
+
+        animals.ForEach(a => Console.WriteLine(a.ToString()));
     }
 }

@@ -13,6 +13,12 @@
             case "Meat":
                 return new Meat(quantity);
 
+            case "Fruit":
+                return new Fruit(quantity);
+
+            case "Seeds":
+                return new Seeds(quantity);
+
             default:
                 throw new System.ArgumentException();
         }
