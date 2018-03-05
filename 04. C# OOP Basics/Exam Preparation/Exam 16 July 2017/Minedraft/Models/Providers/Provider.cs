@@ -1,29 +1,17 @@
 ﻿using System;
 
-public abstract class Provider : IProvider
+public abstract class Provider : Miner, IProvider
 {
     private string type;
-    private string id;
+
     private double energyOutput;
 
     protected Provider(string id, double energyOutput)
+        : base(id)
     {
         this.type = this.GetType().Name.Replace("Provider", "");
 
-        Id = id;
         EnergyOutput = energyOutput;
-    }
-
-    public string Id
-    {
-        get
-        {
-            return this.id;
-        }
-        private set
-        {
-            this.id = value;
-        }
     }
 
     public double EnergyOutput
@@ -56,7 +44,7 @@ public abstract class Provider : IProvider
 
     public override string ToString()
     {
-        return $"{this.type} Provider - {Id}{Environment.NewLine}" +
+        return $"{this.type} Provider - {base.Id}{Environment.NewLine}" +
                     $"Energy Output: {EnergyOutput}";
     }
 }

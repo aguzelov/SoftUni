@@ -1,31 +1,18 @@
 ﻿using System;
 
-public abstract class Harvester : IHarvester
+public abstract class Harvester : Miner, IHarvester
 {
     private string type;
-    private string id;
     private double oreOutput;
     private double energyRequirement;
 
     protected Harvester(string id, double oreOutput, double energyRequirement)
+        : base(id)
     {
         this.type = this.GetType().Name.Replace("Harvester", "");
 
-        Id = id;
         OreOutput = oreOutput;
         EnergyRequirement = energyRequirement;
-    }
-
-    public string Id
-    {
-        get
-        {
-            return this.id;
-        }
-        private set
-        {
-            this.id = value;
-        }
     }
 
     public double OreOutput
@@ -78,7 +65,7 @@ public abstract class Harvester : IHarvester
 
     public override string ToString()
     {
-        return $"{this.type} Harvester - {Id}{Environment.NewLine}" +
+        return $"{this.type} Harvester - {base.Id}{Environment.NewLine}" +
                     $"Ore Output: {OreOutput}{Environment.NewLine}" +
                     $"Energy Requirement: {EnergyRequirement}";
     }

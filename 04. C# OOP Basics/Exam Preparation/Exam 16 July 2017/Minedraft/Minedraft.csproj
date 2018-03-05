@@ -48,12 +48,14 @@
     <Compile Include="Factories\HarvesterFactory.cs" />
     <Compile Include="Factories\ProviderFactory.cs" />
     <Compile Include="Interfaces\IHarvester.cs" />
+    <Compile Include="Interfaces\IId.cs" />
     <Compile Include="Interfaces\IProvider.cs" />
     <Compile Include="IO\InputReader.cs" />
     <Compile Include="IO\OutputWriter.cs" />
     <Compile Include="Models\Harvesters\HammerHarvester.cs" />
     <Compile Include="Models\Harvesters\Harvester.cs" />
     <Compile Include="Models\Harvesters\SonicHarvester.cs" />
+    <Compile Include="Models\Miner.cs" />
     <Compile Include="Models\Providers\PressureProvider.cs" />
     <Compile Include="Models\Providers\Provider.cs" />
     <Compile Include="Models\Providers\SolarProvider.cs" />

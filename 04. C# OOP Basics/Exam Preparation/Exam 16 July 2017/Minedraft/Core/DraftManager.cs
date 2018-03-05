@@ -73,7 +73,7 @@ public class DraftManager
         {
             this.totalEnergyProvided -= totalEnergyRequirement;
             double totalOreOutput = CalculateOreOutputByMode();
-                
+
             this.totalMinedOre += totalOreOutput;
 
             sb.Append($"Plumbus Ore Mined: {totalOreOutput}");
