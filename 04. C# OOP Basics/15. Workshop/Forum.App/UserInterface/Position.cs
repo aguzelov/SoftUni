@@ -1,7 +1,7 @@
-﻿namespace Forum.App.UserInterface
-{
-    using System;
+﻿using System;
 
+namespace Forum.App
+{
     public class Position
     {
         private int left;

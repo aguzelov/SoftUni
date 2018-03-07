@@ -1,7 +1,7 @@
 ﻿namespace Forum.App
 {
-    using Forum.App.Services;
-    using Forum.App.Services.Contracts;
+    using Forum.App.Controllers;
+    using Forum.App.Controllers.Contracts;
     using Forum.App.UserInterface;
     using System;
     using System.Collections.Generic;

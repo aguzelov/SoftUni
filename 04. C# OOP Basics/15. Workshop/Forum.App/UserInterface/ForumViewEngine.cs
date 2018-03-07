@@ -189,6 +189,8 @@
             int left = textArea.Left;
             int top = textArea.Top;
 
+            Console.SetCursorPosition(left, top);
+
             foreach (var item in textArea.Lines)
             {
                 Console.SetCursorPosition(left, top);
@@ -200,8 +202,6 @@
                 }
                 top++;
             }
-
-            Console.SetCursorPosition(textArea.DisplayCursor.Left, textArea.DisplayCursor.Top);
         }
     }
 }

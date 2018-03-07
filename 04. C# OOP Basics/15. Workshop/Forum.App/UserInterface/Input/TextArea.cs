@@ -3,6 +3,7 @@
     using Forum.App.UserInterface.Contracts;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class TextArea : IInput
     {
@@ -15,6 +16,7 @@
         private const int OFFSET = 37;
         private IEnumerable<string> lines = new List<string>();
         private string text = string.Empty;
+        private static char[] forbiddenCharacters = { ';' };
 
         private int MaxLength { get; set; }
 
@@ -74,13 +76,19 @@
 
             while (true)
             {
-                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 ConsoleKey key = keyInfo.Key;
+
                 if (key == ConsoleKey.Backspace)
                 {
                     this.Delete();
                 }
-                else if (key == ConsoleKey.Enter || key == ConsoleKey.Escape || this.Text.Length == this.MaxLength)
+                else if (this.Text.Length == this.MaxLength || forbiddenCharacters.Contains(keyInfo.KeyChar))
+                {
+                    Console.Beep(415, 260);
+                    continue;
+                }
+                else if (key == ConsoleKey.Enter || key == ConsoleKey.Escape)
                 {
                     break;
                 }
@@ -89,6 +97,8 @@
                     this.AddCharacter(keyInfo.KeyChar);
                 }
             }
+
+            ForumViewEngine.HideCursor();
         }
 
         public void Delete()

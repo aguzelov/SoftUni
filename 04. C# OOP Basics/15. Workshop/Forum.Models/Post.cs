@@ -4,13 +4,19 @@ namespace Forum.Models
 {
     public class Post
     {
-        public Post(int id, string title, string content, int categoryId, int authorId, IEnumerable<int> replyIds)
+        public Post(int id, string title, string content, int categoryId, int authorId)
         {
             this.Id = id;
             this.Title = title;
             this.Content = content;
             this.CategoryId = categoryId;
             this.AuthorId = authorId;
+            this.ReplyIds = new List<int>();
+        }
+
+        public Post(int id, string title, string content, int categoryId, int authorId, IEnumerable<int> replyIds)
+            : this(id, title, content, categoryId, authorId)
+        {
             this.ReplyIds = new List<int>(replyIds);
         }
 

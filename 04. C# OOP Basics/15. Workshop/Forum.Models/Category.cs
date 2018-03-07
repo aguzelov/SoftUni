@@ -4,10 +4,15 @@
 
     public class Category
     {
-        public Category(int id, string name, IEnumerable<int> posts)
+        public Category(int id, string name)
         {
             this.Id = id;
             this.Name = name;
+            this.Posts = new List<int>();
+        }
+        public Category(int id, string name, IEnumerable<int> posts)
+            : this(id, name)
+        {
             this.Posts = new List<int>(posts);
         }
 
