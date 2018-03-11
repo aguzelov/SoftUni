@@ -1,6 +1,8 @@
 ﻿namespace Forum.App
 {
+    using Forum.App.Controllers;
     using Forum.App.Controllers.Contracts;
+    using Forum.App.Services;
     using Forum.App.UserInterface;
     using Forum.App.UserInterface.Contracts;
     using System;
@@ -143,12 +145,17 @@
 
         private void AddReply()
         {
-            throw new NotImplementedException();
+
+            this.Back();
         }
 
         private void RedirectToAddReply()
         {
-            throw new NotImplementedException();
+            var postDetailsController = (PostDetailsController)this.CurrentController;
+
+            var addReplyController = (AddReplyController)this.controllers[(int)MenuState.AddReply];
+            addReplyController.SetPostId(postDetailsController.PostId);
+            RedirectToMenu(MenuState.AddReply);
         }
 
         private void LogOut()
@@ -169,17 +176,47 @@
 
         private void ViewPost()
         {
-            throw new NotImplementedException();
+            var categoryController = (CategoryController)this.CurrentController;
+
+            int categoryId = categoryController.CategoryId;
+
+            var posts = PostService.GetPostsByCategory(categoryId).ToArray();
+
+            int postIndex = categoryController.CurrentPage * CategoriesController.PAGE_OFFSET + this.currentOptionIndex;
+            var postId = posts[postIndex - 1].Id;
+
+            var postController = (PostDetailsController)this.controllers[(int)MenuState.ViewPost];
+            postController.SetPostId(postId);
+
+            this.RedirectToMenu(MenuState.ViewPost);
         }
 
         private void OpenCategory()
         {
-            throw new NotImplementedException();
+            var categoriesController = (CategoriesController)this.CurrentController;
+
+            int categoryIndex = categoriesController.CurrentPage * CategoriesController.PAGE_OFFSET + this.currentOptionIndex;
+
+            var categoryCtrlr = (CategoryController)this.controllers[(int)MenuState.OpenCategory];
+            categoryCtrlr.SetCategory(categoryIndex);
+
+            this.RedirectToMenu(MenuState.OpenCategory);
         }
 
         private void AddPost()
         {
-            throw new NotImplementedException();
+            var addPostController = (AddPostController)this.CurrentController;
+
+            int postId = addPostController.Post.PostId;
+
+            var postViewer = (PostDetailsController)this.controllers[(int)MenuState.ViewPost];
+            postViewer.SetPostId(postId);
+
+            addPostController.ResetPost();
+
+            this.controllerHistory.Pop();
+
+            this.RedirectToMenu(MenuState.ViewPost);
         }
 
         private void RenderCurrentView()

@@ -114,10 +114,19 @@ namespace Forum.Data
                 var id = int.Parse(args[0]);
                 var username = args[1];
                 var password = args[2];
-                var postIds = args[3]
+
+                int[] postIds = null;
+                if (args.Length < 4)
+                {
+                    postIds = new int[0];
+                }
+                else
+                {
+                    postIds = args[3]
                     .Split(',', System.StringSplitOptions.RemoveEmptyEntries)
                     .Select(int.Parse)
                     .ToArray();
+                }
 
                 User user = new User(id, username, password, postIds);
                 users.Add(user);
@@ -159,10 +168,19 @@ namespace Forum.Data
                 var content = args[2];
                 var categoryId = int.Parse(args[3]);
                 var authorId = int.Parse(args[4]);
-                var replyIds = args[5]
+
+                var replyIds = new int[0];
+                if (args.Length < 6)
+                {
+                    replyIds = new int[0];
+                }
+                else
+                {
+                    replyIds = args[5]
                     .Split(',', System.StringSplitOptions.RemoveEmptyEntries)
                     .Select(int.Parse)
                     .ToArray();
+                }
 
                 Post post = new Post(id, title, content, categoryId, authorId, replyIds);
                 posts.Add(post);

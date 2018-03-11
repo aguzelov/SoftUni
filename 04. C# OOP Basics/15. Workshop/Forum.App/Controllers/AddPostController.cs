@@ -1,7 +1,12 @@
 ﻿namespace Forum.App.Controllers
 {
     using Forum.App.Controllers.Contracts;
+    using Forum.App.Services;
+    using Forum.App.UserInterface;
     using Forum.App.UserInterface.Contracts;
+    using Forum.App.UserInterface.Input;
+    using Forum.App.UserInterface.ViewModels;
+    using System.Linq;
 
     public class AddPostController : IController
     {
@@ -10,14 +15,81 @@
         private const int TEXT_AREA_HEIGHT = 18;
         private const int POST_MAX_LENGTH = 660;
 
+        private static int centerTop = Position.ConsoleCenter().Top;
+        private static int centerLeft = Position.ConsoleCenter().Left;
+
+        public AddPostController()
+        {
+            this.ResetPost();
+        }
+
+        private enum Command
+        {
+            AddTitle,
+            AddCategory,
+            Write,
+            Post
+        }
+
+        public PostViewModel Post { get; set; }
+
+        public TextArea TextArea { get; set; }
+
+        public bool Error { get; set; }
+
         public MenuState ExecuteCommand(int index)
         {
-            throw new System.NotImplementedException();
+            switch ((Command)index)
+            {
+                case Command.AddTitle:
+                    this.ReadTitle();
+                    return MenuState.AddPost;
+
+                case Command.AddCategory:
+                    this.ReadCategory();
+                    return MenuState.AddPost;
+
+                case Command.Write:
+                    this.TextArea.Write();
+                    this.Post.Content = this.TextArea.Lines.ToList();
+                    return MenuState.AddPost;
+
+                case Command.Post:
+                    bool isValidPost = PostService.TrySavePost(this.Post);
+                    if (!isValidPost)
+                    {
+                        this.Error = true;
+                        return MenuState.Rerender;
+                    }
+                    return MenuState.PostAdded;
+            }
+
+            throw new InvalidCommandException();
         }
 
         public IView GetView(string userName)
         {
-            throw new System.NotImplementedException();
+            this.Post.Author = userName;
+            return new AddPostView(this.Post, this.TextArea, this.Error);
+        }
+
+        public void ReadTitle()
+        {
+            this.Post.Title = ForumViewEngine.ReadRow();
+            ForumViewEngine.HideCursor();
+        }
+
+        public void ReadCategory()
+        {
+            this.Post.Category = ForumViewEngine.ReadRow();
+            ForumViewEngine.HideCursor();
+        }
+
+        public void ResetPost()
+        {
+            this.Error = false;
+            this.Post = new PostViewModel();
+            this.TextArea = new TextArea(centerLeft - 18, centerTop - 7, TEXT_AREA_WIDTH, TEXT_AREA_HEIGHT, POST_MAX_LENGTH);
         }
     }
 }
