@@ -1,11 +1,8 @@
-﻿namespace Box
+﻿public interface IBox<T>
 {
-    public interface IBox<T>
-    {
-        void Add(T element);
+    void Add(T element);
 
-        T Remove();
+    T Remove();
 
-        int Count { get; }
-    }
+    int Count { get; }
 }
