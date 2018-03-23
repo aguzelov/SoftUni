@@ -39,6 +39,10 @@ public class CommandInterpreter
 
                     break;
 
+                case "PrintAll":
+                    result = string.Join(" ", this.listyIterator);
+                    break;
+
                 case "END":
                     return;
             }

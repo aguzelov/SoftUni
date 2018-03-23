@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
-public class ListyIterator<T>
+public class ListyIterator<T> : IEnumerable<T>
 {
     private IList<T> list;
     private int current;
@@ -37,5 +38,18 @@ public class ListyIterator<T>
     private void Reset()
     {
         this.current = 0;
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        for (int i = 0; i < this.list.Count; i++)
+        {
+            yield return this.list[i];
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return this.GetEnumerator();
     }
 }
