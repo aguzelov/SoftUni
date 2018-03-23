@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Froggy", "Froggy\Froggy.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparingObjects", "ComparingObjects\ComparingObjects.csproj", "{87337F2F-8338-487B-8719-9A4BBC4BABC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{3C8E12B1-06FE-41A6-95B3-6518DA5106E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EqualityLogic", "EqualityLogic\EqualityLogic.csproj", "{1D5CC01F-F582-4B1B-9561-995EA66BD3F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{87337F2F-8338-487B-8719-9A4BBC4BABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87337F2F-8338-487B-8719-9A4BBC4BABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87337F2F-8338-487B-8719-9A4BBC4BABC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8E12B1-06FE-41A6-95B3-6518DA5106E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8E12B1-06FE-41A6-95B3-6518DA5106E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8E12B1-06FE-41A6-95B3-6518DA5106E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8E12B1-06FE-41A6-95B3-6518DA5106E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5CC01F-F582-4B1B-9561-995EA66BD3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5CC01F-F582-4B1B-9561-995EA66BD3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5CC01F-F582-4B1B-9561-995EA66BD3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5CC01F-F582-4B1B-9561-995EA66BD3F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
