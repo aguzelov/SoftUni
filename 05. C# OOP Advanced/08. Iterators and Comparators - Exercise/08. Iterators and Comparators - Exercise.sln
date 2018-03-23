@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EqualityLogic", "EqualityLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetClinic", "PetClinic\PetClinic.csproj", "{060462A1-BF0A-44EB-A59C-D0BF05EF6E04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTraversal", "LinkedListTraversal\LinkedListTraversal.csproj", "{BBFE2043-C8C6-44B7-8B23-99115E89321E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{060462A1-BF0A-44EB-A59C-D0BF05EF6E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{060462A1-BF0A-44EB-A59C-D0BF05EF6E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{060462A1-BF0A-44EB-A59C-D0BF05EF6E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFE2043-C8C6-44B7-8B23-99115E89321E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFE2043-C8C6-44B7-8B23-99115E89321E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFE2043-C8C6-44B7-8B23-99115E89321E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFE2043-C8C6-44B7-8B23-99115E89321E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
