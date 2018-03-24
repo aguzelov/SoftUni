@@ -81,4 +81,28 @@ public class Spy
 
         return sb.ToString().Trim();
     }
+
+    public string CollectGettersAndSetters(string className)
+    {
+        Type classType = Type.GetType(className);
+        MethodInfo[] methods = classType.GetMethods(
+            BindingFlags.Instance |
+            BindingFlags.Public |
+            BindingFlags.NonPublic |
+            BindingFlags.Static);
+
+        StringBuilder sb = new StringBuilder();
+
+        foreach (var methodInfo in methods.Where(m => m.Name.StartsWith("get")))
+        {
+            sb.AppendLine($"{methodInfo.Name} will return {methodInfo.ReturnType}");
+        }
+
+        foreach (var methodInfo in methods.Where(m => m.Name.StartsWith("set")))
+        {
+            sb.AppendLine($"{methodInfo.Name} will set field of {methodInfo.GetParameters().First().ParameterType}");
+        }
+
+        return sb.ToString().Trim();
+    }
 }
