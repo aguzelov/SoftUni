@@ -63,4 +63,22 @@ public class Spy
 
         return sb.ToString().Trim();
     }
+
+    public string RevealPrivateMethods(string className)
+    {
+        Type classType = Type.GetType(className);
+        MethodInfo[] methods = classType.GetMethods(
+            BindingFlags.NonPublic | BindingFlags.Instance);
+
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine($"All Private Methods of Class: {className}");
+        sb.AppendLine($"Base Class: {classType.BaseType.Name}");
+
+        foreach (var methodInfo in methods)
+        {
+            sb.AppendLine(methodInfo.Name);
+        }
+
+        return sb.ToString().Trim();
+    }
 }
