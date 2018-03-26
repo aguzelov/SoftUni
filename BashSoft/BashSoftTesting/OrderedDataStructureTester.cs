@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using BashSoft.Contracts;
 using BashSoft.DataStructures;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 
 namespace BashSoftTesting
 {
@@ -22,7 +21,7 @@ namespace BashSoftTesting
         public void TestEmptyCtor()
         {
             this.names = new SimpleSortedList<string>();
-            
+
             Assert.AreEqual(this.names.Capacity, 16);
             Assert.AreEqual(this.names.Size, 0);
         }
@@ -120,7 +119,6 @@ namespace BashSoftTesting
         {
             this.names.AddAll(null);
         }
-
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

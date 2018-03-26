@@ -50,74 +50,12 @@ namespace BashSoft
 
         private IExecutable ParseCommand(string input, string[] data, string command)
         {
-            //switch (command)
-            //{
-            //    case "open":
-            //        return new OpenFileCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "mkdir":
-            //        return new MakeDirectoryCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "ls":
-            //        return new TraverseFoldersCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "cmp":
-            //        return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "cdRel":
-            //        return new ChangeRelativePathCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "cdAbs":
-            //        return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "readDb":
-            //        return new ReadDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "help":
-            //        return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    //case ":q!":
-            //    //case "logout":
-            //    case "exit":
-            //        return new CloseConsoleCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "show":
-            //        return new ShowCourseCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "filter":
-            //        return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "order":
-            //        return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "dropdb":
-            //        return new DropDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "display":
-            //        return new DisplayCommand(input, data, this.judge, this.repository, this.inputOutputIoManager);
-
-            //    case "download":
-            //    //TODO: implement after functionality is implemented
-            //    case "downloadAsynch":
-            //    //TODO: implement after functionality is implemented
-            //    default:
-            //        throw new InvalidCommandException(input);
-            //}
-
             object[] paramenterForConstruction = new object[]
             {
                 input, data
             };
 
-
-            //TODO: Find why this always is CommandInterpreter type
             Type typeOfCommand = null;
-            //Assembly.GetExecutingAssembly()
-            //.GetTypes()
-            //.First(type =>
-            //    type.GetCustomAttributes(typeof(AliasAttribute))
-            //            .Where(atr => atr.Equals(command))
-            //           .ToString().Length > 0);
 
             foreach (var type in Assembly.GetExecutingAssembly()
                 .GetTypes())

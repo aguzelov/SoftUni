@@ -1,8 +1,8 @@
-﻿using BashSoft.Contracts;
+﻿using BashSoft.Attributes;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 using System;
 using System.Collections.Generic;
-using BashSoft.Attributes;
 
 namespace BashSoft.IO.Commands
 {

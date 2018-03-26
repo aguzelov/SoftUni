@@ -14,6 +14,5 @@ namespace BashSoft.Contracts
         void EnrollInCourse(ICourse softUniCourse);
 
         void SetMarksInCourse(string courseName, params int[] scores);
-
     }
 }

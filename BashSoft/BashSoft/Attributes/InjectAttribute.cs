@@ -7,7 +7,6 @@ namespace BashSoft.Attributes
     {
         public InjectAttribute()
         {
-
         }
     }
 }

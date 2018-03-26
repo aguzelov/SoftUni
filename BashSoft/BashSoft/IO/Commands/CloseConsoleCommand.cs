@@ -1,5 +1,4 @@
 ﻿using BashSoft.Attributes;
-using BashSoft.Contracts;
 using System;
 
 namespace BashSoft.IO.Commands

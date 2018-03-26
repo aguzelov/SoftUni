@@ -1,7 +1,6 @@
-﻿using BashSoft.Exceptions;
+﻿using BashSoft.Attributes;
+using BashSoft.Exceptions;
 using System.Diagnostics;
-using BashSoft.Attributes;
-using BashSoft.Contracts;
 
 namespace BashSoft.IO.Commands
 {

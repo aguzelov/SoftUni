@@ -123,10 +123,7 @@ namespace BashSoft.DataStructures
                 }
                 this.size--;
                 this.innerCollection[this.Size] = default(T);
-                
             }
-
-            
 
             return hasBeenRemoved;
         }
