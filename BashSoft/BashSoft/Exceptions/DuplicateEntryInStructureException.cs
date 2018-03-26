@@ -2,7 +2,7 @@
 
 namespace BashSoft.Exceptions
 {
-    internal class DuplicateEntryInStructureException : Exception
+    public class DuplicateEntryInStructureException : Exception
     {
         private const string DublicateEntry = "The {0} already exists in {1}.";
 

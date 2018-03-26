@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using BashSoft.Contracts;
 
 namespace BashSoft
 {
-    public class RepositoryFilter
+    public class RepositoryFilter : IDataFilter
     {
         public void FilterAndTake(Dictionary<string, double> studentsWithMarks,
                                          string wantedFilter,

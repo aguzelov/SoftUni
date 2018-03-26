@@ -2,7 +2,7 @@
 
 namespace BashSoft.Exceptions
 {
-    internal class InvalidFileNameException : Exception
+    public class InvalidFileNameException : Exception
     {
         private const string ForbiddenSymbolsContainedInName = "The given name contains symbols that are not allowed to be used in names of files and folders.";
 

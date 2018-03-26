@@ -2,7 +2,7 @@
 
 namespace BashSoft.Exceptions
 {
-    internal class InvalidCommandException : Exception
+    public class InvalidCommandException : Exception
     {
         private const string InvalidCommand = "The command '{0}' is invalid";
 

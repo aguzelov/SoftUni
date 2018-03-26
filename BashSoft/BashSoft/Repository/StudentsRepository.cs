@@ -1,4 +1,6 @@
-﻿using BashSoft.Exceptions;
+﻿using BashSoft.Contracts;
+using BashSoft.DataStructures;
+using BashSoft.Exceptions;
 using BashSoft.Models;
 using System;
 using System.Collections.Generic;
@@ -8,15 +10,15 @@ using System.Text.RegularExpressions;
 
 namespace BashSoft
 {
-    public class StudentsRepository
+    public class StudentsRepository : IDatabase
     {
         private bool isDataInitialized = false;
-        private Dictionary<string, Course> courses;
-        private Dictionary<string, Student> students;
-        private RepositoryFilter filter;
-        private RepositorySorter sorter;
+        private Dictionary<string, ICourse> courses;
+        private Dictionary<string, IStudent> students;
+        private IDataFilter filter;
+        private IDataSorter sorter;
 
-        public StudentsRepository(RepositorySorter sorter, RepositoryFilter filter)
+        public StudentsRepository(IDataSorter sorter, IDataFilter filter)
         {
             this.filter = filter;
             this.sorter = sorter;
@@ -31,8 +33,8 @@ namespace BashSoft
 
             OutputWriter.WriteMessageOnNewLine("Reading data..");
 
-            this.courses = new Dictionary<string, Course>();
-            this.students = new Dictionary<string, Student>();
+            this.courses = new Dictionary<string, ICourse>();
+            this.students = new Dictionary<string, IStudent>();
             this.ReadData(fileName);
         }
 
@@ -82,7 +84,7 @@ namespace BashSoft
                                 continue;
                             }
 
-                            if (scores.Length > Course.NumberOfTasksOnExam)
+                            if (scores.Length > SoftUniCourse.NumberOfTasksOnExam)
                             {
                                 OutputWriter.DisplayException(ExceptionMessages.InvalidNumberOfScores);
                                 continue;
@@ -90,21 +92,21 @@ namespace BashSoft
 
                             if (!this.students.ContainsKey(username))
                             {
-                                this.students.Add(username, new Student(username));
+                                this.students.Add(username, new SoftUniStudent(username));
                             }
 
                             if (!this.courses.ContainsKey(courseName))
                             {
-                                this.courses.Add(courseName, new Course(courseName));
+                                this.courses.Add(courseName, new SoftUniCourse(courseName));
                             }
 
-                            Course course = this.courses[courseName];
-                            Student student = this.students[username];
+                            ICourse softUniCourse = this.courses[courseName];
+                            IStudent softUniStudent = this.students[username];
 
-                            student.EnrollInCourse(course);
-                            student.SetMarksInCourse(courseName, scores);
+                            softUniStudent.EnrollInCourse(softUniCourse);
+                            softUniStudent.SetMarksInCourse(courseName, scores);
 
-                            course.EnrollStudent(student);
+                            softUniCourse.EnrollStudent(softUniStudent);
                         }
                         catch (FormatException fex)
                         {
@@ -207,6 +209,24 @@ namespace BashSoft
                     this.GetStudentScoresFromCourse(courseName, studentMarksEntry.Key);
                 }
             }
+        }
+
+        public ISimpleOrderedBag<ICourse> GetAllCoursesSorted(IComparer<ICourse> cmp)
+        {
+            SimpleSortedList<ICourse> sortedCourses = new SimpleSortedList<ICourse>(cmp);
+
+            sortedCourses.AddAll(this.courses.Values);
+
+            return sortedCourses;
+        }
+
+        public ISimpleOrderedBag<IStudent> GetAllStudentsSorted(IComparer<IStudent> cmp)
+        {
+            SimpleSortedList<IStudent> sortedStudents = new SimpleSortedList<IStudent>(cmp);
+
+            sortedStudents.AddAll(this.students.Values);
+
+            return sortedStudents;
         }
     }
 }

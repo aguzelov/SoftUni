@@ -1,13 +1,15 @@
 ﻿using BashSoft.Exceptions;
 using System.Diagnostics;
+using BashSoft.Attributes;
+using BashSoft.Contracts;
 
 namespace BashSoft.IO.Commands
 {
-    internal class OpenFileCommand : Command
+    [Alias("open")]
+    public class OpenFileCommand : Command
     {
-        public OpenFileCommand(string input, string[] data, Tester judge, StudentsRepository repository,
-            IOManager inputOutputManager)
-            : base(input, data, judge, repository, inputOutputManager)
+        public OpenFileCommand(string input, string[] data)
+            : base(input, data)
         {
         }
 

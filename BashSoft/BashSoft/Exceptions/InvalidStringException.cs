@@ -2,7 +2,7 @@
 
 namespace BashSoft.Exceptions
 {
-    internal class InvalidStringException : Exception
+    public class InvalidStringException : Exception
     {
         private const string NullOrEmptyValue = "The value of the variable CANNOT be null or empty!";
 
