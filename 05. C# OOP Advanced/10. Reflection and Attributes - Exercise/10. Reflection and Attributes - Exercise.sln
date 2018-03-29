@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_CustomEnumAttribute", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07_TrafficLights", "P07_TrafficLights\P07_TrafficLights.csproj", "{582862B2-5742-45F9-A549-8AC924350F56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08_CreateCustomClassAttribute", "P08_CreateCustomClassAttribute\P08_CreateCustomClassAttribute.csproj", "{E7018899-7200-459E-9986-F06793119A36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{582862B2-5742-45F9-A549-8AC924350F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{582862B2-5742-45F9-A549-8AC924350F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{582862B2-5742-45F9-A549-8AC924350F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7018899-7200-459E-9986-F06793119A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7018899-7200-459E-9986-F06793119A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7018899-7200-459E-9986-F06793119A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7018899-7200-459E-9986-F06793119A36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
