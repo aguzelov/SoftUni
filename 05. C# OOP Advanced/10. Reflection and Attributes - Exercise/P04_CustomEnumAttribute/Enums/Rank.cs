@@ -1,6 +1,6 @@
-﻿using P04_CustomEnumAttribute.Attributes;
+﻿using P06_CustomEnumAttribute.Attributes;
 
-namespace P04_CustomEnumAttribute.Enums
+namespace P06_CustomEnumAttribute.Enums
 {
     [Type("Enumeration", "Rank", "Provides rank constants for a Card class.")]
     public enum Rank

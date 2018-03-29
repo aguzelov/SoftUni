@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P04_CustomEnumAttribute.Attributes
+namespace P06_CustomEnumAttribute.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Enum)]
     public class TypeAttribute : Attribute

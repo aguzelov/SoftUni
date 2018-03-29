@@ -1,7 +1,7 @@
 ﻿using System;
-using P04_CustomEnumAttribute.Enums;
+using P06_CustomEnumAttribute.Enums;
 
-namespace P04_CustomEnumAttribute
+namespace P06_CustomEnumAttribute
 {
     internal class StartUp
     {
