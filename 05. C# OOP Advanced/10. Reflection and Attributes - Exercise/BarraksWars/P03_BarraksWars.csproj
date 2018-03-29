@@ -7,11 +7,8 @@
 
   <ItemGroup>
     <Compile Remove="Core\Commands - Copy\**" />
-    <Compile Remove="Core\NewFolder\**" />
     <EmbeddedResource Remove="Core\Commands - Copy\**" />
-    <EmbeddedResource Remove="Core\NewFolder\**" />
     <None Remove="Core\Commands - Copy\**" />
-    <None Remove="Core\NewFolder\**" />
   </ItemGroup>
 
 </Project>

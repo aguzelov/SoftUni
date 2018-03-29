@@ -1,4 +1,5 @@
-﻿using _03BarracksFactory.Core.Commands;
+﻿using _03BarracksFactory.Core.Attributes;
+using _03BarracksFactory.Core.Commands;
 using System.Linq;
 using System.Reflection;
 
@@ -45,12 +46,33 @@ namespace _03BarracksFactory.Core
         {
             object[] paramenterForConstruction = new object[]
             {
-                data, this.repository, this.unitFactory
+                data
             };
 
             Type commandType = Assembly.GetExecutingAssembly().GetTypes().First(t => t.Name.ToLower().Contains(commandName));
 
             Command command = (Command)Activator.CreateInstance(commandType, paramenterForConstruction);
+
+            FieldInfo[] fieldInfos = commandType.GetFields(
+                BindingFlags.Instance |
+                BindingFlags.NonPublic);
+
+            FieldInfo[] engineFieldInfos = typeof(Engine).GetFields(
+                BindingFlags.Instance |
+                BindingFlags.NonPublic);
+
+            foreach (var fieldInfo in fieldInfos)
+            {
+                Attribute attribute = fieldInfo.GetCustomAttribute(typeof(InjectAttribute));
+                if (attribute != null)
+                {
+                    if (engineFieldInfos.Any(f => f.FieldType == fieldInfo.FieldType))
+                    {
+                        fieldInfo.SetValue(command,
+                            engineFieldInfos.First(x => x.FieldType == fieldInfo.FieldType).GetValue(this));
+                    }
+                }
+            }
 
             return command;
         }
