@@ -1,9 +1,13 @@
-﻿namespace _03BarracksFactory.Core
-{
-    using System;
-    using Contracts;
+﻿using _03BarracksFactory.Core.Commands;
+using System.Linq;
+using System.Reflection;
 
-    class Engine : IRunnable
+namespace _03BarracksFactory.Core
+{
+    using Contracts;
+    using System;
+
+    internal class Engine : IRunnable
     {
         private IRepository repository;
         private IUnitFactory unitFactory;
@@ -13,7 +17,7 @@
             this.repository = repository;
             this.unitFactory = unitFactory;
         }
-        
+
         public void Run()
         {
             while (true)
@@ -23,7 +27,10 @@
                     string input = Console.ReadLine();
                     string[] data = input.Split();
                     string commandName = data[0];
-                    string result = InterpredCommand(data, commandName);
+
+                    IExecutable command = ParseCommand(data, commandName);
+                    string result = command.Execute();
+                    if (result == "exit") break;
                     Console.WriteLine(result);
                 }
                 catch (Exception e)
@@ -34,41 +41,18 @@
         }
 
         // TODO: refactor for Problem 4
-        private string InterpredCommand(string[] data, string commandName)
+        private IExecutable ParseCommand(string[] data, string commandName)
         {
-            string result = string.Empty;
-            switch (commandName)
+            object[] paramenterForConstruction = new object[]
             {
-                case "add":
-                    result = this.AddUnitCommand(data);
-                    break;
-                case "report":
-                    result = this.ReportCommand(data);
-                    break;
-                case "fight":
-                    Environment.Exit(0);
-                    break;
-                default:
-                    throw new InvalidOperationException("Invalid command!");
-            }
-            return result;
-        }
+                data, this.repository, this.unitFactory
+            };
 
+            Type commandType = Assembly.GetExecutingAssembly().GetTypes().First(t => t.Name.ToLower().Contains(commandName));
 
-        private string ReportCommand(string[] data)
-        {
-            string output = this.repository.Statistics;
-            return output;
-        }
+            Command command = (Command)Activator.CreateInstance(commandType, paramenterForConstruction);
 
-
-        private string AddUnitCommand(string[] data)
-        {
-            string unitType = data[1];
-            IUnit unitToAdd = this.unitFactory.CreateUnit(unitType);
-            this.repository.AddUnit(unitToAdd);
-            string output = unitType + " added!";
-            return output;
+            return command;
         }
     }
 }
