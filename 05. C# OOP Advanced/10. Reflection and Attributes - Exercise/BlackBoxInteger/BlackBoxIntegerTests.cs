@@ -8,8 +8,6 @@ namespace P02_BlackBoxInteger
     {
         public static void Main()
         {
-            //TODO put your reflection code here
-
             Type blackBoxType = typeof(BlackBoxInteger);
 
             ConstructorInfo constructor =
