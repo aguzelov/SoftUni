@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_BlackBoxInteger", "Blac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_BarraksWars", "BarraksWars\P03_BarraksWars.csproj", "{E6900DE2-7D95-48EB-AAB2-BF4F4D5CBAF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_CustomEnumAttribute", "P04_CustomEnumAttribute\P06_CustomEnumAttribute.csproj", "{1B01128D-BC5C-40DC-B671-C53B604E9F7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_CustomEnumAttribute", "CustomEnumAttribute\P06_CustomEnumAttribute.csproj", "{1B01128D-BC5C-40DC-B671-C53B604E9F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07_TrafficLights", "P07_TrafficLights\P07_TrafficLights.csproj", "{582862B2-5742-45F9-A549-8AC924350F56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07_TrafficLights", "TrafficLights\P07_TrafficLights.csproj", "{582862B2-5742-45F9-A549-8AC924350F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08_CreateCustomClassAttribute", "P08_CreateCustomClassAttribute\P08_CreateCustomClassAttribute.csproj", "{E7018899-7200-459E-9986-F06793119A36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08_CreateCustomClassAttribute", "CreateCustomClassAttribute\P08_CreateCustomClassAttribute.csproj", "{E7018899-7200-459E-9986-F06793119A36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P09_InfernoInfinity", "InfernoInfinity\P09_InfernoInfinity.csproj", "{D9A9D78B-8457-4197-9BFB-F7E4DEA9E983}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E7018899-7200-459E-9986-F06793119A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7018899-7200-459E-9986-F06793119A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7018899-7200-459E-9986-F06793119A36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9A9D78B-8457-4197-9BFB-F7E4DEA9E983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9A9D78B-8457-4197-9BFB-F7E4DEA9E983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9A9D78B-8457-4197-9BFB-F7E4DEA9E983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9A9D78B-8457-4197-9BFB-F7E4DEA9E983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
