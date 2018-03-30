@@ -1,6 +1,4 @@
 ﻿using P09_InfernoInfinity.Contracts;
-using P09_InfernoInfinity.Models.Commands;
-using P09_InfernoInfinity.Models.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +8,21 @@ namespace P09_InfernoInfinity.Core
 {
     public class Engine
     {
-        private List<Weapon> weapons;
+        private readonly List<IWeapon> weapons;
+        private readonly IReader reader;
 
-        public Engine()
+        public Engine(IReader reader)
         {
-            this.weapons = new List<Weapon>();
+            this.weapons = new List<IWeapon>();
+
+            this.reader = reader;
         }
 
         public void Run()
         {
             while (true)
             {
-                string[] commandArgs = Console.ReadLine().Split(";");
+                string[] commandArgs = reader.ReadLine().Split(";");
                 string command = commandArgs[0];
 
                 IExecutable exe = ParseCommand(command, commandArgs.Skip(1).ToArray());
@@ -38,7 +39,7 @@ namespace P09_InfernoInfinity.Core
             Type commandType = Assembly.GetExecutingAssembly().GetTypes()
                 .First(t => t.Name.ToLower().Contains(commandName.ToLower()));
 
-            Command command = (Command)Activator.CreateInstance(commandType, parametersData);
+            IExecutable command = (IExecutable)Activator.CreateInstance(commandType, parametersData);
 
             return command;
         }

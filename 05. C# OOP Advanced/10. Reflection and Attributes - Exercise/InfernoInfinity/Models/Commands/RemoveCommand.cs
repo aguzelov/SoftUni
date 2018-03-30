@@ -1,4 +1,4 @@
-﻿using P09_InfernoInfinity.Models.Weapons;
+﻿using P09_InfernoInfinity.Contracts;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +10,7 @@ namespace P09_InfernoInfinity.Models.Commands
         {
         }
 
-        public override void Execute(List<Weapon> weapons)
+        public override void Execute(List<IWeapon> weapons)
         {
             string weaponName = this.Data[0];
             int socketIndex = int.Parse(this.Data[1]);

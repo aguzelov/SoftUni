@@ -1,5 +1,5 @@
-﻿using P09_InfernoInfinity.Enums;
-using P09_InfernoInfinity.Models.Weapons;
+﻿using P09_InfernoInfinity.Contracts;
+using P09_InfernoInfinity.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace P09_InfernoInfinity.Models.Commands
         {
         }
 
-        public override void Execute(List<Weapon> weapons)
+        public override void Execute(List<IWeapon> weapons)
         {
             string[] weaponTypeArgs = this.Data[0].Split(" ");
 
@@ -33,7 +33,7 @@ namespace P09_InfernoInfinity.Models.Commands
 
             Type weaponType = Assembly.GetExecutingAssembly().GetTypes().First(t => t.Name.ToLower().Contains(weaponTypeName.ToLower()));
 
-            Weapon weapon = (Weapon)Activator.CreateInstance(weaponType, parameter);
+            IWeapon weapon = (IWeapon)Activator.CreateInstance(weaponType, parameter);
 
             if (weapon != null)
             {

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace P09_InfernoInfinity.Models.Weapons
 {
-    public abstract class Weapon
+    public abstract class Weapon : IWeapon
     {
         private string name;
         private int minDmg;

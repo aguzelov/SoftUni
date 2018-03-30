@@ -1,5 +1,4 @@
 ﻿using P09_InfernoInfinity.Contracts;
-using P09_InfernoInfinity.Models.Weapons;
 using System.Collections.Generic;
 
 namespace P09_InfernoInfinity.Models.Commands
@@ -19,6 +18,6 @@ namespace P09_InfernoInfinity.Models.Commands
             private set => this.data = value;
         }
 
-        public abstract void Execute(List<Weapon> weapons);
+        public abstract void Execute(List<IWeapon> weapons);
     }
 }

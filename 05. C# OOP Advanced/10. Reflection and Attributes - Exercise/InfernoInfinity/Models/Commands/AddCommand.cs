@@ -1,6 +1,5 @@
-﻿using P09_InfernoInfinity.Enums;
-using P09_InfernoInfinity.Models.Gems;
-using P09_InfernoInfinity.Models.Weapons;
+﻿using P09_InfernoInfinity.Contracts;
+using P09_InfernoInfinity.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,7 @@ namespace P09_InfernoInfinity.Models.Commands
         {
         }
 
-        public override void Execute(List<Weapon> weapons)
+        public override void Execute(List<IWeapon> weapons)
         {
             string weaponName = this.Data[0];
             int socketIndex = int.Parse(this.Data[1]);
@@ -30,7 +29,7 @@ namespace P09_InfernoInfinity.Models.Commands
 
             Type gemType = Assembly.GetExecutingAssembly().GetTypes().First(t => t.Name.ToLower().Contains(gemName.ToLower()));
 
-            Gem gem = (Gem)Activator.CreateInstance(gemType, new object[] { gemQualityLevel });
+            IGem gem = (IGem)Activator.CreateInstance(gemType, new object[] { gemQualityLevel });
 
             if (gem != null)
             {

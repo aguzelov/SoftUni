@@ -1,4 +1,6 @@
-﻿using P09_InfernoInfinity.Core;
+﻿using P09_InfernoInfinity.Contracts;
+using P09_InfernoInfinity.Core;
+using P09_InfernoInfinity.IO;
 
 namespace P09_InfernoInfinity
 {
@@ -6,7 +8,9 @@ namespace P09_InfernoInfinity
     {
         private static void Main(string[] args)
         {
-            Engine engine = new Engine();
+            IReader reader = new Reader();
+
+            Engine engine = new Engine(reader);
             engine.Run();
         }
     }
