@@ -1,6 +1,6 @@
 ﻿using System;
 
-public abstract class AbstractHero : IAttacker
+public abstract class AbstractHero : IAttacker, IObserver
 {
     private const string TARGET_NULL_MESSAGE = "Target is null.";
     private const string NO_TARGET_MESSAGE = "{0} has no target.";
@@ -50,6 +50,11 @@ public abstract class AbstractHero : IAttacker
     }
 
     protected abstract void ExecuteClassSpecificAttack(ITarget target, int damage);
+
+    public void Update(int value)
+    {
+        throw new NotImplementedException();
+    }
 
     public override string ToString()
     {

@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public class Dragon : ITarget
+public class Dragon : ITarget, ISubject
 {
     private const string THIS_DIED_EVENT = "{0} dies";
 
@@ -8,14 +9,14 @@ public class Dragon : ITarget
     private int hp;
     private int reward;
     private bool eventTriggered;
-    private IHandler logger;
+    private List<IObserver> observers;
 
-    public Dragon(string id, int hp, int reward, IHandler logger)
+    public Dragon(string id, int hp, int reward)
     {
         this.id = id;
         this.hp = hp;
         this.reward = reward;
-        this.logger = logger;
+        this.observers = new List<IObserver>();
     }
 
     public bool IsDead { get => this.hp <= 0; }
@@ -31,7 +32,26 @@ public class Dragon : ITarget
         {
             Console.WriteLine(THIS_DIED_EVENT, this);
             this.eventTriggered = true;
+            this.NotifyObservers();
         }
+    }
+
+    public void NotifyObservers()
+    {
+        foreach (var observer in observers)
+        {
+            observer.Update(this.reward);
+        }
+    }
+
+    public void Regster(IObserver observer)
+    {
+        this.observers.Add(observer);
+    }
+
+    public void Unregister(IObserver observer)
+    {
+        this.observers.Remove(observer);
     }
 
     public override string ToString()
