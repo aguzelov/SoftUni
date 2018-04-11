@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KingsGambit", "KingsGambit\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInversion", "DependencyInversion\DependencyInversion.csproj", "{190121F4-80FA-4F53-9E01-88DBFB953541}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkForce", "WorkForce\WorkForce.csproj", "{650A02DD-5315-4B70-9EAC-A9D4B9CEB210}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{190121F4-80FA-4F53-9E01-88DBFB953541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{190121F4-80FA-4F53-9E01-88DBFB953541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{190121F4-80FA-4F53-9E01-88DBFB953541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{650A02DD-5315-4B70-9EAC-A9D4B9CEB210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650A02DD-5315-4B70-9EAC-A9D4B9CEB210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650A02DD-5315-4B70-9EAC-A9D4B9CEB210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650A02DD-5315-4B70-9EAC-A9D4B9CEB210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
