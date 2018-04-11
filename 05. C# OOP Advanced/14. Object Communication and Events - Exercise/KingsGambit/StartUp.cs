@@ -12,8 +12,8 @@ namespace KingsGambit
             King king = new King(kingName);
 
             List<Soldier> soldiers = new List<Soldier>();
-            GetSoldiers(king, soldiers, "Royal");
-            GetSoldiers(king, soldiers, "Footman");
+            GetSoldiers(king, "Royal");
+            GetSoldiers(king, "Footman");
 
             string input = string.Empty;
             while ((input = Console.ReadLine()) != "End")
@@ -29,15 +29,14 @@ namespace KingsGambit
 
                     case "Kill":
                         string soldierName = commandArgs[1];
-                        Soldier soldier = soldiers.FirstOrDefault(s => s.Name == soldierName);
-                        king.UnderAttack -= soldier.KingUnderAttack;
-                        soldiers.Remove(soldier);
+                        var soldier = king.Soldiers.FirstOrDefault(s => s.Name == soldierName);
+                        soldier.TakeAttack();
                         break;
                 }
             }
         }
 
-        private static void GetSoldiers(King king, List<Soldier> soldiers, string soldierType)
+        private static void GetSoldiers(King king, string soldierType)
         {
             string[] soldiersNames = Console.ReadLine().Split();
 
@@ -55,8 +54,7 @@ namespace KingsGambit
                         break;
                 }
 
-                soldiers.Add(soldier);
-                king.UnderAttack += soldier.KingUnderAttack;
+                king.AddSoldier(soldier);
             }
         }
     }

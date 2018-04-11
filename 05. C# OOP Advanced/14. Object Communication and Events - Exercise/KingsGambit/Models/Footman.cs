@@ -1,7 +1,9 @@
 ﻿public class Footman : Soldier
 {
+    private const int InitialHealth = 2;
+
     public Footman(string name)
-        : base(name)
+        : base(name, InitialHealth)
     {
     }
 
