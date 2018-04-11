@@ -1,4 +1,5 @@
 ﻿using System;
+
 public class Dragon : ITarget
 {
     private const string THIS_DIED_EVENT = "{0} dies";
@@ -7,12 +8,14 @@ public class Dragon : ITarget
     private int hp;
     private int reward;
     private bool eventTriggered;
+    private IHandler logger;
 
-    public Dragon(string id, int hp, int reward)
+    public Dragon(string id, int hp, int reward, IHandler logger)
     {
         this.id = id;
         this.hp = hp;
         this.reward = reward;
+        this.logger = logger;
     }
 
     public bool IsDead { get => this.hp <= 0; }
@@ -24,7 +27,7 @@ public class Dragon : ITarget
             this.hp -= damage;
         }
 
-        if(this.IsDead && !eventTriggered)
+        if (this.IsDead && !eventTriggered)
         {
             Console.WriteLine(THIS_DIED_EVENT, this);
             this.eventTriggered = true;
