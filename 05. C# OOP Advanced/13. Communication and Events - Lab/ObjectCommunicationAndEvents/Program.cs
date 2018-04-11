@@ -7,11 +7,14 @@
 
         combatLog.SetSuccessor(eventLog);
 
-        var warrior = new Warrior("Quannarin", 10, combatLog);
-        var dragon = new Dragon("Mincho", 100, 25, combatLog);
+        IAttackGroup group = new Group();
+        group.AddMember(new Warrior("Quannarin", 10, combatLog));
+        group.AddMember(new Warrior("Pancho", 15, combatLog));
+
+        ITarget dragon = new Dragon("Mincho", 200, 25, combatLog);
 
         IExecutor executor = new CommandExecutor();
-        ICommand command = new TargetCommand(warrior, dragon);
-        ICommand attack = new AttackCommand(warrior);
+        ICommand groupTarget = new GroupTargetCommand(group, dragon);
+        ICommand attack = new GroupAttackCommand(group);
     }
 }
