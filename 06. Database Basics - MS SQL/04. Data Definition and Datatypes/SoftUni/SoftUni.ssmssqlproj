@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SoftUni">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="AGUZELOV\SQLEXPRESS:AGUZELOV\Aleksandur">
+          <Created>2018-05-08T16:36:20.5501527+03:00</Created>
+          <Type>SQL</Type>
+          <Server>AGUZELOV\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>Minions</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="BasicInsert.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BasicInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BasicSelectAllFields.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BasicSelectAllFields.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BasicSelectAllFieldsAndOrderThem.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BasicSelectAllFieldsAndOrderThem.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BasicSelectSomeFields.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BasicSelectSomeFields.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CreateDatabaseAndTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CreateDatabaseAndTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="IncreaseEmployeesSalary.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>IncreaseEmployeesSalary.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
