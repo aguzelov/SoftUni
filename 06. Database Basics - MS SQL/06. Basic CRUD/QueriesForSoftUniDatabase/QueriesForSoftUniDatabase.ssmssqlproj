@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QueriesForSoftUniDatabase">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="AGUZELOV\SQLEXPRESS:AGUZELOV\Aleksandur">
+          <Created>2018-05-23T02:03:26.2655307+03:00</Created>
+          <Type>SQL</Type>
+          <Server>AGUZELOV\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>SoftUni</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="10. Find Names of All Employees.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>10. Find Names of All Employees.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11. Find All Employees Without Manager.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>11. Find All Employees Without Manager.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12. Find All Employees with Salary More Than.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>12. Find All Employees with Salary More Than.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13. Find 5 Best Paid Employees.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>13. Find 5 Best Paid Employees.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14. Find All Employees Except Marketing.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>14. Find All Employees Except Marketing.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15. Sort Employees Table.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>15. Sort Employees Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="16. Create View Employees with Salaries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>16. Create View Employees with Salaries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="17. Create View Employees with Job Titles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>17. Create View Employees with Job Titles.sql</FullPath>
+        </FileNode>
+        <FileNode Name="18. Distinct Job Titles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>18. Distinct Job Titles.sql</FullPath>
+        </FileNode>
+        <FileNode Name="19. Find First 10 Started Projects.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>19. Find First 10 Started Projects.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2. Find All Information About Departments.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>2. Find All Information About Departments.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20. Last 7 Hired Employees.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>20. Last 7 Hired Employees.sql</FullPath>
+        </FileNode>
+        <FileNode Name="21. Increase Salaries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>21. Increase Salaries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3. Find all Department Names.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>3. Find all Department Names.sql</FullPath>
+        </FileNode>
+        <FileNode Name="4. Find Salary of Each Employee.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>4. Find Salary of Each Employee.sql</FullPath>
+        </FileNode>
+        <FileNode Name="5. Find Full Name of Each Employee.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>5. Find Full Name of Each Employee.sql</FullPath>
+        </FileNode>
+        <FileNode Name="6. Find Email Address of Each Employee.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>6. Find Email Address of Each Employee.sql</FullPath>
+        </FileNode>
+        <FileNode Name="7. Find All Different Employee’s Salaries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>7. Find All Different Employee’s Salaries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="8. Find all Information About Employees.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>8. Find all Information About Employees.sql</FullPath>
+        </FileNode>
+        <FileNode Name="9. Find Names of All Employees by Salary in Range.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>9. Find Names of All Employees by Salary in Range.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QueriesforGeographyDatabase">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="AGUZELOV\SQLEXPRESS:AGUZELOV\Aleksandur">
+          <Created>2018-05-23T03:19:38.1121094+03:00</Created>
+          <Type>SQL</Type>
+          <Server>AGUZELOV\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>SoftUni</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="22. All Mountain Peaks.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>22. All Mountain Peaks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="23. Biggest Countries by Population.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>23. Biggest Countries by Population.sql</FullPath>
+        </FileNode>
+        <FileNode Name="24. Countries and Currency.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>24. Countries and Currency.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
