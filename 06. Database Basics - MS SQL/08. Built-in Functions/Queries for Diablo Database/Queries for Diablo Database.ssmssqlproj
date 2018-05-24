@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Queries for Diablo Database">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="AGUZELOV\SQLEXPRESS:AGUZELOV\Aleksandur">
+          <Created>2018-05-24T02:41:12.0152886+03:00</Created>
+          <Type>SQL</Type>
+          <Server>AGUZELOV\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="12. Games From 2011 and 2012 Year.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>12. Games From 2011 and 2012 Year.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13. User Email Providers.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>13. User Email Providers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14. Get Users with IPAddress Like Pattern.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>14. Get Users with IPAddress Like Pattern.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15. Show All Games with Duration.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGUZELOV\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGUZELOV\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>15. Show All Games with Duration.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
