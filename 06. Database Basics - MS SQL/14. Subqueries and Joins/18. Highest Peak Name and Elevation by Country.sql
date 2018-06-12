@@ -17,7 +17,7 @@ WITH chp AS
    LEFT JOIN Peaks p
      ON p.MountainId = m.Id)
 
-SELECT
+SELECT TOP 5
   chp.CountryName                           AS [Country],
   ISNULL(chp.PeakName, '(no highest peak)') AS [Highest Peak Name],
   ISNULL(chp.Elevation, 0)                  AS [Highest Peak Elevation],
