@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Employee147
 {
-    public class Program
+    public class StartUp
     {
         public static void Main(string[] args)
         {
