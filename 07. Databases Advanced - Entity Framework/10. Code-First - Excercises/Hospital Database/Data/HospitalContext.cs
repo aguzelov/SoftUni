@@ -24,6 +24,8 @@ namespace P01_HospitalDatabase.Data
 
         public DbSet<PatientMedicament> Prescriptions { get; set; }
 
+        public DbSet<Doctor> Doctors { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             base.OnConfiguring(builder);
@@ -71,7 +73,7 @@ namespace P01_HospitalDatabase.Data
                 entity.Property(e => e.Date)
                     .IsRequired()
                     .HasColumnType("DATETIME2")
-                    .HasDefaultValue("GETDATE()");
+                    .HasDefaultValueSql("GETDATE()");
 
                 entity.Property(e => e.Comments)
                     .HasMaxLength(250)
@@ -81,6 +83,11 @@ namespace P01_HospitalDatabase.Data
                     .WithMany(p => p.Visitations)
                     .HasForeignKey(v => v.PatientId)
                     .HasConstraintName("FK_Visitations_Patients");
+
+                entity.HasOne(v => v.Doctor)
+                    .WithMany(d => d.Visitations)
+                    .HasForeignKey(v => v.DoctorId)
+                    .HasConstraintName("FK_Visitations_Doctors");
             });
 
             builder.Entity<Diagnose>(entity =>
@@ -113,7 +120,7 @@ namespace P01_HospitalDatabase.Data
 
                 entity.HasOne(pm => pm.Medicament)
                     .WithMany(m => m.Prescriptions)
-                    .HasForeignKey(pm => pm.Medicament)
+                    .HasForeignKey(pm => pm.MedicamentId)
                     .HasConstraintName("FK_PatientsMedicaments_Medicaments");
             });
 
@@ -124,6 +131,21 @@ namespace P01_HospitalDatabase.Data
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50)
+                    .IsUnicode(true);
+            });
+
+            builder.Entity<Doctor>(entity =>
+            {
+                entity.HasKey(e => e.DoctorId);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(true);
+
+                entity.Property(e => e.Specialty)
+                    .IsRequired()
+                    .HasMaxLength(100)
                     .IsUnicode(true);
             });
         }
