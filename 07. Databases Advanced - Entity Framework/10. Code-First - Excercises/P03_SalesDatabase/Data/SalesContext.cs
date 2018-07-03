@@ -46,6 +46,10 @@ namespace P03_SalesDatabase.Data
                 .HasColumnType("FLOAT")
                 .IsRequired(true);
 
+                entity.Property(e => e.Description)
+                .HasMaxLength(250)
+                .HasDefaultValue("No description");
+
                 entity.HasMany(e => e.Sales)
                 .WithOne(s => s.Product)
                 .HasForeignKey(s => s.SaleId);
