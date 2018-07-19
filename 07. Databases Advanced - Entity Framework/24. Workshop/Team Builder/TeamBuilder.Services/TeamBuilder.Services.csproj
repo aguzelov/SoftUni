@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeamBuilder.Data\TeamBuilder.Data.csproj" />
+    <ProjectReference Include="..\TeamBuilder.Models\TeamBuilder.Models.csproj" />
+  </ItemGroup>
+
+</Project>
