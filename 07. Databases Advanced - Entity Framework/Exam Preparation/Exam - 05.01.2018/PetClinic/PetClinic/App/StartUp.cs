@@ -13,13 +13,13 @@
             {
                 Mapper.Initialize(config => config.AddProfile<PetClinicProfile>());
 
-                //ResetDatabase(context);
-                //
-                //ImportEntities(context);
-                //
+                ResetDatabase(context);
+
+                ImportEntities(context);
+
                 ExportEntities(context);
-                //
-                //BonusTask(context);
+
+                BonusTask(context);
             }
         }
 
@@ -46,8 +46,8 @@
         {
             const string exportDir = "../../../Results/";
 
-            //string animalsExport = DataProcessor.Serializer.ExportAnimalsByOwnerPhoneNumber(context, "0887446123");
-            //PrintAndExportEntityToFile(animalsExport, exportDir + "AnimalsExport.json");
+            string animalsExport = DataProcessor.Serializer.ExportAnimalsByOwnerPhoneNumber(context, "0887446123");
+            PrintAndExportEntityToFile(animalsExport, exportDir + "AnimalsExport.json");
 
             string proceduresExport = DataProcessor.Serializer.ExportAllProcedures(context);
             PrintAndExportEntityToFile(proceduresExport, exportDir + "ProceduresExport.xml");
