@@ -3,27 +3,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PetClinic.Models
 {
-    public class Animal
+    public class Vet
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3)]
+        [StringLength(40, MinimumLength = 3)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3)]
-        public string Type { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        public string Profession { get; set; }
 
         [Required]
-        [Range(1, 555)]
+        [Range(22, 65)]
         public int Age { get; set; }
 
         [Required]
-        public string PassportSerialNumber { get; set; }
-
-        public Passport Passport { get; set; }
+        [RegularExpression(@"^(\+359|0)[0-9]{9}$")]
+        public string PhoneNumber { get; set; }
 
         public ICollection<Procedure> Procedures { get; set; } = new List<Procedure>();
     }
