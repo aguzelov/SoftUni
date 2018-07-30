@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<cars>
+  <car id="50" model="250 GTO" travelled-distance="2183647" />
+  <car id="42" model="250 GTO" travelled-distance="214747" />
+  <car id="47" model="250 GTO" travelled-distance="214747" />
+  <car id="33" model="250 GTO" travelled-distance="213647" />
+  <car id="37" model="250 GTO" travelled-distance="213647" />
+  <car id="45" model="275" travelled-distance="92854775807" />
+  <car id="32" model="275" travelled-distance="2147647" />
+  <car id="40" model="275" travelled-distance="214647" />
+  <car id="48" model="Daytona" travelled-distance="92036854775807" />
+  <car id="41" model="Daytona" travelled-distance="922337275807" />
+  <car id="30" model="Daytona" travelled-distance="2147447" />
+  <car id="35" model="Daytona" travelled-distance="213647" />
+  <car id="31" model="Enzo" travelled-distance="2147483647" />
+  <car id="39" model="F40" travelled-distance="214647" />
+  <car id="34" model="F40" travelled-distance="21447" />
+  <car id="43" model="F40" travelled-distance="2647" />
+  <car id="44" model="F430" travelled-distance="92236854775807" />
+  <car id="46" model="F430" travelled-distance="2147647" />
+  <car id="36" model="F430" travelled-distance="214647" />
+</cars>
