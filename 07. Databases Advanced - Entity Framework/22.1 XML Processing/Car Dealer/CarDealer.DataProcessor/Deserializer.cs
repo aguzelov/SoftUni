@@ -115,9 +115,14 @@ namespace CarDealer.DataProcessor
         {
             var rangeOfParts = new List<Part>();
             Random random = new Random();
-            for (int i = 0; i < count; i++)
+            while (rangeOfParts.Count < count)
             {
                 rangeOfParts.Add(parts.ElementAt(random.Next(0, parts.Count - 1)));
+
+                if (rangeOfParts.Count == count)
+                {
+                    rangeOfParts = rangeOfParts.Distinct().ToList();
+                }
             }
 
             var partCars = new List<PartCar>();
