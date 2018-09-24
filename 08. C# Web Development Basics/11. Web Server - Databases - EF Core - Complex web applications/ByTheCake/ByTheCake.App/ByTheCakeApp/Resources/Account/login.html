@@ -1,0 +1,21 @@
+﻿<h2>Login</h2>
+
+<form method="post">
+    Username:
+    <input type="text" name="username" placeholder="Username"
+           required oninvalid="this.setCustomValidity('Please, enter a Username')" oninput="setCustomValidity('')" />
+    <br />
+    Password:
+    <input type="password" name="password" placeholder="Password"
+           required oninvalid="this.setCustomValidity('Please, enter a password')" oninput="setCustomValidity('')" />
+    <br />
+    <input type="submit" value="Login" />
+    <br />
+</form>
+<p>
+    Don`t have an account? <button onclick="location.href='/register'">Register</button>
+</p>
+
+<div style="display: {{{showError}}}; color: red">
+    {{{error}}}
+</div>
