@@ -84,6 +84,8 @@ namespace SIS.WebServer
 
                 var httpResponse = this.HandleRequest(httpRequest);
 
+                httpRequest.ToString();
+
                 this.SetResponseSession(httpResponse, sessionId);
 
                 await this.PrepareResponse(httpResponse);

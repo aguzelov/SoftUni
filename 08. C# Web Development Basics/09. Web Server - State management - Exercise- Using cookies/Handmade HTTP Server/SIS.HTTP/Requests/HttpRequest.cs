@@ -209,7 +209,7 @@ namespace SIS.HTTP.Requests
                     var key = cookieTokens[0];
                     var value = cookieTokens[1];
 
-                    var cookie = new HttpCookie(key, value);
+                    var cookie = new HttpCookie(key, value, false);
 
                     this.Cookies.Add(cookie);
                 }
