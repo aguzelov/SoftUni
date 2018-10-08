@@ -150,6 +150,8 @@ namespace SIS.App.Controllers
 
             var sb = new StringBuilder();
 
+            sb.Append($"<h3>Order {order.Id}</h3><br />");
+
             foreach (var product in order.Products)
             {
                 sb.Append($"<tr>" +

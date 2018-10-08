@@ -34,6 +34,15 @@ namespace SIS.Services.CakeServices
             return cakes;
         }
 
+        public ICollection<Product> GetAll(string searchedCakes)
+        {
+            var cakes = this._context.Products
+                .Where(c => c.Name.Contains(searchedCakes))
+                .ToArray();
+
+            return cakes;
+        }
+
         public Product Get(string name)
         {
             var cake = this._context.Products.FirstOrDefault(p => p.Name == name);

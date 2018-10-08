@@ -1,7 +1,9 @@
 ﻿using SIS.App.Models;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
+using SIS.Models;
 using SIS.Services.CakeServices;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 
@@ -42,7 +44,18 @@ namespace SIS.App.Controllers
 
         public IHttpResponse Search(IHttpRequest request)
         {
-            var cakes = this.cakeService.GetAll();
+            ICollection<Product> cakes = new List<Product>();
+
+            if (request.QueryData.ContainsKey("search"))
+            {
+                var cakeName = request.QueryData["search"].ToString();
+
+                cakes = this.cakeService.GetAll(cakeName);
+            }
+            else
+            {
+                cakes = this.cakeService.GetAll();
+            }
 
             if (cakes.Count == 0)
             {

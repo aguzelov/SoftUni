@@ -9,6 +9,8 @@ namespace SIS.Services.CakeServices
 
         ICollection<Product> GetAll();
 
+        ICollection<Product> GetAll(string searchedCakes);
+
         Product Get(string name);
 
         Product Get(int id);

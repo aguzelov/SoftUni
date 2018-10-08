@@ -57,12 +57,12 @@ namespace SIS.HTTP.Requests
 
         private bool IsValidRequesttQueryString(string queryString, string[] queryParameters)
         {
-            if (!string.IsNullOrEmpty(queryString) &&
-                queryParameters.Length > 0)
+            if (string.IsNullOrEmpty(queryString) &&
+                queryParameters.Length == 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
         private void ParseRequestMethod(string[] requestLine)
@@ -127,7 +127,7 @@ namespace SIS.HTTP.Requests
 
             var queryParameters = queryString.Last().Split("&");
 
-            if (IsValidRequesttQueryString(queryString.Last(), queryParameters))
+            if (!IsValidRequesttQueryString(queryString.Last(), queryParameters))
             {
                 throw new BadRequestException();
             }

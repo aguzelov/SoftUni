@@ -62,7 +62,7 @@ namespace SIS.WebServer
             var requestMethod = httpRequest.RequestMethod;
 
             var requestPath = httpRequest.Path;
-            if (!httpRequest.Cookies.ContainsCookie(".auth-cakes"))
+            if (!httpRequest.Cookies.ContainsCookie(".auth-cakes") && requestPath != "/register")
             {
                 requestPath = "/login";
             }
