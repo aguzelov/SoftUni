@@ -4,6 +4,8 @@ namespace SIS.HTTP.Cookies
 {
     public class HttpCookie
     {
+        public const string AuthenticeKey = ".auth-cakes";
+
         private const int HttpCookieDefaultExpirationDays = 3;
 
         public HttpCookie(string key, string value, int expires = HttpCookieDefaultExpirationDays)
@@ -29,7 +31,7 @@ namespace SIS.HTTP.Cookies
 
         public override string ToString()
         {
-            return $"{this.Key}={this.Value}; Expires={this.Expires.ToString("dd-MM-yyyy")}; HttpOnly";
+            return $"{this.Key}={this.Value}; Expires={this.Expires.ToString("R")}; HttpOnly; Path=/";
         }
     }
 }

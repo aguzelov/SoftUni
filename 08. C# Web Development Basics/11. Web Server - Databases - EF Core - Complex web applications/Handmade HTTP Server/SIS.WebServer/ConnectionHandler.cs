@@ -61,11 +61,7 @@ namespace SIS.WebServer
         {
             var requestMethod = httpRequest.RequestMethod;
 
-            var requestPath = httpRequest.Path;
-            if (!httpRequest.Cookies.ContainsCookie(".auth-cakes") && requestPath != "/register")
-            {
-                requestPath = "/login";
-            }
+            var requestPath = httpRequest.Url;
 
             var registeredRoutes = this._serverRoutingTable.Routes[requestMethod];
 
