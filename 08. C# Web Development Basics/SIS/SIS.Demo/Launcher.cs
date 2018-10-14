@@ -8,7 +8,7 @@ namespace SIS.Demo
     {
         private static void Main(string[] args)
         {
-            var server = new Server(8000, new ControllerRouter());
+            var server = new Server(8000, new ControllerRouter(), new ResourceRouter());
 
             MvcEngine.Run(server);
         }

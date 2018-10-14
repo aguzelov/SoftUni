@@ -24,6 +24,7 @@ namespace SIS.WebServer
 
         private readonly ServerRoutingTable _serverRoutingTable;
         private readonly IHandleable handler;
+        private readonly IHandleable resourceRouter;
 
         public ConnectionHandler(Socket client)
         {
@@ -36,10 +37,11 @@ namespace SIS.WebServer
             this._serverRoutingTable = serverRoutingTable;
         }
 
-        public ConnectionHandler(Socket client, IHandleable handler)
+        public ConnectionHandler(Socket client, IHandleable handler, IHandleable resourceRouter)
             : this(client)
         {
             this.handler = handler;
+            this.resourceRouter = resourceRouter;
         }
 
         private async Task<IHttpRequest> ReadRequest()
@@ -102,7 +104,7 @@ namespace SIS.WebServer
                 return this._serverRoutingTable.Routes[httpRequest.RequestMethod][route].Invoke(httpRequest);
             }
 
-            IHttpResponse resource = ReturnIfResource(httpRequest.Path);
+            IHttpResponse resource = this.resourceRouter.Handle(httpRequest);
             if (resource != null)
             {
                 return resource;
@@ -142,15 +144,16 @@ namespace SIS.WebServer
             {
                 string sessionId = SetRequestSession(httpRequest);
 
-                IHttpResponse httpResponse = null;
+                IHttpResponse httpResponse = this.resourceRouter.Handle(httpRequest);
+
                 if (this.handler != null)
                 {
                     httpResponse = this.handler.Handle(httpRequest);
                 }
-                else
-                {
-                    httpResponse = HandleRequest(httpRequest);
-                }
+                //else
+                //{
+                //    httpResponse = HandleRequest(httpRequest);
+                //}
 
                 SetResponseSession(httpResponse, sessionId);
 
