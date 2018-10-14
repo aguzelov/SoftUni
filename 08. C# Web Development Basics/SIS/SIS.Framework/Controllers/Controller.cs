@@ -33,6 +33,8 @@ namespace SIS.Framework.Controllers
             };
         }
 
+        public Model ModelState { get; } = new Model();
+
         protected ViewModel Model { get; }
 
         protected Dictionary<string, string> ViewData;

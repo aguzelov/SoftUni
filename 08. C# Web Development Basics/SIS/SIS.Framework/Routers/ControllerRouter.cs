@@ -9,6 +9,7 @@ using SIS.WebServer.Api;
 using SIS.WebServer.Results;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 
@@ -126,7 +127,7 @@ namespace SIS.Framework.Routers
                 return new HttpResponse(HttpResponseStatusCode.NotFound);
             }
 
-            object[] actionParametes = this.MapActionParameters(action, request);
+            object[] actionParametes = this.MapActionParameters(controller, action, request);
 
             IActionResult actionResult = this.InvokeAction(controller, action, actionParametes);
 
@@ -138,7 +139,7 @@ namespace SIS.Framework.Routers
             return (IActionResult)action.Invoke(controller, actionParametes);
         }
 
-        private object[] MapActionParameters(MethodInfo action, IHttpRequest request)
+        private object[] MapActionParameters(Controller controller, MethodInfo action, IHttpRequest request)
         {
             ParameterInfo[] actionParametersInfo = action.GetParameters();
             object[] mappedActionParameters = new object[actionParametersInfo.Length];
@@ -153,11 +154,33 @@ namespace SIS.Framework.Routers
                 }
                 else
                 {
-                    mappedActionParameters[index] = ProcessBindingModelParameter(currentParameterInfo, request);
+                    object bindingModel = ProcessBindingModelParameter(currentParameterInfo, request);
+                    controller.ModelState.IsValid = this.IsValid(bindingModel);
+                    mappedActionParameters[index] = bindingModel;
                 }
             }
 
             return mappedActionParameters;
+        }
+
+        private bool? IsValid(object bindingModel)
+        {
+            Type bindingModelType = bindingModel.GetType();
+
+            var properties = bindingModelType.GetProperties();
+
+            foreach (var property in properties)
+            {
+                var attribute = property.GetCustomAttributes(typeof(ValidationAttribute), true).Cast<ValidationAttribute>().FirstOrDefault();
+
+                var value = property.GetValue(bindingModel);
+
+                var isValid = attribute.IsValid(value);
+
+                if (isValid == false) return false;
+            }
+
+            return true;
         }
 
         private object ProcessBindingModelParameter(ParameterInfo param, IHttpRequest request)
