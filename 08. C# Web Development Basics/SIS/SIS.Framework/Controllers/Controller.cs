@@ -1,5 +1,6 @@
 ﻿using SIS.Framework.ActionResult;
 using SIS.Framework.ActionResult.Contracts;
+using SIS.Framework.Models;
 using SIS.Framework.Services.UserCookieServices;
 using SIS.Framework.Utilities;
 using SIS.Framework.Views;
@@ -23,11 +24,18 @@ namespace SIS.Framework.Controllers
             this.Response = new HttpResponse();
 
             this.UserCookieService = new UserCookieService();
+
+            this.Model = new ViewModel();
+
             this.ViewData = new Dictionary<string, string>()
             {
                 {"display", "none" }
             };
         }
+
+        public Model ModelState { get; } = new Model();
+
+        protected ViewModel Model { get; }
 
         protected Dictionary<string, string> ViewData;
 
@@ -39,28 +47,6 @@ namespace SIS.Framework.Controllers
 
         protected string Username => this.UserCookieService.GetUsername(this.Request.Cookies);
 
-        //protected IHttpResponse View(string viewFileName)
-        //{
-        //    var layoutContent = File.ReadAllText("Views/_Layout.html");
-        //    var content = File.ReadAllText("Views/" + viewFileName + ".html");
-
-        //    content = layoutContent.Replace("@RenderBody()", content);
-
-        //    content = this.AddToViewData(content);
-        //    this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/html"));
-        //    this.Response.Content = Encoding.UTF8.GetBytes(content);
-        //    this.Response.StatusCode = HttpResponseStatusCode.OK;
-
-        //    return this.Response;
-        //}
-
-        protected IHttpResponse Redirect(string location)
-        {
-            this.Response.Headers.Add(new HttpHeader("Location", location));
-            this.Response.StatusCode = HttpResponseStatusCode.Found;
-            return this.Response;
-        }
-
         protected IHttpResponse Text(string content)
         {
             this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/plain"));
@@ -70,12 +56,6 @@ namespace SIS.Framework.Controllers
             return this.Response;
         }
 
-        public virtual IHttpResponse NotFound()
-        {
-            return null;
-            // return this.View("notfound");
-        }
-
         public void SetUserCookie(string username)
         {
             var cookie = this.UserCookieService.GetUserCookie(username);
@@ -83,37 +63,24 @@ namespace SIS.Framework.Controllers
             this.Response.Cookies.Add(cookie);
         }
 
-        private string AddToViewData(string content)
+        protected IViewable View([CallerMemberName] string caller = "")
         {
             if (IsAuthenticatedUser)
             {
-                this.ViewData["guestMenu"] = "d-none";
-                this.ViewData["userMenu"] = "d-block";
+                this.Model.Data["guestMenu"] = "d-none";
+                this.Model.Data["userMenu"] = "d-block";
             }
             else
             {
-                this.ViewData["guestMenu"] = "d-block";
-                this.ViewData["userMenu"] = "d-none";
+                this.Model.Data["guestMenu"] = "d-block";
+                this.Model.Data["userMenu"] = "d-none";
             }
 
-            if (this.ViewData.Count != 0)
-            {
-                foreach (var data in this.ViewData)
-                {
-                    content = content.Replace($"{{{{{{{data.Key}}}}}}}", data.Value);
-                }
-            }
-
-            return content;
-        }
-
-        protected IViewable View([CallerMemberName] string caller = "")
-        {
             var controllerName = ControllerUtilities.GetControllerName(this);
 
             var fullyQualifiedName = ControllerUtilities.GetViewFullQualifiedName(controllerName, caller);
 
-            var view = new View(fullyQualifiedName);
+            var view = new View(fullyQualifiedName, this.Model.Data);
 
             return new ViewResult(view);
         }

@@ -17,6 +17,7 @@ namespace SIS.WebServer
 
         private readonly ServerRoutingTable _serverRoutingTable;
         private readonly IHandleable handler;
+        private readonly IHandleable resourceRouter;
 
         public bool IsRunning;
 
@@ -32,10 +33,11 @@ namespace SIS.WebServer
             this._serverRoutingTable = serverRoutingTable;
         }
 
-        public Server(int port, IHandleable handler)
+        public Server(int port, IHandleable handler, IHandleable resourceRouter)
             : this(port)
         {
             this.handler = handler;
+            this.resourceRouter = resourceRouter;
         }
 
         public void Run()
@@ -63,7 +65,7 @@ namespace SIS.WebServer
                 }
                 else
                 {
-                    connectionHandler = new ConnectionHandler(client, this.handler);
+                    connectionHandler = new ConnectionHandler(client, this.handler, this.resourceRouter);
                 }
 
                 var responseTask = connectionHandler.ProcessRequestAsync();
