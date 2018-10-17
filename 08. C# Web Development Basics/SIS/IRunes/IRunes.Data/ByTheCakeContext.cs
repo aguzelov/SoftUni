@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SIS.App.IRunes.Models;
+﻿using IRunes.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace SIS.App.IRunes.Data
+namespace IRunes.Data
 {
     public class IRunesContext : DbContext
     {

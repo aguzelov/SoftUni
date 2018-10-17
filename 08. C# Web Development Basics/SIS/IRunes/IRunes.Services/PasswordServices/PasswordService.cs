@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SIS.App.IRunes.Services.PasswordServices
+namespace IRunes.Services.PasswordServices
 {
     public class PasswordService : IPasswordService
     {

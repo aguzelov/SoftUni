@@ -22,7 +22,6 @@ namespace SIS.WebServer
     {
         private readonly Socket _client;
 
-        private readonly ServerRoutingTable _serverRoutingTable;
         private readonly IHandleable handler;
         private readonly IHandleable resourceRouter;
 
@@ -31,11 +30,7 @@ namespace SIS.WebServer
             this._client = client;
         }
 
-        public ConnectionHandler(Socket client, ServerRoutingTable serverRoutingTable)
-            : this(client)
-        {
-            this._serverRoutingTable = serverRoutingTable;
-        }
+       
 
         public ConnectionHandler(Socket client, IHandleable handler, IHandleable resourceRouter)
             : this(client)
@@ -75,42 +70,42 @@ namespace SIS.WebServer
             return new HttpRequest(result.ToString());
         }
 
-        private IHttpResponse HandleRequest(IHttpRequest httpRequest)
-        {
-            var requestMethod = httpRequest.RequestMethod;
+        //private IHttpResponse HandleRequest(IHttpRequest httpRequest)
+        //{
+        //    var requestMethod = httpRequest.RequestMethod;
 
-            var requestPath = httpRequest.Url;
+        //    var requestPath = httpRequest.Url;
 
-            var registeredRoutes = this._serverRoutingTable.Routes[requestMethod];
+        //    var registeredRoutes = this._serverRoutingTable.Routes[requestMethod];
 
-            foreach (var registeredRoute in registeredRoutes)
-            {
-                var route = registeredRoute.Key;
-                var routePattern = this.ParseRoute(registeredRoute.Key, new List<string>());
+        //    foreach (var registeredRoute in registeredRoutes)
+        //    {
+        //        var route = registeredRoute.Key;
+        //        var routePattern = this.ParseRoute(registeredRoute.Key, new List<string>());
 
-                var routingContext = registeredRoute.Value;
+        //        var routingContext = registeredRoute.Value;
 
-                var routeRegex = new Regex(routePattern);
-                var match = routeRegex.Match(requestPath);
+        //        var routeRegex = new Regex(routePattern);
+        //        var match = routeRegex.Match(requestPath);
 
-                if (!match.Success)
-                {
-                    continue;
-                }
+        //        if (!match.Success)
+        //        {
+        //            continue;
+        //        }
 
-                var parameterValue = match.Groups[1].Value;
-                httpRequest.UrlParameter = parameterValue;
+        //        var parameterValue = match.Groups[1].Value;
+        //        httpRequest.UrlParameter = parameterValue;
 
-                return this._serverRoutingTable.Routes[httpRequest.RequestMethod][route].Invoke(httpRequest);
-            }
+        //        return this._serverRoutingTable.Routes[httpRequest.RequestMethod][route].Invoke(httpRequest);
+        //    }
 
-            IHttpResponse resource = this.resourceRouter.Handle(httpRequest);
-            if (resource != null)
-            {
-                return resource;
-            }
-            return this._serverRoutingTable.Routes[HttpRequestMethod.Get]["notfound"].Invoke(httpRequest);
-        }
+        //    IHttpResponse resource = this.resourceRouter.Handle(httpRequest);
+        //    if (resource != null)
+        //    {
+        //        return resource;
+        //    }
+        //    return this._serverRoutingTable.Routes[HttpRequestMethod.Get]["notfound"].Invoke(httpRequest);
+        //}
 
         private IHttpResponse ReturnIfResource(string path)
         {
@@ -144,16 +139,9 @@ namespace SIS.WebServer
             {
                 string sessionId = SetRequestSession(httpRequest);
 
-                IHttpResponse httpResponse = this.resourceRouter.Handle(httpRequest);
+                IHttpResponse httpResponse = this.resourceRouter.Handle(httpRequest) ?? this.handler.Handle(httpRequest);
 
-                if (this.handler != null)
-                {
-                    httpResponse = this.handler.Handle(httpRequest);
-                }
-                //else
-                //{
-                //    httpResponse = HandleRequest(httpRequest);
-                //}
+                
 
                 SetResponseSession(httpResponse, sessionId);
 

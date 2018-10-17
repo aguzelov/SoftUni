@@ -1,32 +1,34 @@
-﻿using SIS.App.IRunes.Services.UserCookieServices;
+﻿using IRunes.Services.UserCookieServices;
+using SIS.Framework.ActionResult.Contracts;
+using SIS.Framework.Attributes.Methods;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
 
-namespace SIS.App.IRunes.App.Controllers
+namespace IRunes.App.Controllers
 {
     public class HomeController : BaseController
     {
+        private const string GuestPage = "Index-guest";
+        private const string UserPage = "Index-user";
         private readonly IUserCookieService userCookieService;
 
         public HomeController(IUserCookieService userCookieService)
         {
             this.userCookieService = userCookieService;
         }
-
-        public IHttpResponse Index(IHttpRequest request)
+        [HttpGet]
+        public IActionResult Index()
         {
-            var username = this.userCookieService.GetUsername(request.Cookies);
+            var username = this.userCookieService.GetUsername(this.Request.Cookies);
 
             if (username == null)
             {
-                this.IsAuthenticatedUser = false;
-                return this.View("Home/Index-guest");
+                return this.View(GuestPage);
             }
 
-            this.ViewData["username"] = username;
+            this.Model["username"] = username;
 
-            this.IsAuthenticatedUser = true;
-            return this.View("Home/Index-user");
+            return this.View(UserPage);
         }
     }
 }

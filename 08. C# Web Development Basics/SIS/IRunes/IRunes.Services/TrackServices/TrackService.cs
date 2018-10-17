@@ -1,9 +1,9 @@
-﻿using SIS.App.IRunes.Data;
-using SIS.App.IRunes.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using IRunes.Data;
+using IRunes.Models;
 
-namespace SIS.App.IRunes.Services.TrackServices
+namespace IRunes.Services.TrackServices
 {
     public class TrackService : ITrackService
     {
@@ -11,7 +11,7 @@ namespace SIS.App.IRunes.Services.TrackServices
 
         public TrackService(IRunesContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public void Add(Track track)

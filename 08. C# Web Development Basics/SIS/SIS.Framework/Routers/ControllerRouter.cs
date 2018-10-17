@@ -19,6 +19,18 @@ namespace SIS.Framework.Routers
     {
         private const string UnsupportedActionMessage = "The view result is not supported.";
 
+        private readonly IServiceProvider Provider;
+
+        public ControllerRouter(IServiceProvider provider)
+        {
+            this.Provider = provider;
+        }
+
+        public ControllerRouter()
+        {
+            
+        }
+
         private Controller GetController(string controllerName, IHttpRequest request)
         {
             if (controllerName != null)
@@ -30,7 +42,14 @@ namespace SIS.Framework.Routers
                     controllerName);
 
                 var controllerType = Type.GetType(controllerTypeName);
-                var controller = (Controller)Activator.CreateInstance(controllerType);
+
+                var constructorInfo = controllerType.GetConstructors().FirstOrDefault();
+
+                var parameters = constructorInfo.GetParameters()
+                    .Select(p => this.Provider.GetService(p.ParameterType))
+                    .ToArray();
+
+                var controller = (Controller)Activator.CreateInstance(controllerType, parameters);
 
                 if (controller != null)
                 {

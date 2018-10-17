@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SIS.App.IRunes.Models
+namespace IRunes.Models
 {
     public class Album
     {

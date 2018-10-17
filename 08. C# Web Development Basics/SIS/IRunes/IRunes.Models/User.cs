@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIS.App.IRunes.Models
+namespace IRunes.Models
 {
     public class User
     {

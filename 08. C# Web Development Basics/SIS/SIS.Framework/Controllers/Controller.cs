@@ -26,18 +26,12 @@ namespace SIS.Framework.Controllers
             this.UserCookieService = new UserCookieService();
 
             this.Model = new ViewModel();
-
-            this.ViewData = new Dictionary<string, string>()
-            {
-                {"display", "none" }
-            };
         }
 
         public Model ModelState { get; } = new Model();
 
         protected ViewModel Model { get; }
 
-        protected Dictionary<string, string> ViewData;
 
         protected bool IsAuthenticatedUser => this.Username != null;
 
@@ -47,14 +41,14 @@ namespace SIS.Framework.Controllers
 
         protected string Username => this.UserCookieService.GetUsername(this.Request.Cookies);
 
-        protected IHttpResponse Text(string content)
-        {
-            this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/plain"));
-            this.Response.Content = Encoding.UTF8.GetBytes(content);
-            this.Response.StatusCode = HttpResponseStatusCode.OK;
+        //protected IHttpResponse Text(string content)
+        //{
+        //    this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/plain"));
+        //    this.Response.Content = Encoding.UTF8.GetBytes(content);
+        //    this.Response.StatusCode = HttpResponseStatusCode.OK;
 
-            return this.Response;
-        }
+        //    return this.Response;
+        //}
 
         public void SetUserCookie(string username)
         {
@@ -63,9 +57,27 @@ namespace SIS.Framework.Controllers
             this.Response.Cookies.Add(cookie);
         }
 
-        protected IViewable View([CallerMemberName] string caller = "")
+        private string AddViewData(string content)
         {
             if (IsAuthenticatedUser)
+            {
+                this.Model["guestMenu"] = "d-none";
+                this.Model["userMenu"] = "d-block";
+            }
+            else
+            {
+                this.Model["guestMenu"] = "d-block";
+                this.Model["userMenu"] = "d-none";
+            }
+
+            
+
+            return content;
+        }
+
+        protected IViewable View([CallerMemberName] string caller = "")
+        {
+            if (this.IsAuthenticatedUser)
             {
                 this.Model.Data["guestMenu"] = "d-none";
                 this.Model.Data["userMenu"] = "d-block";

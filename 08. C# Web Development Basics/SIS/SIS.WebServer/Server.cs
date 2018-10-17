@@ -15,7 +15,6 @@ namespace SIS.WebServer
 
         private readonly TcpListener _listener;
 
-        private readonly ServerRoutingTable _serverRoutingTable;
         private readonly IHandleable handler;
         private readonly IHandleable resourceRouter;
 
@@ -27,11 +26,7 @@ namespace SIS.WebServer
             this._listener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), this._port);
         }
 
-        public Server(int port, ServerRoutingTable serverRoutingTable)
-            : this(port)
-        {
-            this._serverRoutingTable = serverRoutingTable;
-        }
+       
 
         public Server(int port, IHandleable handler, IHandleable resourceRouter)
             : this(port)
@@ -57,17 +52,9 @@ namespace SIS.WebServer
             {
                 var client = await this._listener.AcceptSocketAsync();
 
-                ConnectionHandler connectionHandler = null;
+                var connectionHandler = new ConnectionHandler(client, this.handler, this.resourceRouter); ;
 
-                if (this.handler == null)
-                {
-                    connectionHandler = new ConnectionHandler(client, this._serverRoutingTable);
-                }
-                else
-                {
-                    connectionHandler = new ConnectionHandler(client, this.handler, this.resourceRouter);
-                }
-
+                
                 var responseTask = connectionHandler.ProcessRequestAsync();
                 responseTask.Wait();
             }

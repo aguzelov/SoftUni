@@ -1,7 +1,7 @@
 ﻿using SIS.HTTP.Cookies;
 using SIS.HTTP.Cookies.Contracts;
 
-namespace SIS.App.IRunes.Services.UserCookieServices
+namespace IRunes.Services.UserCookieServices
 {
     public interface IUserCookieService
     {

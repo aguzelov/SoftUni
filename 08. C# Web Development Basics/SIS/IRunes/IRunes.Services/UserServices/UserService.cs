@@ -1,8 +1,8 @@
-﻿using SIS.App.IRunes.Data;
-using SIS.App.IRunes.Models;
-using System.Linq;
+﻿using System.Linq;
+using IRunes.Data;
+using IRunes.Models;
 
-namespace SIS.App.IRunes.Services.UserServices
+namespace IRunes.Services.UserServices
 {
     public class UserService : IUserService
     {

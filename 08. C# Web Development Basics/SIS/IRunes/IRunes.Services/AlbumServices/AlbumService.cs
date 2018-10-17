@@ -1,9 +1,9 @@
-﻿using SIS.App.IRunes.Data;
-using SIS.App.IRunes.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using IRunes.Data;
+using IRunes.Models;
 
-namespace SIS.App.IRunes.Services.AlbumServices
+namespace IRunes.Services.AlbumServices
 {
     public class AlbumService : IAlbumService
     {

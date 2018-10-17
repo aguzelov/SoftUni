@@ -1,6 +1,6 @@
-﻿using SIS.App.IRunes.Models;
+﻿using IRunes.Models;
 
-namespace SIS.App.IRunes.Services.UserServices
+namespace IRunes.Services.UserServices
 {
     public interface IUserService
     {

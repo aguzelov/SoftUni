@@ -1,11 +1,11 @@
-﻿using SIS.HTTP.Cookies;
-using SIS.HTTP.Cookies.Contracts;
-using System;
+﻿using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using SIS.HTTP.Cookies;
+using SIS.HTTP.Cookies.Contracts;
 
-namespace SIS.App.IRunes.Services.UserCookieServices
+namespace IRunes.Services.UserCookieServices
 {
     public class UserCookieService : IUserCookieService
     {

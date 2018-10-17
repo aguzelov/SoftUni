@@ -10,31 +10,39 @@ namespace SIS.Framework.Views
     {
         private readonly string fullyQualifiedTemplateName;
 
+        private readonly string layoutName;
+
         private readonly IDictionary<string, object> viewData;
 
         public View(string fullyQualifiedTemplateName, IDictionary<string, object> viewData)
         {
             this.fullyQualifiedTemplateName = fullyQualifiedTemplateName;
             this.viewData = viewData;
+
+            this.layoutName = "Views\\_Layout";
         }
 
-        private string ReadFile()
+        private string ReadFile(string fileName)
         {
-            var fileName = this.fullyQualifiedTemplateName + ".html";
+            var file = fileName + ".html";
 
-            if (!File.Exists(fileName))
+            if (!File.Exists(file))
             {
                 throw new FileNotFoundException();
             }
 
-            var htmlText = File.ReadAllText(fileName);
+            var htmlText = File.ReadAllText(file);
             return htmlText;
         }
 
         public string Render()
         {
-            var fullHtml = this.ReadFile();
-            var renderedHtml = this.RenderHtml(fullHtml);
+            var layoutHtml = this.ReadFile(this.layoutName);
+            var pageHtml = this.ReadFile(this.fullyQualifiedTemplateName);
+
+            var content = layoutHtml.Replace("@RenderBody()", pageHtml);
+
+            var renderedHtml = this.RenderHtml(content);
 
             return renderedHtml;
         }

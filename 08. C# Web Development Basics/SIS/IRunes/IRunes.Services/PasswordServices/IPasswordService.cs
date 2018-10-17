@@ -1,4 +1,4 @@
-﻿namespace SIS.App.IRunes.Services.PasswordServices
+﻿namespace IRunes.Services.PasswordServices
 {
     public interface IPasswordService
     {

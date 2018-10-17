@@ -1,7 +1,7 @@
-﻿using SIS.App.IRunes.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using IRunes.Models;
 
-namespace SIS.App.IRunes.Services.TrackServices
+namespace IRunes.Services.TrackServices
 {
     public interface ITrackService
     {

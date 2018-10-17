@@ -1,11 +1,14 @@
-﻿using SIS.HTTP.Requests.Contracts;
+﻿using SIS.Framework.ActionResult.Contracts;
+using SIS.Framework.Attributes.Methods;
+using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
 
-namespace SIS.App.IRunes.App.Controllers
+namespace IRunes.App.Controllers
 {
     public class BadRequestController : BaseController
     {
-        public IHttpResponse NotFound(IHttpRequest request)
+        [HttpGet]
+        public IActionResult NotFound()
         {
             return this.View("notfound");
         }
