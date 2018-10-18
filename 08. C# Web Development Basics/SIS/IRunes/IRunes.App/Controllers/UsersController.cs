@@ -11,7 +11,7 @@ using SIS.HTTP.Responses.Contracts;
 
 namespace IRunes.App.Controllers
 {
-    public class UserController : BaseController
+    public class UsersController : BaseController
     {
         private const string RegisterPage = "Register";
         private const string LoginPage = "Login";
@@ -19,7 +19,7 @@ namespace IRunes.App.Controllers
         private readonly IPasswordService PasswordService;
         private readonly IUserCookieService UserCookieService;
 
-        public UserController(IUserService userService, IPasswordService passwordService, IUserCookieService userCookieService)
+        public UsersController(IUserService userService, IPasswordService passwordService, IUserCookieService userCookieService)
         {
             this.UserService = userService;
             this.PasswordService = passwordService;

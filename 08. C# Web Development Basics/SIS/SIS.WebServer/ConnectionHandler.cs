@@ -105,24 +105,24 @@ namespace SIS.WebServer
         //        return resource;
         //    }
         //    return this._serverRoutingTable.Routes[HttpRequestMethod.Get]["notfound"].Invoke(httpRequest);
+        ////}
+
+        //private IHttpResponse ReturnIfResource(string path)
+        //{
+        //    var fullPath = Environment.CurrentDirectory + path;
+
+        //    if (File.Exists(fullPath))
+        //    {
+        //        var extension = path.Split(".", StringSplitOptions.RemoveEmptyEntries).Last();
+
+        //        var contentString = File.ReadAllText(fullPath);
+        //        var contentBytes = Encoding.UTF8.GetBytes(contentString);
+
+        //        return new InlineResourceRasult(contentBytes, HttpResponseStatusCode.OK, extension);
+        //    }
+
+        //    return null;
         //}
-
-        private IHttpResponse ReturnIfResource(string path)
-        {
-            var fullPath = Environment.CurrentDirectory + path;
-
-            if (File.Exists(fullPath))
-            {
-                var extension = path.Split(".", StringSplitOptions.RemoveEmptyEntries).Last();
-
-                var contentString = File.ReadAllText(fullPath);
-                var contentBytes = Encoding.UTF8.GetBytes(contentString);
-
-                return new InlineResourceRasult(contentBytes, HttpResponseStatusCode.OK, extension);
-            }
-
-            return null;
-        }
 
         private async Task PrepareResponse(IHttpResponse httpResponse)
         {
