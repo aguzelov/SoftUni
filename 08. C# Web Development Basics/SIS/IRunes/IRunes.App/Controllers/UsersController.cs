@@ -30,10 +30,8 @@ namespace IRunes.App.Controllers
         [HttpPost]
         public IActionResult Register()
         {
-            this.IsAuthenticatedUser = false;
             if (this.Request.RequestMethod == HttpRequestMethod.Get)
             {
-                
                 this.Model["errorDisplay"] = "none";
                 return this.View(RegisterPage);
             }
@@ -53,7 +51,12 @@ namespace IRunes.App.Controllers
             var hashedPassword = this.PasswordService.GenerateHash(password);
 
             this.UserService.Add(username, hashedPassword, email);
-            this.IsAuthenticatedUser = true;
+
+
+            var cookie = this.UserCookieService.GetUserCookie(username);
+
+            this.Response.Cookies.Add(cookie);
+
             return this.View("Index-user"); ;
         }
 
@@ -61,7 +64,6 @@ namespace IRunes.App.Controllers
         [HttpPost]
         public IActionResult Login()
         {
-            this.IsAuthenticatedUser = false;
             if (this.Request.RequestMethod == HttpRequestMethod.Get)
             {
                 
@@ -87,7 +89,9 @@ namespace IRunes.App.Controllers
                 return this.View(LoginPage);
             }
 
-            this.IsAuthenticatedUser = true;
+            var cookie = this.UserCookieService.GetUserCookie(username);
+
+            this.Response.Cookies.Add(cookie);
 
             return this.RedirectToAction("/Home/Index"); ;
         }
@@ -95,6 +99,11 @@ namespace IRunes.App.Controllers
         [HttpGet]
         public IActionResult Logout(IHttpRequest request)
         {
+            var authCookie = request.Cookies.GetCookie(HttpCookie.AuthenticeKey);
+            authCookie.Expires = DateTime.UtcNow.AddDays(-1);
+
+            this.Response.Cookies.Add(authCookie);
+
             return this.RedirectToAction("/Home/Index"); ;
         }
 
