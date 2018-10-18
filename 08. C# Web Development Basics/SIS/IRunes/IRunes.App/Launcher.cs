@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SIS.Framework;
 using SIS.Framework.Routers;
+using SIS.Framework.Services;
 using SIS.WebServer;
 using SIS.WebServer.Api;
 
@@ -22,61 +23,42 @@ namespace IRunes.App
     {
         public static void Main(string[] args)
         {
-            IServiceProvider provider = ConfigureService();
+            IDependencyContainer service = ConfigureService();
 
-            IRunesContext context = provider.GetService<IRunesContext>();
+            IRunesContext context = service.CreateInstance<IRunesContext>();
 
             context.Database.Migrate();
 
-            var controllerRouter = provider.GetService<IHandleable>();
+            var controllerRouter = service.CreateInstance<IHandleable>();
 
-            var server = new Server(8000, new ControllerRouter(provider), new ResourceRouter());
+            var server = new Server(8000, new ControllerRouter(service), new ResourceRouter());
 
             MvcEngine.Run(server);
         }
 
-        private static IServiceProvider ConfigureService()
+        private static IDependencyContainer ConfigureService()
         {
-            IServiceCollection services = new ServiceCollection();
+            IDependencyContainer services = new DependencyContainer();
 
-            string path = GetConfigurationFilePath();
+            
+            services.RegisterDependency<IRunesContext, IRunesContext>();
 
-            var config = new ConfigurationBuilder()
-                .SetBasePath(path)
-                .AddJsonFile("appsettings.json")
-                .Build();
+            services.RegisterDependency<IHandleable, ControllerRouter>();
 
-            services.AddDbContext<IRunesContext>(options => options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+            services.RegisterDependency<HomeController, HomeController>();
+            services.RegisterDependency<UsersController, UsersController>();
+            services.RegisterDependency<AlbumsController, AlbumsController>();
+            services.RegisterDependency<TracksController, TracksController>();
+            services.RegisterDependency<BadRequestController, BadRequestController>();
 
-            services.AddTransient<IHandleable, ControllerRouter>();
+            services.RegisterDependency<IUserService, UserService>();
+            services.RegisterDependency<IPasswordService, PasswordService>();
+            services.RegisterDependency<IUserCookieService, UserCookieService>();
+            services.RegisterDependency<IAlbumService, AlbumService>();
+            services.RegisterDependency<ITrackService, TrackService>();
 
-            services.AddSingleton<HomeController>();
-            services.AddSingleton<UserController>();
-            services.AddSingleton<AlbumsController>();
-            services.AddSingleton<TracksController>();
-            services.AddSingleton<BadRequestController>();
 
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IPasswordService, PasswordService>();
-            services.AddTransient<IUserCookieService, UserCookieService>();
-            services.AddTransient<IAlbumService, AlbumService>();
-            services.AddTransient<ITrackService, TrackService>();
-
-            IServiceProvider provider = services.BuildServiceProvider();
-
-            return provider;
-        }
-
-        private static string GetConfigurationFilePath()
-        {
-            string[] pathTokens = Directory
-                .GetCurrentDirectory()
-                .Split("\\");
-            pathTokens = pathTokens.Take(pathTokens.Length - 4).ToArray();
-
-            string path = string.Join("\\", pathTokens);
-
-            return path;
+            return services;
         }
     }
 }

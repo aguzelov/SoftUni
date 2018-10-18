@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using SIS.Framework.Services;
 
 namespace SIS.Framework.Routers
 {
@@ -19,9 +20,9 @@ namespace SIS.Framework.Routers
     {
         private const string UnsupportedActionMessage = "The view result is not supported.";
 
-        private readonly IServiceProvider Provider;
+        private readonly IDependencyContainer Provider;
 
-        public ControllerRouter(IServiceProvider provider)
+        public ControllerRouter(IDependencyContainer provider)
         {
             this.Provider = provider;
         }
@@ -46,7 +47,7 @@ namespace SIS.Framework.Routers
                 var constructorInfo = controllerType.GetConstructors().FirstOrDefault();
 
                 var parameters = constructorInfo.GetParameters()
-                    .Select(p => this.Provider.GetService(p.ParameterType))
+                    .Select(p => this.Provider.CreateInstance(p.ParameterType))
                     .ToArray();
 
                 var controller = (Controller)Activator.CreateInstance(controllerType, parameters);
