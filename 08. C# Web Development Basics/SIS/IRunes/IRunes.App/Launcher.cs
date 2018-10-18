@@ -1,19 +1,14 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using IRunes.App.Controllers;
+﻿using IRunes.App.Controllers;
 using IRunes.Data;
 using IRunes.Services.AlbumServices;
 using IRunes.Services.PasswordServices;
 using IRunes.Services.TrackServices;
-using IRunes.Services.UserCookieServices;
 using IRunes.Services.UserServices;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using SIS.Framework;
 using SIS.Framework.Routers;
 using SIS.Framework.Services;
+using SIS.Framework.Services.UserCookieServices;
 using SIS.WebServer;
 using SIS.WebServer.Api;
 
@@ -40,7 +35,6 @@ namespace IRunes.App
         {
             IDependencyContainer services = new DependencyContainer();
 
-            
             services.RegisterDependency<IRunesContext, IRunesContext>();
 
             services.RegisterDependency<IHandleable, ControllerRouter>();
@@ -56,7 +50,6 @@ namespace IRunes.App
             services.RegisterDependency<IUserCookieService, UserCookieService>();
             services.RegisterDependency<IAlbumService, AlbumService>();
             services.RegisterDependency<ITrackService, TrackService>();
-
 
             return services;
         }

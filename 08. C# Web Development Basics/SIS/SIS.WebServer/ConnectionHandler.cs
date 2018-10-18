@@ -1,16 +1,11 @@
 ﻿using SIS.HTTP.Cookies;
-using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
 using SIS.HTTP.Sessions;
 using SIS.WebServer.Api;
-using SIS.WebServer.Results;
-using SIS.WebServer.Routing;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -29,8 +24,6 @@ namespace SIS.WebServer
         {
             this._client = client;
         }
-
-       
 
         public ConnectionHandler(Socket client, IHandleable handler, IHandleable resourceRouter)
             : this(client)
@@ -70,60 +63,6 @@ namespace SIS.WebServer
             return new HttpRequest(result.ToString());
         }
 
-        //private IHttpResponse HandleRequest(IHttpRequest httpRequest)
-        //{
-        //    var requestMethod = httpRequest.RequestMethod;
-
-        //    var requestPath = httpRequest.Url;
-
-        //    var registeredRoutes = this._serverRoutingTable.Routes[requestMethod];
-
-        //    foreach (var registeredRoute in registeredRoutes)
-        //    {
-        //        var route = registeredRoute.Key;
-        //        var routePattern = this.ParseRoute(registeredRoute.Key, new List<string>());
-
-        //        var routingContext = registeredRoute.Value;
-
-        //        var routeRegex = new Regex(routePattern);
-        //        var match = routeRegex.Match(requestPath);
-
-        //        if (!match.Success)
-        //        {
-        //            continue;
-        //        }
-
-        //        var parameterValue = match.Groups[1].Value;
-        //        httpRequest.UrlParameter = parameterValue;
-
-        //        return this._serverRoutingTable.Routes[httpRequest.RequestMethod][route].Invoke(httpRequest);
-        //    }
-
-        //    IHttpResponse resource = this.resourceRouter.Handle(httpRequest);
-        //    if (resource != null)
-        //    {
-        //        return resource;
-        //    }
-        //    return this._serverRoutingTable.Routes[HttpRequestMethod.Get]["notfound"].Invoke(httpRequest);
-        ////}
-
-        //private IHttpResponse ReturnIfResource(string path)
-        //{
-        //    var fullPath = Environment.CurrentDirectory + path;
-
-        //    if (File.Exists(fullPath))
-        //    {
-        //        var extension = path.Split(".", StringSplitOptions.RemoveEmptyEntries).Last();
-
-        //        var contentString = File.ReadAllText(fullPath);
-        //        var contentBytes = Encoding.UTF8.GetBytes(contentString);
-
-        //        return new InlineResourceRasult(contentBytes, HttpResponseStatusCode.OK, extension);
-        //    }
-
-        //    return null;
-        //}
-
         private async Task PrepareResponse(IHttpResponse httpResponse)
         {
             byte[] byteSegments = httpResponse.GetBytes();
@@ -140,8 +79,6 @@ namespace SIS.WebServer
                 string sessionId = SetRequestSession(httpRequest);
 
                 IHttpResponse httpResponse = this.resourceRouter.Handle(httpRequest) ?? this.handler.Handle(httpRequest);
-
-                
 
                 SetResponseSession(httpResponse, sessionId);
 

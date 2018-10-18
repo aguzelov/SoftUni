@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SIS.Framework.Models
+﻿namespace SIS.Framework.Models
 {
     public class Model
     {

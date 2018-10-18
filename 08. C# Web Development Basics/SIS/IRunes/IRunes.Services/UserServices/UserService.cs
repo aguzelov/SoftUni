@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using IRunes.Data;
+﻿using IRunes.Data;
 using IRunes.Models;
+using System.Linq;
 
 namespace IRunes.Services.UserServices
 {

@@ -1,5 +1,4 @@
 ﻿using SIS.WebServer.Api;
-using SIS.WebServer.Routing;
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -25,8 +24,6 @@ namespace SIS.WebServer
             this._port = port;
             this._listener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), this._port);
         }
-
-       
 
         public Server(int port, IHandleable handler, IHandleable resourceRouter)
             : this(port)
@@ -54,7 +51,6 @@ namespace SIS.WebServer
 
                 var connectionHandler = new ConnectionHandler(client, this.handler, this.resourceRouter); ;
 
-                
                 var responseTask = connectionHandler.ProcessRequestAsync();
                 responseTask.Wait();
             }

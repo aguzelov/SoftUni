@@ -1,13 +1,11 @@
-﻿using System.Net;
-using IRunes.Services.AlbumServices;
+﻿using IRunes.Services.AlbumServices;
 using IRunes.Services.TrackServices;
-using IRunes.Services.UserCookieServices;
 using IRunes.Services.UserServices;
 using SIS.Framework.ActionResult.Contracts;
 using SIS.Framework.Attributes.Methods;
+using SIS.Framework.Services.UserCookieServices;
 using SIS.HTTP.Enums;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
+using System.Net;
 
 namespace IRunes.App.Controllers
 {
@@ -19,14 +17,13 @@ namespace IRunes.App.Controllers
         private readonly ITrackService trackService;
         private readonly IAlbumService albumService;
         private readonly IUserService UserService;
-        private readonly IUserCookieService UserCookieService;
 
         public TracksController(ITrackService shoppingService, IAlbumService albumService, IUserService userService, IUserCookieService userCookieService)
+        : base(userCookieService)
         {
             this.trackService = shoppingService;
             this.albumService = albumService;
             this.UserService = userService;
-            this.UserCookieService = userCookieService;
         }
 
         [HttpGet]

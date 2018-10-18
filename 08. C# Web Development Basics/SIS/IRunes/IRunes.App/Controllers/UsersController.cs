@@ -1,13 +1,12 @@
-﻿using System;
-using IRunes.Services.PasswordServices;
-using IRunes.Services.UserCookieServices;
+﻿using IRunes.Services.PasswordServices;
 using IRunes.Services.UserServices;
 using SIS.Framework.ActionResult.Contracts;
 using SIS.Framework.Attributes.Methods;
+using SIS.Framework.Services.UserCookieServices;
 using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
+using System;
 
 namespace IRunes.App.Controllers
 {
@@ -17,13 +16,12 @@ namespace IRunes.App.Controllers
         private const string LoginPage = "Login";
         private readonly IUserService UserService;
         private readonly IPasswordService PasswordService;
-        private readonly IUserCookieService UserCookieService;
 
         public UsersController(IUserService userService, IPasswordService passwordService, IUserCookieService userCookieService)
+        : base(userCookieService)
         {
             this.UserService = userService;
             this.PasswordService = passwordService;
-            this.UserCookieService = userCookieService;
         }
 
         [HttpGet]
@@ -43,7 +41,6 @@ namespace IRunes.App.Controllers
 
             if (!IsValidUserData(username, password, confirmPassword, email))
             {
-                
                 this.Model["errorDisplay"] = "inline";
                 return this.View(RegisterPage);
             }
@@ -52,12 +49,9 @@ namespace IRunes.App.Controllers
 
             this.UserService.Add(username, hashedPassword, email);
 
+            this.SetUserCookie(username);
 
-            var cookie = this.UserCookieService.GetUserCookie(username);
-
-            this.Response.Cookies.Add(cookie);
-
-            return this.View("Index-user"); ;
+            return this.View("Index-user");
         }
 
         [HttpGet]
@@ -66,7 +60,6 @@ namespace IRunes.App.Controllers
         {
             if (this.Request.RequestMethod == HttpRequestMethod.Get)
             {
-                
                 this.Model["errorDisplay"] = "none";
                 return this.View(LoginPage);
             }
@@ -76,7 +69,6 @@ namespace IRunes.App.Controllers
 
             if (!IsValidUserData(username, password))
             {
-                
                 this.Model["errorDisplay"] = "inline";
                 return this.View(LoginPage);
             }
@@ -89,9 +81,7 @@ namespace IRunes.App.Controllers
                 return this.View(LoginPage);
             }
 
-            var cookie = this.UserCookieService.GetUserCookie(username);
-
-            this.Response.Cookies.Add(cookie);
+            this.SetUserCookie(username);
 
             return this.RedirectToAction("/Home/Index"); ;
         }
@@ -102,7 +92,7 @@ namespace IRunes.App.Controllers
             var authCookie = request.Cookies.GetCookie(HttpCookie.AuthenticeKey);
             authCookie.Expires = DateTime.UtcNow.AddDays(-1);
 
-            this.Response.Cookies.Add(authCookie);
+            this.SetUserCookie(authCookie);
 
             return this.RedirectToAction("/Home/Index"); ;
         }

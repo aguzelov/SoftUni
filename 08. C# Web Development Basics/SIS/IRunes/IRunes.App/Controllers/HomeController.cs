@@ -1,8 +1,6 @@
-﻿using IRunes.Services.UserCookieServices;
-using SIS.Framework.ActionResult.Contracts;
+﻿using SIS.Framework.ActionResult.Contracts;
 using SIS.Framework.Attributes.Methods;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
+using SIS.Framework.Services.UserCookieServices;
 
 namespace IRunes.App.Controllers
 {
@@ -10,23 +8,21 @@ namespace IRunes.App.Controllers
     {
         private const string GuestPage = "Index-guest";
         private const string UserPage = "Index-user";
-        private readonly IUserCookieService userCookieService;
 
         public HomeController(IUserCookieService userCookieService)
+        : base(userCookieService)
         {
-            this.userCookieService = userCookieService;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
-            var username = this.userCookieService.GetUsername(this.Request.Cookies);
-
-            if (username == null)
+            if (this.IsAuthenticatedUser)
             {
                 return this.View(GuestPage);
             }
 
-            this.Model["username"] = username;
+            this.Model["username"] = this.Username;
 
             return this.View(UserPage);
         }

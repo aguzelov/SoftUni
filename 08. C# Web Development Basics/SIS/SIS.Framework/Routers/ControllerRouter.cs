@@ -1,6 +1,7 @@
 ﻿using SIS.Framework.ActionResult.Contracts;
 using SIS.Framework.Attributes.Methods;
 using SIS.Framework.Controllers;
+using SIS.Framework.Services;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses;
@@ -12,7 +13,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using SIS.Framework.Services;
 
 namespace SIS.Framework.Routers
 {
@@ -29,7 +29,6 @@ namespace SIS.Framework.Routers
 
         public ControllerRouter()
         {
-            
         }
 
         private Controller GetController(string controllerName, IHttpRequest request)

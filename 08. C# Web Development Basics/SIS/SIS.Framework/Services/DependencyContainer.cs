@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace SIS.Framework.Services
 {
@@ -24,7 +23,7 @@ namespace SIS.Framework.Services
         }
 
         public T CreateInstance<T>()
-            => (T) this.CreateInstance(typeof(T));
+            => (T)this.CreateInstance(typeof(T));
 
         public object CreateInstance(Type type)
         {
@@ -43,7 +42,6 @@ namespace SIS.Framework.Services
             for (int i = 0; i < constructorParameters.Length; i++)
             {
                 constructorParameterObjects[i] = this.CreateInstance(constructorParameters[i].ParameterType);
-
             }
 
             return constructor.Invoke(constructorParameterObjects);

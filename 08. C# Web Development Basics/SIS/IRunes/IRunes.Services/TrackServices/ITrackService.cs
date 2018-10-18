@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using IRunes.Models;
+﻿using IRunes.Models;
+using System.Collections.Generic;
 
 namespace IRunes.Services.TrackServices
 {

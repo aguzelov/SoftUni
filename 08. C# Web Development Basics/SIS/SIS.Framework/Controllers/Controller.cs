@@ -4,27 +4,23 @@ using SIS.Framework.Models;
 using SIS.Framework.Services.UserCookieServices;
 using SIS.Framework.Utilities;
 using SIS.Framework.Views;
-using SIS.HTTP.Enums;
-using SIS.HTTP.Headers;
+using SIS.HTTP.Cookies;
 using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses;
-using SIS.HTTP.Responses.Contracts;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace SIS.Framework.Controllers
 {
     public abstract class Controller
     {
-        private readonly IUserCookieService UserCookieService;
+        private readonly IUserCookieService userCookieService;
 
-        public Controller()
+        protected Controller()
         {
-            this.Response = new HttpResponse();
+        }
 
-            this.UserCookieService = new UserCookieService();
-
+        protected Controller(IUserCookieService userCookieService)
+        {
+            this.userCookieService = userCookieService;
             this.Model = new ViewModel();
         }
 
@@ -32,34 +28,26 @@ namespace SIS.Framework.Controllers
 
         protected ViewModel Model { get; }
 
-
         protected bool IsAuthenticatedUser => this.Username != null;
+        protected string Username => this.userCookieService.GetUsername(this.Request.Cookies);
 
         public IHttpRequest Request { get; set; }
 
-        protected IHttpResponse Response { get; set; }
+        private HttpCookie Cookie { get; set; }
 
-        protected string Username => this.UserCookieService.GetUsername(this.Request.Cookies);
-
-        //protected IHttpResponse Text(string content)
-        //{
-        //    this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/plain"));
-        //    this.Response.Content = Encoding.UTF8.GetBytes(content);
-        //    this.Response.StatusCode = HttpResponseStatusCode.OK;
-
-        //    return this.Response;
-        //}
-
-        public void SetUserCookie(string username)
+        protected void SetUserCookie(string username)
         {
-            var cookie = this.UserCookieService.GetUserCookie(username);
-
-            this.Response.Cookies.Add(cookie);
+            this.Cookie = this.userCookieService.GetUserCookie(username);
         }
 
-        private string AddViewData(string content)
+        protected void SetUserCookie(HttpCookie cookie)
         {
-            if (IsAuthenticatedUser)
+            this.Cookie = cookie;
+        }
+
+        private void SetMenu()
+        {
+            if (this.IsAuthenticatedUser)
             {
                 this.Model["guestMenu"] = "d-none";
                 this.Model["userMenu"] = "d-block";
@@ -69,24 +57,11 @@ namespace SIS.Framework.Controllers
                 this.Model["guestMenu"] = "d-block";
                 this.Model["userMenu"] = "d-none";
             }
-
-            
-
-            return content;
         }
 
         protected IViewable View([CallerMemberName] string caller = "")
         {
-            if (this.IsAuthenticatedUser)
-            {
-                this.Model.Data["guestMenu"] = "d-none";
-                this.Model.Data["userMenu"] = "d-block";
-            }
-            else
-            {
-                this.Model.Data["guestMenu"] = "d-block";
-                this.Model.Data["userMenu"] = "d-none";
-            }
+            this.SetMenu();
 
             var controllerName = ControllerUtilities.GetControllerName(this);
 

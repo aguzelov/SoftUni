@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using IRunes.Data;
+﻿using IRunes.Data;
 using IRunes.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace IRunes.Services.AlbumServices
 {

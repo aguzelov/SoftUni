@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using IRunes.Models;
+﻿using IRunes.Models;
 using IRunes.Services.AlbumServices;
 using SIS.Framework.ActionResult.Contracts;
 using SIS.Framework.Attributes.Methods;
+using SIS.Framework.Services.UserCookieServices;
 using SIS.HTTP.Enums;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
 
 namespace IRunes.App.Controllers
 {
@@ -19,7 +18,8 @@ namespace IRunes.App.Controllers
         private const string DetailAlbumPage = "Details";
         private readonly IAlbumService albumService;
 
-        public AlbumsController(IAlbumService albumService)
+        public AlbumsController(IAlbumService albumService, IUserCookieService userCookieService)
+          : base(userCookieService)
         {
             this.albumService = albumService;
         }
