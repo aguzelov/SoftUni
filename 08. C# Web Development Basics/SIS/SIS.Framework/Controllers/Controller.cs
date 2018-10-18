@@ -17,14 +17,8 @@ namespace SIS.Framework.Controllers
 {
     public abstract class Controller
     {
-        private readonly IUserCookieService UserCookieService;
-
-        public Controller()
+        protected Controller()
         {
-            this.Response = new HttpResponse();
-
-            this.UserCookieService = new UserCookieService();
-
             this.Model = new ViewModel();
         }
 
@@ -32,34 +26,13 @@ namespace SIS.Framework.Controllers
 
         protected ViewModel Model { get; }
 
-
-        protected bool IsAuthenticatedUser => this.Username != null;
-
+        protected bool IsAuthenticatedUser { get; set; }
+    
         public IHttpRequest Request { get; set; }
 
-        protected IHttpResponse Response { get; set; }
-
-        protected string Username => this.UserCookieService.GetUsername(this.Request.Cookies);
-
-        //protected IHttpResponse Text(string content)
-        //{
-        //    this.Response.Headers.Add(new HttpHeader(HttpHeader.ContentType, "text/plain"));
-        //    this.Response.Content = Encoding.UTF8.GetBytes(content);
-        //    this.Response.StatusCode = HttpResponseStatusCode.OK;
-
-        //    return this.Response;
-        //}
-
-        public void SetUserCookie(string username)
+        private void SetMenu()
         {
-            var cookie = this.UserCookieService.GetUserCookie(username);
-
-            this.Response.Cookies.Add(cookie);
-        }
-
-        private string AddViewData(string content)
-        {
-            if (IsAuthenticatedUser)
+            if (this.IsAuthenticatedUser)
             {
                 this.Model["guestMenu"] = "d-none";
                 this.Model["userMenu"] = "d-block";
@@ -70,23 +43,11 @@ namespace SIS.Framework.Controllers
                 this.Model["userMenu"] = "d-none";
             }
 
-            
-
-            return content;
         }
 
         protected IViewable View([CallerMemberName] string caller = "")
         {
-            if (this.IsAuthenticatedUser)
-            {
-                this.Model.Data["guestMenu"] = "d-none";
-                this.Model.Data["userMenu"] = "d-block";
-            }
-            else
-            {
-                this.Model.Data["guestMenu"] = "d-block";
-                this.Model.Data["userMenu"] = "d-none";
-            }
+            this.SetMenu();
 
             var controllerName = ControllerUtilities.GetControllerName(this);
 
