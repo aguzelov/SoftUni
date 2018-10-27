@@ -12,12 +12,20 @@
 
         public string AssemblyName { get; set; }
 
-        public string ControllersFolder { get; set; }
+        public string ControllerSuffix { get; set; } = "Controller";
 
-        public string ControllersSuffix { get; set; }
+        public string ControllersFolder { get; set; } = "Controllers";
 
-        public string ViewFolder { get; set; }
+        public string ViewsFolderName { get; set; } = "Views";
 
-        public string ModelsFolder { get; set; }
+        public string SharedViewsFolderName { get; set; } = "Shared";
+
+        public string ModelsFolder { get; set; } = "Models";
+
+        public string ResourceFolderName { get; set; } = "Resources";
+
+        public string LayoutViewName { get; set; } = "_Layout";
+
+        public string RootDirectoryRelativePath { get; set; } = "../../..";
     }
 }

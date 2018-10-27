@@ -1,38 +1,42 @@
-﻿using SIS.HTTP.Enums;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
-using SIS.WebServer.Api;
+﻿using System.IO;
+using SIS.HTTP.Enums;
+using SIS.HTTP.Requests;
+using SIS.HTTP.Responses;
+using SIS.WebServer.Api.Contracts;
 using SIS.WebServer.Results;
-using System;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace SIS.Framework.Routers
 {
-    public class ResourceRouter : IHandleable
+    public class ResourceRouter : IResourceHandler
     {
         public IHttpResponse Handle(IHttpRequest request)
         {
-            IHttpResponse resource = ReturnIfResource(request.Path);
-            return resource;
-        }
+            var httpRequestPath = request.Path;
 
-        private IHttpResponse ReturnIfResource(string path)
-        {
-            var fullPath = Environment.CurrentDirectory + path;
+            var indexOfStartOfExtension = httpRequestPath.LastIndexOf('.');
+            var indexOfStartOfNameOfResource = httpRequestPath.LastIndexOf('/');
+            // users/login/bootstrap.css
 
-            if (File.Exists(fullPath))
+            var requestPathExtension = httpRequestPath
+                .Substring(indexOfStartOfExtension);
+
+            var resourceName = httpRequestPath
+                .Substring(
+                    indexOfStartOfNameOfResource);
+
+            var resourcePath = MvcContext.Get.RootDirectoryRelativePath
+                               + $"/{MvcContext.Get.ResourceFolderName}"
+                               + $"/{requestPathExtension.Substring(1)}"
+                               + resourceName;
+
+            if (!File.Exists(resourcePath))
             {
-                var extension = path.Split(".", StringSplitOptions.RemoveEmptyEntries).Last();
-
-                var contentString = File.ReadAllText(fullPath);
-                var contentBytes = Encoding.UTF8.GetBytes(contentString);
-
-                return new InlineResourceRasult(contentBytes, HttpResponseStatusCode.OK, extension);
+                return new HttpResponse(HttpResponseStatusCode.NotFound);
             }
 
-            return null;
+            var fileContent = File.ReadAllBytes(resourcePath);
+
+            return new InlineResouceResult(fileContent, HttpResponseStatusCode.Ok);
         }
     }
 }

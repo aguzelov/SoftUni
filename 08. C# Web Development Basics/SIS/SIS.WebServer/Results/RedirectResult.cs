@@ -6,10 +6,10 @@ namespace SIS.WebServer.Results
 {
     public class RedirectResult : HttpResponse
     {
-        public RedirectResult(string location, HttpResponseStatusCode responseStatusCode)
-           : base(responseStatusCode)
+        public RedirectResult(string location) 
+            : base(HttpResponseStatusCode.SeeOther)
         {
-            this.Headers.Add(new HttpHeader("Location", location));
+            this.Headers.Add(new HttpHeader(HttpHeader.Location, location));
         }
     }
 }

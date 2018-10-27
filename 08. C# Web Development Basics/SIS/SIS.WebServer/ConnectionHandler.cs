@@ -1,35 +1,39 @@
-﻿using SIS.HTTP.Cookies;
-using SIS.HTTP.Requests;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
-using SIS.HTTP.Sessions;
-using SIS.WebServer.Api;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 using System.Net.Sockets;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using SIS.HTTP.Cookies;
+using SIS.HTTP.Enums;
+using SIS.WebServer.Api.Contracts;
 
 namespace SIS.WebServer
 {
+    using HTTP.Common;
+    using HTTP.Exceptions;
+    using HTTP.Requests;
+    using HTTP.Responses;
+    using HTTP.Sessions;
+    using Results;
+    using Routing;
+
     public class ConnectionHandler
     {
-        private readonly Socket _client;
+        private readonly Socket client;
 
-        private readonly IHandleable handler;
-        private readonly IHandleable resourceRouter;
+        private const string RootDirectoryRelativePath = "../../..";
 
-        public ConnectionHandler(Socket client)
+        private readonly IHttpHandlingContext handlersContext;
+
+        public ConnectionHandler(
+            Socket client,
+            IHttpHandlingContext handlersContext)
         {
-            this._client = client;
-        }
+            CoreValidator.ThrowIfNull(client, nameof(client));
+            CoreValidator.ThrowIfNull(handlersContext, nameof(handlersContext));
 
-        public ConnectionHandler(Socket client, IHandleable handler, IHandleable resourceRouter)
-            : this(client)
-        {
-            this.handler = handler;
-            this.resourceRouter = resourceRouter;
+            this.client = client;
+            this.handlersContext = handlersContext;
         }
 
         private async Task<IHttpRequest> ReadRequest()
@@ -39,7 +43,7 @@ namespace SIS.WebServer
 
             while (true)
             {
-                int numberOfBytesRead = await this._client.ReceiveAsync(data.Array, SocketFlags.None);
+                int numberOfBytesRead = await this.client.ReceiveAsync(data.Array, SocketFlags.None);
 
                 if (numberOfBytesRead == 0)
                 {
@@ -67,42 +71,24 @@ namespace SIS.WebServer
         {
             byte[] byteSegments = httpResponse.GetBytes();
 
-            await this._client.SendAsync(byteSegments, SocketFlags.None);
-        }
-
-        public async Task ProcessRequestAsync()
-        {
-            var httpRequest = await ReadRequest();
-
-            if (httpRequest != null)
-            {
-                string sessionId = SetRequestSession(httpRequest);
-
-                IHttpResponse httpResponse = this.resourceRouter.Handle(httpRequest) ?? this.handler.Handle(httpRequest);
-
-                SetResponseSession(httpResponse, sessionId);
-
-                await PrepareResponse(httpResponse);
-            }
-
-            this._client.Shutdown(SocketShutdown.Both);
+            await this.client.SendAsync(byteSegments, SocketFlags.None);
         }
 
         private string SetRequestSession(IHttpRequest httpRequest)
         {
-            string sessionId;
+            string sessionId = null;
 
             if (httpRequest.Cookies.ContainsCookie(HttpSessionStorage.SessionCookieKey))
             {
                 var cookie = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
                 sessionId = cookie.Value;
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
             }
             else
             {
                 sessionId = Guid.NewGuid().ToString();
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
             }
-
-            httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
 
             return sessionId;
         }
@@ -112,59 +98,38 @@ namespace SIS.WebServer
             if (sessionId != null)
             {
                 httpResponse
-                    .AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey,
-                                            $"{sessionId};HttpOnly"));
+                    .AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey
+                        , sessionId));
             }
         }
 
-        private string ParseRoute(string route, List<string> parameters)
+        public async Task ProcessRequestAsync()
         {
-            if (route == "/")
+            try
             {
-                return "^/$";
+                var httpRequest = await this.ReadRequest();
+
+                if (httpRequest != null)
+                {
+                    string sessionId = this.SetRequestSession(httpRequest);
+
+                    var httpResponse = this.handlersContext.Handle(httpRequest);
+
+                    this.SetResponseSession(httpResponse, sessionId);
+
+                    await this.PrepareResponse(httpResponse);
+                }
+            }
+            catch (BadRequestException e)
+            {
+                await this.PrepareResponse(new TextResult(e.Message, HttpResponseStatusCode.BadRequest));
+            }
+            catch (Exception e)
+            {
+                await this.PrepareResponse(new TextResult(e.Message, HttpResponseStatusCode.InternalServerError));
             }
 
-            var result = new StringBuilder();
-
-            result.Append("^/");
-
-            var tokens = route.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-
-            this.ParseTokens(tokens, parameters, result);
-
-            return result.ToString();
-        }
-
-        private void ParseTokens(string[] tokens, List<string> parameters, StringBuilder result)
-        {
-            for (int i = 0; i < tokens.Length; i++)
-            {
-                var end = i == tokens.Length - 1 ? "$" : "/";
-                var currentToken = tokens[i];
-
-                if (!currentToken.StartsWith('{') && !currentToken.EndsWith('}'))
-                {
-                    result.Append($"{currentToken}{end}");
-                    continue;
-                }
-
-                var parameterRegex = new Regex("<\\w+>");
-                var parameterMatch = parameterRegex.Match(currentToken);
-
-                if (!parameterMatch.Success)
-                {
-                    throw new InvalidOperationException($"Route parameter in '{currentToken}' is not valid.");
-                }
-
-                var match = parameterMatch.Value;
-                var parameter = match.Substring(1, match.Length - 2);
-
-                parameters.Add(parameter);
-
-                var currentTokenWithoutCurlyBrackets = currentToken.Substring(1, currentToken.Length - 2);
-
-                result.Append($"{currentTokenWithoutCurlyBrackets}{end}");
-            }
+            this.client.Shutdown(SocketShutdown.Both);
         }
     }
 }

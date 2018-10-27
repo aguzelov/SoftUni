@@ -9,7 +9,7 @@ namespace SIS.Framework.Models
             this.Data = new Dictionary<string, object>();
         }
 
-        public IDictionary<string, object> Data { get; }
+        public IDictionary<string, object> Data { get; set; }
 
         public object this[string key]
         {

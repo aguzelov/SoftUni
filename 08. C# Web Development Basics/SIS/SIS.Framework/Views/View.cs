@@ -1,66 +1,72 @@
-﻿using SIS.Framework.ActionResult.Contracts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using SIS.Framework.ActionsResults.Contracts;
+using SIS.HTTP.Common;
 
 namespace SIS.Framework.Views
 {
     public class View : IRenderable
     {
-        private readonly string fullyQualifiedTemplateName;
+        private const string RenderBodyConstant = "@RenderBody()";
 
-        private readonly string layoutName;
+        private readonly string fullHtmlContent;
 
-        private readonly IDictionary<string, object> viewData;
-
-        public View(string fullyQualifiedTemplateName, IDictionary<string, object> viewData)
+        public View(string fullHtmlContent)
         {
-            this.fullyQualifiedTemplateName = fullyQualifiedTemplateName;
-            this.viewData = viewData;
-
-            this.layoutName = "Views\\_Layout";
+            this.fullHtmlContent = fullHtmlContent;
         }
 
-        private string ReadFile(string fileName)
-        {
-            var file = fileName + ".html";
+        public string Render() => this.fullHtmlContent;
 
-            if (!File.Exists(file))
-            {
-                throw new FileNotFoundException();
-            }
+        //private string ReadFile()
+        //{
+        //    if (!File.Exists(this.fullyQualifiedTemplateName))
+        //    {
+        //        throw new FileNotFoundException($"View does not exist at {fullyQualifiedTemplateName}");
+        //    }
 
-            var htmlText = File.ReadAllText(file);
-            return htmlText;
-        }
+        //    return File.ReadAllText(this.fullyQualifiedTemplateName);
+        //}
 
-        public string Render()
-        {
-            var layoutHtml = this.ReadFile(this.layoutName);
-            var pageHtml = this.ReadFile(this.fullyQualifiedTemplateName);
+        //private string AddViewToLayout(string renderedHtml)
+        //{
+        //    var layoutViewPath = MvcContext.Get.RootDirectoryRelativePath +
+        //        GlobalConstants.DirectorySeparator +
+        //        MvcContext.Get.ViewsFolderName +
+        //        GlobalConstants.DirectorySeparator +
+        //        MvcContext.Get.LayoutViewName +
+        //        GlobalConstants.HtmlFileExtension;
 
-            var content = layoutHtml.Replace("@RenderBody()", pageHtml);
+        //    if (!File.Exists(layoutViewPath))
+        //    {
+        //        throw new FileNotFoundException($"View does not exist at {fullyQualifiedTemplateName}");
+        //    }
 
-            var renderedHtml = this.RenderHtml(content);
+        //    var layoutViewContent = File.ReadAllText(layoutViewPath);
+        //    var layoutWithView = layoutViewContent.Replace(RenderBodyConstant, renderedHtml);
 
-            return renderedHtml;
-        }
+        //    return layoutWithView;
 
-        private string RenderHtml(string fullHtml)
-        {
-            var renderedHtml = fullHtml;
+        //}
 
-            if (this.viewData.Any())
-            {
-                foreach (var parameter in this.viewData)
-                {
-                    renderedHtml = renderedHtml
-                        .Replace($"{{{{{{{parameter.Key}}}}}}}",
-                        parameter.Value.ToString());
-                }
-            }
+        //private string RenderHtml(string fullHtml)
+        //{
+        //    if (this.viewData.Any())
+        //    {
+        //        foreach (var viewDataKey in this.viewData.Keys)
+        //        {
+        //            var dynamicDataPlaceholder = $"{{{{{viewDataKey}}}}}";
+        //            if (fullHtml.Contains(dynamicDataPlaceholder))
+        //            {
+        //                fullHtml = fullHtml.Replace(
+        //                    dynamicDataPlaceholder,
+        //                    this.viewData[viewDataKey].ToString());
+        //            }
+        //        }
+        //    }
 
-            return renderedHtml;
-        }
+        //    return fullHtml;
+        //}
     }
 }

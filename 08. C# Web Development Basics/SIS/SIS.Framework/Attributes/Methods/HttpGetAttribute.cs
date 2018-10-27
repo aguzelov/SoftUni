@@ -1,10 +1,17 @@
-﻿namespace SIS.Framework.Attributes.Methods
+﻿using SIS.Framework.Attributes.Methods.Base;
+
+namespace SIS.Framework.Attributes.Methods
 {
-    public class HttpGetAttribute : HttpMethodAttribute
+    public class HttpPostAttribute : HttpMethodAttribute
     {
         public override bool IsValid(string requestMethod)
         {
-            return requestMethod.ToUpper() == "GET" ? true : false;
+            if (requestMethod.ToLower() == "post")
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

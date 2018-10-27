@@ -2,49 +2,63 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using SIS.Framework.Services.Contracts;
 
 namespace SIS.Framework.Services
 {
     public class DependencyContainer : IDependencyContainer
     {
-        private readonly IDictionary<Type, Type> dependencyDictionary;
+        private readonly IDictionary<Type, Type> dependencyMap;
 
         public DependencyContainer()
         {
-            this.dependencyDictionary = new Dictionary<Type, Type>();
+            this.dependencyMap = new Dictionary<Type, Type>();
         }
 
-        private Type this[Type key]
-            => this.dependencyDictionary.ContainsKey(key) ? this.dependencyDictionary[key] : null;
+        public DependencyContainer(IDictionary<Type, Type> dependencyMap)
+        {
+            this.dependencyMap = dependencyMap;
+        }
+
+        private Type this[Type key] =>
+            this.dependencyMap.ContainsKey(key)
+                ? this.dependencyMap[key]
+                : null;
 
         public void RegisterDependency<TSource, TDestination>()
         {
-            this.dependencyDictionary[typeof(TSource)] = typeof(TDestination);
+            this.dependencyMap[typeof(TSource)] = typeof(TDestination);
         }
 
-        public T CreateInstance<T>()
-            => (T)this.CreateInstance(typeof(T));
+        public T CreateInstance<T>() =>
+            (T)CreateInstance(typeof(T));
 
         public object CreateInstance(Type type)
         {
-            Type instanceType = this[type] ?? type;
+            Type typeInstance = this[type] ?? type;
 
-            if (instanceType.IsInterface || instanceType.IsAbstract)
+            if (typeInstance.IsInterface || typeInstance.IsAbstract)
             {
-                throw new InvalidOperationException($"Type {instanceType.FullName} cannot be instantiated.");
+                throw new InvalidOperationException(
+                    $"Type {typeInstance.FullName} cannot be instantiated. Abstract type and interfaces cannot be instantiated");
             }
 
-            ConstructorInfo constructor =
-                instanceType.GetConstructors().OrderBy(x => x.GetParameters().Length).First();
+            ConstructorInfo constructor = typeInstance
+                .GetConstructors()
+                .OrderByDescending(c => c.GetParameters().Length)
+                .First();
+
             ParameterInfo[] constructorParameters = constructor.GetParameters();
-            object[] constructorParameterObjects = new object[constructorParameters.Length];
 
-            for (int i = 0; i < constructorParameters.Length; i++)
+            object[] constructorParametersObjects = new object[constructorParameters.Length];
+
+            for (int index = 0; index < constructorParameters.Length; index++)
             {
-                constructorParameterObjects[i] = this.CreateInstance(constructorParameters[i].ParameterType);
+                constructorParametersObjects[index] = this.CreateInstance(
+                    constructorParameters[index].ParameterType);
             }
 
-            return constructor.Invoke(constructorParameterObjects);
+            return constructor.Invoke(constructorParametersObjects);
         }
     }
 }

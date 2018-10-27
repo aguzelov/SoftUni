@@ -1,8 +1,8 @@
-﻿using System;
-
-namespace SIS.HTTP.Common
+﻿namespace SIS.HTTP.Common
 {
-    public static class CoreValidator
+    using System;
+
+    public class CoreValidator
     {
         public static void ThrowIfNull(object obj, string name)
         {

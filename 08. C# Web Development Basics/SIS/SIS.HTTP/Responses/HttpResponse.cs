@@ -1,82 +1,71 @@
-﻿using SIS.HTTP.Common;
+﻿using System.Linq;
+using System.Text;
+using SIS.HTTP.Common;
 using SIS.HTTP.Cookies;
-using SIS.HTTP.Cookies.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Extensions;
 using SIS.HTTP.Headers;
-using SIS.HTTP.Headers.Contracts;
-using SIS.HTTP.Responses.Contracts;
-using System;
-using System.Text;
 
 namespace SIS.HTTP.Responses
 {
     public class HttpResponse : IHttpResponse
     {
-        public HttpResponse()
-        {
-            this.Cookies = new HttpCookieCollection();
-            this.Headers = new HttpHeaderCollection();
-            this.Content = new byte[0];
-        }
+        public HttpResponse() { }
 
         public HttpResponse(HttpResponseStatusCode statusCode)
-            : this()
         {
+            CoreValidator.ThrowIfNull(statusCode, nameof(statusCode));
+
+            this.Headers = new HttpHeaderCollection();
+            this.Cookies = new HttpCookieCollection();
+            this.Content = new byte[0];
             this.StatusCode = statusCode;
         }
 
-        public HttpResponseStatusCode StatusCode { get; set; }
+        public HttpResponseStatusCode StatusCode { get; set;  }
 
         public IHttpHeaderCollection Headers { get; }
 
         public IHttpCookieCollection Cookies { get; }
 
         public byte[] Content { get; set; }
-
+        
         public void AddHeader(HttpHeader header)
         {
+            CoreValidator.ThrowIfNull(header, nameof(header));
             this.Headers.Add(header);
         }
 
         public void AddCookie(HttpCookie cookie)
         {
+            CoreValidator.ThrowIfNull(cookie, nameof(cookie));
             this.Cookies.Add(cookie);
         }
 
         public byte[] GetBytes()
         {
-            var toStringInBytes = Encoding.UTF8.GetBytes(ToString());
-
-            var result = new byte[toStringInBytes.Length + this.Content.Length];
-            toStringInBytes.CopyTo(result, 0);
-            this.Content.CopyTo(result, toStringInBytes.Length);
-
-            return result;
+            return Encoding.UTF8.GetBytes(this.ToString()).Concat(this.Content).ToArray();
         }
 
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder result = new StringBuilder();
 
-            sb.Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.GetResponseLine()}").Append(Environment.NewLine);
-
-            foreach (var hear in this.Headers)
-            {
-                sb.Append(hear.ToString()).Append(Environment.NewLine);
-            }
+            result
+                .Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.GetResponseLine()}").Append(GlobalConstants.HttpNewLine)
+                .Append(this.Headers).Append(GlobalConstants.HttpNewLine);
 
             if (this.Cookies.HasCookies())
             {
-                foreach (var cookie in this.Cookies)
+                foreach (var httpCookie in this.Cookies)
                 {
-                    sb.Append($"Set-Cookie: {cookie}").Append(Environment.NewLine);
+                    result.Append($"Set-Cookie: {httpCookie}").Append(GlobalConstants.HttpNewLine);
                 }
             }
 
-            sb.Append(Environment.NewLine);
+            result.Append(GlobalConstants.HttpNewLine);
 
-            return sb.ToString();
+            return result.ToString();
         }
     }
 }

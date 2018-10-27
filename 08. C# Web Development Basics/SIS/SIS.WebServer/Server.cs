@@ -1,8 +1,8 @@
-﻿using SIS.WebServer.Api;
 using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using SIS.WebServer.Api.Contracts;
 
 namespace SIS.WebServer
 {
@@ -10,50 +10,42 @@ namespace SIS.WebServer
     {
         private const string LocalhostIpAddress = "127.0.0.1";
 
-        private readonly int _port;
+        private readonly int port;
 
-        private readonly TcpListener _listener;
+        private readonly TcpListener listener;
 
-        private readonly IHandleable handler;
-        private readonly IHandleable resourceRouter;
+        private readonly IHttpHandlingContext handlersContext;
 
-        public bool IsRunning;
+        private bool isRunning;
 
-        public Server(int port)
+        public Server(int port, IHttpHandlingContext handlersContext)
         {
-            this._port = port;
-            this._listener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), this._port);
-        }
+            this.port = port;
+            this.listener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), port);
 
-        public Server(int port, IHandleable handler, IHandleable resourceRouter)
-            : this(port)
-        {
-            this.handler = handler;
-            this.resourceRouter = resourceRouter;
+            this.handlersContext = handlersContext;
         }
 
         public void Run()
         {
-            this._listener.Start();
-            this.IsRunning = true;
+            this.listener.Start();
+            this.isRunning = true;
 
-            Console.WriteLine($"Server started at http://{LocalhostIpAddress}:{this._port}");
+            Console.WriteLine($"Server started at http://{LocalhostIpAddress}:{this.port}");
+            while (isRunning)
+            {
+                Console.WriteLine("Waiting for client...");
 
-            var task = Task.Run(ListenLoop);
-            task.Wait();
+                var client = listener.AcceptSocketAsync().GetAwaiter().GetResult();
+
+                Task.Run(() => Listen(client));
+            }
         }
 
-        public async Task ListenLoop()
+        public async void Listen(Socket client)
         {
-            while (this.IsRunning)
-            {
-                var client = await this._listener.AcceptSocketAsync();
-
-                var connectionHandler = new ConnectionHandler(client, this.handler, this.resourceRouter); ;
-
-                var responseTask = connectionHandler.ProcessRequestAsync();
-                responseTask.Wait();
-            }
+            var connectionHandler = new ConnectionHandler(client, this.handlersContext);
+            await connectionHandler.ProcessRequestAsync();
         }
     }
 }
