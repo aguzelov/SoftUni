@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SIS.MvcFramework\SIS.MvcFramework.csproj" />
+    <ProjectReference Include="..\MishMash.Data\MishMash.Data.csproj" />
+    <ProjectReference Include="..\MishMash.Models\MishMash.Models.csproj" />
+  </ItemGroup>
+
+</Project>
