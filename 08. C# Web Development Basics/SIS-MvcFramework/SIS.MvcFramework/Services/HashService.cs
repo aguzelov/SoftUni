@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SIS.MvcFramework.Logger;
+using System;
 using System.Security.Cryptography;
 using System.Text;
-using SIS.MvcFramework.Logger;
 
 namespace SIS.MvcFramework.Services
 {
@@ -30,9 +30,9 @@ namespace SIS.MvcFramework.Services
             stringToHash = stringToHash + "myAppSalt1316387123718#";
             using (var sha256 = SHA256.Create())
             {
-                // Send a sample text to hash.  
+                // Send a sample text to hash.
                 var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(stringToHash));
-                // Get the hashed string.  
+                // Get the hashed string.
                 var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
                 this.logger.Log(hash);
                 return hash;

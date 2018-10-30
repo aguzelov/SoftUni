@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using CakesWebApp.ViewModels.User;
+﻿using CakesWebApp.ViewModels.User;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework;
+using System.Linq;
 
 namespace CakesWebApp.Controllers
 {
@@ -12,11 +12,11 @@ namespace CakesWebApp.Controllers
         {
             var viewModel = this.Db.Users.Where(x => x.Username == this.User.Username)
                 .Select(x => new ProfileViewModel
-                             {
-                                 Username = x.Username,
-                                 RegisteredOn = x.DateOfRegistration,
-                                 OrdersCount = x.Orders.Count(),
-                             }).FirstOrDefault();
+                {
+                    Username = x.Username,
+                    RegisteredOn = x.DateOfRegistration,
+                    OrdersCount = x.Orders.Count(),
+                }).FirstOrDefault();
 
             if (viewModel == null)
             {

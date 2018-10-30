@@ -28,8 +28,7 @@ namespace MishMash.App.Controllers
             {
                 var model = new LoggedInIndexModel();
 
-                model.YourChannels = this.context.Channels
-                    .Where(c => c.Followers.Any(f => f.User.Username == user.Username))
+                model.YourChannels = this.channelService.YourChannels(user.Username)
                     .Select(c => new ChannelModel
                     {
                         Id = c.Id,

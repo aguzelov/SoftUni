@@ -18,9 +18,9 @@ namespace MishMash.Services
             this.hashService = hashService;
         }
 
-        public bool Add(string username, string password, string email, string roleStr)
+        public bool Add(string username, string password, string confirmPassword, string email, string roleStr)
         {
-            if (!IsValid(username, password, email, roleStr))
+            if (!IsValid(username, password, confirmPassword, email, roleStr))
             {
                 return false;
             }
@@ -86,9 +86,14 @@ namespace MishMash.Services
             return true;
         }
 
-        private bool IsValid(string username, string password, string email, string roleStr)
+        private bool IsValid(string username, string password, string confirmPassword, string email, string roleStr)
         {
-            if (username == null || password == null || email == null || roleStr == null)
+            if (username == null ||
+                password == null ||
+                confirmPassword == null ||
+                email == null ||
+                roleStr == null ||
+                password != confirmPassword)
             {
                 return false;
             }

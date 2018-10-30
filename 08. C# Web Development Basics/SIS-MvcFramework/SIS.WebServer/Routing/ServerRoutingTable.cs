@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
+using System;
+using System.Collections.Generic;
 
 namespace SIS.WebServer.Routing
 {

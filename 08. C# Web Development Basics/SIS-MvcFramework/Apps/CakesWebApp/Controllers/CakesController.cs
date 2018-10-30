@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using CakesWebApp.Models;
+﻿using CakesWebApp.Models;
 using CakesWebApp.ViewModels.Cakes;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Logger;
+using System;
+using System.Linq;
 
 namespace CakesWebApp.Controllers
 {
@@ -64,12 +64,12 @@ namespace CakesWebApp.Controllers
         {
             var cakes = this.Db.Products.Where(x => x.Name.Contains(searchText))
                 .Select(x => new CakeViewModel
-                             {
-                                 Id = x.Id,
-                                 Name = x.Name,
-                                 ImageUrl = x.ImageUrl,
-                                 Price = x.Price,
-                             }).ToList();
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ImageUrl = x.ImageUrl,
+                    Price = x.Price,
+                }).ToList();
             var cakesViewModel = new SearchViewModel
             {
                 Cakes = cakes,

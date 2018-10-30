@@ -16,19 +16,12 @@ namespace MishMash.Services
             this.context = context;
         }
 
-        public ICollection<int> FollowedChannelsTags(string username)
-        {
-            return this.YourChannels(username)
-               .SelectMany(c => c.Tags.Select(t => t.TagId))
-               .ToList();
-        }
-
         public ICollection<Channel> FollowedChannels(string username)
         {
-            return this.YourChannels(username);
+            return this.YourChannels(username).ToList();
         }
 
-        public ICollection<Channel> SeeOtherChannels(string username)
+        public IQueryable<Channel> SeeOtherChannels(string username)
         {
             var userChannels = this.YourChannels(username);
             var suggestedChannels = this.SuggestedChannels(username);
@@ -38,24 +31,21 @@ namespace MishMash.Services
             ids = ids.Distinct().ToList();
 
             return this.context.Channels
-                .Where(c => !ids.Contains(c.Id))
-                .ToList();
+                .Where(c => !ids.Contains(c.Id));
         }
 
-        public ICollection<Channel> SuggestedChannels(string username)
+        public IQueryable<Channel> SuggestedChannels(string username)
         {
             var tags = this.FollowedChannelsTags(username);
             return this.context.Channels.Where(
                 c => !c.Followers.Any(f => f.User.Username == username) &&
-                c.Tags.Any(t => tags.Contains(t.Id)))
-                .ToList();
+                c.Tags.Any(t => tags.Contains(t.Id)));
         }
 
-        public ICollection<Channel> YourChannels(string username)
+        public IQueryable<Channel> YourChannels(string username)
         {
             return this.context.Channels
-                .Where(c => c.Followers.Any(f => f.User.Username == username))
-                .ToList();
+                .Where(c => c.Followers.Any(f => f.User.Username == username));
         }
 
         public bool Follow(int userId, int channelId)
@@ -131,6 +121,13 @@ namespace MishMash.Services
 
         public void AddFollower(int id)
         {
+        }
+
+        private ICollection<int> FollowedChannelsTags(string username)
+        {
+            return this.YourChannels(username)
+               .SelectMany(c => c.Tags.Select(t => t.TagId))
+               .ToList();
         }
 
         private bool IsValid(string name, string description, string tags, string type)

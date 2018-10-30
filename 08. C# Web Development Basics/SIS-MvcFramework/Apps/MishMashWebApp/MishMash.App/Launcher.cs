@@ -1,4 +1,5 @@
-﻿using MishMash.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using MishMash.Data;
 using SIS.MvcFramework;
 using System;
 
@@ -9,8 +10,7 @@ namespace MishMash.App
         private static void Main(string[] args)
         {
             var context = new MishMashContext();
-            //context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
+            context.Database.Migrate();
 
             WebHost.Start(new StartUp());
 

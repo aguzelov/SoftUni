@@ -22,7 +22,7 @@ namespace SIS.MvcFramework.Services
 
         public T CreateInstance<T>()
         {
-            return (T) this.CreateInstance(typeof(T));
+            return (T)this.CreateInstance(typeof(T));
         }
 
         public object CreateInstance(Type type)
@@ -42,7 +42,7 @@ namespace SIS.MvcFramework.Services
                 throw new Exception($"Type {type.FullName} cannot be instantiated.");
             }
 
-            // TODO: if empty -> use it 
+            // TODO: if empty -> use it
             var constructor = type.GetConstructors().OrderBy(x => x.GetParameters().Length).First();
             var constructorParameters = constructor.GetParameters();
             var constructorParameterObjects = new List<object>();

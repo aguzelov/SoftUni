@@ -1,19 +1,18 @@
 ﻿using MishMash.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MishMash.Services
 {
     public interface IChannelService
     {
-        ICollection<Channel> YourChannels(string username);
-
-        ICollection<int> FollowedChannelsTags(string username);
+        IQueryable<Channel> YourChannels(string username);
 
         ICollection<Channel> FollowedChannels(string username);
 
-        ICollection<Channel> SuggestedChannels(string username);
+        IQueryable<Channel> SuggestedChannels(string username);
 
-        ICollection<Channel> SeeOtherChannels(string username);
+        IQueryable<Channel> SeeOtherChannels(string username);
 
         bool Follow(int userId, int channelId);
 

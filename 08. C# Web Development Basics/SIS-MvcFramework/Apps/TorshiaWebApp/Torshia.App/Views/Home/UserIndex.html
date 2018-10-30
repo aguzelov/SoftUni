@@ -1,0 +1,51 @@
+﻿@if(User.Role == "Admin")
+{
+<h4 class="text-torshia text-center">Welcome, Admin-@User.Username!</h4>
+<h4 class="text-torshia text-center">Enjoy your work!</h4>
+}
+@else
+{
+<h4 class="text-torshia text-center">Welcome, @User.Username!</h4>
+<h4 class="text-torshia text-center">Have a nice tasking experience!</h4>
+}
+
+<hr class="hr-2 bg-torshia">
+<div class="tasks-holder">
+    <div class="tasks-row row">
+        @for(var i = 0; i < Model.Tasks.Count(); i++)
+        {
+
+        {var task = Model.Tasks.ToList()[i];}
+        @if(i % 5 == 0 && i != 0)
+        {
+    </div>
+    <div class="tasks-row row mt-4 mb-4">
+        }
+
+        <div class="task col mx-3 bg-torshia rounded py-3">
+            <h6 class="task-title text-white text-center my-3">
+                @task.Title
+            </h6>
+            <hr class="bg-white hr-2 w-75">
+            <h6 class="task-title text-white text-center my-4">Level:   @task.Level</h6>
+            <hr class="bg-white hr-2 w-75">
+            <div class="follow-button-holder d-flex justify-content-between w-50    mx-auto mt-4">
+                <a href="/Tasks/Report?id=@task.Id">
+                    <h6 class="text-center text-white">Report</h6>
+                </a>
+                <a href="/Tasks/Details?id=@task.Id"><h6 class="text-center text-white">Details</h6></a>
+            </div>
+        </div>
+
+        }
+
+        @if((Model.Tasks.Count() % 5) != 0)
+        {
+        {var remainder = 5 - (Model.Tasks.Count() % 5) ;}
+        @for(var i = 0; i < remainder; i++)
+        {
+        <div class="task col mx-3 bg-white rounded py-3"></div>
+        }
+        }
+    </div>
+</div>

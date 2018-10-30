@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using CakesWebApp.Models;
+﻿using CakesWebApp.Models;
 using CakesWebApp.ViewModels.Cakes;
 using CakesWebApp.ViewModels.Orders;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework;
+using System.Linq;
 
 namespace CakesWebApp.Controllers
 {

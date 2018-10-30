@@ -74,11 +74,11 @@ namespace MishMash.App.Controllers
         [HttpPost]
         public IHttpResponse Register(RegiserUserModel model)
         {
-            var isAdded = this.userService.Add(model.Username, model.Password, model.Email, "User");
+            var isAdded = this.userService.Add(model.Username, model.Password, model.ConfirmPassword, model.Email, "User");
 
             if (!isAdded)
             {
-                return this.BadRequestErrorWithView("Please provide correct data.");
+                return this.BadRequestErrorWithView("Invalid registration data!");
             }
 
             return this.Redirect("/Users/Login");

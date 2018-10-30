@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using SIS.HTTP.Cookies;
+﻿using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Sessions;
+using System.Collections.Generic;
 
 namespace SIS.HTTP.Requests
 {

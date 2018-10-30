@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework.Services;
 using SIS.WebServer.Results;
 using SIS.WebServer.Routing;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace SIS.MvcFramework.Routing
 {
@@ -17,7 +17,7 @@ namespace SIS.MvcFramework.Routing
     {
         public void RegisterRoutes(
             ServerRoutingTable routingTable,
-            IMvcApplication application, 
+            IMvcApplication application,
             MvcFrameworkSettings settings,
             IServiceCollection serviceCollection)
         {
@@ -83,7 +83,7 @@ namespace SIS.MvcFramework.Routing
         }
 
         private static void RegisterActions(
-            ServerRoutingTable routingTable, 
+            ServerRoutingTable routingTable,
             IMvcApplication application,
             MvcFrameworkSettings settings,
             IServiceCollection serviceCollection)
@@ -100,9 +100,9 @@ namespace SIS.MvcFramework.Routing
 
                 foreach (var methodInfo in getMethods)
                 {
-                    var httpAttribute = (HttpAttribute) methodInfo.GetCustomAttributes(true)
+                    var httpAttribute = (HttpAttribute)methodInfo.GetCustomAttributes(true)
                         .FirstOrDefault(ca => ca.GetType().IsSubclassOf(typeof(HttpAttribute)));
-                    
+
                     var method = HttpRequestMethod.Get;
                     string path = null;
                     if (httpAttribute != null)
@@ -166,7 +166,7 @@ namespace SIS.MvcFramework.Routing
             controllerInstance.Request = request;
             controllerInstance.ViewEngine = new ViewEngine.ViewEngine(); // TODO: use serviceCollection
             controllerInstance.UserCookieService = serviceCollection.CreateInstance<IUserCookieService>();
-            
+
             var actionParameterObjects = GetActionParameterObjects(methodInfo, request, serviceCollection);
             var httpResponse = methodInfo.Invoke(controllerInstance, actionParameterObjects.ToArray()) as IHttpResponse;
             return httpResponse;

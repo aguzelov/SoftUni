@@ -49,21 +49,27 @@ namespace SIS.MvcFramework
                 case TypeCode.Int32:
                     if (int.TryParse(stringValue, out var intValue)) value = intValue;
                     break;
+
                 case TypeCode.Char:
                     if (char.TryParse(stringValue, out var charValue)) value = charValue;
                     break;
+
                 case TypeCode.Int64:
                     if (long.TryParse(stringValue, out var longValue)) value = longValue;
                     break;
+
                 case TypeCode.Double:
                     if (double.TryParse(stringValue, out var doubleValue)) value = doubleValue;
                     break;
+
                 case TypeCode.Decimal:
                     if (decimal.TryParse(stringValue, out var decimalValue)) value = decimalValue;
                     break;
+
                 case TypeCode.DateTime:
                     if (DateTime.TryParse(stringValue, out var dateTimeValue)) value = dateTimeValue;
                     break;
+
                 case TypeCode.String:
                     value = stringValue;
                     break;

@@ -13,8 +13,8 @@
                 @if (i == Model.Count() - 1)
                 {
                     <form action="/orders/finish" method="post">
-                        <input type="hidden" name="orderId" value="@order.Id"/>
-                        <input type="submit" class="btn-primary" value="Finish"/>
+                        <input type="hidden" name="orderId" value="@order.Id" />
+                        <input type="submit" class="btn-primary" value="Finish" />
                     </form>
                 }
                 @else

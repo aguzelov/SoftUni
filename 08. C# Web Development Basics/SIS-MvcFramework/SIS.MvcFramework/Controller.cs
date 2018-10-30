@@ -1,12 +1,12 @@
-﻿using System;
-using System.Text;
-using SIS.HTTP.Cookies;
+﻿using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework.Services;
 using SIS.MvcFramework.ViewEngine;
+using System;
+using System.Text;
 
 namespace SIS.MvcFramework
 {
@@ -14,7 +14,7 @@ namespace SIS.MvcFramework
     {
         protected Controller()
         {
-            this.Response = new HttpResponse {StatusCode = HttpResponseStatusCode.Ok};
+            this.Response = new HttpResponse { StatusCode = HttpResponseStatusCode.Ok };
         }
 
         public IHttpRequest Request { get; set; }
@@ -54,7 +54,7 @@ namespace SIS.MvcFramework
         {
             return this.View(viewName, (object)null, layoutName);
         }
-        
+
         protected IHttpResponse View<T>(T model = null, string layoutName = "_Layout")
             where T : class
         {

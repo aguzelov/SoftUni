@@ -1,11 +1,11 @@
-﻿using System;
-using SIS.HTTP.Responses;
-using System.Linq;
-using CakesWebApp.Models;
+﻿using CakesWebApp.Models;
 using CakesWebApp.ViewModels.Account;
 using SIS.HTTP.Cookies;
+using SIS.HTTP.Responses;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Services;
+using System;
+using System.Linq;
 
 namespace CakesWebApp.Controllers
 {
@@ -88,7 +88,7 @@ namespace CakesWebApp.Controllers
         {
             var hashedPassword = this.hashService.Hash(model.Password);
 
-            var user = this.Db.Users.FirstOrDefault(x => 
+            var user = this.Db.Users.FirstOrDefault(x =>
                 x.Username == model.Username.Trim() &&
                 x.Password == hashedPassword);
 

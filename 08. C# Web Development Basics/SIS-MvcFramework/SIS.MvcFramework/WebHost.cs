@@ -1,9 +1,9 @@
-﻿using System.Globalization;
-using SIS.MvcFramework.Logger;
+﻿using SIS.MvcFramework.Logger;
 using SIS.MvcFramework.Routing;
 using SIS.MvcFramework.Services;
 using SIS.WebServer;
 using SIS.WebServer.Routing;
+using System.Globalization;
 
 namespace SIS.MvcFramework
 {
@@ -24,7 +24,6 @@ namespace SIS.MvcFramework
             var serverRoutingTable = new ServerRoutingTable();
             var routingEngine = new RoutingEngine();
             routingEngine.RegisterRoutes(serverRoutingTable, application, settings, dependencyContainer);
-
 
             var server = new Server(80, serverRoutingTable);
             server.Run();
