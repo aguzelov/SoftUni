@@ -1,0 +1,50 @@
+﻿<h1 class="text-center">Delete Product</h1>
+<hr class="hr-2 bg-dark" />
+
+<form class="mx-auto w-50" method="post" action="/Products/Delete">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="name" class="text-mishmash">Name</label>
+        <input type="text" disabled="disabled" class="form-control" id="name" name="name"
+               value="@Model.Name">
+    </div>
+    <div class="form-group">
+        <label for="price" class="text-mishmash text-center">Price</label>
+        <input type="number" step="0.1" min="0" disabled="disabled" class="form-control" id="price" name="price" value="@Model.Price">
+    </div>
+    <div class="form-group">
+        <label for="description" class="text-mishmash">Description</label>
+        <textarea class="form-control" disabled="disabled" id="description" name="description">@Model.Description</textarea>
+    </div>
+
+    <h2 class="text-center text-mishmash">Product Type</h2>
+    <hr class="bg-mishmash w-50 hr-2" />
+    <div class="row justify-content-around">
+        {var types = new []{"Food", "Domestic", "Health", "Cosmetic", "Other"};}
+
+        @foreach(var type in types)
+        {
+
+        @if(type == Model.Type)
+        {
+        <div class="col-md-2">
+            <input name="type" disabled="disabled" checked="checked" id="@type" value="@type" type="radio" />
+            <label for="@type" class="text-mishmash">@type</label>
+        </div>
+        }
+        @else
+        {
+        <div class="col-md-2">
+            <input name="type" disabled="disabled" id="@type" value="@type" type="radio" />
+            <label for="@type" class="text-mishmash">@type</label>
+        </div>
+        }
+
+        }
+    </div>
+    <hr class="bg-mishmash w-50 hr-2" />
+    <div class="button-holder mt-4 d-flex justify-content-center">
+        <input type="submit" class="btn chushka-bg-color" value="Delete">
+        <a class="btn chushka-bg-color" href="/Products/Details?id=@Model.Id">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+﻿<!--<main class="mt-3 mb-5">-->
+<div class="container-fluid text-center">
+    @if(User.Role == "Admin")
+    {
+    <h2>Greetings, admin!</h2>
+    <h4>Enjoy your work today!</h4>
+    }
+    @else
+    {
+    <h2>Greetings, @User.Username!</h2>
+    <h4>Feel free to view and order any of our products.</h4>
+    }
+</div>
+<hr class="hr-2 bg-dark" />
+<div class="container-fluid product-holder">
+    <div class="row d-flex justify-content-around">
+        @for(int i = 0; i < @Model.Products.Count(); i++)
+        {
+        {var product = Model.Products.ToList()[i];}
+
+        @if(i != 0 && i % 5 == 0)
+        {
+    </div>
+    <div class="row d-flex justify-content-around mt-3">
+        }
+
+        <div class="product p-1 chushka-bg-color rounded-top rounded-bottom col-md-2">
+            <a href="/products/details?id=@product.Id">
+                <h5 class="text-center mt-3">@product.Name</h5>
+                <hr class="hr-1 bg-white" />
+
+                <p class="text-white text-center ">
+                    @product.ShortDescription
+                </p>
+
+                <hr class="hr-1 bg-white" />
+                <h6 class="text-center text-white mb-3">$@product.Price</h6>
+            </a>
+        </div>
+
+        }
+    </div>
+</div>

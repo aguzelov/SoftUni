@@ -1,0 +1,24 @@
+﻿<!-- <main class="mt-3 mb-5">-->
+<h1 class="text-center">@Model.Name</h1>
+<hr class="hr-2 bg-dark" />
+<div class="product-type-holder half-width mx-auto d-flex justify-content-between">
+    <h3 class="text-center">Type: @Model.Type</h3>
+    <h3 class="text-center">Price: $@Model.Price</h3>
+</div>
+<hr class="hr-2 bg-dark" />
+<h3 class="text-center">Description</h3>
+<div class="product-description-holder">
+    <p class="text-center mt-4">
+        @Model.ShortDescription
+    </p>
+</div>
+<hr class="hr-2 bg-dark" />
+<h3 class="text-center">Actions</h3>
+<div class="product-action-holder mt-4 d-flex justify-content-around">
+    <a class="btn chushka-bg-color" href="/Orders/Order?id=@Model.Id">Order</a>
+    @if(@User.Role == "Admin")
+    {
+    <a class="btn chushka-bg-color" href="/Products/Edit?id=@Model.Id">Edit</a>
+    <a class="btn chushka-bg-color" href="/Products/Delete?id=@Model.Id">Delete</a>
+    }
+</div>

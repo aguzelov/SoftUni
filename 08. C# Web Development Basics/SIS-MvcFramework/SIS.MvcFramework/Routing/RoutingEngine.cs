@@ -31,11 +31,16 @@ namespace SIS.MvcFramework.Routing
             MvcFrameworkSettings settings)
         {
             var path = settings.WwwrootPath;
+            if (!Directory.Exists(path))
+            {
+                return;
+            }
+
             var files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
             foreach (var file in files)
             {
                 var url = file.Replace("\\", "/").Replace(settings.WwwrootPath, string.Empty);
-                routingTable.Routes[HttpRequestMethod.Get][url] = (request) =>
+                routingTable.Add(HttpRequestMethod.Get, url, (request) =>
                 {
                     var content = File.ReadAllText(file);
                     var contentType = "text/plain";
@@ -65,18 +70,18 @@ namespace SIS.MvcFramework.Routing
                     }
 
                     return new TextResult(content, HttpResponseStatusCode.Ok, contentType);
-                };
+                });
                 Console.WriteLine($"Content registered: {file} => {HttpRequestMethod.Get} => {url}");
             }
         }
 
         private static void RegisterDefaultRoute(ServerRoutingTable routingTable)
         {
-            if (!routingTable.Routes[HttpRequestMethod.Get].ContainsKey("/")
-                && routingTable.Routes[HttpRequestMethod.Get].ContainsKey("/Home/Index"))
+            if (!routingTable.Contains(HttpRequestMethod.Get, "/")
+                && routingTable.Contains(HttpRequestMethod.Get, "/Home/Index"))
             {
-                routingTable.Routes[HttpRequestMethod.Get]["/"] = (request) =>
-                    routingTable.Routes[HttpRequestMethod.Get]["/Home/Index"](request);
+                routingTable.Add(HttpRequestMethod.Get, "/", (request) =>
+                    routingTable.Get(HttpRequestMethod.Get, "/Home/Index")(request));
 
                 Console.WriteLine($"Route registered: reuse /Home/Index => {HttpRequestMethod.Get} => /");
             }
@@ -128,15 +133,17 @@ namespace SIS.MvcFramework.Routing
                         path = "/" + path;
                     }
 
-                    var hasAuthorizeAttribute = methodInfo.GetCustomAttributes(true)
-                        .Any(ca => ca.GetType() == typeof(AuthorizeAttribute));
+                    var authorizeAttribute = methodInfo.GetCustomAttributes(true)
+                        .FirstOrDefault(ca => ca.GetType() == typeof(AuthorizeAttribute)) as AuthorizeAttribute;
                     routingTable.Add(method, path,
                         (request) =>
                         {
-                            if (hasAuthorizeAttribute)
+                            if (authorizeAttribute != null)
                             {
                                 var userData = Controller.GetUserData(request.Cookies, userCookieService);
-                                if (userData == null)
+                                if (userData == null || !userData.IsLoggedIn
+                                    || (authorizeAttribute.RoleName != null
+                                        && authorizeAttribute.RoleName != userData.Role))
                                 {
                                     var response = new HttpResponse();
                                     response.Headers.Add(new HttpHeader(HttpHeader.Location, settings.LoginPageUrl));
