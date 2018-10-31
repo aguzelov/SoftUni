@@ -17,14 +17,13 @@ namespace CakesWebApp.Controllers
             this.logger = logger;
         }
 
-        [HttpGet("/cakes/add")]
-        public IHttpResponse AddCakes()
+        public IHttpResponse Add()
         {
-            return this.View("AddCakes");
+            return this.View();
         }
 
-        [HttpPost("/cakes/add")]
-        public IHttpResponse DoAddCakes(DoAddCakesInputModel model)
+        [HttpPost]
+        public IHttpResponse Add(DoAddCakesInputModel model)
         {
             // TODO: Validation
             var product = model.To<Product>();
@@ -44,8 +43,6 @@ namespace CakesWebApp.Controllers
             return this.Redirect("/cakes/view?id=" + product.Id);
         }
 
-        // cakes/view?id=1
-        [HttpGet("/cakes/view")]
         public IHttpResponse ById(int id)
         {
             var product = this.Db.Products.FirstOrDefault(x => x.Id == id);
@@ -55,11 +52,9 @@ namespace CakesWebApp.Controllers
             }
 
             var viewModel = product.To<CakeViewModel>();
-            return this.View("CakeById", viewModel);
+            return this.View(viewModel);
         }
 
-        // cakes/search?searchText=cake
-        [HttpGet("/cakes/search")]
         public IHttpResponse Search(string searchText)
         {
             var cakes = this.Db.Products.Where(x => x.Name.Contains(searchText))
@@ -76,7 +71,7 @@ namespace CakesWebApp.Controllers
                 SearchText = searchText,
             };
 
-            return this.View("Search", cakesViewModel);
+            return this.View(cakesViewModel);
         }
     }
 }

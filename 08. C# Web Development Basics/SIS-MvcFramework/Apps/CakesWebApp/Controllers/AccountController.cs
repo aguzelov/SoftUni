@@ -19,14 +19,13 @@ namespace CakesWebApp.Controllers
             this.hashService = hashService;
         }
 
-        [HttpGet("/account/register")]
         public IHttpResponse Register()
         {
-            return this.View("Register");
+            return this.View();
         }
 
-        [HttpPost("/account/register")]
-        public IHttpResponse DoRegister(DoRegisterInputModel model)
+        [HttpPost]
+        public IHttpResponse Register(DoRegisterInputModel model)
         {
             // Validate
             if (string.IsNullOrWhiteSpace(model.Username) || model.Username.Trim().Length < 4)
@@ -67,24 +66,19 @@ namespace CakesWebApp.Controllers
             }
             catch (Exception e)
             {
-                // TODO: Log error
                 return this.ServerError(e.Message);
             }
 
-            // TODO: Login
-
-            // Redirect
-            return this.Redirect("/");
+            return this.Redirect("/Account/Login");
         }
 
-        [HttpGet("/account/login")]
         public IHttpResponse Login()
         {
-            return this.View("Login");
+            return this.View();
         }
 
-        [HttpPost("/account/login")]
-        public IHttpResponse DoLogin(DoLoginInputModel model)
+        [HttpPost]
+        public IHttpResponse Login(DoLoginInputModel model)
         {
             var hashedPassword = this.hashService.Hash(model.Password);
 
@@ -94,18 +88,23 @@ namespace CakesWebApp.Controllers
 
             if (user == null)
             {
-                return this.BadRequestError("Invalid username or password.");
+                return BadRequestErrorWithView("Invalid username or password!");
             }
 
-            var mvcUser = new MvcUserInfo { Username = user.Username };
+            var mvcUser = new MvcUserInfo
+            {
+                Username = user.Username,
+                Info = user.DateOfRegistration.ToString("dd/MM/yyyy")
+            };
+
             var cookieContent = this.UserCookieService.GetUserCookie(mvcUser);
 
             var cookie = new HttpCookie(".auth-cakes", cookieContent, 7) { HttpOnly = true };
             this.Response.Cookies.Add(cookie);
+
             return this.Redirect("/");
         }
 
-        [HttpGet("/account/logout")]
         public IHttpResponse Logout()
         {
             if (!this.Request.Cookies.ContainsCookie(".auth-cakes"))

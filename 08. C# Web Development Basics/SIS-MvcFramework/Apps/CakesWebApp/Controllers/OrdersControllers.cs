@@ -9,7 +9,7 @@ namespace CakesWebApp.Controllers
 {
     public class OrdersControllers : BaseController
     {
-        [HttpPost("/orders/add")]
+        [HttpPost]
         public IHttpResponse Add(int productId)
         {
             var userId = this.Db.Users.FirstOrDefault(x => x.Username == this.User.Username)?.Id;
@@ -41,11 +41,10 @@ namespace CakesWebApp.Controllers
             this.Db.OrderProducts.Add(orderProduct);
             this.Db.SaveChanges();
 
-            return this.Redirect("/orders/byid?id=" + lastUserOrder.Id);
+            return this.Redirect("/Orders/ById?id=" + lastUserOrder.Id);
         }
 
-        [HttpGet("/orders/byid")]
-        public IHttpResponse GetById(int id)
+        public IHttpResponse ById(int id)
         {
             var order = this.Db.Orders.FirstOrDefault(x => x.Id == id
                                 && x.User.Username == this.User.Username);
@@ -70,10 +69,9 @@ namespace CakesWebApp.Controllers
                 }).ToList();
             viewModel.IsShoppingCart = lastOrderId == order.Id;
 
-            return this.View("OrderById", viewModel);
+            return this.View(viewModel);
         }
 
-        [HttpGet("/orders/list")]
         public IHttpResponse List()
         {
             var orders = this.Db.Orders.Where(x => x.User.Username == this.User.Username)
@@ -85,10 +83,10 @@ namespace CakesWebApp.Controllers
                     SumOfProductPrices = x.Products.Sum(p => p.Product.Price),
                 });
 
-            return this.View("OrdersList", orders.ToArray());
+            return this.View(orders.ToArray());
         }
 
-        [HttpPost("/orders/finish")]
+        [HttpPost]
         public IHttpResponse Finish(int orderId)
         {
             var userId = this.Db.Users.FirstOrDefault(x => x.Username == this.User.Username)?.Id;
@@ -111,7 +109,7 @@ namespace CakesWebApp.Controllers
             this.Db.Orders.Add(newEmptyOrder);
             this.Db.SaveChanges();
 
-            return this.Redirect("/orders/list");
+            return this.Redirect("/Orders/List");
         }
     }
 }

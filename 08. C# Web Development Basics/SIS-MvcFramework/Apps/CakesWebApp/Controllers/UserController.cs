@@ -1,13 +1,11 @@
 ﻿using CakesWebApp.ViewModels.User;
 using SIS.HTTP.Responses;
-using SIS.MvcFramework;
 using System.Linq;
 
 namespace CakesWebApp.Controllers
 {
     public class UserController : BaseController
     {
-        [HttpGet("/user/profile")]
         public IHttpResponse Profile()
         {
             var viewModel = this.Db.Users.Where(x => x.Username == this.User.Username)
@@ -28,7 +26,7 @@ namespace CakesWebApp.Controllers
                 viewModel.OrdersCount--;
             }
 
-            return this.View("Profile", viewModel);
+            return this.View(viewModel);
         }
     }
 }
