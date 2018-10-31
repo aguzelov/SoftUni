@@ -64,7 +64,7 @@ namespace Torshia.App.Controllers
             return this.Redirect("Users/Login");
         }
 
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Logout()
         {
             if (!this.Request.Cookies.ContainsCookie(".auth-cakes"))

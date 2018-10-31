@@ -15,22 +15,15 @@ namespace MishMash.App.Controllers
             this.userService = userService;
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Logout()
         {
-            if (!this.Request.Cookies.ContainsCookie(".auth-cakes"))
-            {
-                return this.Redirect("/");
-            }
-
             var cookie = this.Request.Cookies.GetCookie(".auth-cakes");
             cookie.Delete();
             this.Response.Cookies.Add(cookie);
             return this.Redirect("/");
         }
 
-        [HttpGet]
         public IHttpResponse Login()
         {
             return this.View();
@@ -65,7 +58,6 @@ namespace MishMash.App.Controllers
             return this.Redirect("/");
         }
 
-        [HttpGet]
         public IHttpResponse Register()
         {
             return this.View();

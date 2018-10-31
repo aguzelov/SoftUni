@@ -15,14 +15,9 @@ namespace Torshia.App.Controllers
             this.reportService = reportService;
         }
 
-        [Authorize]
+        [Authorize("Admin")]
         public IHttpResponse All()
         {
-            if (this.User.Role != "Admin")
-            {
-                return this.Redirect($"/Users/Login");
-            }
-
             var reports = this.reportService.GetAll(this.User.Username)
                 .Select(r => new ReportView
                 {
@@ -40,14 +35,9 @@ namespace Torshia.App.Controllers
             return this.View("/Reports/All", view);
         }
 
-        [Authorize]
+        [Authorize("Admin")]
         public IHttpResponse Details(int id)
         {
-            if (this.User.Role != "Admin")
-            {
-                return this.Redirect($"/Users/Login");
-            }
-
             var report = this.reportService.GetReport(id);
 
             if (report == null)

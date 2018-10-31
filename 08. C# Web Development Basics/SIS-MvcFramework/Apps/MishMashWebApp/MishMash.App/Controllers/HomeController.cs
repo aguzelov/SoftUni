@@ -2,7 +2,6 @@
 using MishMash.Data;
 using MishMash.Services;
 using SIS.HTTP.Responses;
-using SIS.MvcFramework;
 using System.Linq;
 
 namespace MishMash.App.Controllers
@@ -20,7 +19,6 @@ namespace MishMash.App.Controllers
             this.channelService = channelService;
         }
 
-        [HttpGet]
         public IHttpResponse Index()
         {
             var user = this.userService.GetUser(this.User.Username);

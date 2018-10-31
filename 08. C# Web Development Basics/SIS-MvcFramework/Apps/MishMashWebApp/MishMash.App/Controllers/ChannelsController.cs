@@ -21,19 +21,13 @@ namespace MishMash.App.Controllers
             this.channelService = channelService;
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("Admin")]
         public IHttpResponse Create()
         {
-            if (this.User.Role != "Admin")
-            {
-                return this.Redirect("/");
-            }
             return this.View();
         }
 
-        [HttpPost]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Create(CreateChannelModel model)
         {
             var user = this.userService.GetUser(this.User.Username);
@@ -55,8 +49,7 @@ namespace MishMash.App.Controllers
             return this.Redirect("/");
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Followed()
         {
             var user = this.userService.GetUser(this.User.Username);
@@ -80,8 +73,7 @@ namespace MishMash.App.Controllers
             return this.View("Channels/Followed", model);
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Follow(int id)
         {
             var user = this.userService.GetUser(this.User.Username);
@@ -93,8 +85,7 @@ namespace MishMash.App.Controllers
             return this.Redirect("/");
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Unfollow(int id)
         {
             var user = this.userService.GetUser(this.User.Username);
@@ -104,8 +95,7 @@ namespace MishMash.App.Controllers
             return this.Redirect("/Channels/Followed");
         }
 
-        [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Details(int id)
         {
             var channel = this.context.Channels.Where(c => c.Id == id)

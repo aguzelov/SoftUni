@@ -20,21 +20,16 @@ namespace Torshia.App.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Create()
         {
             return this.View("/Tasks/Create");
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize("Admin")]
         public IHttpResponse Create(CreateTaskView view)
         {
-            if (this.User.Role != "Admin")
-            {
-                return this.Redirect($"/Users/Login");
-            }
-
             var task = this.taskService.AddTask(view);
             if (task == null)
             {
@@ -44,7 +39,7 @@ namespace Torshia.App.Controllers
             return this.Redirect($"/Tasks/Details?id={task.Id}");
         }
 
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Details(int id)
         {
             var task = this.taskService.GetTask(id);
@@ -66,7 +61,7 @@ namespace Torshia.App.Controllers
             return this.View("/Tasks/Details", model);
         }
 
-        [Authorize]
+        [Authorize("User")]
         public IHttpResponse Report(int id)
         {
             var user = this.userService.GetUser(this.User.Username);
