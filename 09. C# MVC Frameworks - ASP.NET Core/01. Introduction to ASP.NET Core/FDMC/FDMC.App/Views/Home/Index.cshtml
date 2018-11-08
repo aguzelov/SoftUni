@@ -1,0 +1,14 @@
+﻿@model FDMC.App.Models.CatsViewModel
+
+<h1>Fluffy Duffy Munchkin Cats</h1>
+
+<ul>
+    @foreach (var cat in Model.Cats)
+    {
+        <li><a href="/cats/@cat.Id">@cat.Name</a></li>
+    }
+</ul>
+
+<button type="reset" onclick="location.href='/cats/add'">
+    Add Cat
+</button>
