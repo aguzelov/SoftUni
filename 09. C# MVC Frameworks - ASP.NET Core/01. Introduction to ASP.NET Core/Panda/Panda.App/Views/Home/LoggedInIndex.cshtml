@@ -1,0 +1,51 @@
+﻿@model Dictionary<string, ICollection<PackageViewModel>>
+@inject UserManager<User> userManager
+
+@{
+
+    var isAdmin = User.Identity.IsAuthenticated && await userManager.IsInRoleAsync(await userManager.FindByNameAsync(User.Identity.Name), "Admin");
+
+}
+
+<div class="container-fluid text-center">
+
+    @if (isAdmin)
+    {
+        <h2>Hello, Administrator @User.Identity.Name!</h2>
+    }
+    else
+    {
+        <h2>Hello, @User.Identity.Name!</h2>
+    }
+</div>
+<hr class="bg-panda hr-2" />
+<div class="container-fluid product-holder">
+    <div class="row d-flex justify-content-around">
+        @{
+            var statuses = new[] { "Pending", "Shipped", "Delivered" };
+            foreach (var status in statuses)
+            {
+
+                <div class="col-3">
+                    <h2 class="text-center">@status</h2>
+                    <div class="d-flex flex-column border-panda">
+                        @foreach (var package in Model[status])
+                        {
+                            <div class="row m-2">
+                                <div class="col-9 "><h2>@package.Description</h2></div>
+                                @if (status == "Delivered")
+                                {
+                                    <div class="col-3"><a asp-controller="Packages" asp-action="Acquire" asp-route-id="@package.Id" class="btn bg-panda text-white">Acquire</a></div>
+                                }
+                                else
+                                {
+                                    <div class="col-3"><a asp-controller="Packages" asp-action="Details" asp-route-id="@package.Id" class="btn bg-panda text-white">Details</a></div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

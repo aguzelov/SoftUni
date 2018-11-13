@@ -1,0 +1,40 @@
+﻿@model ReceiptsDetailsViewModel
+
+<h1 class="text-center">Receipt Details</h1>
+<hr class="hr-2 bg-panda">
+<div class="mx-auto">
+    <div class="receipt-id-handler d-flex justify-content-between">
+        <h3>Receipt Number:</h3>
+        <h3>@Model.Id</h3>
+    </div>
+    <hr class="hr-2 bg-panda">
+    <div class="d-flex justify-content-between">
+        <h4>Issued On:</h4>
+        <h4>@Model.IssuedOn.ToString("dd/MM/yyyy")</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4>Delivery Address:</h4>
+        <h4>@Model.Address</h4>
+    </div>
+    <hr class="hr-2 bg-panda">
+    <div class="d-flex justify-content-between">
+        <h4>Package Weight (KG):</h4>
+        <h4>@Model.Weight</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4>Package Description:</h4>
+        <h4>@Model.Description</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4>Recipient:</h4>
+        <h4>@Model.Recipient</h4>
+    </div>
+    <hr class="hr-2 bg-panda">
+    <div class="fee-holder d-flex justify-content-end">
+        <h3>Total: $@Model.Total</h3>
+    </div>
+</div>
+<!--RECIPIENT-->
+<!--PACKAGE WEIGHT-->
+<!--PACKAGE DESCRIPTION-->
+<!--DELIVERY ADDRESS-->

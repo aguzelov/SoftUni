@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-Panda.App-1B2E8AA2-B275-4D9D-A721-B72E878B916C</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Accounts\Login.cshtml" />
+    <Content Remove="Views\Accounts\Register.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Home\LoggedInIndex.cshtml" />
+    <Content Remove="Views\Packages\All.cshtml" />
+    <Content Remove="Views\Packages\Details.cshtml" />
+    <Content Remove="Views\Receipts\Details.cshtml" />
+    <Content Remove="Views\Receipts\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Accounts\Login.cshtml" />
+    <None Include="Views\Accounts\Register.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\LoggedInIndex.cshtml" />
+    <None Include="Views\Packages\All.cshtml" />
+    <None Include="Views\Packages\Details.cshtml" />
+    <None Include="Views\Receipts\Details.cshtml" />
+    <None Include="Views\Receipts\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Panda.Data\Panda.Data.csproj" />
+    <ProjectReference Include="..\Panda.Services\Panda.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
+</Project>
