@@ -52,13 +52,3 @@ namespace Panda.App
         }
     }
 }
-
-/*
- Id = receipt.Id,
-                Address = receipt.Package.ShippingAddress,
-                Description = receipt.Package.Description,
-                IssuedOn = receipt.IssuedOn.ToString("dd/MM/yyyy"),
-                Recipient = receipt.Recipient.UserName,
-                Weight = receipt.Package.Weight,
-                Total = receipt.Fee
-*/
