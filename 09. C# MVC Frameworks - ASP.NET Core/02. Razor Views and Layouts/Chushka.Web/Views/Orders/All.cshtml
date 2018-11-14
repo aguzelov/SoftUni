@@ -1,0 +1,31 @@
+﻿@model ICollection<DetailsOrderViewModel>
+
+<h1 class="text-center">All Orders</h1>
+<hr class="hr-2 bg-dark" />
+<table class="table w-75 mx-auto table-hover">
+    <thead>
+        <tr class="row">
+            <th class="col-md-1">#</th>
+            <th class="col-md-4">Order ID</th>
+            <th class="col-md-2">Customer</th>
+            <th class="col-md-2">Product</th>
+            <th class="col-md-2">Ordered On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+
+            var index = i + 1;
+            var order = Model.ToList()[i];
+
+            <tr class="row">
+                <th class="col-md-1">@index</th>
+                <td class="col-md-4">@order.Id</td>
+                <td class="col-md-2">@order.Client</td>
+                <td class="col-md-2">@order.Product</td>
+                <td class="col-md-2">@order.OrderedOn</td>
+            </tr>
+        }
+    </tbody>
+</table>

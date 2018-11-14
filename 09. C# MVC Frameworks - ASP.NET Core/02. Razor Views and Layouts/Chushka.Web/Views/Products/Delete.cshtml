@@ -1,0 +1,46 @@
+﻿@model CreateProductViewModel
+
+<h1 class="text-center">Delete Product</h1>
+<hr class="hr-2 bg-dark" />
+<form class="mx-auto half-width" method="post" asp-controller="Products" asp-action="Delete">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name" class="form-control" placeholder="Name..." disabled="disabled">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" value="@Model.Price" class="form-control" placeholder="Price..." disabled="disabled">
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" value="@Model.Description" class="form-control" placeholder="Description..." disabled="disabled">
+        <span asp-validation-for="Description"></span>
+    </div>
+    <h4 class="text-center">Product Type</h4>
+    <hr class="hr-2 bg-dark half-width mt-4" />
+    <div class="product-type-holder mt-4 d-flex justify-content-around">
+        @foreach (var type in Model.Types)
+        {
+            <div class="form-check form-check-inline">
+
+                @if (Model.Type == type)
+                {
+                    <input disabled="disabled" class="form-check-input" checked="checked" type="radio" name="Type" id="@type" value="@type">
+                    <label class="form-check-label" for="@type">@type</label>
+                }
+                else
+                {
+                    <input disabled="disabled" class="form-check-input" type="radio" name="Type" id="@type" value="@type">
+                    <label class="form-check-label" for="@type">@type</label>
+                }
+            </div>
+        }
+    </div>
+    <hr class="hr-2 bg-dark half-width mt-4" />
+    <div class="button-holder mt-2 d-flex justify-content-center">
+        <button type="submit" class="btn chushka-bg-color">Delete</button>
+        <a class="btn chushka-bg-color" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
+    </div>
+</form>

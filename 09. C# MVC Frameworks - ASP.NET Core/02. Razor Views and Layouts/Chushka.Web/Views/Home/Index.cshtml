@@ -1,0 +1,41 @@
+﻿@model ICollection<ProductInfoViewModel>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="container-fluid text-center">
+        @if (User.IsInRole("Admin"))
+        {
+            <h2>Greetings, admin!</h2>
+            <h4>Enjoy your work today!</h4>
+        }
+        else
+        {
+            <h2>Greetings, @User.Identity.Name!</h2>
+            <h4>Feel free to view and order any of our products.</h4>
+        }
+    </div>
+    <hr class="hr-2 bg-dark" />
+    <div class="container-fluid product-holder">
+        <div class="row d-flex justify-content-around mt-3">
+            @foreach (var item in Model.Select((value, i) => new { i, value }))
+            {
+                var product = item.value;
+                var index = item.i;
+                if (index % 5 == 0 && index != 0)
+                {
+                    @Html.Raw(@"</div><div class=""row d-flex justify-content-around mt-3"">");
+                }
+                <partial name="~/Views/Shared/_ProductsPartial.cshtml" model="product" />
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="jumbotron mt-3 chushka-bg-color">
+        <h1>Welcome to Chushka Universal Web Shop</h1>
+        <hr class="bg-white" />
+        <h3><a class="nav-link-dark" asp-controller="Users" asp-action="Login">Login</a> if you have an account.</h3>
+        <h3><a class="nav-link-dark" asp-controller="Users" asp-action="Register">Register</a> if you don't.</h3>
+    </div>
+}

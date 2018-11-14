@@ -1,0 +1,14 @@
+@model ProductInfoViewModel
+
+<a class="col-md-2" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">
+    <div class="product p-1 chushka-bg-color rounded-top rounded-bottom">
+
+        <h5 class="text-center mt-3">@Model.Name</h5>
+        <hr class="hr-1 bg-white" />
+        <p class="text-white text-center">
+            @Model.DescriptionToDisplay
+        </p>
+        <hr class="hr-1 bg-white" />
+        <h6 class="text-center text-white mb-3">$@Model.Price</h6>
+    </div>
+</a>
