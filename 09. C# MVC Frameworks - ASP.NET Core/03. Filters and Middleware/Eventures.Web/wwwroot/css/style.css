@@ -1,0 +1,54 @@
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #5174bd;
+}
+
+.half-width {
+    width: 50%;
+}
+
+textarea {
+    resize: none;
+}
+
+.eventures-bg-color {
+    background-color: #AFEEEE;
+    color: #000000;
+}
+
+.nav-link-dark {
+    color: #000000;
+    font-weight: bold
+}
+
+.hr-2 {
+    height: 2px;
+}
+
+.hr-1 {
+    height: 1px;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #DC143C;
+    color: #F8F8FF;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    border: 0;
+    width: 98%;
+}
+
+#home {
+    text-align: center
+}
+
+/*.product {*/
+/*word-wrap: break-word;*/
+/*}*/

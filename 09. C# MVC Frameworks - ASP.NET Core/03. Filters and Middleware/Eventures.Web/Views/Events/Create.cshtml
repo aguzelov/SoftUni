@@ -1,0 +1,48 @@
+﻿@model CreateEventViewModel
+
+<h1 class="text-center">Register</h1>
+<hr class="hr-2 bg-secondary half-width" />
+<form class="mx-auto half-width" method="post" asp-controller="Events" asp-action="Create">
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" placeholder="Iron Maiden - Hills of Rock" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Place"></label>
+            <input asp-for="Place" class="form-control" placeholder="Plovdiv, Bulgaria" />
+            <span asp-validation-for="Place" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Start"></label>
+            <input asp-for="Start" class="form-control" placeholder="20-Jul-2018 22:00" />
+            <span asp-validation-for="Start" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="End"></label>
+            <input asp-for="End" class="form-control" placeholder="20-Aug-2018 04:00" />
+            <span asp-validation-for="End" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="TotalTickets"></label>
+            <input asp-for="TotalTickets" class="form-control" placeholder="1000" />
+            <span asp-validation-for="TotalTickets" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="PricePerTicket"></label>
+            <input asp-for="PricePerTicket" class="form-control" placeholder="150" />
+            <span asp-validation-for="PricePerTicket" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn chushka-bg-color">Create Event</button>
+    </div>
+</form>

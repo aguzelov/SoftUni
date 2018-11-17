@@ -1,0 +1,35 @@
+﻿@model ICollection<EventViewModel>
+
+<h1 class="text-center">All Events</h1>
+<hr class="hr-2 eventures-bg-color" />
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+            <tr class="row">
+                <th class="col-md-1">#</th>
+                <th class="col-md-4">Name</th>
+                <th class="col-md-3">Start</th>
+                <th class="col-md-2">End</th>
+                <th class="col-md-2">Place</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+
+                var index = i + 1;
+                var order = Model.ToList()[i];
+
+                <tr class="row">
+                    <th class="col-md-1">@index</th>
+                    <td class="col-md-4">@order.Name</td>
+                    <td class="col-md-3">@order.Start</td>
+                    <td class="col-md-2">@order.End</td>
+                    <td class="col-md-2">@order.Place</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<hr class="hr-2 eventures-bg-color" />

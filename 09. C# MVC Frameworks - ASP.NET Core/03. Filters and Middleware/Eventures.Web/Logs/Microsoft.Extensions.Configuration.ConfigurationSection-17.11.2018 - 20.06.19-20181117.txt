@@ -1,0 +1,44 @@
+2018-11-17T22:06:19.9874022+02:00 0HLICP0HU1DGJ:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:49255/  0 (ca22a1cb)
+2018-11-17T22:06:19.9874022+02:00 0HLICP0HU1DGK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-17T22:06:20.1039263+02:00 0HLICP0HU1DGJ:00000001 [INF] Request finished in 124.3357ms 200  (791a596a)
+2018-11-17T22:06:20.2866912+02:00 0HLICP0HU1DGK:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-17T22:06:20.4684165+02:00 0HLICP0HU1DGK:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UniqueCitizenNumber], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-17T22:06:20.8348866+02:00 0HLICP0HU1DGK:00000001 [INF] Executed DbCommand ("21"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-11-17T22:06:20.9526184+02:00 0HLICP0HU1DGK:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-11-17T22:06:21.1513114+02:00 0HLICP0HU1DGK:00000001 [INF] Executed DbCommand ("14"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-11-17T22:06:21.2719102+02:00 0HLICP0HU1DGK:00000001 [INF] Executed DbCommand ("27"ms) [Parameters=["@__role_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-11-17T22:06:21.6562828+02:00 0HLICP0HU1DGK:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-17T22:06:21.6894808+02:00 0HLICP0HU1DGK:00000001 [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-17T22:06:21.7102125+02:00 0HLICP0HU1DGK:00000001 [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.6869ms. (50a9e262)
+2018-11-17T22:06:26.2271977+02:00 0HLICP0HU1DGK:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-17T22:06:27.4029576+02:00 0HLICP0HU1DGK:00000001 [INF] Executed ViewResult - view "Index" executed in 5666.7492ms. (f66409e9)
+2018-11-17T22:06:27.4102778+02:00 0HLICP0HU1DGK:00000001 [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 5746.7637ms (afa2e885)
+2018-11-17T22:06:27.5250910+02:00 0HLICP0HU1DGK:00000001 [INF] Request finished in 7514.8468ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-17T22:06:31.5577372+02:00 0HLICP0HU1DGJ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/Create   (ca22a1cb)
+2018-11-17T22:06:31.5901842+02:00 0HLICP0HU1DGJ:00000002 [INF] Route matched with "{action = \"Create\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.Create (Eventures.Web)" (a44c0341)
+2018-11-17T22:06:31.6153730+02:00 0HLICP0HU1DGJ:00000002 [INF] Authorization was successful. (0d575a54)
+2018-11-17T22:06:31.6266909+02:00 0HLICP0HU1DGJ:00000002 [INF] Executing action method "Eventures.Web.Controllers.EventsController.Create (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-17T22:06:31.6345571+02:00 0HLICP0HU1DGJ:00000002 [INF] Executed action method "Eventures.Web.Controllers.EventsController.Create (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4593ms. (50a9e262)
+2018-11-17T22:06:32.0679311+02:00 0HLICP0HU1DGJ:00000002 [INF] Executing ViewResult, running view "Create". (c83d0e25)
+2018-11-17T22:06:32.1816735+02:00 0HLICP0HU1DGJ:00000002 [INF] Executed ViewResult - view "Create" executed in 531.6074ms. (f66409e9)
+2018-11-17T22:06:32.2309208+02:00 0HLICP0HU1DGJ:00000002 [INF] Executed action "Eventures.Web.Controllers.EventsController.Create (Eventures.Web)" in 591.9251ms (afa2e885)
+2018-11-17T22:06:32.2512965+02:00 0HLICP0HU1DGJ:00000002 [INF] Request finished in 706.2456ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-17T22:06:46.7444147+02:00 0HLICP0HU1DGK:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Events/Create application/x-www-form-urlencoded 339 (ca22a1cb)
+2018-11-17T22:06:46.7768283+02:00 0HLICP0HU1DGK:00000002 [INF] Route matched with "{action = \"Create\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.Create (Eventures.Web)" (a44c0341)
+2018-11-17T22:06:46.7891062+02:00 0HLICP0HU1DGK:00000002 [INF] Authorization was successful. (0d575a54)

@@ -1,0 +1,12 @@
+﻿<div class="dropdown show collapse navbar-collapse d-flex justify-content-between eventures-bg-color" id="navbarNav">
+    <a class=" dropdown-toggle nav-link nav-link-dark eventures-bg-color" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Events
+    </a>
+    <div class="dropdown-menu mt-2" aria-labelledby="dropdownMenuLink">
+        <a class="nav-link nav-link-dark" asp-controller="Events" asp-action="All">All Events</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="nav-link nav-link-dark" asp-controller="Events" asp-action="Create">Create Event</a>
+        }
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model RegisterUserViewModel
+
+<h1 class="text-center">Register</h1>
+<hr class="hr-2 bg-secondary half-width" />
+<form class="mx-auto half-width" method="post" asp-controller="Users" asp-action="Register">
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Username"></label>
+            <input asp-for="Username" class="form-control" placeholder="Username..." />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" placeholder="Email..." />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" placeholder="Password..." />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password..." />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" placeholder="First Name..." />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-colmn col-md-6 d-flex flex-column align-items-center">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" placeholder="Last Name..." />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <label asp-for="UniqueCitizenNumber"></label>
+            <input asp-for="UniqueCitizenNumber" class="form-control" placeholder="Unique Citizen Number..." />
+            <span asp-validation-for="UniqueCitizenNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn chushka-bg-color">Register</button>
+    </div>
+</form>

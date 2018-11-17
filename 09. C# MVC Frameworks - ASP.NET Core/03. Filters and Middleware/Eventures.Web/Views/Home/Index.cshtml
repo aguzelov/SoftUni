@@ -1,0 +1,28 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <div class="jumbotron mt-3 eventures-bg-color justify-content-center" id="home">
+            <h1>Greetings, Administrator - Admin!</h1>
+            <hr class="hr-2 bg-dark" />
+            <h3>Enjoy your work.</h3>
+        </div>
+    }
+    else
+    {
+        <div class="jumbotron mt-3 eventures-bg-color justify-content-center" id="home">
+            <h1>Welcome, @User.Identity.Name!</h1>
+            <hr class="hr-2 bg-dark" />
+            <h3>Eventures wishes you an exciting experience.</h3>
+        </div>
+    }
+}
+else
+{
+    <div class="jumbotron mt-3 eventures-bg-color">
+        <h1>Eventures - The best ticket service in the world.</h1>
+        <hr class="hr-2 bg-dark" />
+        <h3><a asp-controller="Users" asp-action="Login">Login</a> to start "eventing".</h3>
+        <h3><a asp-controller="Users" asp-action="Register">Register</a> if you don't have an account.</h3>
+    </div>
+}

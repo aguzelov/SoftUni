@@ -1,0 +1,29 @@
+﻿@model LoginUserViewModel
+
+<h1 class="text-center">Login</h1>
+<hr class="hr-2 bg-secondary half-width" />
+<form class="mx-auto half-width" method="post" asp-controller="Users" asp-action="Login">
+    <div class="form-group d-flex flex-column align-items-center">
+        <label asp-for="Username" class="">Username</label>
+        <input asp-for="Username" class="form-control" placeholder="Username..." />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control" placeholder="Password..." />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="d-flex align-items-center justify-content-center">
+        <input asp-for="RememberMe" />
+        <label asp-for="RememberMe"></label>
+        <span asp-validation-for="RememberMe" class="text-danger"></span>
+    </div>
+    <hr class="hr-2 bg-secondary" />
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn eventures-bg-color">Login</button>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+        <a asp-controller="Users" asp-action="Register">Register as a new user</a>
+    </div>
+</form>
