@@ -1,20 +1,40 @@
 ﻿using Eventures.Web.Models;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace Eventures.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            this.logger = logger;
+        }
+
         public IActionResult Index()
         {
+            throw new System.Exception();
+
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int statusCode)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            //var statusCode = this.HttpContext.Response.StatusCode;
+
+            var reExecute = this.HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
+            this.logger.LogInformation($"Unexpected Status Code: {statusCode}, OriginalPath: {reExecute.OriginalPath}");
+
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                StatusCode = statusCode
+            });
         }
     }
 }

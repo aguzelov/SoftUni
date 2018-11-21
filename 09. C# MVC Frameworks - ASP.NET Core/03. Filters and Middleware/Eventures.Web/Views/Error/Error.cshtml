@@ -1,0 +1,11 @@
+﻿@model ErrorViewModel
+@{
+    var statusCode = Model;
+
+}
+<div class="jumbotron mt-3 eventures-bg-color">
+    <h1>Error @Model.StatusCode</h1>
+    <hr class="hr-2 bg-dark" />
+    <h3>@Model.StatusMessage</h3>
+    <h4>For more information <a target="_blank" href="@Model.MoreInfo">look here</a></h4>
+</div>

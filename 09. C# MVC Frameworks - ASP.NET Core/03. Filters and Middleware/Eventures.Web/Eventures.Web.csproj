@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Error\Error.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Events\Create.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

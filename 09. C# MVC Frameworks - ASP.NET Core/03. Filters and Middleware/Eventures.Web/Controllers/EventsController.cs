@@ -31,19 +31,20 @@ namespace Eventures.Web.Controllers
 
         [ServiceFilter(typeof(EventsCreateLogActionFilter))]
         [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Create(CreateEventViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return this.View();
+                return this.View(model);
             }
 
             var result = this.eventsService.Create(model.Name, model.Place, model.Start, model.End, model.TotalTickets, model.PricePerTicket);
 
             if (!result)
             {
-                return this.View();
+                return this.View(model);
             }
             this.logger.LogInformation($"Event created: {model.Name}", model);
 
