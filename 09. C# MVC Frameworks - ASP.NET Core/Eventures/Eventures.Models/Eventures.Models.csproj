@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Order.cs~RF1c5d82f5.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Microsoft.Extensions.Identity.Stores">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
     </Reference>

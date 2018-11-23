@@ -4,12 +4,12 @@
 <hr class="hr-2 bg-secondary half-width" />
 <form class="mx-auto half-width" method="post" asp-controller="Users" asp-action="Login">
     <div class="form-group d-flex flex-column align-items-center">
-        <label asp-for="Username" class="form-control">Username</label>
+        <label asp-for="Username"></label>
         <input asp-for="Username" class="form-control" placeholder="Username..." />
         <span asp-validation-for="Username" class="text-danger"></span>
     </div>
     <div class="form-group d-flex flex-column align-items-center">
-        <label asp-for="Password">Password</label>
+        <label asp-for="Password"></label>
         <input asp-for="Password" class="form-control" placeholder="Password..." />
         <span asp-validation-for="Password" class="text-danger"></span>
     </div>

@@ -82,6 +82,7 @@ namespace Eventures.Web
 
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<IEventsService, EventsService>();
+            services.AddScoped<IOrdersService, OrdersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,8 +92,8 @@ namespace Eventures.Web
 
             if (env.IsDevelopment())
             {
-                app.UseExceptionHandler("/Error");
-                //app.UseDeveloperExceptionPage();
+                //app.UseExceptionHandler("/Error");
+                app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
             else

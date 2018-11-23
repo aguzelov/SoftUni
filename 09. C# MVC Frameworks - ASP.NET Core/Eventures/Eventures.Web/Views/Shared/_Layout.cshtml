@@ -26,8 +26,17 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-dark" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <partial name="_EventPartial.cshtml" />
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <partial name="_OrderPartial.cshtml" />
+                        </li>
+                    }
                 </ul>
-                <partial name="_EventPartial.cshtml" />
+
                 <partial name="_LoginPartial.cshtml" />
             </div>
         </nav>

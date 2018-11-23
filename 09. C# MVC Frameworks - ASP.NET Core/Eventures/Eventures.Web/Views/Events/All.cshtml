@@ -7,10 +7,10 @@
         <thead>
             <tr class="row">
                 <th class="col-md-1">#</th>
-                <th class="col-md-4">Name</th>
-                <th class="col-md-3">Start</th>
+                <th class="col-md-3">Name</th>
+                <th class="col-md-2">Start</th>
                 <th class="col-md-2">End</th>
-                <th class="col-md-2">Place</th>
+                <th class="col-md-4">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +22,20 @@
 
                 <tr class="row">
                     <th class="col-md-1">@index</th>
-                    <td class="col-md-4">@order.Name</td>
-                    <td class="col-md-3">@order.Start</td>
+                    <td class="col-md-3">@order.Name</td>
+                    <td class="col-md-2">@order.Start</td>
                     <td class="col-md-2">@order.End</td>
-                    <td class="col-md-2">@order.Place</td>
+                    <td class="col-md-4">
+                        <form asp-controller="Orders" asp-action="Create" method="post">
+                            <input type="text" name="@(nameof(order.Order.EventId))" value="@order.Order.EventId" hidden />
+                            <label id="tickets">TicketsCount</label>
+                            <input type="number" id="tickets" name="@(nameof(order.Order.TicketsCount))" />
+
+                            <button type="submit" class="btn eventures-bg-color">Order</button>
+                            <br />
+                            <span asp-validation-for="@order.Order.TicketsCount"></span>
+                        </form>
+                    </td>
                 </tr>
 
             }

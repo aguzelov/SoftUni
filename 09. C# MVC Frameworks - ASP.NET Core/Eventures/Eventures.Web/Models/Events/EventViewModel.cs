@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Eventures.Web.Models.Orders;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Eventures.Web.Models.Events
 {
     public class EventViewModel
     {
+        public string Id { get; set; }
+
         [Required]
         [MaxLength(10, ErrorMessage = "Event name should be at least 10 symbols long.")]
         [DataType(DataType.Text)]
@@ -21,10 +24,6 @@ namespace Eventures.Web.Models.Events
         [Display(Name = "End")]
         public DateTime End { get; set; }
 
-        [Required]
-        [MinLength(1, ErrorMessage = "Place should not be empty.")]
-        [DataType(DataType.Text)]
-        [Display(Name = "Place")]
-        public string Place { get; set; }
+        public CreateOrderViewModel Order { get; set; }
     }
 }

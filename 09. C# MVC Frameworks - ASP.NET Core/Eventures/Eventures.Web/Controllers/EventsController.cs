@@ -11,11 +11,16 @@ namespace Eventures.Web.Controllers
     {
         private readonly IEventsService eventsService;
         private readonly ILogger<EventsController> logger;
+        private readonly IOrdersService ordersService;
 
-        public EventsController(IEventsService eventsService, ILogger<EventsController> logger)
+        public EventsController(
+            IEventsService eventsService,
+            ILogger<EventsController> logger,
+            IOrdersService ordersService)
         {
             this.eventsService = eventsService;
             this.logger = logger;
+            this.ordersService = ordersService;
         }
 
         [Authorize]
@@ -49,6 +54,14 @@ namespace Eventures.Web.Controllers
             this.logger.LogInformation($"Event created: {model.Name}", model);
 
             return this.RedirectToAction(nameof(All));
+        }
+
+        public IActionResult MyEvents()
+        {
+            var username = this.User.Identity.Name;
+            var orders = this.ordersService.AllByUser<EventWithTicketsCountViewModel>(username);
+
+            return this.View(orders);
         }
     }
 }

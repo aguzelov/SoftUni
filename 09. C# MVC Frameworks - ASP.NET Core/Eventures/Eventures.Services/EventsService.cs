@@ -55,5 +55,12 @@ namespace Eventures.Services
 
             return true;
         }
+
+        public Event GetById(string id)
+        {
+            var @event = this.context.Events.Find(id);
+
+            return @event;
+        }
     }
 }
