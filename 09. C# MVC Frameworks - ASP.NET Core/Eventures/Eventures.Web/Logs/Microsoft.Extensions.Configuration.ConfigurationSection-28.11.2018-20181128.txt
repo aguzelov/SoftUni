@@ -1,0 +1,492 @@
+2018-11-28T18:08:05.9238832+02:00 0HLIL9EN7JFIG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:08:06.4186939+02:00 0HLIL9EN7JFIG:00000001 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:08:07.7323295+02:00 0HLIL9EN7JFIG:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:08:07.7546476+02:00 0HLIL9EN7JFIG:00000001 [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:08:07.7632563+02:00 0HLIL9EN7JFIG:00000001 [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6667ms. (50a9e262)
+2018-11-28T18:08:12.0467487+02:00 0HLIL9EN7JFIG:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:08:13.9665165+02:00 0HLIL9EN7JFIG:00000001 [INF] Executed ViewResult - view "Index" executed in 6188.8051ms. (f66409e9)
+2018-11-28T18:08:13.9670091+02:00 0HLIL9EN7JFIG:00000001 [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 6234.2113ms (afa2e885)
+2018-11-28T18:08:13.9818248+02:00 0HLIL9EN7JFIG:00000001 [INF] Request finished in 8065.8352ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:08:14.2249053+02:00 0HLIL9EN7JFIG:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44327/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js   (ca22a1cb)
+2018-11-28T18:08:14.2344925+02:00 0HLIL9EN7JFIH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44327/lib/jquery-validation/dist/jquery.validate.js   (ca22a1cb)
+2018-11-28T18:08:14.2389015+02:00 0HLIL9EN7JFIH:00000001 [INF] The file "/lib/jquery-validation/dist/jquery.validate.js" was not modified (f1f8d725)
+2018-11-28T18:08:14.2389040+02:00 0HLIL9EN7JFIG:00000002 [INF] The file "/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" was not modified (f1f8d725)
+2018-11-28T18:08:14.2430925+02:00 0HLIL9EN7JFIH:00000001 [INF] Request finished in 8.5252ms 304 application/javascript (791a596a)
+2018-11-28T18:08:14.2437100+02:00 0HLIL9EN7JFIG:00000002 [INF] Request finished in 19.4249ms 304 application/javascript (791a596a)
+2018-11-28T18:28:40.3063341+02:00 0HLIL9EN7JFII:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All   (ca22a1cb)
+2018-11-28T18:28:40.3100568+02:00 0HLIL9EN7JFII:00000001 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:40.3444808+02:00 0HLIL9EN7JFII:00000001 [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:40.3732915+02:00 0HLIL9EN7JFII:00000001 [INF] Authorization failed. (b15dd539)
+2018-11-28T18:28:40.3793736+02:00 0HLIL9EN7JFII:00000001 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2018-11-28T18:28:40.3882701+02:00 0HLIL9EN7JFII:00000001 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2018-11-28T18:28:40.3959866+02:00 0HLIL9EN7JFII:00000001 [INF] AuthenticationScheme: "Identity.Application" was challenged. (d45f1f38)
+2018-11-28T18:28:40.3964737+02:00 0HLIL9EN7JFII:00000001 [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 51.4318ms (afa2e885)
+2018-11-28T18:28:40.3971640+02:00 0HLIL9EN7JFII:00000001 [INF] Request finished in 90.9501ms 302  (791a596a)
+2018-11-28T18:28:40.4061819+02:00 0HLIL9EN7JFII:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Login?ReturnUrl=%2FEvents%2FAll   (ca22a1cb)
+2018-11-28T18:28:40.4067695+02:00 0HLIL9EN7JFII:00000002 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:40.4179283+02:00 0HLIL9EN7JFII:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:40.4269822+02:00 0HLIL9EN7JFII:00000002 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:28:40.4276130+02:00 0HLIL9EN7JFII:00000002 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.3027ms. (50a9e262)
+2018-11-28T18:28:41.0133271+02:00 0HLIL9EN7JFII:00000002 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:28:41.1378673+02:00 0HLIL9EN7JFII:00000002 [INF] Executed ViewResult - view "Login" executed in 709.6646ms. (f66409e9)
+2018-11-28T18:28:41.1382009+02:00 0HLIL9EN7JFII:00000002 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 720.16ms (afa2e885)
+2018-11-28T18:28:41.1389087+02:00 0HLIL9EN7JFII:00000002 [INF] Request finished in 732.8417ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:28:44.9713875+02:00 0HLIL9EN7JFII:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/Login application/x-www-form-urlencoded 255 (ca22a1cb)
+2018-11-28T18:28:44.9727542+02:00 0HLIL9EN7JFII:00000003 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:44.9816071+02:00 0HLIL9EN7JFII:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:45.0869324+02:00 0HLIL9EN7JFII:00000003 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" with arguments (["Eventures.Web.Models.Users.LoginUserViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:28:45.0927648+02:00 0HLIL9EN7JFII:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:28:46.5868574+02:00 0HLIL9EN7JFII:00000003 [INF] Executed DbCommand ("115"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:28:46.6215449+02:00 0HLIL9EN7JFII:00000003 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1534.449ms. (50a9e262)
+2018-11-28T18:28:46.6218583+02:00 0HLIL9EN7JFII:00000003 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:28:46.6353910+02:00 0HLIL9EN7JFII:00000003 [INF] Executed ViewResult - view "Login" executed in 13.6498ms. (f66409e9)
+2018-11-28T18:28:46.6355445+02:00 0HLIL9EN7JFII:00000003 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 1653.7718ms (afa2e885)
+2018-11-28T18:28:46.6359457+02:00 0HLIL9EN7JFII:00000003 [INF] Request finished in 1665.6038ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:28:51.4702548+02:00 0HLIL9EN7JFII:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/Login application/x-www-form-urlencoded 255 (ca22a1cb)
+2018-11-28T18:28:51.4710075+02:00 0HLIL9EN7JFII:00000004 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:51.4714527+02:00 0HLIL9EN7JFII:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:51.4744368+02:00 0HLIL9EN7JFII:00000004 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" with arguments (["Eventures.Web.Models.Users.LoginUserViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:28:51.4754115+02:00 0HLIL9EN7JFII:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:28:51.4858818+02:00 0HLIL9EN7JFII:00000004 [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:28:51.4872164+02:00 0HLIL9EN7JFII:00000004 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 12.62ms. (50a9e262)
+2018-11-28T18:28:51.4875415+02:00 0HLIL9EN7JFII:00000004 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:28:51.4899911+02:00 0HLIL9EN7JFII:00000004 [INF] Executed ViewResult - view "Login" executed in 2.509ms. (f66409e9)
+2018-11-28T18:28:51.4901318+02:00 0HLIL9EN7JFII:00000004 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 18.5726ms (afa2e885)
+2018-11-28T18:28:51.4904089+02:00 0HLIL9EN7JFII:00000004 [INF] Request finished in 20.2631ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:28:54.9320801+02:00 0HLIL9EN7JFII:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:28:54.9329880+02:00 0HLIL9EN7JFII:00000005 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:54.9331659+02:00 0HLIL9EN7JFII:00000005 [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:54.9335721+02:00 0HLIL9EN7JFII:00000005 [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:28:54.9338381+02:00 0HLIL9EN7JFII:00000005 [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0307ms. (50a9e262)
+2018-11-28T18:28:54.9358413+02:00 0HLIL9EN7JFII:00000005 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:28:54.9390119+02:00 0HLIL9EN7JFII:00000005 [INF] Executed ViewResult - view "Index" executed in 5.0407ms. (f66409e9)
+2018-11-28T18:28:54.9392121+02:00 0HLIL9EN7JFII:00000005 [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 5.8862ms (afa2e885)
+2018-11-28T18:28:54.9398326+02:00 0HLIL9EN7JFII:00000005 [INF] Request finished in 8.4273ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:28:56.7678531+02:00 0HLIL9EN7JFII:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Login   (ca22a1cb)
+2018-11-28T18:28:56.7690291+02:00 0HLIL9EN7JFII:00000006 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:56.7692921+02:00 0HLIL9EN7JFII:00000006 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:56.7704801+02:00 0HLIL9EN7JFII:00000006 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:28:56.7708364+02:00 0HLIL9EN7JFII:00000006 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0513ms. (50a9e262)
+2018-11-28T18:28:56.7712290+02:00 0HLIL9EN7JFII:00000006 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:28:56.7747165+02:00 0HLIL9EN7JFII:00000006 [INF] Executed ViewResult - view "Login" executed in 3.5101ms. (f66409e9)
+2018-11-28T18:28:56.7748388+02:00 0HLIL9EN7JFII:00000006 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 5.181ms (afa2e885)
+2018-11-28T18:28:56.7751352+02:00 0HLIL9EN7JFII:00000006 [INF] Request finished in 8.0694ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:28:58.9699095+02:00 0HLIL9EN7JFII:00000007 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/Login application/x-www-form-urlencoded 255 (ca22a1cb)
+2018-11-28T18:28:58.9708863+02:00 0HLIL9EN7JFII:00000007 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:28:58.9710912+02:00 0HLIL9EN7JFII:00000007 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:28:58.9724998+02:00 0HLIL9EN7JFII:00000007 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" with arguments (["Eventures.Web.Models.Users.LoginUserViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:28:58.9732704+02:00 0HLIL9EN7JFII:00000007 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:28:58.9759301+02:00 0HLIL9EN7JFII:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:28:58.9762786+02:00 0HLIL9EN7JFII:00000007 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3.6568ms. (50a9e262)
+2018-11-28T18:28:58.9764462+02:00 0HLIL9EN7JFII:00000007 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:28:58.9796651+02:00 0HLIL9EN7JFII:00000007 [INF] Executed ViewResult - view "Login" executed in 3.2416ms. (f66409e9)
+2018-11-28T18:28:58.9797840+02:00 0HLIL9EN7JFII:00000007 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 8.5039ms (afa2e885)
+2018-11-28T18:28:58.9803344+02:00 0HLIL9EN7JFII:00000007 [INF] Request finished in 10.581ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:00.4999050+02:00 0HLIL9EN7JFII:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Register   (ca22a1cb)
+2018-11-28T18:29:00.5008646+02:00 0HLIL9EN7JFII:00000008 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:29:00.5037197+02:00 0HLIL9EN7JFII:00000008 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:00.5043471+02:00 0HLIL9EN7JFII:00000008 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:29:00.5049709+02:00 0HLIL9EN7JFII:00000008 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.3789ms. (50a9e262)
+2018-11-28T18:29:01.0473821+02:00 0HLIL9EN7JFII:00000008 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2018-11-28T18:29:01.1362222+02:00 0HLIL9EN7JFII:00000008 [INF] Executed ViewResult - view "Register" executed in 630.9214ms. (f66409e9)
+2018-11-28T18:29:01.1366883+02:00 0HLIL9EN7JFII:00000008 [INF] Executed action "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" in 632.8176ms (afa2e885)
+2018-11-28T18:29:01.1371574+02:00 0HLIL9EN7JFII:00000008 [INF] Request finished in 637.394ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:15.9736412+02:00 0HLIL9EN7JFII:00000009 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/Register application/x-www-form-urlencoded 348 (ca22a1cb)
+2018-11-28T18:29:15.9744016+02:00 0HLIL9EN7JFII:00000009 [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:29:15.9858195+02:00 0HLIL9EN7JFII:00000009 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:15.9891078+02:00 0HLIL9EN7JFII:00000009 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" with arguments (["Eventures.Web.Models.Users.RegisterUserViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:16.1061700+02:00 0HLIL9EN7JFII:00000009 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:16.1076715+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:29:16.2488402+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UniqueCitizenNumber], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2018-11-28T18:29:16.2913790+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]" (0723d8ff)
+2018-11-28T18:29:16.3240937+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("17"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-11-28T18:29:16.3680433+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("4"ms) [Parameters=["@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)" (0723d8ff)
+2018-11-28T18:29:16.3771365+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-11-28T18:29:16.3990824+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:29:16.4609127+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("45"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);" (0723d8ff)
+2018-11-28T18:29:16.5184938+02:00 0HLIL9EN7JFII:00000009 [INF] Executed DbCommand ("56"ms) [Parameters=["@p17='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p18='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UniqueCitizenNumber] = @p15, [UserName] = @p16
+WHERE [Id] = @p17 AND [ConcurrencyStamp] = @p18;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-11-28T18:29:16.5237201+02:00 0HLIL9EN7JFII:00000009 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 534.4375ms. (50a9e262)
+2018-11-28T18:29:16.5244108+02:00 0HLIL9EN7JFII:00000009 [INF] Executing RedirectResult, redirecting to "/Users/Login". (d98d540e)
+2018-11-28T18:29:16.5247683+02:00 0HLIL9EN7JFII:00000009 [INF] Executed action "Eventures.Web.Controllers.UsersController.Register (Eventures.Web)" in 538.8166ms (afa2e885)
+2018-11-28T18:29:16.5250215+02:00 0HLIL9EN7JFII:00000009 [INF] Request finished in 551.837ms 302  (791a596a)
+2018-11-28T18:29:16.5327971+02:00 0HLIL9EN7JFII:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Login   (ca22a1cb)
+2018-11-28T18:29:16.5333719+02:00 0HLIL9EN7JFII:0000000A [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:29:16.5335502+02:00 0HLIL9EN7JFII:0000000A [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:16.5338885+02:00 0HLIL9EN7JFII:0000000A [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:29:16.5339809+02:00 0HLIL9EN7JFII:0000000A [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0072ms. (50a9e262)
+2018-11-28T18:29:16.5341053+02:00 0HLIL9EN7JFII:0000000A [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:29:16.5370728+02:00 0HLIL9EN7JFII:0000000A [INF] Executed ViewResult - view "Login" executed in 2.6852ms. (f66409e9)
+2018-11-28T18:29:16.5372263+02:00 0HLIL9EN7JFII:0000000A [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 3.6021ms (afa2e885)
+2018-11-28T18:29:16.5374996+02:00 0HLIL9EN7JFII:0000000A [INF] Request finished in 4.8808ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:18.7913608+02:00 0HLIL9EN7JFII:0000000B [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/Login application/x-www-form-urlencoded 255 (ca22a1cb)
+2018-11-28T18:29:18.7920797+02:00 0HLIL9EN7JFII:0000000B [INF] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed" (48071232)
+2018-11-28T18:29:18.7922546+02:00 0HLIL9EN7JFII:0000000B [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:18.7930962+02:00 0HLIL9EN7JFII:0000000B [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" with arguments (["Eventures.Web.Models.Users.LoginUserViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:18.7935397+02:00 0HLIL9EN7JFII:0000000B [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:18.7947517+02:00 0HLIL9EN7JFII:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:29:18.9559175+02:00 0HLIL9EN7JFII:0000000B [INF] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-11-28T18:29:19.0131308+02:00 0HLIL9EN7JFII:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-11-28T18:29:19.0280175+02:00 0HLIL9EN7JFII:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-11-28T18:29:19.0453430+02:00 0HLIL9EN7JFII:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-11-28T18:29:19.0593141+02:00 0HLIL9EN7JFII:0000000B [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-11-28T18:29:19.0630227+02:00 0HLIL9EN7JFII:0000000B [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 269.8049ms. (50a9e262)
+2018-11-28T18:29:19.0638138+02:00 0HLIL9EN7JFII:0000000B [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2018-11-28T18:29:19.0642625+02:00 0HLIL9EN7JFII:0000000B [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 271.9188ms (afa2e885)
+2018-11-28T18:29:19.0645015+02:00 0HLIL9EN7JFII:0000000B [INF] Request finished in 273.1967ms 302  (791a596a)
+2018-11-28T18:29:19.0726453+02:00 0HLIL9EN7JFII:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:29:19.0804411+02:00 0HLIL9EN7JFII:0000000C [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:19.0807819+02:00 0HLIL9EN7JFII:0000000C [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:29:19.0809102+02:00 0HLIL9EN7JFII:0000000C [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0124ms. (50a9e262)
+2018-11-28T18:29:19.0810107+02:00 0HLIL9EN7JFII:0000000C [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:29:19.0855755+02:00 0HLIL9EN7JFII:0000000C [INF] Executed ViewResult - view "Index" executed in 4.5314ms. (f66409e9)
+2018-11-28T18:29:19.0857320+02:00 0HLIL9EN7JFII:0000000C [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 5.0595ms (afa2e885)
+2018-11-28T18:29:19.0859514+02:00 0HLIL9EN7JFII:0000000C [INF] Request finished in 13.3423ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:21.3019840+02:00 0HLIL9EN7JFII:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All   (ca22a1cb)
+2018-11-28T18:29:21.3036056+02:00 0HLIL9EN7JFII:0000000D [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:21.3052397+02:00 0HLIL9EN7JFII:0000000D [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:29:21.3066347+02:00 0HLIL9EN7JFII:0000000D [INF] Executing action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:21.3116678+02:00 0HLIL9EN7JFII:0000000D [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:21.3995674+02:00 0HLIL9EN7JFII:0000000D [INF] Executed DbCommand ("69"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[TotalTickets] > 0" (0723d8ff)
+2018-11-28T18:29:21.4313468+02:00 0HLIL9EN7JFII:0000000D [INF] Executed action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 124.5881ms. (50a9e262)
+2018-11-28T18:29:21.6749417+02:00 0HLIL9EN7JFII:0000000D [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:29:21.7056888+02:00 0HLIL9EN7JFII:0000000D [INF] Executed ViewResult - view "All" executed in 274.0789ms. (f66409e9)
+2018-11-28T18:29:21.7060267+02:00 0HLIL9EN7JFII:0000000D [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 402.326ms (afa2e885)
+2018-11-28T18:29:21.7063286+02:00 0HLIL9EN7JFII:0000000D [INF] Request finished in 404.9647ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:25.2428287+02:00 0HLIL9EN7JFII:0000000E [INF] Request starting HTTP/1.1 POST http://localhost:44327/Orders/Create application/x-www-form-urlencoded 289 (ca22a1cb)
+2018-11-28T18:29:25.2518663+02:00 0HLIL9EN7JFII:0000000E [INF] Route matched with "{action = \"Create\", controller = \"Orders\"}". Executing action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:25.2576272+02:00 0HLIL9EN7JFII:0000000E [INF] Executing action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" with arguments (["Eventures.Web.Models.Orders.CreateOrderViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:25.2661906+02:00 0HLIL9EN7JFII:0000000E [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:25.2678490+02:00 0HLIL9EN7JFII:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:29:25.2842133+02:00 0HLIL9EN7JFII:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:29:25.3055270+02:00 0HLIL9EN7JFII:0000000E [INF] Executed action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 47.7484ms. (50a9e262)
+2018-11-28T18:29:25.3120865+02:00 0HLIL9EN7JFII:0000000E [INF] Executing RedirectResult, redirecting to "/Events/All?Error=There%20is%20not%20enough%20tickets%20available!". (d98d540e)
+2018-11-28T18:29:25.3149462+02:00 0HLIL9EN7JFII:0000000E [INF] Executed action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" in 62.7078ms (afa2e885)
+2018-11-28T18:29:25.3246095+02:00 0HLIL9EN7JFII:0000000E [INF] Request finished in 81.8385ms 302  (791a596a)
+2018-11-28T18:29:25.3305992+02:00 0HLIL9EN7JFII:0000000F [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All?Error=There%20is%20not%20enough%20tickets%20available!   (ca22a1cb)
+2018-11-28T18:29:25.3316238+02:00 0HLIL9EN7JFII:0000000F [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:25.3317654+02:00 0HLIL9EN7JFII:0000000F [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:29:25.3326699+02:00 0HLIL9EN7JFII:0000000F [INF] Executing action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" with arguments (["There is not enough tickets available!"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:25.3337347+02:00 0HLIL9EN7JFII:0000000F [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:25.3357892+02:00 0HLIL9EN7JFII:0000000F [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[TotalTickets] > 0" (0723d8ff)
+2018-11-28T18:29:25.3376195+02:00 0HLIL9EN7JFII:0000000F [INF] Executed action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 4.8256ms. (50a9e262)
+2018-11-28T18:29:25.3377692+02:00 0HLIL9EN7JFII:0000000F [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:29:25.3471246+02:00 0HLIL9EN7JFII:0000000F [INF] Executed ViewResult - view "All" executed in 9.3528ms. (f66409e9)
+2018-11-28T18:29:25.3472256+02:00 0HLIL9EN7JFII:0000000F [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 15.5268ms (afa2e885)
+2018-11-28T18:29:25.3474646+02:00 0HLIL9EN7JFII:0000000F [INF] Request finished in 16.8996ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:30.4876120+02:00 0HLIL9EN7JFII:00000010 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Orders/Create application/x-www-form-urlencoded 286 (ca22a1cb)
+2018-11-28T18:29:30.4891029+02:00 0HLIL9EN7JFII:00000010 [INF] Route matched with "{action = \"Create\", controller = \"Orders\"}". Executing action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:30.4903832+02:00 0HLIL9EN7JFII:00000010 [INF] Executing action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" with arguments (["Eventures.Web.Models.Orders.CreateOrderViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:30.4909935+02:00 0HLIL9EN7JFII:00000010 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:30.4936997+02:00 0HLIL9EN7JFII:00000010 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:29:30.4980198+02:00 0HLIL9EN7JFII:00000010 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:29:30.5392881+02:00 0HLIL9EN7JFII:00000010 [INF] Executed DbCommand ("2"ms) [Parameters=["@p1='?' (Size = 450), @p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Events] SET [TotalTickets] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-11-28T18:29:30.5571846+02:00 0HLIL9EN7JFII:00000010 [INF] Executed DbCommand ("17"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CustomerId], [EventId], [OrderedOn], [TicketsCount])
+VALUES (@p0, @p1, @p2, @p3, @p4);" (0723d8ff)
+2018-11-28T18:29:30.5607982+02:00 0HLIL9EN7JFII:00000010 [INF] Executed action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 70.2238ms. (50a9e262)
+2018-11-28T18:29:30.5610125+02:00 0HLIL9EN7JFII:00000010 [INF] Executing RedirectResult, redirecting to "/Events/MyEvents". (d98d540e)
+2018-11-28T18:29:30.5611104+02:00 0HLIL9EN7JFII:00000010 [INF] Executed action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" in 71.9156ms (afa2e885)
+2018-11-28T18:29:30.5613089+02:00 0HLIL9EN7JFII:00000010 [INF] Request finished in 74.0047ms 302  (791a596a)
+2018-11-28T18:29:30.5733867+02:00 0HLIL9EN7JFII:00000011 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/MyEvents   (ca22a1cb)
+2018-11-28T18:29:30.5763867+02:00 0HLIL9EN7JFII:00000011 [INF] Route matched with "{action = \"MyEvents\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:30.5765274+02:00 0HLIL9EN7JFII:00000011 [INF] Executing action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:29:30.5818722+02:00 0HLIL9EN7JFII:00000011 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:30.6830189+02:00 0HLIL9EN7JFII:00000011 [INF] Executed DbCommand ("35"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CustomerId], [o].[EventId], [o].[OrderedOn], [o].[TicketsCount]
+FROM [Orders] AS [o]
+LEFT JOIN [AspNetUsers] AS [o.Customer] ON [o].[CustomerId] = [o.Customer].[Id]
+WHERE [o.Customer].[UserName] = @__username_0" (0723d8ff)
+2018-11-28T18:29:30.7028402+02:00 0HLIL9EN7JFII:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:29:30.7081851+02:00 0HLIL9EN7JFII:00000011 [INF] Executed action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 131.5691ms. (50a9e262)
+2018-11-28T18:29:30.9095833+02:00 0HLIL9EN7JFII:00000011 [INF] Executing ViewResult, running view "MyEvents". (c83d0e25)
+2018-11-28T18:29:30.9167358+02:00 0HLIL9EN7JFII:00000011 [INF] Executed ViewResult - view "MyEvents" executed in 208.404ms. (f66409e9)
+2018-11-28T18:29:30.9168427+02:00 0HLIL9EN7JFII:00000011 [INF] Executed action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" in 340.3615ms (afa2e885)
+2018-11-28T18:29:30.9171011+02:00 0HLIL9EN7JFII:00000011 [INF] Request finished in 344.588ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:38.0307446+02:00 0HLIL9EN7JFII:00000012 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All   (ca22a1cb)
+2018-11-28T18:29:38.0323261+02:00 0HLIL9EN7JFII:00000012 [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:38.0327986+02:00 0HLIL9EN7JFII:00000012 [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:29:38.0331766+02:00 0HLIL9EN7JFII:00000012 [INF] Executing action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:29:38.0337570+02:00 0HLIL9EN7JFII:00000012 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:38.0365629+02:00 0HLIL9EN7JFII:00000012 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[TotalTickets] > 0" (0723d8ff)
+2018-11-28T18:29:38.0371170+02:00 0HLIL9EN7JFII:00000012 [INF] Executed action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3.8228ms. (50a9e262)
+2018-11-28T18:29:38.0372787+02:00 0HLIL9EN7JFII:00000012 [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:29:38.0396339+02:00 0HLIL9EN7JFII:00000012 [INF] Executed ViewResult - view "All" executed in 2.3679ms. (f66409e9)
+2018-11-28T18:29:38.0397335+02:00 0HLIL9EN7JFII:00000012 [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 7.1255ms (afa2e885)
+2018-11-28T18:29:38.0400739+02:00 0HLIL9EN7JFII:00000012 [INF] Request finished in 9.4485ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:29:39.7660043+02:00 0HLIL9EN7JFII:00000013 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/MyEvents   (ca22a1cb)
+2018-11-28T18:29:39.7681289+02:00 0HLIL9EN7JFII:00000013 [INF] Route matched with "{action = \"MyEvents\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" (a44c0341)
+2018-11-28T18:29:39.7683072+02:00 0HLIL9EN7JFII:00000013 [INF] Executing action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:29:39.7690077+02:00 0HLIL9EN7JFII:00000013 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:29:39.7754229+02:00 0HLIL9EN7JFII:00000013 [INF] Executed DbCommand ("6"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CustomerId], [o].[EventId], [o].[OrderedOn], [o].[TicketsCount]
+FROM [Orders] AS [o]
+LEFT JOIN [AspNetUsers] AS [o.Customer] ON [o].[CustomerId] = [o.Customer].[Id]
+WHERE [o.Customer].[UserName] = @__username_0" (0723d8ff)
+2018-11-28T18:29:39.7807448+02:00 0HLIL9EN7JFII:00000013 [INF] Executed DbCommand ("3"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:29:39.7827072+02:00 0HLIL9EN7JFII:00000013 [INF] Executed action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 14.2819ms. (50a9e262)
+2018-11-28T18:29:39.7828608+02:00 0HLIL9EN7JFII:00000013 [INF] Executing ViewResult, running view "MyEvents". (c83d0e25)
+2018-11-28T18:29:39.7839572+02:00 0HLIL9EN7JFII:00000013 [INF] Executed ViewResult - view "MyEvents" executed in 1.1375ms. (f66409e9)
+2018-11-28T18:29:39.7840389+02:00 0HLIL9EN7JFII:00000013 [INF] Executed action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" in 15.8043ms (afa2e885)
+2018-11-28T18:29:39.7842549+02:00 0HLIL9EN7JFII:00000013 [INF] Request finished in 19.2991ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:01.3294919+02:00 0HLIL9EN7JFIJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Logout   (ca22a1cb)
+2018-11-28T18:31:01.3327947+02:00 0HLIL9EN7JFIJ:00000001 [INF] Route matched with "{action = \"Logout\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:01.3329243+02:00 0HLIL9EN7JFIJ:00000001 [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:31:01.3330629+02:00 0HLIL9EN7JFIJ:00000001 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:01.3440002+02:00 0HLIL9EN7JFIJ:00000001 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-11-28T18:31:01.3449799+02:00 0HLIL9EN7JFIJ:00000001 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-11-28T18:31:01.3452480+02:00 0HLIL9EN7JFIJ:00000001 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-11-28T18:31:01.3453631+02:00 0HLIL9EN7JFIJ:00000001 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 12.2223ms. (50a9e262)
+2018-11-28T18:31:01.3456158+02:00 0HLIL9EN7JFIJ:00000001 [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2018-11-28T18:31:01.3457826+02:00 0HLIL9EN7JFIJ:00000001 [INF] Executed action "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" in 12.9044ms (afa2e885)
+2018-11-28T18:31:01.3459147+02:00 0HLIL9EN7JFIJ:00000001 [INF] Request finished in 16.5476ms 302  (791a596a)
+2018-11-28T18:31:01.4165205+02:00 0HLIL9EN7JFIJ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:31:01.4169670+02:00 0HLIL9EN7JFIJ:00000002 [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:01.4171397+02:00 0HLIL9EN7JFIJ:00000002 [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:01.4172586+02:00 0HLIL9EN7JFIJ:00000002 [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0106ms. (50a9e262)
+2018-11-28T18:31:01.4173989+02:00 0HLIL9EN7JFIJ:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:31:01.4190454+02:00 0HLIL9EN7JFIJ:00000002 [INF] Executed ViewResult - view "Index" executed in 1.6823ms. (f66409e9)
+2018-11-28T18:31:01.4191343+02:00 0HLIL9EN7JFIJ:00000002 [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 2.0668ms (afa2e885)
+2018-11-28T18:31:01.4193528+02:00 0HLIL9EN7JFIJ:00000002 [INF] Request finished in 2.8759ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:04.3977990+02:00 0HLIL9EN7JFIJ:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Login   (ca22a1cb)
+2018-11-28T18:31:04.3984243+02:00 0HLIL9EN7JFIJ:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:04.3987934+02:00 0HLIL9EN7JFIJ:00000003 [INF] Executing action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:04.3988922+02:00 0HLIL9EN7JFIJ:00000003 [INF] Executed action method "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0072ms. (50a9e262)
+2018-11-28T18:31:04.3989854+02:00 0HLIL9EN7JFIJ:00000003 [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2018-11-28T18:31:04.4013135+02:00 0HLIL9EN7JFIJ:00000003 [INF] Executed ViewResult - view "Login" executed in 2.3264ms. (f66409e9)
+2018-11-28T18:31:04.4013850+02:00 0HLIL9EN7JFIJ:00000003 [INF] Executed action "Eventures.Web.Controllers.UsersController.Login (Eventures.Web)" in 2.8986ms (afa2e885)
+2018-11-28T18:31:04.4015791+02:00 0HLIL9EN7JFIJ:00000003 [INF] Request finished in 3.8313ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:05.9832193+02:00 0HLIL9EN7JFIJ:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Users/ExternalLogin application/x-www-form-urlencoded 200 (ca22a1cb)
+2018-11-28T18:31:05.9862429+02:00 0HLIL9EN7JFIJ:00000004 [INF] Route matched with "{action = \"ExternalLogin\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.ExternalLogin (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:05.9870307+02:00 0HLIL9EN7JFIJ:00000004 [INF] Executing action method "Eventures.Web.Controllers.UsersController.ExternalLogin (Eventures.Web)" with arguments (["Facebook"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:31:05.9901392+02:00 0HLIL9EN7JFIJ:00000004 [INF] Executed action method "Eventures.Web.Controllers.UsersController.ExternalLogin (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ChallengeResult" in 2.8644ms. (50a9e262)
+2018-11-28T18:31:05.9904317+02:00 0HLIL9EN7JFIJ:00000004 [INF] Executing ChallengeResult with authentication schemes (["Facebook"]). (f3dca807)
+2018-11-28T18:31:05.9955726+02:00 0HLIL9EN7JFIJ:00000004 [INF] AuthenticationScheme: "Facebook" was challenged. (d45f1f38)
+2018-11-28T18:31:05.9957424+02:00 0HLIL9EN7JFIJ:00000004 [INF] Executed action "Eventures.Web.Controllers.UsersController.ExternalLogin (Eventures.Web)" in 9.416ms (afa2e885)
+2018-11-28T18:31:05.9959173+02:00 0HLIL9EN7JFIJ:00000004 [INF] Request finished in 12.8625ms 302  (791a596a)
+2018-11-28T18:31:14.4904213+02:00 0HLIL9EN7JFIJ:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44327/signin-facebook?code=AQAMf2WvX65b7V6cbH3JMRQGHampNsgn50tYDQBP91fuZy6YRKy1qNn0T1xtxZkwHH9WjmIlHWovWxpR2HMXSuMd-drJ1Cs6F_svbw4P-idO5bZB8uVUeImB6ylt6SP7vIMgDel9NEzKmMcp1wL1MCnOnpEZb3fkTVyarWntsnocOFnNyS7WBoNWSIFwe0JnQCDPv6eS-k0_kuZlQtzn6kIjNCxdy-Lz_sSt0KDCVFcV486ayVtwFzfVhMdK2DVLCOX8p5C8K_4CCuxyaQ6on3Ja4nsKQnd1tM84lAN1FjKjtl9x9Uk6sTgFdwbg7-s2LjwFWWPZBQxC3oae9H8yVeV6&state=CfDJ8NX9CtqryydFjKwddIwQ0CwrmEmwQ2uc-JaXaDnNiXAbF5WR7PnvnNr4geqta5cxUcQHE_8Xxo26iy85P3Y-rnlsL_1KmK0bRNgsLvw-_1f7JUVNveWIdOALhZKiIP3QFRyN0bF-WkJOfhdCf4yCI5WecEn_L-HssEwuBKx1YL6KfW78xmGoMy10asJ4qj1P8bDSIDB_MWlf0f7I-kb4DfmCMan9ebD_8hGmwaTcBuUR4wIdp_Fcpfo9LqHkw28qxtPKaL-mfI4NE0UzDC0naBOkt3zoe7Pn3sqQD1NqHd5i   (ca22a1cb)
+2018-11-28T18:31:16.1267380+02:00 0HLIL9EN7JFIJ:00000005 [INF] AuthenticationScheme: "Identity.External" signed in. (c66dd7e7)
+2018-11-28T18:31:16.1268719+02:00 0HLIL9EN7JFIJ:00000005 [INF] Request finished in 1636.7687ms 302  (791a596a)
+2018-11-28T18:31:16.3864854+02:00 0HLIL9EN7JFIJ:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/ExternalLoginCallback?returnUrl=%2F   (ca22a1cb)
+2018-11-28T18:31:16.3936449+02:00 0HLIL9EN7JFIJ:00000006 [INF] Route matched with "{action = \"ExternalLoginCallback\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.ExternalLoginCallback (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:16.3942611+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executing action method "Eventures.Web.Controllers.UsersController.ExternalLoginCallback (Eventures.Web)" with arguments (["/", ""]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:31:16.4062029+02:00 0HLIL9EN7JFIJ:00000006 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:16.5910227+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("162"ms) [Parameters=["@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)" (0723d8ff)
+2018-11-28T18:31:16.7379725+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("78"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0" (0723d8ff)
+2018-11-28T18:31:16.7416845+02:00 0HLIL9EN7JFIJ:00000006 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-11-28T18:31:16.8109037+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("68"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-11-28T18:31:17.0554845+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("243"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-11-28T18:31:17.1842905+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("126"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-11-28T18:31:17.2874899+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed DbCommand ("101"ms) [Parameters=["@__role_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-11-28T18:31:17.2883311+02:00 0HLIL9EN7JFIJ:00000006 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-11-28T18:31:17.2889503+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed action method "Eventures.Web.Controllers.UsersController.ExternalLoginCallback (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 894.5951ms. (50a9e262)
+2018-11-28T18:31:17.2890508+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2018-11-28T18:31:17.2891967+02:00 0HLIL9EN7JFIJ:00000006 [INF] Executed action "Eventures.Web.Controllers.UsersController.ExternalLoginCallback (Eventures.Web)" in 895.4496ms (afa2e885)
+2018-11-28T18:31:17.2893489+02:00 0HLIL9EN7JFIJ:00000006 [INF] Request finished in 902.9053ms 302  (791a596a)
+2018-11-28T18:31:17.5404855+02:00 0HLIL9EN7JFIJ:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:31:17.5416021+02:00 0HLIL9EN7JFIJ:00000007 [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:17.5418553+02:00 0HLIL9EN7JFIJ:00000007 [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:17.5419327+02:00 0HLIL9EN7JFIJ:00000007 [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0094ms. (50a9e262)
+2018-11-28T18:31:17.5420738+02:00 0HLIL9EN7JFIJ:00000007 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:31:18.2844604+02:00 0HLIL9EN7JFIJ:00000007 [INF] Executed ViewResult - view "Index" executed in 741.5659ms. (f66409e9)
+2018-11-28T18:31:18.2846452+02:00 0HLIL9EN7JFIJ:00000007 [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 742.83ms (afa2e885)
+2018-11-28T18:31:18.2849184+02:00 0HLIL9EN7JFIJ:00000007 [INF] Request finished in 744.4872ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:22.8619806+02:00 0HLIL9EN7JFIJ:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All   (ca22a1cb)
+2018-11-28T18:31:22.8630913+02:00 0HLIL9EN7JFIJ:00000008 [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:22.8632756+02:00 0HLIL9EN7JFIJ:00000008 [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:31:22.8635570+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executing action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:31:22.8642207+02:00 0HLIL9EN7JFIJ:00000008 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:22.8798882+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[TotalTickets] > 0" (0723d8ff)
+2018-11-28T18:31:22.8804010+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executed action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 16.7165ms. (50a9e262)
+2018-11-28T18:31:22.8805751+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:31:22.8823866+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executed ViewResult - view "All" executed in 1.8474ms. (f66409e9)
+2018-11-28T18:31:22.8825093+02:00 0HLIL9EN7JFIJ:00000008 [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 19.2624ms (afa2e885)
+2018-11-28T18:31:22.8827945+02:00 0HLIL9EN7JFIJ:00000008 [INF] Request finished in 21.1103ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:25.3987330+02:00 0HLIL9EN7JFIJ:00000009 [INF] Request starting HTTP/1.1 POST http://localhost:44327/Orders/Create application/x-www-form-urlencoded 289 (ca22a1cb)
+2018-11-28T18:31:25.4018100+02:00 0HLIL9EN7JFIJ:00000009 [INF] Route matched with "{action = \"Create\", controller = \"Orders\"}". Executing action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:25.4025679+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executing action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" with arguments (["Eventures.Web.Models.Orders.CreateOrderViewModel"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:31:25.4031075+02:00 0HLIL9EN7JFIJ:00000009 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:25.4214629+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executed DbCommand ("17"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UniqueCitizenNumber], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-11-28T18:31:25.4307002+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executed DbCommand ("7"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:31:25.4311727+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executed action method "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 28.4954ms. (50a9e262)
+2018-11-28T18:31:25.4313776+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executing RedirectResult, redirecting to "/Events/All?Error=There%20is%20not%20enough%20tickets%20available!". (d98d540e)
+2018-11-28T18:31:25.4315093+02:00 0HLIL9EN7JFIJ:00000009 [INF] Executed action "Eventures.Web.Controllers.OrdersController.Create (Eventures.Web)" in 29.559ms (afa2e885)
+2018-11-28T18:31:25.4316911+02:00 0HLIL9EN7JFIJ:00000009 [INF] Request finished in 33.4472ms 302  (791a596a)
+2018-11-28T18:31:25.4783042+02:00 0HLIL9EN7JFIJ:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/All?Error=There%20is%20not%20enough%20tickets%20available!   (ca22a1cb)
+2018-11-28T18:31:25.4792467+02:00 0HLIL9EN7JFIJ:0000000A [INF] Route matched with "{action = \"All\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:25.4793844+02:00 0HLIL9EN7JFIJ:0000000A [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:31:25.4797406+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executing action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" with arguments (["There is not enough tickets available!"]) - Validation state: Valid (4e3479ed)
+2018-11-28T18:31:25.4803252+02:00 0HLIL9EN7JFIJ:0000000A [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:25.4881697+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[TotalTickets] > 0" (0723d8ff)
+2018-11-28T18:31:25.4885443+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executed action method "Eventures.Web.Controllers.EventsController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 8.6706ms. (50a9e262)
+2018-11-28T18:31:25.4886807+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:31:25.4905791+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executed ViewResult - view "All" executed in 1.9308ms. (f66409e9)
+2018-11-28T18:31:25.4906629+02:00 0HLIL9EN7JFIJ:0000000A [INF] Executed action "Eventures.Web.Controllers.EventsController.All (Eventures.Web)" in 11.3221ms (afa2e885)
+2018-11-28T18:31:25.4908828+02:00 0HLIL9EN7JFIJ:0000000A [INF] Request finished in 12.6611ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:32.2876960+02:00 0HLIL9EN7JFIJ:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:44327/Orders/All   (ca22a1cb)
+2018-11-28T18:31:32.2945424+02:00 0HLIL9EN7JFIJ:0000000B [INF] Route matched with "{action = \"All\", controller = \"Orders\"}". Executing action "Eventures.Web.Controllers.OrdersController.All (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:32.2946775+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executing action method "Eventures.Web.Controllers.OrdersController.All (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:32.2965425+02:00 0HLIL9EN7JFIJ:0000000B [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:32.3380639+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CustomerId], [o].[EventId], [o].[OrderedOn], [o].[TicketsCount]
+FROM [Orders] AS [o]" (0723d8ff)
+2018-11-28T18:31:32.3471430+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[End], [e].[Name], [e].[Place], [e].[PricePerTicket], [e].[Start], [e].[TotalTickets]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:31:32.3707397+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed DbCommand ("8"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UniqueCitizenNumber], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-11-28T18:31:32.3746758+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed action method "Eventures.Web.Controllers.OrdersController.All (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 79.8978ms. (50a9e262)
+2018-11-28T18:31:32.9058413+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executing ViewResult, running view "All". (c83d0e25)
+2018-11-28T18:31:32.9426859+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed ViewResult - view "All" executed in 567.8899ms. (f66409e9)
+2018-11-28T18:31:32.9427727+02:00 0HLIL9EN7JFIJ:0000000B [INF] Executed action "Eventures.Web.Controllers.OrdersController.All (Eventures.Web)" in 648.152ms (afa2e885)
+2018-11-28T18:31:32.9430336+02:00 0HLIL9EN7JFIJ:0000000B [INF] Request finished in 655.5808ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:37.1006904+02:00 0HLIL9EN7JFIJ:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:44327/Events/MyEvents   (ca22a1cb)
+2018-11-28T18:31:37.1034907+02:00 0HLIL9EN7JFIJ:0000000C [INF] Route matched with "{action = \"MyEvents\", controller = \"Events\"}". Executing action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:37.1036961+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executing action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:37.1051210+02:00 0HLIL9EN7JFIJ:0000000C [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-11-28T18:31:37.1167497+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executed DbCommand ("10"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CustomerId], [o].[EventId], [o].[OrderedOn], [o].[TicketsCount]
+FROM [Orders] AS [o]
+LEFT JOIN [AspNetUsers] AS [o.Customer] ON [o].[CustomerId] = [o.Customer].[Id]
+WHERE [o.Customer].[UserName] = @__username_0" (0723d8ff)
+2018-11-28T18:31:37.1169606+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executed action method "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 13.0729ms. (50a9e262)
+2018-11-28T18:31:37.7147298+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executing ViewResult, running view "MyEvents". (c83d0e25)
+2018-11-28T18:31:37.7241875+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executed ViewResult - view "MyEvents" executed in 607.0403ms. (f66409e9)
+2018-11-28T18:31:37.7243153+02:00 0HLIL9EN7JFIJ:0000000C [INF] Executed action "Eventures.Web.Controllers.EventsController.MyEvents (Eventures.Web)" in 620.7069ms (afa2e885)
+2018-11-28T18:31:37.7245330+02:00 0HLIL9EN7JFIJ:0000000C [INF] Request finished in 624.1093ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-28T18:31:39.2906802+02:00 0HLIL9EN7JFIJ:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:44327/Users/Logout   (ca22a1cb)
+2018-11-28T18:31:39.2917609+02:00 0HLIL9EN7JFIJ:0000000D [INF] Route matched with "{action = \"Logout\", controller = \"Users\"}". Executing action "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:39.2918708+02:00 0HLIL9EN7JFIJ:0000000D [INF] Authorization was successful. (0d575a54)
+2018-11-28T18:31:39.2921826+02:00 0HLIL9EN7JFIJ:0000000D [INF] Executing action method "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:39.2924233+02:00 0HLIL9EN7JFIJ:0000000D [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-11-28T18:31:39.2925550+02:00 0HLIL9EN7JFIJ:0000000D [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-11-28T18:31:39.2926825+02:00 0HLIL9EN7JFIJ:0000000D [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-11-28T18:31:39.2928788+02:00 0HLIL9EN7JFIJ:0000000D [INF] Executed action method "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 0.487ms. (50a9e262)
+2018-11-28T18:31:39.2929835+02:00 0HLIL9EN7JFIJ:0000000D [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2018-11-28T18:31:39.2931503+02:00 0HLIL9EN7JFIJ:0000000D [INF] Executed action "Eventures.Web.Controllers.UsersController.Logout (Eventures.Web)" in 1.3034ms (afa2e885)
+2018-11-28T18:31:39.2933184+02:00 0HLIL9EN7JFIJ:0000000D [INF] Request finished in 2.7968ms 302  (791a596a)
+2018-11-28T18:31:39.3226739+02:00 0HLIL9EN7JFIJ:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:44327/   (ca22a1cb)
+2018-11-28T18:31:39.3230772+02:00 0HLIL9EN7JFIJ:0000000E [INF] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" (a44c0341)
+2018-11-28T18:31:39.3232212+02:00 0HLIL9EN7JFIJ:0000000E [INF] Executing action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" - Validation state: Valid (dad538d7)
+2018-11-28T18:31:39.3233714+02:00 0HLIL9EN7JFIJ:0000000E [INF] Executed action method "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0106ms. (50a9e262)
+2018-11-28T18:31:39.3235014+02:00 0HLIL9EN7JFIJ:0000000E [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-28T18:31:39.3272421+02:00 0HLIL9EN7JFIJ:0000000E [INF] Executed ViewResult - view "Index" executed in 3.7607ms. (f66409e9)
+2018-11-28T18:31:39.3273362+02:00 0HLIL9EN7JFIJ:0000000E [INF] Executed action "Eventures.Web.Controllers.HomeController.Index (Eventures.Web)" in 4.1721ms (afa2e885)
+2018-11-28T18:31:39.3274978+02:00 0HLIL9EN7JFIJ:0000000E [INF] Request finished in 4.8945ms 200 text/html; charset=utf-8 (791a596a)

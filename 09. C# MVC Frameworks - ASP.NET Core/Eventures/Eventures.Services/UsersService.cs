@@ -19,12 +19,6 @@ namespace Eventures.Services
 
         public bool Login(string username, string password, bool rememberMe)
         {
-            if (username == null ||
-                password == null)
-            {
-                return false;
-            }
-
             var result = this.signInManager.PasswordSignInAsync(username, password, rememberMe, false).GetAwaiter().GetResult();
 
             return result.Succeeded;

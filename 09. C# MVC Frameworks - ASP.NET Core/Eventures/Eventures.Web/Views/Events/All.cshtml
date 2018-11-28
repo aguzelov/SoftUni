@@ -27,6 +27,7 @@
                     <td class="col-md-2">@order.End</td>
                     <td class="col-md-4">
                         <form asp-controller="Orders" asp-action="Create" method="post">
+                            <div asp-validation-summary="All"></div>
                             <input type="text" name="@(nameof(order.Order.EventId))" value="@order.Order.EventId" hidden />
                             <label id="tickets">TicketsCount</label>
                             <input type="number" id="tickets" name="@(nameof(order.Order.TicketsCount))" />

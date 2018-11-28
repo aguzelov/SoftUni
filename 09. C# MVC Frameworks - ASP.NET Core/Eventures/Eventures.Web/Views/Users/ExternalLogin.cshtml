@@ -1,0 +1,36 @@
+﻿@model ExternalLoginViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+
+<hr class="hr-2 bg-secondary half-width" />
+<h4 class="text-center">Associate your @ViewData["LoginProvider"] account.</h4>
+
+<hr class="hr-2 bg-secondary half-width" />
+
+<form class="mx-auto half-width" asp-action="ExternalLoginConfirmation" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <p class="text-center">
+                You've successfully authenticated with <strong>@ViewData["LoginProvider"]</strong>.
+                Please enter an email address for this site below and click the Register button to finish
+                logging in.
+            </p>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between my-3">
+        <div class="form-colmn col-md-12 d-flex flex-column align-items-center">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control col-md-6" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn eventures-bg-color">Register</button>
+    </div>
+</form>
+
+<hr class="hr-2 bg-secondary half-width" />

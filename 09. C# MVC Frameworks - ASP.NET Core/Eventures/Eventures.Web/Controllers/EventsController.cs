@@ -24,8 +24,12 @@ namespace Eventures.Web.Controllers
         }
 
         [Authorize]
-        public IActionResult All()
+        public IActionResult All(string error = null)
         {
+            if (error != null)
+            {
+                this.ModelState.AddModelError(string.Empty, error);
+            }
             var events = this.eventsService.All<EventViewModel>();
 
             return this.View(events);

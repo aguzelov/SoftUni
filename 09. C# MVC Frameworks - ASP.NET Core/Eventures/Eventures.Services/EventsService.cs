@@ -22,6 +22,7 @@ namespace Eventures.Services
         public ICollection<T> All<T>()
         {
             var events = this.context.Events
+                .Where(e => e.TotalTickets > 0)
                 .Select(e => this.mapper.Map<T>(e))
                 .ToList();
 

@@ -68,7 +68,17 @@ namespace Eventures.Web
                 options.SlidingExpiration = true;
             });
 
-            services.AddMvc()
+            services.AddAuthentication()
+            .AddFacebook(options =>
+            {
+                options.AppId = Configuration["Authentication:Facebook:AppId"];
+                options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
+
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             var mappingConfig = new MapperConfiguration(mc =>
@@ -77,6 +87,8 @@ namespace Eventures.Web
 
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
+
+            services.AddResponseCompression(options => { options.EnableForHttps = true; });
 
             services.AddScoped<EventsCreateLogActionFilter>();
 
@@ -107,6 +119,7 @@ namespace Eventures.Web
             loggerFactory.AddFile($"Logs/{Configuration.GetSection("ApplicationName")}-{DateTime.UtcNow.ToString("dd/MM/yyyy")}.txt");
 
             app.UseHttpsRedirection();
+            app.UseResponseCompression();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

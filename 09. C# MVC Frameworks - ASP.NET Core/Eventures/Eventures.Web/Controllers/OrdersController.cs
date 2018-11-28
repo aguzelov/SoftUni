@@ -34,7 +34,7 @@ namespace Eventures.Web.Controllers
 
             if (@event.TotalTickets < model.TicketsCount)
             {
-                return this.RedirectToAction(actionName: "All", controllerName: "Events");
+                return this.RedirectToAction(actionName: "All", controllerName: "Events", routeValues: new { Error = "There is not enough tickets available!" });
             }
 
             var result = this.ordersService.Create(user, @event, model.TicketsCount);
