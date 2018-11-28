@@ -400,3 +400,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 *.zip
+/09. C# MVC Frameworks - ASP.NET Core/Eventures/Eventures.Web/appsettings.json
