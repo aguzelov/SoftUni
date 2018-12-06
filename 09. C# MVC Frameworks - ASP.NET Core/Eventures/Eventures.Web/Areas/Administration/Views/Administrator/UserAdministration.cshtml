@@ -1,0 +1,69 @@
+﻿@model Eventures.Web.Areas.Administration.Models.UsersByRoleViewModel<Eventures.Web.Areas.Administration.Models.AdminUsersViewModel>
+
+<table class="table table-sm">
+    <caption>Administrators</caption>
+    <thead>
+        <tr class="row">
+            <th class="col-md-1">#</th>
+            <th class="col-md-4">Username</th>
+            <th class="col-md-3">Role</th>
+            <th class="col-md-4">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Administrators)
+        {
+            <tr class="row">
+                <th class="col-md-1"></th>
+                <td class="col-md-4">@user.Username</td>
+                <td class="col-md-3">Administrator</td>
+                <td class="col-md-4">
+                    <a asp-area="Administration"
+                       asp-controller="Administrator"
+                       asp-action="Promote"
+                       asp-route-id="@user.Id"
+                       class="btn eventures-bg-color">Promote</a>
+                    <a asp-area="Administration"
+                       asp-controller="Administrator"
+                       asp-action="Demote"
+                       asp-route-id="@user.Id"
+                       class="btn eventures-bg-color">Demote</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table class="table table-sm">
+    <caption>Users</caption>
+    <thead>
+        <tr class="row">
+            <th class="col-md-1">#</th>
+            <th class="col-md-4">Username</th>
+            <th class="col-md-3">Role</th>
+            <th class="col-md-4">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr class="row">
+                <th class="col-md-1"></th>
+                <td class="col-md-4">@user.Username</td>
+                <td class="col-md-3">User</td>
+                <td class="col-md-4">
+                    <a asp-area="Administration"
+                       asp-controller="Administrator"
+                       asp-action="Promote"
+                       asp-route-id="@user.Id"
+                       class="btn eventures-bg-color">Promote</a>
+                    <a asp-area="Administration"
+                       asp-controller="Administrator"
+                       asp-action="Demote"
+                       asp-route-id="@user.Id"
+                       class="btn eventures-bg-color">Demote</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

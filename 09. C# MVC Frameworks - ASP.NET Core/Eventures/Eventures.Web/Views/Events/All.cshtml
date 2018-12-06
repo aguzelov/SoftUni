@@ -1,4 +1,4 @@
-﻿@model ICollection<EventViewModel>
+﻿@model AllViewModel<EventViewModel>
 
 <h1 class="text-center">All Events</h1>
 <hr class="hr-2 eventures-bg-color" />
@@ -14,27 +14,27 @@
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < Model.Count(); i++)
+            @for (int i = 0; i < Model.Entities.Count(); i++)
             {
 
                 var index = i + 1;
-                var order = Model.ToList()[i];
+                var entity = Model.Entities.ToList()[i];
 
                 <tr class="row">
                     <th class="col-md-1">@index</th>
-                    <td class="col-md-3">@order.Name</td>
-                    <td class="col-md-2">@order.Start</td>
-                    <td class="col-md-2">@order.End</td>
+                    <td class="col-md-3">@entity.Name</td>
+                    <td class="col-md-2">@entity.Start</td>
+                    <td class="col-md-2">@entity.End</td>
                     <td class="col-md-4">
                         <form asp-controller="Orders" asp-action="Create" method="post">
                             <div asp-validation-summary="All"></div>
-                            <input type="text" name="@(nameof(order.Order.EventId))" value="@order.Order.EventId" hidden />
+                            <input type="text" name="@(nameof(entity.Order.EventId))" value="@entity.Order.EventId" hidden />
                             <label id="tickets">TicketsCount</label>
-                            <input type="number" id="tickets" name="@(nameof(order.Order.TicketsCount))" />
+                            <input type="number" id="tickets" name="@(nameof(entity.Order.TicketsCount))" />
 
                             <button type="submit" class="btn eventures-bg-color">Order</button>
                             <br />
-                            <span asp-validation-for="@order.Order.TicketsCount"></span>
+                            <span asp-validation-for="@entity.Order.TicketsCount"></span>
                         </form>
                     </td>
                 </tr>
@@ -42,5 +42,34 @@
             }
         </tbody>
     </table>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul class="pagination pagination-lg justify-content-center">
+                    @if (Model.HasPreviousPage)
+                    {
+                        <li class="page-item"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page-1)" class="page-link">Previous</a></li>
+                        <li class="page-item"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page-1)" class="page-link">@(Model.Page - 1)</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page-1)" class="page-link">Previous</a></li>
+                    }
+
+                    <li class="page-item active"><span class="page-link">@Model.Page</span></li>
+
+                    @if (Model.HasNextPage)
+                    {
+                        <li class="page-item"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page+1)" class="page-link">@(Model.Page + 1)</a></li>
+                        <li class="page-item"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page+1)" class="page-link">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled"><a asp-controller="Events" asp-action="All" asp-route-page="@(Model.Page+1)" class="page-link">Next</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <hr class="hr-2 eventures-bg-color" />

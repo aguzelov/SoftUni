@@ -3,7 +3,6 @@ using Eventures.Data;
 using Eventures.Models;
 using Eventures.Services.Contracts;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Eventures.Services
@@ -19,12 +18,11 @@ namespace Eventures.Services
             this.mapper = mapper;
         }
 
-        public ICollection<T> All<T>()
+        public IQueryable<T> All<T>()
         {
             var events = this.context.Events
                 .Where(e => e.TotalTickets > 0)
-                .Select(e => this.mapper.Map<T>(e))
-                .ToList();
+                .Select(e => this.mapper.Map<T>(e));
 
             return events;
         }

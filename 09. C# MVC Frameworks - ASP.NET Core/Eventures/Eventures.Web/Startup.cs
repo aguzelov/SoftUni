@@ -71,8 +71,8 @@ namespace Eventures.Web
             services.AddAuthentication()
             .AddFacebook(options =>
             {
-                options.AppId = Configuration["Authentication:Facebook:AppId"];
-                options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                options.AppId = this.Configuration["Authentication:Facebook:AppId"];
+                options.AppSecret = this.Configuration["Authentication:Facebook:AppSecret"];
             });
 
             services.AddMvc(options =>
@@ -114,9 +114,9 @@ namespace Eventures.Web
                 app.UseHsts();
             }
 
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(this.Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            loggerFactory.AddFile($"Logs/{Configuration.GetSection("ApplicationName")}-{DateTime.UtcNow.ToString("dd/MM/yyyy")}.txt");
+            loggerFactory.AddFile($"Logs/{this.Configuration.GetSection("ApplicationName")}-{DateTime.UtcNow:dd/MM/yyyy}.txt");
 
             app.UseHttpsRedirection();
             app.UseResponseCompression();
@@ -127,6 +127,11 @@ namespace Eventures.Web
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

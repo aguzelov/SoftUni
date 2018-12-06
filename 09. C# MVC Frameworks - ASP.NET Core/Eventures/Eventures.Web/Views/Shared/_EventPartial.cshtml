@@ -3,13 +3,13 @@
         Events
     </a>
     <div class="dropdown-menu mt-2" aria-labelledby="dropdownMenuLink">
-        <a class="nav-link nav-link-dark" asp-controller="Events" asp-action="All">All Events</a>
+        <a class="nav-link nav-link-dark" asp-area="" asp-controller="Events" asp-action="All">All Events</a>
         @if (User.Identity.IsAuthenticated)
         {
-            <a class="nav-link nav-link-dark" asp-controller="Events" asp-action="MyEvents">My Events</a>
+            <a class="nav-link nav-link-dark" asp-area="" asp-controller="Events" asp-action="MyEvents">My Events</a>
             @if (User.IsInRole("Admin"))
             {
-                <a class="nav-link nav-link-dark" asp-controller="Events" asp-action="Create">Create Event</a>
+                <a class="nav-link nav-link-dark" asp-area="" asp-controller="Events" asp-action="Create">Create Event</a>
             }
         }
     </div>

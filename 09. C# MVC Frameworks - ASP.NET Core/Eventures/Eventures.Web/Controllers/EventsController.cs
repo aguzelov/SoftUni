@@ -1,9 +1,12 @@
 ﻿using Eventures.Services.Contracts;
 using Eventures.Web.Filters;
+using Eventures.Web.Models;
 using Eventures.Web.Models.Events;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 
 namespace Eventures.Web.Controllers
 {
@@ -24,15 +27,27 @@ namespace Eventures.Web.Controllers
         }
 
         [Authorize]
-        public IActionResult All(string error = null)
+        public IActionResult All(AllViewModel<EventViewModel> model)
         {
-            if (error != null)
-            {
-                this.ModelState.AddModelError(string.Empty, error);
-            }
+            //if (error != null)
+            //{
+            //    this.ModelState.AddModelError(string.Empty, error);
+            //}
+
             var events = this.eventsService.All<EventViewModel>();
 
-            return this.View(events);
+            var currentPosts = events
+                .Skip((model.Page - 1) * model.PageSize)
+                .Take(model.PageSize)
+                .ToList();
+
+            var totalPosts = events.Count();
+
+            model.TotalPages = (int)Math.Ceiling(totalPosts / (double)model.PageSize);
+
+            model.Entities = currentPosts;
+
+            return this.View(model);
         }
 
         [Authorize(Roles = "Admin")]

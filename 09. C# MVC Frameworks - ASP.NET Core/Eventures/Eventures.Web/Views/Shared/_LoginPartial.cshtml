@@ -4,6 +4,9 @@
         @if (User.IsInRole("Admin"))
         {
             <li class="nav-item">
+                <a class="nav-link nav-link-dark" asp-area="Administration" asp-controller="Administrator" asp-action="UserAdministration">User Administration</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link nav-link-dark">Hello Admin!</a>
             </li>
         }
@@ -14,7 +17,7 @@
             </li>
         }
         <li class="nav-item">
-            <a class="nav-link nav-link-dark" asp-controller="Users" asp-action="Logout">Logout</a>
+            <a class="nav-link nav-link-dark" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
         </li>
     </ul>
 }
