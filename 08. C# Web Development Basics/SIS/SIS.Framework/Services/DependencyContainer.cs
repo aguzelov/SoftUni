@@ -2,63 +2,51 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using SIS.Framework.Services.Contracts;
 
 namespace SIS.Framework.Services
 {
     public class DependencyContainer : IDependencyContainer
     {
-        private readonly IDictionary<Type, Type> dependencyMap;
+        private readonly IDictionary<Type, Type> dependencyDictionary;
 
         public DependencyContainer()
         {
-            this.dependencyMap = new Dictionary<Type, Type>();
+            this.dependencyDictionary = new Dictionary<Type, Type>();
         }
 
-        public DependencyContainer(IDictionary<Type, Type> dependencyMap)
-        {
-            this.dependencyMap = dependencyMap;
-        }
-
-        private Type this[Type key] =>
-            this.dependencyMap.ContainsKey(key)
-                ? this.dependencyMap[key]
-                : null;
+        private Type this[Type key] 
+            => this.dependencyDictionary.ContainsKey(key) ? this.dependencyDictionary[key] : null;
 
         public void RegisterDependency<TSource, TDestination>()
         {
-            this.dependencyMap[typeof(TSource)] = typeof(TDestination);
+            this.dependencyDictionary[typeof(TSource)] = typeof(TDestination);
         }
 
-        public T CreateInstance<T>() =>
-            (T)CreateInstance(typeof(T));
+        public T CreateInstance<T>() 
+            => (T) this.CreateInstance(typeof(T));
 
         public object CreateInstance(Type type)
         {
-            Type typeInstance = this[type] ?? type;
+            if (type == null) return null;
 
-            if (typeInstance.IsInterface || typeInstance.IsAbstract)
+            Type instanceType = this[type] ?? type;
+
+            if (instanceType.IsInterface || instanceType.IsAbstract)
             {
-                throw new InvalidOperationException(
-                    $"Type {typeInstance.FullName} cannot be instantiated. Abstract type and interfaces cannot be instantiated");
+                throw new InvalidOperationException($"Type {instanceType.FullName} cannot be instantiated.");
             }
 
-            ConstructorInfo constructor = typeInstance
-                .GetConstructors()
-                .OrderByDescending(c => c.GetParameters().Length)
-                .First();
-
+            ConstructorInfo constructor =
+                instanceType.GetConstructors().OrderBy(x => x.GetParameters().Length).First();
             ParameterInfo[] constructorParameters = constructor.GetParameters();
+            object[] constructorParameterObjects = new object[constructorParameters.Length];
 
-            object[] constructorParametersObjects = new object[constructorParameters.Length];
-
-            for (int index = 0; index < constructorParameters.Length; index++)
+            for (int i = 0; i < constructorParameters.Length; i++)
             {
-                constructorParametersObjects[index] = this.CreateInstance(
-                    constructorParameters[index].ParameterType);
+                constructorParameterObjects[i] = this.CreateInstance(constructorParameters[i].ParameterType);
             }
 
-            return constructor.Invoke(constructorParametersObjects);
+            return constructor.Invoke(constructorParameterObjects);
         }
     }
 }

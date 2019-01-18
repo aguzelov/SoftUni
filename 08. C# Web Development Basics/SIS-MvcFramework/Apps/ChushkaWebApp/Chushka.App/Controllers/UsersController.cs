@@ -51,6 +51,7 @@ namespace Chushka.App.Controllers
                 Role = user.Role.ToString(),
                 Info = user.Email
             };
+
             var cookieContent = this.UserCookieService.GetUserCookie(mvcUser);
 
             var cookie = new HttpCookie(".auth-cakes", cookieContent, 7)

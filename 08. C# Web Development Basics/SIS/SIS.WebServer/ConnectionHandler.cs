@@ -1,39 +1,34 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using SIS.HTTP.Common;
 using SIS.HTTP.Cookies;
-using SIS.HTTP.Enums;
-using SIS.WebServer.Api.Contracts;
+using SIS.HTTP.Exceptions;
+using SIS.HTTP.Headers;
+using SIS.HTTP.Requests;
+using SIS.HTTP.Responses;
+using SIS.HTTP.Sessions;
+using SIS.WebServer.Api;
+using SIS.WebServer.Results;
 
 namespace SIS.WebServer
 {
-    using HTTP.Common;
-    using HTTP.Exceptions;
-    using HTTP.Requests;
-    using HTTP.Responses;
-    using HTTP.Sessions;
-    using Results;
-    using Routing;
-
     public class ConnectionHandler
     {
         private readonly Socket client;
 
-        private const string RootDirectoryRelativePath = "../../..";
-
-        private readonly IHttpHandlingContext handlersContext;
+        private readonly IHttpRequestHandler httpRequestHandler;
 
         public ConnectionHandler(
             Socket client,
-            IHttpHandlingContext handlersContext)
+            IHttpRequestHandler httpRequestHandler)
         {
             CoreValidator.ThrowIfNull(client, nameof(client));
-            CoreValidator.ThrowIfNull(handlersContext, nameof(handlersContext));
+            CoreValidator.ThrowIfNull(httpRequestHandler, nameof(httpRequestHandler));
 
             this.client = client;
-            this.handlersContext = handlersContext;
+            this.httpRequestHandler = httpRequestHandler;
         }
 
         private async Task<IHttpRequest> ReadRequest()
@@ -66,9 +61,11 @@ namespace SIS.WebServer
 
             return new HttpRequest(result.ToString());
         }
-
+        
         private async Task PrepareResponse(IHttpResponse httpResponse)
         {
+            httpResponse.AddHeader(new HttpHeader(HttpHeader.Server, "SIS/0.0.1"));
+
             byte[] byteSegments = httpResponse.GetBytes();
 
             await this.client.SendAsync(byteSegments, SocketFlags.None);
@@ -113,7 +110,7 @@ namespace SIS.WebServer
                 {
                     string sessionId = this.SetRequestSession(httpRequest);
 
-                    var httpResponse = this.handlersContext.Handle(httpRequest);
+                    var httpResponse = this.httpRequestHandler.Handle(httpRequest);
 
                     this.SetResponseSession(httpResponse, sessionId);
 
@@ -122,11 +119,11 @@ namespace SIS.WebServer
             }
             catch (BadRequestException e)
             {
-                await this.PrepareResponse(new TextResult(e.Message, HttpResponseStatusCode.BadRequest));
+                await this.PrepareResponse(new BadRequestResult(e.Message));
             }
             catch (Exception e)
             {
-                await this.PrepareResponse(new TextResult(e.Message, HttpResponseStatusCode.InternalServerError));
+                await this.PrepareResponse(new InternalServerErrorResult(e.StackTrace));
             }
 
             this.client.Shutdown(SocketShutdown.Both);

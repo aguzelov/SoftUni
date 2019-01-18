@@ -1,32 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SIS.Framework.Api.Contracts;
+﻿using SIS.Framework.Api;
 using SIS.Framework.Routers;
+using SIS.Framework.Routers.Contracts;
 using SIS.Framework.Services;
-using SIS.Framework.Services.Contracts;
 using SIS.WebServer;
-using SIS.WebServer.Api.Contracts;
+using SIS.WebServer.Api;
 
 namespace SIS.Framework
 {
     public static class WebHost
     {
-        private const int HostingPort = 8000;
+        private const int HostingPort = 8000; 
 
         public static void Start(IMvcApplication application)
         {
             IDependencyContainer container = new DependencyContainer();
             application.ConfigureServices(container);
 
-            IControllerHandler controllerRouter = new ControllerRouter(container);
-            IResourceHandler resourceRouter = new ResourceRouter();
+            IMvcRouter controllerRouter = new ControllerRouter(container);
+            IResourceRouter resourceRouter = new ResourceRouter();
+            ICustomRouter customRouter = new CustomRouter();
 
-            IHttpHandlingContext handlingContextcontext = new HttpRouteHandlingContext(controllerRouter, resourceRouter);
+            IHttpRequestHandler httpRequestHandlingContext 
+                = new HttpRequestHandlingContext(controllerRouter, resourceRouter, customRouter);
 
             application.Configure();
 
-            Server server = new Server(HostingPort, handlingContextcontext);
+            Server server = new Server(HostingPort, httpRequestHandlingContext);
             server.Run();
         }
     }

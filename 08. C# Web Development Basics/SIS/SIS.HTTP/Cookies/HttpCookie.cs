@@ -7,7 +7,6 @@ namespace SIS.HTTP.Cookies
 
     public class HttpCookie
     {
-        public const string AuthenticeKey = "auth";
         private const int HttpCookieDefaultExpirationDays = 3;
         private const string HttpCookieDefaultPath = "/";
 

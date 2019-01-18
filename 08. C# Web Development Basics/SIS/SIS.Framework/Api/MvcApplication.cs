@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SIS.Framework.Api.Contracts;
-using SIS.Framework.Services.Contracts;
+﻿using SIS.Framework.Services;
 
 namespace SIS.Framework.Api
 {
     public class MvcApplication : IMvcApplication
     {
-        public virtual void Configure()
-        {
-        }
+        public virtual void Configure() { }
 
-        public virtual void ConfigureServices(IDependencyContainer dependencyContainer)
-        {
-        }
+        public virtual void ConfigureServices(IDependencyContainer dependencyContainer) { }
     }
 }

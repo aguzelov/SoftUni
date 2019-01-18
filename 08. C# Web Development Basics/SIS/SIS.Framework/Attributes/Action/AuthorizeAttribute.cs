@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using SIS.Framework.Security.Contracts;
+using SIS.Framework.Security;
 
 namespace SIS.Framework.Attributes.Action
 {
@@ -8,46 +8,33 @@ namespace SIS.Framework.Attributes.Action
     {
         private readonly string[] roles;
 
+        private string[] FormatRoles(string[] inputRoles)
+        {
+            return inputRoles.Length > 0 
+                ? inputRoles.Select(r => r.ToLower()).ToArray()
+                : inputRoles;
+        }
+
         public AuthorizeAttribute()
         {
-            
+            this.roles = new string[0];
         }
-
+        
         public AuthorizeAttribute(params string[] roles)
         {
-            this.roles = roles;
+            this.roles = this.FormatRoles(roles);
         }
 
-        private bool IsIdentityPresent(IIdentity identity) =>
-            identity != null;
+        private bool IsIdentityPresent(IIdentity identity)
+            => identity != null;
 
         private bool IsIdentityInRole(IIdentity identity)
-        {
-            if (!this.IsIdentityPresent(identity))
-            {
-                return false;
-            }
+            => this.IsIdentityPresent(identity)
+               && identity.Roles.Any(r => this.roles.Contains(r.ToLower()));
 
-            var identityRoles = identity.Roles;
-            foreach (var identityRole in identityRoles)
-            {
-                if (this.roles.Contains(identityRole))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        public bool IsAuthenticated(IIdentity identity)
-        {
-            if (roles == null || !this.roles.Any())
-            {
-                return this.IsIdentityPresent(identity);
-            }
-
-            return this.IsIdentityInRole(identity);
-        }
+        public bool IsAuthorized(IIdentity user)
+            => this.roles.Length > 0
+                ? this.IsIdentityInRole(user)
+                : this.IsIdentityPresent(user);
     }
 }

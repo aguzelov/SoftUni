@@ -1,42 +1,64 @@
 ﻿using System.IO;
+using System.Linq;
+using SIS.Framework.Routers.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
-using SIS.WebServer.Api.Contracts;
 using SIS.WebServer.Results;
 
 namespace SIS.Framework.Routers
 {
-    public class ResourceRouter : IResourceHandler
+    public class ResourceRouter : IResourceRouter
     {
-        public IHttpResponse Handle(IHttpRequest request)
-        {
-            var httpRequestPath = request.Path;
+        private const string RootDirectoryRelativePath = "../../../";
 
+        private const string ResourceFolderPath = "Resources/";
+
+        private static readonly string[] AllowedResourceExtensions = {".js", ".css", ".ico", ".jpg", ".jpeg", ".png", ".gif", ".html"};
+
+        private string FormatResourcePath(string httpRequestPath)
+        {
             var indexOfStartOfExtension = httpRequestPath.LastIndexOf('.');
             var indexOfStartOfNameOfResource = httpRequestPath.LastIndexOf('/');
-            // users/login/bootstrap.css
-
-            var requestPathExtension = httpRequestPath
-                .Substring(indexOfStartOfExtension);
 
             var resourceName = httpRequestPath
                 .Substring(
                     indexOfStartOfNameOfResource);
 
-            var resourcePath = MvcContext.Get.RootDirectoryRelativePath
-                               + $"/{MvcContext.Get.ResourceFolderName}"
-                               + $"/{requestPathExtension.Substring(1)}"
-                               + resourceName;
+            return RootDirectoryRelativePath
+                   + ResourceFolderPath
+                   + resourceName;
+        }
 
-            if (!File.Exists(resourcePath))
+        private bool IsAllowedExtension(string httpRequestPath)
+        {
+            var requestPathExtension = httpRequestPath
+                .Substring(httpRequestPath.LastIndexOf('.'));
+
+            return AllowedResourceExtensions.Contains(requestPathExtension);
+        }
+
+        public bool IsResourceRequest(string httpRequestPath) => httpRequestPath.Contains('.');
+
+        public IHttpResponse Handle(IHttpRequest httpRequest)
+        {
+            if (this.IsAllowedExtension(httpRequest.Path))
             {
-                return new HttpResponse(HttpResponseStatusCode.NotFound);
+                string httpRequestPath = httpRequest.Path;
+
+                string resourcePath = this.FormatResourcePath(httpRequestPath);
+
+                if (!File.Exists(resourcePath))
+                {
+                    return null;
+                }
+
+                var fileContent = File.ReadAllBytes(resourcePath);
+
+                return new InlineResouceResult(fileContent, HttpResponseStatusCode.Ok);
             }
 
-            var fileContent = File.ReadAllBytes(resourcePath);
-
-            return new InlineResouceResult(fileContent, HttpResponseStatusCode.Ok);
+            return null;
         }
     }
 }
