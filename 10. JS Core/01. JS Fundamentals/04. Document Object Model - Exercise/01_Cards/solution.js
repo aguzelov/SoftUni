@@ -13,9 +13,9 @@ function solve() {
 
             let player = this.parentElement.id;
 
-            if (player === 'player1Div'
-                && !isFirstMove
-                && !this.hasAttribute('checked')) {
+            if (player === 'player1Div' &&
+                !isFirstMove &&
+                !this.hasAttribute('checked')) {
                 this.src = 'images/whiteCard.jpg';
                 this.setAttribute('checked', 'checked');
                 isFirstMove = true;
@@ -23,9 +23,9 @@ function solve() {
                 let cardScore = +this.name;
                 resultElement.firstChild.textContent = cardScore;
                 firstPlayerCard = this;
-            } else if (player === 'player2Div'
-                && !isSecondMove
-                && !this.hasAttribute('checked')) {
+            } else if (player === 'player2Div' &&
+                !isSecondMove &&
+                !this.hasAttribute('checked')) {
                 this.src = 'images/whiteCard.jpg';
                 this.setAttribute('checked', 'checked');
                 isSecondMove = true;
