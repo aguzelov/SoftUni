@@ -1,64 +1,44 @@
 function solve() {
-    let imgElements = document.querySelectorAll('#exercise div img');
-    let resultElement = document.getElementById('result');
+    Array.from(document.getElementsByTagName('img')).forEach((img) => {
+        img.addEventListener('click', clickEvent);
+    });
 
-    let firstPlayerCard;
-    let secondPlayerCard;
+    function clickEvent(e) {
+        let card = e.target;
+        card.src = './images/whiteCard.jpg';
+        card.removeEventListener('click', clickEvent);
 
-    let isFirstMove = false;
-    let isSecondMove = false;
+        let parent = card.parentNode;
+        let spans = document.getElementById('result').children;
 
-    for (let element of imgElements) {
-        element.addEventListener('click', function () {
+        let leftSpan = spans[0];
+        let rightSpan = spans[2];
 
-            let player = this.parentElement.id;
+        if (parent.id === 'player1Div') {
+            leftSpan.textContent = card.name;
+        } else if (parent.id === 'player2Div') {
+            rightSpan.textContent = card.name;
+        }
 
-            if (player === 'player1Div' &&
-                !isFirstMove &&
-                !this.hasAttribute('checked')) {
-                this.src = 'images/whiteCard.jpg';
-                this.setAttribute('checked', 'checked');
-                isFirstMove = true;
+        if (spans[0].textContent && spans[2].textContent) {
+            let winner;
+            let looser;
 
-                let cardScore = +this.name;
-                resultElement.firstChild.textContent = cardScore;
-                firstPlayerCard = this;
-            } else if (player === 'player2Div' &&
-                !isSecondMove &&
-                !this.hasAttribute('checked')) {
-                this.src = 'images/whiteCard.jpg';
-                this.setAttribute('checked', 'checked');
-                isSecondMove = true;
-
-                let cardScore = +this.name;
-                resultElement.lastChild.textContent = cardScore;
-                secondPlayerCard = this;
+            if (+leftSpan.textContent > +rightSpan.textContent) {
+                winner = document.querySelector(`#player1Div img[name='${leftSpan.textContent}']`);
+                looser = document.querySelector(`#player2Div img[name='${rightSpan.textContent}']`);
+            } else {
+                winner = document.querySelector(`#player2Div img[name='${rightSpan.textContent}']`);
+                looser = document.querySelector(`#player1Div img[name='${leftSpan.textContent}']`);
             }
 
-            if (isFirstMove && isSecondMove) {
-                isFirstMove = false;
-                isSecondMove = false;
+            winner.style.border = '2px solid green';
+            looser.style.border = '2px solid darkred';
 
-                let firstPlayerScore = resultElement.firstChild.textContent;
-                let secondPlayerScore = resultElement.lastChild.textContent;
-                if (firstPlayerScore && secondPlayerScore) {
-                    if (firstPlayerScore > secondPlayerScore) {
-                        firstPlayerCard.style.cssText = 'border: 2px solid green';
-                        secondPlayerCard.style.cssText = 'border: 2px solid darkred';
-                    } else {
-                        firstPlayerCard.style.cssText = 'border: 2px solid darkred';
-                        secondPlayerCard.style.cssText = 'border: 2px solid green';
-                    }
-                }
+            document.getElementById('history').textContent += `[${leftSpan.textContent} vs ${rightSpan.textContent}] `;
 
-                let historyElement = document.getElementById('history');
-                historyElement.innerHTML += `[${firstPlayerScore} vs ${secondPlayerScore}] `;
-
-                setTimeout(function () {
-                    resultElement.firstChild.textContent = '';
-                    resultElement.lastChild.textContent = '';
-                }, 2000);
-            }
-        });
+            leftSpan.textContent = "";
+            rightSpan.textContent = "";
+        }
     }
 }
