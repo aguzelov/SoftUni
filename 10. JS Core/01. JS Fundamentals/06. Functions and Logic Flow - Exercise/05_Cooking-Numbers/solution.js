@@ -8,8 +8,7 @@
         'spice': function (num) { return num + 1; },
         'bake': function (num) { return num * 3; },
         'fillet': function (num) {
-            num = num;
-            var val = num - (num * 0.20);
+            var val = num * 0.8;
             return val;
         }
     };
