@@ -5,12 +5,12 @@ function solve() {
   let arr = JSON.parse(arrElement.value);
 
   let ascendingOrderElement = document.createElement('div');
-  ascendingOrderElement.textContent = arr.join(', ');
+  ascendingOrderElement.textContent = arr.sort((a, b) => {
+    return a - b;
+  }).join(', ');
   resultElement.appendChild(ascendingOrderElement);
 
   let alphabeticallyOrderElement = document.createElement('div');
-  alphabeticallyOrderElement.textContent = arr.sort((a, b) => {
-    return +a - +b;
-  }).sort().join(', ');
+  alphabeticallyOrderElement.textContent = arr.sort().join(', ');
   resultElement.appendChild(alphabeticallyOrderElement);
 }
