@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style/template.css">
+    <title>Rent</title>
+</head>
+
+<body>
+    <div id="container">
+        <nav id="navigation">
+            <div id="navigation-text">
+                <p id="lecture-name">Objects, JSON and DOM Events</p>
+                <p id="problem-name">03. Rent</p>
+            </div>
+            <img id="logo-img" src="./images/SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+        </nav>
+            <main>
+                <div id="exercise">
+                    <form>
+                        <label>Flat Numbers</label>
+                        <input type="text" id="flats">
+                        <label>Families</label>
+                        <input type="text" id="families">
+                        <label>Rents</label>
+                        <input type="text" id="rents">
+                        <div class="center">
+                            <input type="submit" id="button" onclick="calculateRents()" value="Calculate Rent">
+                    </div>
+                    </form>
+                    <label>Result</label>
+                    <textarea readonly rows="10" cols="50" id="result"></textarea>
+                </div>
+                <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
+        </main>
+                <footer>
+                    <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
+                    </p>
+                </footer>
+    </div>
+    <script>
+        document.getElementById("button").addEventListener("click", function(event){
+            event.preventDefault()
+        });
+        function calculateRents() {
+            let flatsElement = document.getElementById('flats');
+            let familiesElement = document.getElementById('families');
+            let rentsElement = document.getElementById('rents');
+            let resultElement = document.getElementById('result');
+
+            let numbers = flatsElement.value.split(', ');
+            let families = familiesElement.value.split(', ');
+            let rents = rentsElement.value.split(', ');
+
+            let totalRents = 0;
+            for(let index = 0 ; index < numbers.length; index++){
+                resultElement.textContent += `In flat ${numbers[index]} family ${families[index]} has to pay ${rents[index]}\n`;
+
+                totalRents += +rents[index];
+            }
+
+            resultElement.textContent += `Total rent paid: ${totalRents}`;
+        }
+    </script>
+</body>
+
+</html>
