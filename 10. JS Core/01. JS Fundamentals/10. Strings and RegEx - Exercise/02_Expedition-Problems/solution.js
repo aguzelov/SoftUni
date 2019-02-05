@@ -1,14 +1,14 @@
 function solve(keywordStr, textString) {
-  // let strElement = document.getElementById('str');
-  // let textElement = document.getElementById('text');
+  let strElement = document.getElementById('str');
+  let textElement = document.getElementById('text');
 
-  // let resultElement = document.getElementById('result');
+  let resultElement = document.getElementById('result');
 
-  // let keyword = strElement.value;
-  // let text = textElement.value;
+  let keyword = strElement.value;
+  let text = textElement.value;
 
-  let keyword = keywordStr;
-  let text = textString;
+  // let keyword = keywordStr;
+  // let text = textString;
 
   let messageRegEx = new RegExp(keyword + '(.+)' + keyword, 'g');
   let message = messageRegEx.exec(text)[1];
@@ -20,17 +20,17 @@ function solve(keywordStr, textString) {
   console.log(east);
 
 
-  // let northParagraphElement = document.createElement('p');
-  // northParagraphElement.textContent = north;
-  // resultElement.appendChild(northParagraphElement);
+  let northParagraphElement = document.createElement('p');
+  northParagraphElement.textContent = north;
+  resultElement.appendChild(northParagraphElement);
 
-  // let eastParagraphElement = document.createElement('p');
-  // eastParagraphElement.textContent = east;
-  // resultElement.appendChild(eastParagraphElement);
+  let eastParagraphElement = document.createElement('p');
+  eastParagraphElement.textContent = east;
+  resultElement.appendChild(eastParagraphElement);
 
-  // let messageElement = document.createElement('p');
-  // messageElement.textContent = `Message: ${message}`;
-  // resultElement.appendChild(messageElement);
+  let messageElement = document.createElement('p');
+  messageElement.textContent = `Message: ${message}`;
+  resultElement.appendChild(messageElement);
 
   function getCoordinates(text, key) {
     let regEx = new RegExp(key + `.*?([0-9]{2}).*?,.*?([0-9]{6})`, 'gmi');
