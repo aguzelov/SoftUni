@@ -1,7 +1,3 @@
-document.body.innerHTML = '<input type="text" id="num1" />' +
-    '<input type="text" id="num2" />' +
-    '<input type="text" id="result" readonly />';
-
 function solve() {
     return (function () {
         let selector1;
