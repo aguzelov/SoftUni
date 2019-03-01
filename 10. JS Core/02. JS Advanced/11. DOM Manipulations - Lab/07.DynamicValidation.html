@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Focus</title>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body onload="validate()">
+    <label for="email">Enter email:</label>
+    <input id="email" type="text"/>
+    <script>
+    function validate() {
+      let emailElem = document.getElementById('email');
+      emailElem.addEventListener('change', ()=>{
+        let currentValue = emailElem.value;
+        let regex =/^[a-z]+@[a-z]+\.[a-z]+$/gsi;
+
+        if(regex.test(currentValue)){
+            emailElem.classList.remove('error');
+        }else{
+            emailElem.classList.add('error');
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
