@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body onload="realEstateAgency()">
+    <section>
+        <div id="roof">
+            <h1>Agency profit: 0 lv.</h1>
+        </div>
+        <div id="building"></div>
+        <div id="offerManager">
+            <div id="regOffer">
+                <h2>Reg offer</h2>
+                <input type="text" name="apartmentRent" placeholder="Rent price..." value = "700">
+                <input type="text" name="apartmentType" placeholder="Apartment type..." value ="two room apartment">
+                <input type="text" name="agencyCommission" placeholder="Commission rate..." value ="50">
+                <button name="regOffer">Reg offer</button>
+            </div>
+            <div id="findOffer">
+                <h2>Find offer</h2>
+                <input type="text" name="familyBudget" placeholder="Family budget...." value = "1100">
+                <input type="text" name="familyApartmentType" placeholder="Apartment type..." value = "two room apartment">
+                <input type="text" name="familyName" placeholder="Family name..." value="Peshovi">
+                <button name="findOffer">Find offer</button>
+            </div>
+            <div id="notifications">
+                <p id="message"></p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
