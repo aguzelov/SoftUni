@@ -1,16 +1,26 @@
+function attachEvents() {
+    $('#btnLoad').on('click', () => {
+        getAllContacts();
+    });
+
+    $('#btnCreate').on('click', () => {
+        createContact();
+    });
+}
 
 //Lead all phonebook contacts
-$('#btnLoad').on('click', () => {
+function getAllContacts() {
     let url = generateURL('');
     request('GET', url, '', onContactsLoadedSuccess);
-});
+}
 
 function onContactsLoadedSuccess(data) {
     clearPhoneBook();
 
+
     for (const contact of Object.entries(data)) {
         let $contact = $('<li>');
-        $contact.text(`${contact[1].Person}: ${contact[1].Phone}`);
+        $contact.text(`${contact[1].person}: ${contact[1].phone} `);
 
         let $deleteButton = $('<button>Delete</button>');
         $deleteButton.attr('id', contact[0]);
@@ -23,38 +33,37 @@ function onContactsLoadedSuccess(data) {
 }
 
 //Create new contact
-$('#btnCreate').on('click', () => {
+function createContact() {
     let url = generateURL('');
-
     let $person = $('#person').val();
     let $phone = $('#phone').val();
 
     let contact = {
-        Person: $person,
-        Phone: $phone
+        person: $person,
+        phone: $phone
     };
 
     request('POST', url, JSON.stringify(contact), onContactCreateSuccess);
-    $('#btnLoad').click();
-});
+}
+
 
 function onContactCreateSuccess(data) {
     let $person = $('#person').val('');
     let $phone = $('#phone').val('');
 
+    getAllContacts();
 }
 
 //Delete contact
 function deleteContact(event) {
     let id = event.target.id;
 
-    let url = generateURL(id);
+    let url = generateURL('/' + id);
     request('DELETE', url, '', onContactDeleteSuccess);
 }
 
-function onContactDeleteSuccess(data) {
-    $('#btnLoad').click();
-    console.log('delete result: ' + data);
+function onContactDeleteSuccess() {
+    getAllContacts();
 }
 
 
@@ -72,10 +81,6 @@ function request(method, url, data, onSuccess) {
 }
 
 function generateURL(param) {
-
-    let url = `https://phonebook-6a5f8.firebaseio.com/${param}.json`;
-
-    console.log('url: ' + url);
-
+    let url = `https://phonebook-nakov.firebaseio.com/phonebook${param}.json`;
     return url;
 }
