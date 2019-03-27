@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Github Commits</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="commits.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        body {
+            font-family: "Open Sans", serif;
+        }
+
+        input[type=text] {
+            padding: 5px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    GitHub username:
+    <input type="text" id="username" value="nakov" /> <br>
+   Repo: <input type="text" id="repo" value="nakov.io.cin"/>
+    <button onclick="loadCommits()">Load Commits</button>
+    <ul id="commits"></ul>
+</body>
+
+</html>
