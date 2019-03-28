@@ -1,0 +1,60 @@
+.container{
+    margin: 10px;
+}
+#books-container{
+    position: relative;;
+    margin-left: -35px;
+}
+
+#load-books{
+    position: absolute;
+    bottom: 0;
+    margin-left: -12px; 
+}
+
+.card{
+    float: left;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 15rem;
+    height: 11rem;
+    
+}
+
+.card-body {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+  }
+  .card-body .btn-holder {
+    justify-content: flex-start;
+    display: inline-table;
+  }
+  .card-body .btn-holder button {
+    margin-left: 5px;
+  }
+
+#books-container{
+    display: inline-block;
+}
+
+form{
+    /* background-color: cadetblue; */
+    /* border: 1px solid grey; */
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+}
+
+#addBook, #updateBook{
+    display: table;
+   margin: 0 auto
+}
+
+
+#update-form{
+    display: none;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="books.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="books.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <button type="button" id="load-books" class="btn btn-primary"><i class="fas fa-book"></i> Load books</button>
+            </div>
+            <div id="add-form" class="col-5">
+                <form>
+                    <div class="form-row">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Title</span>
+                            </div>
+                            <input type="text"
+                            id="bookTitle" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                                      </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon2">Author</span>
+                                </div>
+                                <input type="text" id="bookAuthor" class="form-control" placeholder="Author" aria-label="Author" aria-describedby="basic-addon2">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">ISBN</span>
+                                </div>
+                                <input type="text"  id="bookIsbn"  class="form-control" placeholder="ISBN" aria-label="ISBN" aria-describedby="basic-addon3">
+                                              </div>
+                            </div>
+
+
+                            <button id="addBook" type="button" class="btn btn-primary">Add book</button>
+                </form>
+            </div>
+            <div id="update-form" class="col-5">
+                <form>
+                    <div class="form-row">
+                        <span id="updatebookId" style="display:none"></span>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Title</span>
+                            </div>
+                            <input type="text"
+                                id="updatebookTitle" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                                          </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon2">Author</span>
+                                </div>
+                                <input type="text" id="updatebookAuthor" class="form-control" placeholder="Author" aria-label="Author" aria-describedby="basic-addon2">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">SIBN</span>
+                                </div>
+                                <input type="text"  id="updatebookIsbn"  class="form-control" placeholder="ISBN" aria-label="ISBN" aria-describedby="basic-addon3">
+                                                  </div>
+                            </div>
+
+
+                            <button id="updateBook" type="button" class="btn btn-primary">Update book</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="books-container">
+
+        </div>
+    </div>
+</body>
+<script>
+    attachedEvents();
+</script>
+
+</html>
