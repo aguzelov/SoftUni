@@ -1,0 +1,112 @@
+body div {
+    margin-bottom: 10px;
+}
+
+#countries-list div {
+    margin-bottom: 5px;
+}
+
+.country {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.country-edit {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+
+    padding: 10px;
+    display: none;
+}
+
+.country-delete {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+
+    padding: 10px;
+    display: none;
+}
+
+.add-town {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+
+    padding: 10px;
+    display: none;
+}
+
+.country-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-btns button {
+    margin-right: 3px;
+    height: 30px;
+}
+
+.edit-btn,
+.edit-btn2 {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: none;
+}
+
+.delete-btn,
+.delete-btn2,
+.add-town-btn2 {
+    border: none;
+}
+
+.show-towns-btn {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+}
+
+.add-town-btn {
+    border: none;
+}
+
+.towns-list {
+    display: none;
+}
+
+.towns-list input {
+    width: 70px;
+}
+
+.towns-list div {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 70px;
+    height: auto;
+
+    padding: 10px;
+    display: none;
+}
+
+.towns-list h5 {
+    margin-top: 0;
+}
+
+.towns-list button {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+
+    font-size: 10px;
+}

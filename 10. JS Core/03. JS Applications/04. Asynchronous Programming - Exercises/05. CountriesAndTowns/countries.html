@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="countries.css">
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="countries.js"></script>
+</head>
+
+<body>
+
+    <div id="add-country-form">
+        <form>
+            <input  type="text" placeholder="Country Name">
+            <button id="add-country-btn" type="button">Add Country</button>
+        </form>
+    </div>
+    <div>
+        <button id="list-countries-btn" type="button" >List All Countries</button>
+
+    </div>
+    <div id="countries-list">
+        <div>
+            <div class="country">
+
+                <h3>Name</h3>
+                <div class="country-btns">
+                    <button class="edit-btn" type="button">Edit</button>
+                    <button class="delete-btn"  type="button">Delete</button>
+                    <button class="show-towns-btn" type="button">Show Towns</button>
+                    <button class="add-town-btn" type="button">Add Town</button>
+                </div>
+            </div>
+            <div class="country-edit" style="display:inline-block">
+                <label>Name</label>
+                <input type="text" >
+                <br>
+                <br>
+                <button class="edit-btn2" type="button">Edit</button>
+            </div>
+            <div class="country-delete" style="display:inline-block">
+                <label>Name</label>
+                <input type="text" >
+                <br>
+                <br>
+                <button class="delete-btn2" type="button">Delete</button>
+            </div>
+            <div class="add-town" style="display:inline-block">
+                <label>Name</label>
+                <input type="text" >
+                <br>
+                <br>
+                <button class="add-town-btn2" type="button">Add</button>
+            </div>
+            <div class="towns-list" style="display:inline-block">
+                <div>
+                    <h5>town</h5>
+                    <button class="edit-town-btn" type="button">Edit</button>
+                    <button class="delete-town-btn"  type="button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    attachEvents()
+</script>
+
+</html>
