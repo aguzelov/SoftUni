@@ -1,0 +1,10 @@
+{{> header}}
+<section class="my-pets">
+            <h1>My Pets</h1>
+            <ul class="my-pets-list">
+            {{#each pets}}
+                {{> pet}}
+            {{/each}}
+            </ul>
+</section>
+{{> footer}}

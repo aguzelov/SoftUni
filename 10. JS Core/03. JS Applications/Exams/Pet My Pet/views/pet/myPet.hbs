@@ -1,0 +1,11 @@
+<section class="myPet">
+    <h3>Name: {{name}}</h3>
+    <p>Category: {{category}}</p>
+    <p class="img"><img src="{{imageURL}}"></p>
+        <p class="description">{{description}}</p>
+        <div class="pet-info">
+            <a href="#/editPet/{{_id}}"><button class="button"><i class="fas fa-heart"></i> Edit</button></a>
+            <a href="#/deletePet/{{_id}}"><button class="button">Delete</button></a>
+            <i class="fas fa-heart"></i> <span> {{likes}}</span>
+        </div>
+</section>

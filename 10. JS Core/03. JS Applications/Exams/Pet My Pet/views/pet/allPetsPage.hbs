@@ -1,0 +1,22 @@
+{{> header}}
+<main id="site-content"></main>
+<section class="dashboard">
+        <h1>Dashboard</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#/allPets">All</a></li>
+                <li><a href="#/allPets/Cat">Cats</a></li>
+                <li><a href="#/allPets/Dog">Dogs</a></li>
+                <li><a href="#/allPets/Parrot">Parrots</a></li>
+                <li><a href="#/allPets/Reptile">Reptiles</a></li>
+                <li><a href="#/allPets/Other">Other</a></li>
+            </ul>
+        </nav>
+        <ul class="other-pets-list">
+            {{#each pets}}
+            {{> otherPet}}
+            {{/each}}
+        </ul>
+    </section>
+    </main>
+{{> footer}}
