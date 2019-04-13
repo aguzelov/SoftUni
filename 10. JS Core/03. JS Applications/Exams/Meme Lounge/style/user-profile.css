@@ -1,0 +1,103 @@
+#user-avatar-url {
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    height: 200px;
+    width: 200px;
+}
+
+#user-listings-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    border-bottom: 3px solid lightgrey;
+    margin: auto;
+    margin-bottom: 34px;
+    padding: 23px;
+    width: 60%;
+    font-weight: bold;
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-meme-listings {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.user-meme {
+    margin: 0 10px 0 10px;
+    width: 23%;
+    padding-bottom: 30px;
+}
+
+a.user-meme-title {
+    display: block;
+    font-size: 2vw;
+    width: 330px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-profile {
+    text-align: center;
+}
+
+#container>div.user-profile>div>div>a>img {
+    margin: auto;
+    display: block;
+    height: 12em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.user-meme-title {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-meme-title:hover {
+    color: #4438ea;
+}
+
+#deleteUserButton {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.user-memes-buttons {
+    padding: 26px 0 24px 0;
+}
+
+.user-meme-btn {
+    margin-top: 15px;
+    background-color: blue;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+.userProfileImage {
+    width: 100%;
+}

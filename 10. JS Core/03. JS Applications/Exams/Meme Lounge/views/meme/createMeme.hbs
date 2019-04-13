@@ -1,0 +1,21 @@
+{{> header}}
+<div id="create-meme">
+    <form action="#/createMeme" method="POST">
+        <div class="container">
+            <h1>Create Meme</h1>
+            <p>Please fill in this form to create an meme.</p>
+
+            <p>Title</p>
+            <input type="text" placeholder="Enter Title" name="title">
+
+            <p>Description</p>
+            <input type="text" placeholder="Enter Description" name="description">
+
+            <p>Meme Image</p>
+            <input type="text" placeholder="Enter meme ImageUrl" name="imageUrl">
+
+            <button type="submit" class="registerbtn">Create Meme</button>
+        </div>
+    </form>
+</div>
+{{> footer}}

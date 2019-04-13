@@ -1,0 +1,53 @@
+.meme-details {
+    text-align: center;
+    margin: auto;
+}
+
+#container>div.meme-details>div>img {
+    display: block;
+    margin: auto;
+    margin-bottom: 35px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.meme-details #meme-title {
+    display: block;
+    border-bottom: 3px solid lightgrey;
+    margin: auto;
+    margin-bottom: 34px;
+    padding: 23px;
+    width: 60%;
+    font-weight: bold;
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+#container>div.meme-details>div>div.meme-props>p {
+    border: 2px solid black;
+    margin-bottom: 25px;
+    margin: auto;
+    width: 35%;
+    padding: 50px 0 50px 0;
+}
+
+.meme-details-buttons {
+    margin: 40px 0 45px 0;
+}
+
+.meme-details-button {
+    margin: auto;
+    background-color: blue;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
