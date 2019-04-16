@@ -1,0 +1,18 @@
+{{> header}}
+<div id="addMovie">
+    <h1>Create movie</h1>
+    <form action="#/movie/create" method="POST">
+        <label>Title</label>
+        <input type="text" name="title" id="createTitle">
+        <label>Image Url</label>
+        <input type="text" name="imageUrl" id="createImage">
+        <label>Description</label>
+        <textarea type="text" name="description" id="createDescription"></textarea>
+        <label>Genres</label>
+        <input type="text" name="genres" id="createGenres">
+        <label>Available Tickets</label>
+        <input type="number" name="tickets" id="createTickets">
+        <input type="submit" value="Create">
+    </form>
+</div>
+{{> footer}}

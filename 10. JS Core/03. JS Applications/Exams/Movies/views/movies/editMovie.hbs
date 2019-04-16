@@ -1,0 +1,21 @@
+{{> header}}
+<div id="editMovie">
+    <h1>Edit movie</h1>
+    <form action="#/edit/{{id}}" method="POST">
+        <label>Title</label>
+        <input type="text" name="title" value="{{title}}" id="editTitle">
+        <label>Image Url</label>
+        <input type="text" name="imageUrl" id="editImage"
+        value="{{imageURL}}">
+        <label>Description</label>
+        <textarea type="text" id="editDescription"
+        name="description">{{description}}</textarea>
+        <label>Genres</label>
+        <input type="text" name="genres" value="{{genres}}" id="editGenres">
+        <label>Available Tickets</label>
+        <input type="number" name="tickets" value="{{tickets}}" id="editTickets">
+        <input type="submit" value="Edit">
+    </form>
+</div>
+
+{{> footer}}

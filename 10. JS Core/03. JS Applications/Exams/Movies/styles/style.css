@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
+
+* {
+  font-family: 'Libre Franklin',
+  sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #A98EB8;
+}
+
+h1, h2 {
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+p {
+   text-align: center;
+   color: white;
+   font-weight: bold;
+}
+
+img {
+  border-radius: 4px;
+  border: 3px solid #673D7E;
+  width: 150px;
+  height: 220px;
+}
+
+img.background {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  height: 100vh;
+}
+
+/*Header styles*/
+nav {
+  background: #673D7E;
+  padding: 10px;
+}
+
+nav ul li a{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+a:hover {
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+
+nav ul li a:hover,
+button a {
+  color: white;
+  text-decoration: underline;
+}
+
+nav ul {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav li,
+button a {
+  padding: 5px;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+nav li {
+  float: left;
+}
+
+nav li.right {
+  float: right;
+}
+
+/*Form style*/
+form {
+  display: grid;
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid white;
+}
+
+input[type="submit"],
+button {
+  border: 2px solid #CEBED7;
+  background: #673D7E;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+  width: 30%;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+input[type="submit"]:hover {
+  border: 2px solid #673D7E;
+  background: #CEBED7;
+  color: #673D7E;
+  text-decoration: underline;
+}
+
+/*Movies styles*/
+div.movies {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div.movie {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 30%;;
+}
+
+div.btn-group {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+
+ul.genres {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+div.movie button {
+  margin: 10px auto 12% auto;
+}
+
+div.movie button:hover {
+  color: white !important;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Footer styles*/
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 5px;
+  background: #673D7E;
+  color: white;
+  font-weight: bold;
+}

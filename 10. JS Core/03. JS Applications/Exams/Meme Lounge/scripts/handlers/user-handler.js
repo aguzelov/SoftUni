@@ -1,5 +1,3 @@
-// @ts-check
-
 handlers.getRegister = function(ctx) {
 	let commonPartials = handlers.getCommonPartials(ctx);
 
@@ -16,6 +14,7 @@ handlers.registerUser = function(ctx) {
 		avatarUrl: ctx.params.avatarUrl,
 		email: ctx.params.email
 	};
+
 	userService
 		.register(user)
 		.then((res) => {
