@@ -1,7 +1,9 @@
 import { Article } from '../models/article.model';
-import { data } from './seed';
+import { data } from '../data/seed';
+import { Injectable } from '@angular/core';
 
-export class ArticleData {
+@Injectable()
+export class ArticleService {
 	getData(): Article[] {
 		let articles: Article[] = [];
 
