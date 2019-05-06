@@ -1,3 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-3">Find a Movie</h1>
+  <p class="lead">Search for a movie using the form below</p>
+  <form #form="ngForm" (submit)="search(form.value)">
+    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" ngModel>
+    <button class="btn btn-primary btn-lg" type="submit">Search</button>
+  </form>
+</div>
+
+<div *ngIf="mathcedMovies" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Matched Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of mathcedMovies;let i=index" class="col-md-
+        2">
+        <div *ngIf="i < 6" class="movie">
+          <img *ngIf="movie.poster_path" class="thumbnail"
+        src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Popular Movies</h3>
@@ -11,13 +40,12 @@
 src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4>{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-default" href="#">View Details</a></p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details</a></p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -32,7 +60,47 @@ src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
 src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4>{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-default" href="#">View Details</a></p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Kids</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="kids" class="row">
+      <div *ngFor="let movie of kids;let i=index" class="col-md-
+  2">
+        <div *ngIf="i < 6" class="movie">
+          <img *ngIf="movie.poster_path" class="thumbnail"
+  src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Best dramas</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="dramas" class="row">
+      <div *ngFor="let movie of dramas;let i=index" class="col-md-
+    2">
+        <div *ngIf="i < 6" class="movie">
+          <img *ngIf="movie.poster_path" class="thumbnail"
+    src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details</a></p>
         </div>
       </div>
     </div>
