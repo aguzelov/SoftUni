@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { RegisterFormComponent } from './authentication/register-form/register-f
 
 @NgModule({
 	declarations: [ AppComponent, NavigationComponent, LoginFormComponent, HomeComponent, RegisterFormComponent ],
-	imports: [ BrowserModule, AppRoutingModule ],
+	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
