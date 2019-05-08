@@ -8,11 +8,13 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LoginFormComponent } from './authentication/login-form/login-form.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterFormComponent } from './authentication/register-form/register-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationService } from './authentication/service/authentication.service';
 
 @NgModule({
 	declarations: [ AppComponent, NavigationComponent, LoginFormComponent, HomeComponent, RegisterFormComponent ],
-	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule ],
-	providers: [],
+	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule ],
+	providers: [ HttpClientModule, AuthenticationService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
