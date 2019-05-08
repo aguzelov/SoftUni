@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginModel } from '../models/login.model';
 import { RegisterModel } from '../models/register.model';
+import { AuthModel } from '../models/auth.model';
 
 @Injectable()
 export class AuthenticationService {
@@ -11,6 +12,7 @@ export class AuthenticationService {
 	private loginUrl: string = `https://baas.kinvey.com/user/${this.appKey}/login`;
 	private logoutUrl: string = `https://baas.kinvey.com/user/${this.appKey}/_logout`;
 	private authTokenName: string = 'authToken';
+
 	private currentAuthToken: string;
 
 	constructor(private http: HttpClient) {}
@@ -33,13 +35,18 @@ export class AuthenticationService {
 		return this.currentAuthToken === localStorage.getItem(this.authTokenName);
 	}
 
-	get authToken() {
-		return this.currentAuthToken;
+	get token() {
+		var model: AuthModel;
+		model.username = localStorage.getItem('username');
+		model.authoken = this.currentAuthToken;
+
+		return model;
 	}
 
-	set authToken(val: string) {
-		this.currentAuthToken = val;
+	set token(val: AuthModel) {
+		this.currentAuthToken = val.authoken;
 		localStorage.setItem(this.authTokenName, this.currentAuthToken);
+		localStorage.setItem('username', val.username);
 	}
 
 	public login(loginModel: LoginModel) {

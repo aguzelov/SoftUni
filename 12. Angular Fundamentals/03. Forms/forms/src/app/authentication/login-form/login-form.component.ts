@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthenticationService } from '../service/authentication.service';
+import { LoginModel } from '../models/login.model';
+import { Router } from '@angular/router';
+import { AuthModel } from '../models/auth.model';
 
 @Component({
 	selector: 'app-login-form',
@@ -8,10 +12,22 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 	loginForm: FormGroup;
-	constructor() {}
+	constructor(private authService: AuthenticationService, private router: Router) {}
 
 	submitForm() {
-		console.log(this.loginForm);
+		let model: LoginModel = this.loginForm.value;
+		this.authService.login(model).subscribe(
+			(response) => {
+				let token: AuthModel;
+				token.authoken = response['_kmd'].authtoken;
+				token.username = this.loginForm.value.username;
+
+				this.authService.token = token;
+
+				this.router.navigate([ '' ]);
+			},
+			(err) => console.log(err)
+		);
 	}
 
 	ngOnInit() {
