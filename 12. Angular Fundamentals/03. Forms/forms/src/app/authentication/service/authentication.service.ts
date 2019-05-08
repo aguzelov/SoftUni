@@ -36,7 +36,7 @@ export class AuthenticationService {
 	}
 
 	get token() {
-		var model: AuthModel;
+		var model: AuthModel = new AuthModel();
 		model.username = localStorage.getItem('username');
 		model.authoken = this.currentAuthToken;
 
@@ -63,7 +63,9 @@ export class AuthenticationService {
 
 	public logout() {
 		this.currentAuthToken = '';
-		localStorage.clear;
+
+		localStorage.clear();
+
 		return this.http.post(
 			this.logoutUrl,
 			{},

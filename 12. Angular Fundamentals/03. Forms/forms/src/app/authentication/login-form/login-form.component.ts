@@ -18,9 +18,9 @@ export class LoginFormComponent implements OnInit {
 		let model: LoginModel = this.loginForm.value;
 		this.authService.login(model).subscribe(
 			(response) => {
-				let token: AuthModel;
+				let token: AuthModel = new AuthModel();
 				token.authoken = response['_kmd'].authtoken;
-				token.username = this.loginForm.value.username;
+				token.username = response.username;
 
 				this.authService.token = token;
 
