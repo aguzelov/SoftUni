@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
 	usernameValidator,
@@ -7,6 +8,8 @@ import {
 	namesValidator,
 	emailValidator
 } from '../shared/register-from.directive';
+import { AuthenticationService } from '../service/authentication.service';
+import { RegisterModel } from '../models/register.model';
 
 @Component({
 	selector: 'app-register-form',
@@ -16,10 +19,20 @@ import {
 export class RegisterFormComponent implements OnInit {
 	registerForm: FormGroup;
 
-	constructor() {}
+	constructor(private authService: AuthenticationService, private router: Router) {}
 
 	submitForm(): void {
-		console.log(this.registerForm);
+		let model: RegisterModel = this.registerForm.value;
+
+		this.authService.register(model).subscribe(
+			(response) => {
+				let token: string = response._kmd.authtoken;
+				this.authService.authToken = token;
+			},
+			(err) => console.log(err)
+		);
+
+		this.router.navigate([ '' ]);
 	}
 
 	ngOnInit() {
