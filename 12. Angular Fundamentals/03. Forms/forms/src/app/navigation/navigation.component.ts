@@ -14,6 +14,11 @@ export class NavigationComponent implements OnInit {
 
 		this.authService.logout();
 	}
+
+	isLoggedIn(): boolean {
+		return this.authService.checkIfLoggedIn();
+	}
+
 	ngOnInit() {
 		console.log('init navigation');
 	}
