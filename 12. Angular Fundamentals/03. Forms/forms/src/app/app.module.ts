@@ -10,11 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { RegisterFormComponent } from './authentication/register-form/register-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService } from './authentication/service/authentication.service';
+import { AuthGuardService } from './authentication/guards/auth-guard.service';
 
 @NgModule({
 	declarations: [ AppComponent, NavigationComponent, LoginFormComponent, HomeComponent, RegisterFormComponent ],
 	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule ],
-	providers: [ HttpClientModule, AuthenticationService ],
+	providers: [ HttpClientModule, AuthenticationService, AuthGuardService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
