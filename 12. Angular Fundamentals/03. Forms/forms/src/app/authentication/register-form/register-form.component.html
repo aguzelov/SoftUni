@@ -1,11 +1,12 @@
 <div class="container">
   <h1>Registration Form</h1>
-  <form [formGroup]="registerFrom" (ngSubmit)="submitForm()">
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" formControlName="username" id="username"
 required>
-      <div *ngIf="!registerFrom.controls?.username.valid" class="alert alert-danger">
+      <div *ngIf="!registerForm.controls?.username.valid && (registerForm.dirty || registerForm.touched)"
+        class="alert alert-danger">
         <p>Username must start with a capital letter and must contain only letters and digits.</p>
       </div>
     </div>
@@ -13,7 +14,8 @@ required>
       <label for="password">Password</label>
       <input type="password" class="form-control" formControlName="password" id="password"
 required>
-      <div *ngIf="!registerFrom.controls?.password.valid" class="alert alert-danger">
+      <div *ngIf="!registerForm.controls?.password.valid && (registerForm.dirty || registerForm.touched)"
+        class="alert alert-danger">
         <p>Password must contain only letters and digits and must be between 4 and 16 symbols.</p>
       </div>
     </div>
@@ -27,7 +29,8 @@ required>
         <label for="firstName">First Name</label>
         <input type="text" class="form-control" formControlName="firstName" id="firstName"
 required>
-        <div *ngIf="!registerFrom.controls?.firstName.valid" class="alert alert-danger">
+        <div *ngIf="!registerForm.controls?.firstName.valid && (registerForm.dirty || registerForm.touched)"
+          class="alert alert-danger">
           <p>First Names must contain only letters and start with a capital letter.</p>
         </div>
       </div>
@@ -35,7 +38,8 @@ required>
         <label for="lastName">Last Name</label>
         <input type="text" class="form-control" formControlName="lastName" id="lastName"
 required>
-        <div *ngIf="!registerFrom.controls?.lastName.valid" class="alert alert-danger">
+        <div *ngIf="!registerForm.controls?.lastName.valid && (registerForm.dirty || registerForm.touched)"
+          class="alert alert-danger">
           <p>Last Names must contain only letters and start with a capital letter.</p>
         </div>
       </div>
@@ -43,7 +47,7 @@ required>
         <label for="email">Email Address</label>
         <input type="text" class="form-control" formControlName="email" id="email"
 required>
-        <div *ngIf="!registerFrom.controls?.email.valid && (registerFrom.dirty || registerFrom.touched)"
+        <div *ngIf="!registerForm.controls?.email.valid && (registerForm.dirty || registerForm.touched)"
           class="alert alert-danger">
           <p>Email address is not valid.</p>
         </div>
@@ -52,6 +56,6 @@ required>
         <label for="age">Age</label>
         <input type="number" class="form-control" formControlName="age" id="age">
 </div>
-        <button type="submit" [disabled]="!registerFrom.valid" class="btn btn-success">Register</button>
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success">Register</button>
   </form>
 </div>

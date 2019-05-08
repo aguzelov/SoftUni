@@ -14,16 +14,16 @@ import {
 	styleUrls: [ './register-form.component.css' ]
 })
 export class RegisterFormComponent implements OnInit {
-	registerFrom: FormGroup;
+	registerForm: FormGroup;
 
 	constructor() {}
 
 	submitForm(): void {
-		console.log(this.registerFrom);
+		console.log(this.registerForm);
 	}
 
 	ngOnInit() {
-		this.registerFrom = new FormGroup(
+		this.registerForm = new FormGroup(
 			{
 				username: new FormControl('Kokorcho', [ usernameValidator() ]),
 				password: new FormControl('1234', passwordValidator()),
