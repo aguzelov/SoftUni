@@ -26,13 +26,10 @@ export class RegisterFormComponent implements OnInit {
 
 		this.authService.register(model).subscribe(
 			(response) => {
-				let token: string = response._kmd.authtoken;
-				this.authService.authToken = token;
+				this.router.navigate([ '' ]);
 			},
 			(err) => console.log(err)
 		);
-
-		this.router.navigate([ '' ]);
 	}
 
 	ngOnInit() {
